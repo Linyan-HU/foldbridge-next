@@ -72,7 +72,7 @@ import {
   SEARCH_FILTER_GROUPS,
   searchParamsFromHash,
   visibleSearchFilterEntries
-} from './search/searchService.js';
+} from './search/searchService.js?v=20260917-search-index';
 let sequenceRows = [];
 let browseEntryRows = [];
 let expandedAnnojointGroupIds = new Set();
