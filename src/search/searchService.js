@@ -134,12 +134,9 @@ function normalizeFilters(filters = {}) {
 }
 
 function getPagefindBundlePath() {
-  if (typeof window === 'undefined') return '/dist/pagefind/pagefind.js';
-  const marker = '/dist/';
-  const path = window.location.pathname;
-  const index = path.indexOf(marker);
-  if (index >= 0) return `${path.slice(0, index + marker.length)}pagefind/pagefind.js`;
-  return '/dist/pagefind/pagefind.js';
+  // Resolve from this module instead of the domain root so Search also works
+  // when the portal is served from a GitHub Pages project path.
+  return new URL('../../dist/pagefind/pagefind.js', import.meta.url).href;
 }
 
 async function defaultPagefindLoader() {
