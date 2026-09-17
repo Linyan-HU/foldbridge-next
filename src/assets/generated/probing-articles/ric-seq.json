@@ -1,0 +1,63 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "ric-seq",
+  "title": "RIC-seq: In situ mapping of RNA–RNA spatial interactions and higher-order RNA architecture",
+  "date": "",
+  "figure_count": 3,
+  "rep_pmid": "32499643",
+  "rep_pmcid": "",
+  "rep_doi": "10.1038/s41586-020-2249-1",
+  "asset_base": "./src/assets/generated/probing-articles/assets/ric-seq",
+  "sibling_navigation": {
+    "previous": {
+      "slug": "mario",
+      "title": "MARIO"
+    },
+    "next": {
+      "slug": "comrades",
+      "title": "COMRADES"
+    }
+  },
+  "key_innovation": "Compared with RNA duplex mapping methods that directly capture base-paired regions, RIC-seq uses in situ formaldehyde crosslinking and proximity ligation to preserve protein-mediated RNA spatial contacts, enabling transcriptome-wide mapping of RNA–RNA interactions and higher-order RNA architectures in living cells.",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "How does RIC-seq capture RNA spatial interactions and validate RNA structures?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-ric-seq-f1",
+      "alt": "Principle and validation of RIC-seq-mediated RNA interaction mapping",
+      "srcBasename": "ricseq_f1__F1.png",
+      "legend": "**Figure 1. Principle and validation of RIC-seq-mediated RNA interaction mapping.** RIC-seq captures endogenous RNA spatial contacts through formaldehyde fixation, micrococcal nuclease digestion, proximity ligation, and high-throughput sequencing. The method preserves RNA interactions mediated by RNA-binding proteins and generates chimeric reads representing spatially associated RNA regions. RIC-seq accurately recovers known RNA secondary structures, RNA tertiary interactions, and RNA–RNA contacts, including pre-miRNA structures, telomerase RNA architecture, and U1–MALAT1 interactions.",
+      "label": "RIC-seq F1",
+      "figureId": "F1"
+    },
+    {
+      "type": "heading",
+      "text": "How does RIC-seq reveal transcriptome-wide RNA spatial interaction networks?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-ric-seq-f2",
+      "alt": "Genome-wide mapping of RNA spatial organization",
+      "srcBasename": "ricseq_f2__F2.png",
+      "legend": "**Figure 2. Genome-wide mapping of RNA spatial organization.** RIC-seq generates a global RNA interaction map across the genome by identifying spatially associated RNA regions. The interaction landscape reveals widespread RNA–RNA contacts, RNA interaction hubs, and topological domains within long transcripts, demonstrating that cellular RNAs form complex three-dimensional interaction networks.",
+      "label": "RIC-seq F2",
+      "figureId": "F2"
+    },
+    {
+      "type": "heading",
+      "text": "How does RIC-seq map functional RNA regulatory networks?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-ric-seq-f3",
+      "alt": "Identification of functional RNA-mediated regulatory networks",
+      "srcBasename": "ricseq_f3__F3.png",
+      "legend": "**Figure 3. Identification of functional RNA-mediated regulatory networks.** RIC-seq interaction maps reveal spatial connections between regulatory RNAs and genomic regulatory regions, including enhancer-associated RNAs and promoter-associated transcripts. These RNA interaction networks uncover potential mechanisms by which RNA spatial organization contributes to gene regulation.",
+      "label": "RIC-seq F3",
+      "figureId": "F3"
+    }
+  ]
+}

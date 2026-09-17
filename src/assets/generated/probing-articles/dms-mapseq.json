@@ -1,0 +1,36 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "dms-mapseq",
+  "title": "DMS-MaPseq: Quantitative RNA structure profiling through mutation-based DMS detection",
+  "date": "",
+  "figure_count": 3,
+  "rep_pmid": "27819661",
+  "rep_pmcid": "PMC5508988",
+  "rep_doi": "10.1038/nmeth.4057",
+  "key_innovation": "Compared with DMS-seq approaches based on reverse transcription stops, DMS-MaPseq uses error-prone reverse transcription to record DMS modifications as mutations, enabling quantitative structure mapping without truncation bias.",
+  "asset_base": "./src/assets/generated/probing-articles/assets/dms-mapseq",
+  "ppt_overview": [
+    {
+      "title": "How does DMS-MaPseq convert DMS modifications into sequencing signals?",
+      "srcBasename": "dmsmapseq_figure1.png",
+      "alt": "Principle and workflow of DMS-MaPseq",
+      "captionTitle": "Figure 1. Principle of DMS-MaPseq.",
+      "text": "DMS-modified nucleotides are read through by a high-fidelity mutation-aware reverse transcriptase, which introduces mismatches into cDNA. These mutations are detected by deep sequencing to generate quantitative DMS reactivity profiles."
+    },
+    {
+      "title": "Why does mutation-based detection improve DMS probing?",
+      "srcBasename": "dmsmapseq_figure2.png",
+      "alt": "TGIRT-based DMS-MaPseq improves signal quality",
+      "captionTitle": "Figure 2. TGIRT-based DMS-MaPseq improves signal quality.",
+      "text": "Compared with traditional RT-stop methods, mutation-based detection provides lower background and improved sensitivity for detecting DMS modifications."
+    },
+    {
+      "title": "What structural information can DMS-MaPseq provide?",
+      "srcBasename": "dmsmapseq_figure3.png",
+      "alt": "Global RNA structure analysis using DMS-MaPseq",
+      "captionTitle": "Figure 3. Global RNA structure analysis using DMS-MaPseq.",
+      "text": "DMS-MaPseq generates quantitative nucleotide-resolution structure profiles suitable for transcriptome-wide RNA folding analysis."
+    }
+  ],
+  "blocks": []
+}

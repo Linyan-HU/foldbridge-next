@@ -1,0 +1,76 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "splash",
+  "title": "SPLASH: Transcriptome-wide mapping of RNA–RNA interactions through psoralen-mediated proximity ligation",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "27184079",
+  "rep_pmcid": "",
+  "rep_doi": "10.1016/j.molcel.2016.04.028",
+  "asset_base": "./src/assets/generated/probing-articles/assets/splash",
+  "sibling_navigation": {
+    "previous": {
+      "slug": "paris",
+      "title": "PARIS"
+    },
+    "next": {
+      "slug": "ligr-seq",
+      "title": "LIGR-seq"
+    }
+  },
+  "key_innovation": "Compared with RNA structure probing methods that measure local RNA accessibility or individual RNA conformations, SPLASH uses biotinylated psoralen crosslinking and proximity ligation to directly capture RNA duplex regions, enabling high-resolution identification of both intra- and intermolecular RNA–RNA interactions across the transcriptome.",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "How does SPLASH directly capture RNA duplex interactions in living cells?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-splash-f1",
+      "alt": "Principle and validation of SPLASH-mediated RNA duplex mapping",
+      "srcBasename": "splash_f1__F1.png",
+      "legend": "**Figure 1. Principle and validation of SPLASH-mediated RNA duplex mapping.** SPLASH captures RNA–RNA interactions by stabilizing RNA duplexes in vivo using biotinylated psoralen crosslinking. Crosslinked RNA fragments are enriched through streptavidin purification, ligated to generate chimeric RNA molecules, and identified by high-throughput sequencing. Mapping of chimeric reads onto known RNA structures demonstrates that SPLASH accurately recovers spatially interacting RNA regions.",
+      "label": "SPLASH F1",
+      "figureId": "F1"
+    },
+    {
+      "type": "heading",
+      "text": "How does SPLASH reveal the global landscape of RNA interactions?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-splash-f2",
+      "alt": "Transcriptome-wide RNA interaction networks revealed by SPLASH",
+      "srcBasename": "splash_f2__F2.png",
+      "legend": "**Figure 2. Transcriptome-wide RNA interaction networks revealed by SPLASH.** SPLASH identifies extensive intramolecular and intermolecular RNA interactions across diverse RNA classes, including rRNAs, mRNAs, and long non-coding RNAs. Analysis of interaction patterns reveals global properties of RNA organization and identifies transcripts with extensive long-range RNA contacts.",
+      "label": "SPLASH F2",
+      "figureId": "F2"
+    },
+    {
+      "type": "heading",
+      "text": "How does SPLASH link RNA interactions with gene regulation?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-splash-f3",
+      "alt": "Association between RNA interaction architecture and transcript regulation",
+      "srcBasename": "splash_f3__F3.png",
+      "legend": "**Figure 3. Association between RNA interaction architecture and transcript regulation.** SPLASH reveals characteristic intramolecular interaction patterns within mRNAs and demonstrates that RNA circularization and long-range contacts are associated with translation efficiency and RNA stability, linking RNA architecture with functional regulation.",
+      "label": "SPLASH F3",
+      "figureId": "F3"
+    },
+    {
+      "type": "heading",
+      "text": "How does SPLASH identify specific RNA–RNA interaction partners?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-splash-f4",
+      "alt": "Discovery of specific RNA–RNA interaction partners by SPLASH",
+      "srcBasename": "splash_f4__F4.png",
+      "legend": "**Figure 4. Discovery of specific RNA–RNA interaction partners by SPLASH.** SPLASH identifies known and previously unknown snoRNA–rRNA interactions by detecting chimeric RNA fragments generated from interacting RNA molecules. The recovered interaction sites agree with known RNA modification pathways and reveal new RNA pairing events.",
+      "label": "SPLASH F4",
+      "figureId": "F4"
+    }
+  ]
+}

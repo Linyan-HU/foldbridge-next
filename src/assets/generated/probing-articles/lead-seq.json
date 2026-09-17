@@ -1,0 +1,157 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "lead-seq",
+  "title": "Lead-seq: reading the backbone flexibility and single-strand accessibility of RNA via lead-ion cleavage",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "32463449",
+  "rep_pmcid": "PMC7337928",
+  "rep_doi": "10.1093/nar/gkaa404",
+  "asset_base": "./src/assets/generated/probing-articles/assets/lead-seq",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you look only at the data table, Lead-seq is easily misread as a pairing detector that says \"wherever the lead ion cuts is an unpaired base\" — as if a high or low lead score could be translated directly into paired or not. That reading is wrong. The object that Lead-seq interprets is the flexibility of the RNA backbone in solution and its single-strand accessibility: the lead ion (Pb²⁺) preferentially attacks the backbone in single-stranded, flexible, unpaired regions, and after cleavage leaves a 2′,3′-cyclic phosphate (cP) and a 5′-hydroxyl end, which is then read out through library construction and sequencing to show which sites are more easily cut. In other words, Lead-seq first reports whether a stretch of backbone is flexible, whether it is in a single-stranded conformation, and whether it is accessible to the lead ion, rather than directly reporting \"this base must be paired\" or \"this base must be unpaired\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "This point determines how FoldBridge should treat Lead-seq data. A flexibility / single-strand accessibility signal is not equivalent to a pairing call. Strong cleavage indicates backbone flexibility and a single-stranded conformation, but it is at the same time influenced by tertiary structure and the ionic environment (including the competition between Pb²⁺ and native Mg²⁺), and is not the direct ground truth of pairing. FoldBridge can preserve the raw cleavage signal, and can also display the readout from the experiment on the web page; but the moment it enters the default structure colouring, the explanatory text or confidence, a more specific question must first be asked: in the chemical and readout context of Lead-seq, can this number be interpreted as evidence of backbone flexibility / single-strand accessibility? A raw cleavage signal must first pass through the chemistry/readout context before it can become a candidate for the default colour or confidence."
+    },
+    {
+      "type": "heading",
+      "text": "The experimental chain: Pb²⁺ cleaves single strands, quantified after library construction by the lead score"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-lead-seq-f1",
+      "alt": "Lead-seq F1",
+      "srcBasename": "leadseq_f1__PMC7337928__F1.jpg",
+      "legend": "**Figure 1. Locating lead cleavage sites by high-throughput sequencing.** The schematic of Twittenhoff et al. 2020 (PMID 32463449, DOI `10.1093/nar/gkaa404`) breaks the Lead-seq experimental chain apart: (A) RNA is extracted from Yersinia pseudotuberculosis cells cultured at 25°C or 37°C and treated with lead(II) acetate; the lead ion attacks the backbone of single-stranded nucleotides, generating 2′,3′-cyclic phosphate (cP) and 5′-hydroxyl cleavage products; after the RNA is isolated and rRNA removed, it is randomly fragmented, the ends are treated with T4 PNK, the 5′ (yellow) and 3′ (green) adapters are ligated, and after reverse transcription and PCR amplification Illumina sequencing is carried out; the cleavage events at each nucleotide are counted separately in the lead-treated and control libraries, and the lead score is taken as the logarithm of the ratio of induced to spontaneous cleavage events. (B) Pie charts give the preference of lead cleavage for A/C/G/U at 25°C and 37°C, and show the proportions after correction for the abundance of each nucleotide in the genome. (C) The distribution of the lead score at 25°C and 37°C (n = 3009815); overall the mean lead score at 37°C is significantly higher than at 25°C (25°C mean 0.13, 37°C mean 0.23, P = 1.0e-13, D = 0.71).",
+      "body": [
+        "What Lead-seq measures is the flexibility and single-strand accessibility of the RNA backbone (Pb²⁺ cleavage), not the base-pairing state itself. Strong cleavage indicates that this stretch of backbone is flexible, is in a single-stranded conformation, and is accessible to the lead ion; weak cleavage or no cleavage may come from the backbone being paired into a helix, being wrapped up by tertiary-structure folding, or being shielded by a protein or ligand. The temperature dependence (an overall higher lead score at 37°C than at 25°C) also reminds us that cleavage intensity itself carries information about conformational dynamics and the environment, rather than being a fixed structural label.",
+        "For FoldBridge, this means that the values in the final table are not \"structural labels\" handed out directly by Pb²⁺, but observables that arise after cleavage, end repair, library construction, reverse transcription, sequencing and normalisation (the lead score). This observable is very useful, but what it reports is backbone flexibility / single-strand accessibility, and it needs to be interpreted within the chemical context of Lead-seq before structure can be discussed."
+      ],
+      "label": "Lead-seq F1",
+      "pmid": "32463449",
+      "pmcid": "PMC7337928",
+      "doi": "10.1093/nar/gkaa404",
+      "figureId": "F1",
+      "legendText": "Mapping lead cleavage sites by high-throughput sequencing. ( A ) RNA from lead(II) acetate-treated Yersinia pseudotuberculosis cells, grown at 25 or 37°C. Lead(II) ion-mediated attack of single-stranded nucleotides generates 2′,3′-cyclic phosphate (cP) and 5′-hydroxyl groups as cleavage products ( 45 ). After RNA isolation and rRNA depletion, total RNA was randomly fragmented and treated with T4 PNK. The RNA fragments were ligated to 5′—(yellow) and 3′—(green) adapters and subjected to RT. The cDNA products were PCR-amplified prior to Illumina high-throughput sequencing. Cleavage events per nt were counted in the lead-treated and control library. The lead score was calculated as the log ratio between lead-induced and spontaneous cleavage events. ( B ) Pie charts displaying the ratio of lead-cleavage preference toward adenines (As), cytosines (Cs), guanines (Gs) and uraciles (Us) at 25 and 37°C. Moreover, pie charts representing these ratios corrected for the genomic abundance of each nt are shown. ( C ) Distribution of lead scores at 25°C and 37°C ( n = 3009815). Over all sampled nt, the mean lead score is significantly higher at 37°C than at 25°C (mean score at 25°C = 0.13, mean score at 37°C = 0.23, P = 1.0e-13;, D = 0.71)."
+    },
+    {
+      "type": "heading",
+      "text": "Single-molecule structural validation: the lead score of tRNA His matches the known structure"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-lead-seq-f2",
+      "alt": "Lead-seq F2",
+      "srcBasename": "leadseq_f2__PMC7337928__F2.jpg",
+      "legend": "**Figure 2. The lead-score profile of tRNA His matches the expected structure.** Twittenhoff et al. 2020 (PMID 32463449, DOI `10.1093/nar/gkaa404`) give: (A) the lead-score profile obtained for tRNA His (YPK_R0043) at 25°C and 37°C, where a positive lead score indicates that the nucleotide is in an unstructured conformation; (B) the expected secondary structure of tRNA His taken from tRNAScan-SE overlaid with the lead scores at 25°C and 37°C, with the values annotated by the specified colour code; (C) a three-dimensional representation of tRNA His, with the lead-accessible nucleotides marked in blue.",
+      "body": [
+        "This figure places the value of Lead-seq in the right position: when the lead score is overlaid onto the known secondary structure and then projected onto the three-dimensional structure, the positive signal does fall in the single-stranded, flexible regions (loops, bulges, unpaired ends), while the paired helical regions are cut more weakly. This makes the \"cleavage-flexibility/single-strand accessibility\" correspondence visible.",
+        "But this is exactly the place most prone to misreading. The strong signal of Lead-seq corresponds to a flexible, single-stranded backbone accessible to Pb²⁺, rather than being simply equivalent to \"unpaired here\". The legend uses the wording unstructured / single-stranded conformation and lead-accessible, emphasising conformation and accessibility. A stretch of backbone can be temporarily unpaired yet be wrapped up by tertiary-structure folding, buried inside and cut very weakly; cleavage intensity also varies with temperature and the ionic environment. For FoldBridge, translating a high Lead-seq signal directly into \"unpaired here\" would skip the layer of flexibility / single-strand accessibility that is actually measured."
+      ],
+      "label": "Lead-seq F2",
+      "pmid": "32463449",
+      "pmcid": "PMC7337928",
+      "doi": "10.1093/nar/gkaa404",
+      "figureId": "F2",
+      "legendText": "Lead score profile of tRNA His matches the expected structure. ( A ) Lead score profiles of tRNA His (YPK_R0043) obtained at 25 and 37°C. A positive lead score indicates that the nt is in an unstructured conformation. ( B ) The expected secondary structure of tRNA His (taken from tRNAScan-SE ( 56 )) was superimposed with lead scores obtained at 25 and 37°C. Lead score values are marked according to the indicated color code. ( C ) 3D representation of tRNA His with lead-accessible nucleotides colored in blue."
+    },
+    {
+      "type": "heading",
+      "text": "The cleavage signal needs calibration against reference structures: how the lead score distinguishes paired from unpaired sites"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-lead-seq-f3",
+      "alt": "Lead-seq F3",
+      "srcBasename": "leadseq_f3__PMC7337928__F3.jpg",
+      "legend": "**Figure 3. The performance of Lead-seq on a tRNA reference-structure dataset.** Twittenhoff et al. 2020 (PMID 32463449, DOI `10.1093/nar/gkaa404`) use the structures of 32 tRNAs (containing 764 paired and 665 unpaired nucleotides) to assess the reliability of the lead score: after excluding scores below a given threshold, the PPV and sensitivity are calculated at 25°C (A) and 37°C (B) respectively, and this process is repeated with different thresholds; (C) a boxplot shows the lead-score distributions of unpaired versus paired sites — at 25°C the unpaired mean is 0.84 and the paired mean 0.26 (P < 2.2e-16, D = 0.22), and at 37°C the unpaired mean is 1.41 and the paired mean 0.69 (P < 2.2e-16, D = 0.22).",
+      "body": [
+        "This figure puts an easily overlooked safeguard on the table: the lead score is indeed systematically higher at unpaired sites than at paired sites, but the two distributions overlap markedly, and the PPV and sensitivity have to be calibrated against thresholds and reference structures. Put differently, the cleavage value at a single site cannot be cleanly dichotomised into \"paired/unpaired\"; it is a continuous signal that, in a statistical sense, leans towards single-stranded/flexible.",
+        "Placed on FoldBridge, this is exactly why a raw observation must carry its experimental conditions. The same lead score does not mean the same thing at different temperatures, under different thresholds, or against different references. Treating a value that is not annotated with its threshold and experimental conditions directly as the ground truth of backbone single-strand accessibility, or even as the ground truth of pairing, would misread a statistical preference as a deterministic structural label, and would also conflate experimental parameters with structural interpretation."
+      ],
+      "label": "Lead-seq F3",
+      "pmid": "32463449",
+      "pmcid": "PMC7337928",
+      "doi": "10.1093/nar/gkaa404",
+      "figureId": "F3",
+      "legendText": "Lead-seq performance on a tRNA reference structural dataset. The structure of 32 tRNAs was used to assess the reliability of lead scores, including 764 paired and 665 unpaired nt. After excluding scores smaller than a certain threshold from the dataset, PPV and sensitivity were calculated from lead scores at 25°C ( A ) and 37°C ( B ). This was repeated using different thresholds. The distribution of lead scores at unpaired and paired sites at 25°C (mean unpaired = 0.84, mean paired = 0.26, P < 2.2e-16, D = 0.22) and 37°C (mean unpaired = 1.41, mean paired = 0.69, P < 2.2e-16, D = 0.22) is illustrated as boxplots ( C )."
+    },
+    {
+      "type": "heading",
+      "text": "Validation on a larger RNA: the lead-score profile of RNase P RNA"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-lead-seq-f4",
+      "alt": "Lead-seq F4",
+      "srcBasename": "leadseq_f4__PMC7337928__F4.jpg",
+      "legend": "**Figure 4. The lead-score profile of RNase P RNA matches the validated structure.** Twittenhoff et al. 2020 (PMID 32463449, DOI `10.1093/nar/gkaa404`) give: (A) the lead-score profile of M1 RNA at 25°C and 37°C; (B) the lead scores of M1 RNA (25 and 37°C) overlaid onto its expected secondary structure, with positive lead-score values (indicating a single-stranded conformation) annotated in colour, and the proposed pseudoknots marked; black arrows indicate significant lead(II) cleavage sites that were also observed in earlier independent studies.",
+      "body": [
+        "The significance of this figure is not \"Lead-seq resolves all bases\", but a reminder: even on a larger, pseudoknot-containing catalytic RNA, the positive lead-score signal still falls in single-stranded, flexible regions, and matches the lead cleavage hotspots historically observed by independent methods. This is a kind of cross-validation across methods and across studies.",
+        "For FoldBridge the conclusion is direct: a Lead-seq signal is most trustworthy when supported by multiple lines of evidence, but even so, what it reports is still backbone flexibility / single-strand accessibility, not the ground truth of pairing. The existence of a tertiary structure such as a pseudoknot is exactly what shows that \"unpaired\" on a secondary-structure diagram and \"accessible/flexible\" as measured by Lead-seq are not the same thing — tertiary structure can make some nominally unpaired nucleotides inaccessible, and can also cause some paired regions to be cut owing to conformational dynamics. Stuffing these signals into the same confidence channel without distinction would make the meaning of cross-validation disappear."
+      ],
+      "label": "Lead-seq F4",
+      "pmid": "32463449",
+      "pmcid": "PMC7337928",
+      "doi": "10.1093/nar/gkaa404",
+      "figureId": "F4",
+      "legendText": "Lead score profiles of RNase P RNA matches the validated structure. ( A ) Lead score profiles of M1 RNA obtained at 25 and 37°C. ( B ) The lead scores of the M1 RNA (25 and 37°C) were overlaid with its expected secondary structure ( 105 ). Nt with positive lead score values, indicating a single-stranded conformation, are indicated in color. Proposed pseudoknots are indicated. Black arrows indicate prominent sites of lead(II) cleavage that were also observed by ( 36 , 38 , 68 )."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about Lead-seq"
+    },
+    {
+      "type": "paragraph",
+      "text": "The core rule for Lead-seq within FoldBridge is to treat the Pb²⁺ cleavage flexibility / single-strand-accessibility signal as evidence of backbone flexibility and single-strand accessibility, not as a pairing call. The raw cleavage counts and the lead score are first of all provenance: they record the relative frequency at which a given backbone site was cut by the lead ion under a given temperature and ionic condition. Only when this signal can be interpreted within the chemical context of Lead-seq (backbone flexibility / single-stranded accessibility, not base pairing) and within the readout/mapping context does it enter the default visualisation and confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "The key to this boundary is to separate flexibility / single-strand accessibility from unpaired. Flexible and single-strand accessible does not equal unpaired: tertiary structure, pseudoknots, burial and the ionic environment can all make the cleavage accessibility of a stretch of backbone deviate from its secondary-structure state. An unpaired loop can be buried by folding and cut very weakly, while a region engaged in tertiary contacts can be cut owing to conformational dynamics. What Lead-seq measures is \"whether this stretch of backbone is flexible and accessible to the lead ion\", not \"whether these bases are paired\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "FoldBridge therefore needs the concept of a gate, rather than a piece of rule code written out of thin air. The responsibility of this gate is, before sending a raw lead score into the default structure colouring or confidence, to first confirm that it carries explicit experimental conditions (temperature, threshold and control library — this kind of readout context), to confirm that it has been reliably mapped to structural coordinates, and to confirm that it is interpreted as backbone flexibility / single-strand accessibility rather than pairing. Only signals that pass the gate enter the default visual track and the confidence candidates; those that do not are kept as raw provenance, debugging information or download-table fields."
+    },
+    {
+      "type": "paragraph",
+      "text": "This does not weaken Lead-seq. On the contrary, it respects its strengths. Lead-seq is highly sensitive to backbone flexibility and single-stranded conformation, can probe inside living cells, and can be mapped onto a real three-dimensional structure; the error occurs when this strength is expanded into \"high cleavage equals unpaired\". So for non-specialist readers, the most suitable statement is \"Lead-seq turns the flexibility and single-strand accessibility of the backbone into a sequencing-readable accessibility clue\". A more complete sentence should read: in the Lead-seq assay, this backbone site has a relatively high flexibility / single-strand accessibility signal; if the temperature, threshold, mapping, coverage and context all pass inspection, this signal can serve as support for structural interpretation. This sentence is a little more long-winded than \"a high signal equals unpaired\", but it is scientifically more robust, and better suited to entering FoldBridge's long-term knowledge base."
+    },
+    {
+      "type": "heading",
+      "text": "A real case (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so the following is a clearly labelled illustrative scenario, used to explain how the same Lead-seq profile splits into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine a Lead-seq profile flowing through FoldBridge's three layers. The first layer is the raw observation: the counts and lead score at which a stretch of tRNA or RNase P RNA backbone was cut by Pb²⁺ at a given temperature, preserved together with the provenance of temperature, control library, end repair, library construction and sequencing. This layer only answers \"what was recorded in the raw data\", and does not draw conclusions on the reader's behalf."
+    },
+    {
+      "type": "paragraph",
+      "text": "The second layer is the visual signal: only after these lead scores have been reliably mapped to structural coordinates, and have been interpreted as backbone flexibility / single-strand accessibility, do they enter the default structure colouring. The colour the reader sees on the page should answer \"within the interpretive boundary of Lead-seq, what readable flexibility/accessibility clue does this backbone site carry\", not \"whether this base is paired\". Sites whose temperature or threshold is unclear, or that have not yet been mapped to reliable coordinates, should not be mixed into this layer pretending to be the same kind of evidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "The third layer is the confidence candidate: only an accessibility signal that has passed the experimental-condition, mapping and context checks can possibly enter confidence. Even when they come from the same profile, the raw lead score, the visualisation colour and the confidence travel three different paths."
+    },
+    {
+      "type": "paragraph",
+      "text": "What this illustrative scenario is meant to show is system behaviour, not a particular set of numbers: a Lead-seq profile simultaneously grows raw observation, visualisation signal and confidence candidate, and these three layers each have their own semantics and cannot substitute for one another. If the article kneads them together, the reader will mistake the statistical preference of lead cleavage for a deterministic structural label — and will in particular silently read \"this stretch of backbone is flexible and accessible to Pb²⁺\" as \"this base is unpaired\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct ending for a Lead-seq article is not \"high cleavage proves the base is paired\", but rather: Lead-seq data can provide strong backbone flexibility / single-strand accessibility clues for RNA structure interpretation; within FoldBridge, such clues become part of structural interpretation and confidence only after they have first been interpreted as flexibility/accessibility (not pairing) and have passed the subsequent gates."
+    }
+  ]
+}

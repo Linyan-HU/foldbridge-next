@@ -1,0 +1,153 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "tnet-mapseq",
+  "title": "tNET-MaPseq: reading the folding of RNA while it is still attached to the polymerase",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "33631106",
+  "rep_pmcid": "PMC8052309",
+  "rep_doi": "10.1016/j.molcel.2021.01.040",
+  "asset_base": "./src/assets/generated/probing-articles/assets/tnet-mapseq",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you look only at the data table, tNET-MaPseq is easily misread as a method that \"directly assigns a structure to every base of nascent RNA\". That reading is wrong. The chemical probe of tNET-MaPseq is in fact DMS: it methylates the N1 of A and the N3 of C, leaving a modification when these Watson-Crick pairing faces are unpaired and not shielded by protein or ligand; these modifications are then read as mutations during reverse transcription (MaP, mutational profiling) and located by sequencing. The novelty of tNET-MaPseq lies not in the chemistry but in the object — it applies DMS probing to nascent transcripts still bound to RNA polymerase II, so what it reads out are clues to co-transcriptional folding, not the equilibrium structure of mature, purified RNA. In other words, tNET-MaPseq first reports \"whether the pairing face of A/C is accessible on the nascent RNA\", rather than directly reporting \"this base must be paired\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "This boundary matters a great deal for FoldBridge. FoldBridge can preserve the raw observations, and can also display the signal from the experiment on the web page; but the moment it enters the default structure colouring, the explanatory text or the confidence layer, a more specific question must first be asked: can this number, under the assay model of tNET-MaPseq, be interpreted as structural support? Here two gates are stacked together: one is the chemical target boundary of DMS (A/C interpretable, G/U not the main interpretable object), the other is the additional complexity brought by the nascent / chromatin background — the nascent RNA is still attached to the polymerase, may be covered by protein, may be in the process of being spliced, and the DMS mutation signal must be placed in this background to be interpreted. The raw MaP mutation counts are provenance; they must first pass the chemical target, the nascent context and the readout correction before they can become a candidate for the default structure colour or confidence."
+    },
+    {
+      "type": "heading",
+      "text": "Probing strategy: DMS applied to nascent RNA bound to the polymerase"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-tnet-mapseq-f1",
+      "alt": "tNet-MaPseq F1",
+      "srcBasename": "tnetmapseq_f1__PMC8052309__F1.jpg",
+      "legend": "**Figure 1. The probing strategy of tNET-MaPseq and the structural readout of nascent RNA.** The legend of Saldi et al. 2021 (PMID 33631106, DOI `10.1016/j.molcel.2021.01.040`) breaks the method into several parts: (A) enzymatic probing (tNet-RNAse-seq) and DMS probing (tNet-MaPseq) are carried out simultaneously on nascent pol II transcripts; (B) a comparison of the read distributions of tNet-RNAse-seq, tNet-MaPseq and mRNAseq in HEK293 WT α-amanitin-resistant pol II cells; (C) a metaplot of the putative exon junction complex (EJC) footprint upstream of the splice site (SS) (RNase I+VI resistance, blue arrow); (D) the predicted structures with DMS reactivity of a non-canonical XBP1 intron (arrow, chr22:29,192,089–29,192,172) and XIST exon 4 (chrX:73,050,979–73,051,093) in nascent RNA; (E) the nascent RNA structure across an intron (chr16:89,867,703–89,871,732), showing the normalised DMS reactivity, the RNase I, RNase VI, RNase I+VI resistant reads, the per-base A-I editing ratio and the nascent RNA sequencing reads (tNET-seq).",
+      "body": [
+        "This figure first makes one thing clear: tNET-MaPseq does not assign structural labels to nascent RNA out of thin air, but moves DMS, a mature chemical probe, to a special scenario — the RNA is still being transcribed and still attached to the polymerase. DMS still methylates the pairing faces of A/C, and MaP still reads modifications as mutations; what changes is what state the RNA is in \"at the moment it is probed\". This is exactly why it can talk about co-transcriptional folding, and also exactly why the interpretation needs to be more careful.",
+        "More importantly, the figure places DMS reactivity, enzymatic footprints, A-I editing and nascent sequencing reads side by side on the same stretch of sequence. This shows that the DMS signal at a given site must be read together with the context: a protein footprint such as the EJC makes A/C inaccessible, but that is not pairing; a region being spliced or pulled along by the polymerase also has a conformation different from mature RNA. For FoldBridge, this means that the DMS signal of tNET-MaPseq cannot be interpreted apart from \"it was measured in a nascent, protein-bound background\". The raw provenance must be preserved together with this nascent context."
+      ],
+      "label": "tNet-MaPseq F1",
+      "pmid": "33631106",
+      "pmcid": "PMC8052309",
+      "doi": "10.1016/j.molcel.2021.01.040",
+      "figureId": "F1",
+      "legendText": "A. Enzymatic (tNet-RNAse-seq ) and DMS (tNet-MaPseq ) probing of nascent pol II transcripts. B. Distribution of tNet-RNAse-seq and tNet-MaPseq compared to mRNAseq reads in HEK293 WT Am r pol II cells. C. Metaplot of putative exon junction complex footprints (RNAse I+VI resistant, blue arrow) upstream of splice sites (SS). D. Predicted structures with DMS reactivities of the non-canonical XBP1 intron (arrows) ( Yoshida et al., 2001 ) (chr22:29,192,089–29,192,172) and XIST exon 4 (chrX :73,050,979–7,3051,093) within nascent RNA. E. Nascent RNA structure across an intron (chr16:89,867,703–89,871,732). Normalized DMS reactivity, RNAse I, RNAse VI and RNAse I+VI resistant reads, fraction of A-I editing per base and nascent RNA seq reads (tNET-seq) are shown."
+    },
+    {
+      "type": "heading",
+      "text": "DMS reactivity drops in highly structured regions, but protein and editing remain in the background"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-tnet-mapseq-f2",
+      "alt": "tNet-MaPseq F2",
+      "srcBasename": "tnetmapseq_f2__PMC8052309__F2.jpg",
+      "legend": "**Figure 2. The relationship between DMS reactivity, structure score, protein footprint and A-I editing.** The legend of Saldi et al. 2021 (PMID 33631106, DOI `10.1016/j.molcel.2021.01.040`) explains: (A, B) DMS reactivity decreases in high structure-score regions (A) and protein-footprint regions (B) (15-base binning), the two having different reactivities because high structure-score regions are mostly introns whereas protein footprints are mostly in exons; (C) A-I editing in nascent pol II transcripts of HEK293 WT α-amanitin-resistant Rpb1 cells, note the large proportion of editing in intergenic regions and introns; (D) nascent RNA versus mRNA reads and the per-base A-I editing ratio, note the widespread editing in introns and the 3′ flanking region of the divergent antisense transcript upstream of ACAD9 (blue arrow); (E) A-I editing is enriched around structure-score peaks (>1.9) in nascent RNA (15-base binned metaplot); (F) the coincidence of structure score and A-I editing at inverted Alu elements.",
+      "body": [
+        "This figure is one of the most worth-emphasising safeguards in tNET-MaPseq. DMS reactivity drops in high structure-score regions, which looks like \"pairing makes A/C inaccessible\", and the direction is right; but the same figure also tells the reader that the source of the reactivity drop is not unique. DMS reactivity in protein-footprint regions drops equally, and that is not pairing — it is the protein covering the pairing face — and the authors specifically point out that the base composition and gene structure of these two kinds of region differ (high structure-score mostly in introns, protein footprints mostly in exons). Lumping these two kinds of \"low signal\" together would misread protein protection as structure.",
+        "The introduction of A-I editing makes the complexity of the nascent background even more evident. A-I editing in nascent RNA is enriched around structure-score peaks and in inverted-Alu regions prone to forming double strands — this is in itself another independent clue of \"there is a double-stranded structure here\", but it is also a chemical event that rewrites the base and may interfere with the interpretation of the DMS signal. For FoldBridge, this means that a low A/C reactivity in tNET-MaPseq cannot be written directly as \"paired\": it may come from pairing, may come from a protein footprint, and editing and the nascent background must also be considered. The raw observation must first pass the readout and context correction before it can become a candidate for the default layer or confidence."
+      ],
+      "label": "tNet-MaPseq F2",
+      "pmid": "33631106",
+      "pmcid": "PMC8052309",
+      "doi": "10.1016/j.molcel.2021.01.040",
+      "figureId": "F2",
+      "legendText": "A, B. Reduced DMS reactivity at regions of high Structure Score (A) and Protein Footprints (B) (15 base bins). The reactivities differ because most regions of high Structure Score are intronic whereas most Protein Footprints are exonic. C. A-I edits in nascent pol II transcripts from HEK293 WT Am r Rpb1 cells. Note the large fraction of edits in intergenic regions and introns. D. Nascent RNA and mRNA reads and fraction of A-I editing per base. Note extensive editing in introns, 3’ flanking regions in divergent antisense transcripts upstream of ACAD9 (blue arrows, see Fig. S3B ). E. A-I editing is enriched in nascent RNA around peaks (>1.9) of Structure Score. Metaplot with 15 base bins. F. Coincidence of Structure Score with A-I editing at inverted Alu elements (see Fig. S3C , D )."
+    },
+    {
+      "type": "heading",
+      "text": "DMS reactivity can distinguish well- from poorly-spliced introns, but what it interprets is structure not splicing"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-tnet-mapseq-f3",
+      "alt": "tNet-MaPseq F3",
+      "srcBasename": "tnetmapseq_f3__PMC8052309__F3.jpg",
+      "legend": "**Figure 3. The relationship between co-transcriptional splicing efficiency and nascent RNA structure.** The legend of Saldi et al. 2021 (PMID 33631106, DOI `10.1016/j.molcel.2021.01.040`) shows: (A) the co-transcriptional splicing efficiency SE computed by the Fcov method, with the blue line representing idealised nascent RNA coverage; (B) based on three biological replicates and introns with sufficient coverage on both flanking exons, the SE probability density distribution of tNET-seq in HEK293 WT α-amanitin-resistant pol II cells (introns with standard deviation > 0.2 removed); (C) mRNA and tNET-seq showing co-transcriptionally well-spliced (black arrow SE=.91) and poorly-spliced (grey arrow SE=.009) introns, as well as clusters of splicing-coordinated (SE<0.4) introns; (D) well-spliced introns (SE>0.8, n=5739) are more structured than poorly-spliced ones (SE<0.2, n=1001), the vertical axis being the average structure score per nucleotide, with the P value given by an unpaired t-test; (E) the structure score of well- and poorly-spliced introns (>200 bases, 50 bins), with putative protein-footprint regions removed, and below it the per-bin −logₑ corrected P value (unpaired Wilcoxon rank test), the blue line being −logₑ0.05; (F, G) efficient co-transcriptional splicing correlates with intron structure peaks (blue arrows) and steep structural transitions at the 5′ and 3′ splice sites, shown as metaplots (5-base binning) of the structure score (F) and DMS reactivity (G) over well- and poorly-spliced introns; (H) the correlation between the experimentally measured 3′ splice-site structural transition and the computed median 3′ SS strength (the average structure score of bases −1 to −100 upstream of the 3′SS minus that of bases +1 to +40 downstream, n=18455).",
+      "body": [
+        "This figure shows where the appeal of tNET-MaPseq lies: the DMS reactivity profile is not just a chemical measurement, it can map \"structure\" onto a concrete biological process — co-transcriptional splicing. Well-spliced introns are more structured, there are steep structural transitions near the splice sites, and the structural transitions correlate with independently predicted splice-site strength. For non-specialist readers, this is the most intuitive story of tNET-MaPseq: how well a nascent RNA folds is related to how well it is spliced on the spot.",
+        "But two things need care. First, the \"structure\" here is still the difference in DMS reactivity (and in the structure score computed from it and the enzymatic data), not base-level ground truth of pairing; the authors also specifically removed the putative protein-footprint regions when making the metaplots, precisely because protein footprints would contaminate the readout of structure. Second, splicing efficiency and structure are correlated, not a causal determination — what the figure says is \"well-spliced introns are more structured\", not \"the DMS signal can tell you a given base is paired, therefore splicing happens\". When FoldBridge cites such results, it should write \"the DMS reactivity profile of the nascent RNA in this region correlates with high splicing efficiency\", rather than \"this base is paired here\". The prettier the functional story, the more the accessibility readout must be separated from structural ground truth, and correlation from causation."
+      ],
+      "label": "tNet-MaPseq F3",
+      "pmid": "33631106",
+      "pmcid": "PMC8052309",
+      "doi": "10.1016/j.molcel.2021.01.040",
+      "figureId": "F3",
+      "legendText": "A. Calculation of co-transcriptional splicing efficiency, SE by the Fcov method (see Methods ). The blue line represents idealized nascent RNA coverage. B. Probability density plot of SE from tNET-seq of HEK293 WT Am r pol II cells based on three biological replicates for introns with ≥1 read/bp and/or ≥3 reads/bp across both flanking exons. Introns with standard deviation > 0.2 were removed. See Table S1 . C. mRNA and tNET-seq showing co-transcriptionally well-spliced (black arrow SE=.91) and poorly spliced (gray arrow SE=.009) introns and clustering of introns (grey box) with coordinated splicing (SE < 0.4) (see Fig. S4G ). D. Well-spliced introns (SE > 0.8, n=5739) are more structured than poorly spliced introns (SE < 0.2, n=1001). Mean Structure Score per nucleotide for introns >100bases with coverage >9 reads for at least 10% of the length of the intron. P value determined by unpaired t-test E. Structure Score across well-spliced (SE>0.8) and poorly spliced (SE<0.2) introns >200 bases long (50 bins). Putative protein footprint regions were removed. Bottom panels −log e adjusted P values per bin (unpaired Wilcoxon-rank test). Blue line: −log e 0.05. F, G. Efficient co-transcriptional splicing associated with peaks of intronic structure (blue arrows) and steep structural transitions at 5’ and 3’SS’s. Metaplots (5 base bins) of Structure Score, F, and DMS reactivity, G, at well-spliced (SE> 0.8) and poorly spliced (SE < 0.2,) introns. FDR values as in E. See Fig. S5 . H. Correlation between median calculated 3’ SS strength ( Yeo and Burge, 2004 ) and experimentally determined structural transitions across 3’ splice sites. (Mean Structure Score of bases −1 to −100 minus bases +1 to +40 relative to 3’SS, n=18455)."
+    },
+    {
+      "type": "heading",
+      "text": "Slower transcription, more structured nascent RNA — but this is exactly what shows structure depends on background"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-tnet-mapseq-f4",
+      "alt": "tNet-MaPseq F4",
+      "srcBasename": "tnetmapseq_f4__PMC8052309__F4.jpg",
+      "legend": "**Figure 4. How transcription speed alters nascent RNA structure and A-I editing.** The legend of Saldi et al. 2021 (PMID 33631106, DOI `10.1016/j.molcel.2021.01.040`) explains: (A) slower transcription increases nascent RNA structure, comparing the proportion of bases with structure score >1.9 in cells expressing WT versus slow (R749H) pol II (at least 15 reads per base); (B) a metaplot similar to Figure 3E, showing increased full-length structure of introns transcribed by slow pol II; (C) A-I editing in nascent RNA of HEK293 expressing slow pol II, note the increased editing relative to WT pol II (Figure 1C); (D) A-I editing, structure score and nascent RNA coverage downstream of SRSF3, note the elevated editing (blue arrow) and structure score (green arrow) in the slow pol II mutant; (E) slower transcription increases intron A-I editing independently of expression level, red and blue points FDR<0.05 and fold change>1.3; (F) A-I editing in nascent RNA of introns, UTRs, gene upstream (US) and downstream (DS) intergenic regions, note the de novo editing brought about by slow pol II (red bars).",
+      "body": [
+        "This figure pushes the interpretive significance of the nascent background to the very front: for the same stretch of RNA, simply because the polymerase transcribes more slowly, the DMS/structure-score readout shows it as more structured and with more A-I editing. Put differently, the \"structure\" that tNET-MaPseq measures is not an intrinsic property detached from context, but is bound up with transcription kinetics (the competition between folding and elongation). Slow transcription gives the nascent RNA more time to fold, so it becomes more structured and more easily edited by ADAR — and this is precisely the core idea of co-transcriptional folding.",
+        "But this is a double-edged sword for interpretation. It shows that the tNET-MaPseq signal varies with pol II speed and with cellular background; the same site may give different reactivities in WT and slow mutants, and both are \"real\" nascent RNA states, just different states. So if one judges \"paired here\" from a single low DMS reactivity in tNET-MaPseq, one may not only misread protein protection as structure, but also ignore the premise that it depends on the transcription condition. A complete sentence should be: in this cell and at this transcription speed, the pairing-face accessibility of this A/C site is relatively low; this may come from pairing, but may also come from a protein footprint or the nascent background, and will change with transcription kinetics, so it must be judged together with the context. This is exactly why FoldBridge must preserve the assay context and the nascent context together."
+      ],
+      "label": "tNet-MaPseq F4",
+      "pmid": "33631106",
+      "pmcid": "PMC8052309",
+      "doi": "10.1016/j.molcel.2021.01.040",
+      "figureId": "F4",
+      "legendText": "A. Slow transcription increases nascent RNA structure. The fractions of bases (minimum 15 reads/base) with Structure Score >1.9 are plotted in cells expressing WT and slow (R749H) pol II (see Fig. S6A ). B. Metaplots as in 3E showing increased structure throughout introns transcribed by slow pol II. C. A-I edits in nascent RNA from HEK293 expressing slow pol II. Note increased editing relative to WT pol II ( Fig. 1C ). D. A-I editing, Structure Score and nascent RNA coverage downstream of SRSF3. Note elevated editing (blue arrows) and Structure Score (green arrows) in the slow pol II mutant. E. Slow transcription increases intronic A-I editing independent of expression level. Introns contain >3 edited sites in WT or slow pol II mutant in three replicates. Red and blue dots have FDR<0.05 and fold change >1.3. See Table S3 . F. A-I editing in nascent RNA (see Methods ) in introns, UTRs, and intergenic regions upstream (US) and downstream (DS) of genes. Note de novo editing (red bars) with slow pol II."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about tNET-MaPseq"
+    },
+    {
+      "type": "paragraph",
+      "text": "The chemical probe of tNET-MaPseq is DMS, so it inherits that clear base-target boundary of DMS: A/C are the targetable bases, and N1/N3 pairing-face accessibility is the interpretable object; G/U/T/unknown are not the main interpretable objects, and even if there are numbers in the MaP readout, they are first of all raw provenance. But tNET-MaPseq stacks a second gate on top of DMS — the nascent / chromatin background: the RNA being probed is still attached to the polymerase, may be covered by proteins such as the EJC, may be in the process of being spliced, may have its bases rewritten by A-I editing, and transcription speed itself also changes the folding. So the interpretive gate of tNET-MaPseq is not single-layered, but a stack of \"DMS chemical target accessibility + nascent context + readout/mapping/claim gate\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "Only A/C reactivities that pass all these gates simultaneously can enter the default visualisation and confidence layer. The raw MaP mutation counts themselves are only provenance: they should be preserved in full, downloadable and traceable, but should not automatically drive the default structure colouring. The default structure figure of ANNOJOIN should read the visualisation value after the targetability mask and nascent-background correction, rather than the bare mutation rate. The requirements of confidence / FEC are higher still: only A/C observations that pass the chemical-target, readout, mapping, claim and nascent-context gates may become positive-confidence candidates, and they must still carry the qualification that \"low reactivity may come from pairing, but may also come from a protein footprint or the transcription background\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "This does not weaken tNET-MaPseq, but respects its strengths. It is highly powerful for \"the folding of nascent RNA at the moment it is transcribed\", and can link co-transcriptional folding with splicing and transcription speed; the error occurs when \"a drop in DMS reactivity\" is uniformly written as \"paired\", when the raw mutation signal is written as structural ground truth, or when one forgets that these signals depend on the nascent, protein and transcription-kinetics background. In the dynamic background of nascent RNA, FoldBridge must all the more separate \"a mutation signal was measured at a site\" from \"this signal can serve as folding evidence\". The default colour on the web page answers \"within the interpretive boundary of tNET-MaPseq, what readable signal does this site carry\"; the detail table answers \"what was recorded in the raw data\". Once these two layers are mixed together, the transcription-kinetics-dependent mutation signals on nascent RNA would be taken as folding judgements already certified by tNET-MaPseq."
+    },
+    {
+      "type": "heading",
+      "text": "A real case: how a tNET-MaPseq profile flows through three layers (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so the following is a clearly labelled illustrative scenario, used to explain how the same tNET-MaPseq profile splits into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine a tNET-MaPseq profile measured on nascent transcripts in HEK293 (WT α-amanitin-resistant pol II) entering FoldBridge. The first layer is the raw observation: the per-site MaP mutation counts, the corresponding controls, the library and cellular-background metadata (including whether it is WT or slow pol II), the enzymatic footprint and A-I editing information, and the sequencing coordinates — all preserved as they are, as provenance, downloadable and recomputable. What they record is \"how many MaP mutations were read on the nascent transcript\", not yet the folding conclusion for this site."
+    },
+    {
+      "type": "paragraph",
+      "text": "The second layer is the visual signal: after the mutation rate has passed the A/C targetability mask, had the background subtracted, been normalised, and passed the nascent context and mapping gate (marking sites that fall in protein-footprint regions or may be affected by A-I editing), one obtains an A/C pairing-face accessibility value that can be coloured on the structure page. The colour the reader sees at first glance should come from this layer, because it is a colour interpretable under the tNET-MaPseq assay model, rather than the bare mutation counts, and not the G/U background."
+    },
+    {
+      "type": "paragraph",
+      "text": "The third layer is the confidence candidate: only those A/C accessibility observations that pass both the DMS chemistry and readout gate, and the mapping/claim/nascent-context checks, enter the confidence evaluation, and they must still carry the qualification that \"low reactivity may come from pairing, but may also come from a protein footprint or the transcription background, and depends on the transcription condition\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "When this illustrative scenario lands on system behaviour, it means the same tNET-MaPseq profile gives rise to three different things — raw observation, visualisation signal and confidence candidate. What tNET-MaPseq talks about is \"the folding of nascent RNA at the moment it is transcribed\", which is inherently a background-dependent, non-extrapolable object: the same A/C may give \"real\" but different reactivities in WT and slow pol II. If the article cannot separate these three layers, and does not explain the qualification of the nascent background, the reader will mistake the nascent state measured in a particular cell at a particular transcription speed for the general, steady-state structure of this RNA."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct ending for a tNET-MaPseq article is not \"a low signal proves the base is paired\", but rather: tNET-MaPseq can provide powerful A/C pairing-face accessibility clues for co-transcriptional RNA structure interpretation on living nascent RNA; within FoldBridge, such clues become part of the default structural interpretation and confidence only after they have first been preserved as raw provenance and then passed the DMS chemistry and readout, mapping, claim, nascent-context and other gates."
+    }
+  ]
+}

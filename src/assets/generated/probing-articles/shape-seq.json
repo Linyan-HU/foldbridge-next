@@ -1,0 +1,43 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "shape-seq",
+  "title": "SHAPE-Seq: Multiplexed RNA structure profiling by coupling SHAPE chemistry with high-throughput sequencing",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "",
+  "rep_pmcid": "",
+  "rep_doi": "10.1073/pnas.1106501108",
+  "asset_base": "./src/assets/generated/probing-articles/assets/shape-seq",
+  "key_innovation": "Compared with conventional SHAPE analysis based on capillary electrophoresis, SHAPE-Seq combines SHAPE chemistry with barcoded sequencing libraries, enabling parallel structure probing of multiple RNAs at nucleotide resolution.",
+  "ppt_overview": [
+    {
+      "title": "How does SHAPE-Seq integrate SHAPE chemistry with sequencing?",
+      "srcBasename": "shape_seq_figure1.jpeg",
+      "alt": "SHAPE-Seq experimental and computational workflow",
+      "captionTitle": "Figure 1. SHAPE-Seq experimental and computational workflow.",
+      "text": "A barcode sequence is attached to each RNA molecule, allowing multiple RNAs to be processed simultaneously. SHAPE modifications are converted into sequencing reads, and nucleotide-level reactivities are calculated computationally."
+    },
+    {
+      "title": "How accurately can SHAPE-Seq reproduce conventional SHAPE measurements?",
+      "srcBasename": "shape_seq_figure2.jpeg",
+      "alt": "Validation of SHAPE-Seq using RNase P RNA",
+      "captionTitle": "Figure 2. Validation of SHAPE-Seq using RNase P RNA.",
+      "text": "SHAPE-Seq reactivity profiles correlate strongly with conventional SHAPE-capillary electrophoresis measurements and reproduce known RNA structures."
+    },
+    {
+      "title": "How can SHAPE-Seq analyze multiple RNA variants simultaneously?",
+      "srcBasename": "shape_seq_figure3.jpeg",
+      "alt": "Multiplex RNA structure probing by SHAPE-Seq",
+      "captionTitle": "Figure 3. Multiplex RNA structure probing by SHAPE-Seq.",
+      "text": "Barcoded SHAPE-Seq libraries enable parallel measurement of structural differences among RNA variants, demonstrating the scalability of sequencing-based SHAPE analysis."
+    },
+    {
+      "title": "How are SHAPE data incorporated into RNA structure prediction?",
+      "srcBasename": "shape_seq_figure4.jpeg",
+      "alt": "SHAPE-guided RNA secondary structure modeling",
+      "captionTitle": "Figure 4. SHAPE-guided RNA secondary structure modeling.",
+      "text": "SHAPE reactivities are converted into pseudo-free-energy constraints and incorporated into RNA folding algorithms to improve secondary structure prediction accuracy."
+    }
+  ],
+  "blocks": []
+}

@@ -1,0 +1,51 @@
+:root {
+  --fontFamily: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --fontWeightRegular: 500;
+  --fontWeightStrong: 600;
+  --fontWeightHeading: 700;
+  /* Three text roles used across the site: title, body, and footnote. */
+  --type-title-size: 1.75rem;
+  --type-body-size: 1rem;
+  --type-footnote-size: 0.8rem;
+  --type-title-line-height: 1.2;
+  --type-body-line-height: 1.55;
+  --type-footnote-line-height: 1.35;
+  --trackingTight: -0.01em;
+  --trackingNormal: 0;
+  --trackingWide: 0.02em;
+  --primary: #174B3A;
+  --primaryHover: #123B2E;
+  --primarySoft: #E4EFE8;
+  --accent: #2F8F6B;
+  --accentSoft: #C7E36B;
+  --background: #F4F7F2;
+  --backgroundStrong: #E8EFE8;
+  --surface: #ffffff;
+  --surfaceAlt: #EEF3EE;
+  /* Use the same warm gold as the Switch pill for the site's shared borders. */
+  --border: rgba(224, 174, 36, 0.68);
+  --surfaceMuted: var(--surfaceAlt);
+  --borderSubtle: var(--border);
+  /* family 语义色板（Entry 徽标 / profile 下拉 / 两级筛选器 chip 共用）。本次仅 A–D；E/F 留位。 */
+  --family-a: #7C5CBF;  --family-a-bg: #EFEAF8;
+  --family-b: #2F6FB0;  --family-b-bg: #E6EFF7;
+  --family-c: #C9761E;  --family-c-bg: #F8EEDF;
+  --family-d: #3E9463;  --family-d-bg: #E6F3EC;
+  /* E/F 后续补：--family-e(黄) / --family-f(品红) */
+  --textPrimary: #1A1A1A;
+  --textSecondary: #5B5B5B;
+  --textMuted: var(--textSecondary);
+  --textAccent: #9A7B18;
+  --onPrimary: #F4F7F2;
+  --shadow: 0 18px 50px rgba(20, 34, 28, 0.08);
+  --shadowSoft: 0 10px 28px rgba(20, 34, 28, 0.06);
+  --radiusCard: 22px;
+  --radiusPanel: 16px;
+  --page-max-width: 1400px;
+  --feature-card-max-width: 1344px;
+  --feature-card-width: min(var(--feature-card-max-width), calc(100vw - 40px));
+  --panel-card-bg: #ffffff;
+  --panel-card-border: 1px solid var(--border);
+  --panel-card-radius: 38px;
+  --panel-card-shadow: 0 30px 80px rgba(155, 122, 38, 0.09);
+}

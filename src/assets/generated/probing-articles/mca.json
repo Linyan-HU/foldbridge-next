@@ -1,0 +1,153 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "mca",
+  "title": "MCA: reading the tertiary proximity relationships of RNA via chemical accessibility",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "26035425",
+  "rep_pmcid": "PMC4495719",
+  "rep_doi": "10.7554/eLife.07600",
+  "asset_base": "./src/assets/generated/probing-articles/assets/mca",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you only look at an elegant proximity map, MCA is easily misread as having \"directly measured which two nucleotides are in spatial contact\". That understanding is wrong. According to the legends of this paper (PMID 26035425, DOI `10.7554/eLife.07600`), what it does is combine two classes of chemical readout: one is mutate-and-map (M²) — performing chemical mapping on a comprehensive point-mutation library and reading it out by reverse transcription; the other is MOHCA-seq (Multiplexed •OH, that is, the sequencing version of hydroxyl-radical Cleavage Analysis) — randomly doping a radical source into the RNA, cleaving it, ligating adapters, and then analysing by sequencing. What the two share is the framework of \"chemical accessibility plus sequencing\", and the final product is not a per-base structural label but a proximity map, which is then fed to Rosetta for tertiary structure modelling."
+    },
+    {
+      "type": "paragraph",
+      "text": "A boundary needs to be stated first: the title of this Zotero entry simultaneously annotates names such as MAPseq, tagMOHCA and MOHCA-seq, and these annotations do not necessarily correspond exactly to the actual method of the paper. So this article strictly follows what the legends describe the paper as actually doing, and does not pre-adjudicate \"which class of method it ultimately belongs to\". This boundary is crucial for FoldBridge: MCA's accessibility/proximity signal is its own assay model, and the raw values can be stored and displayed on a web page, but the moment they enter the default structure colouring, the explanatory text or the confidence layer, one specific question must be asked first — can this number, under MCA's probe target and readout context, be interpreted as MCA support? Before any accessibility value enters interpretation, it must first be confirmed which class of chemical site it is asking about and which readout it comes from."
+    },
+    {
+      "type": "heading",
+      "text": "M² and MOHCA-seq: two classes of chemical readout converge into one proximity map"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-mca-f1",
+      "alt": "MCA F1",
+      "srcBasename": "mca_f1__PMC4495719__F1.jpg",
+      "legend": "**Figure 1. The M² and MOHCA-seq workflows, and the proximity map of the P4–P6 domain.** Cheng et al. 2015 (PMID 26035425, DOI `10.7554/eLife.07600`) describe two juxtaposed workflows in the legend: (A) the mutate-and-map (M²) workflow — transcribing a comprehensive point-mutation library, performing chemical mapping on the library and reading it out by reverse transcription; (B) the MOHCA-seq workflow — randomly doping in a radical source, fragmenting, ligating adapters, and then analysing by sequencing; (C) the M² dataset of the Tetrahymena group I ribozyme P4–P6 domain; (D) the MOHCA-seq dataset (proximity map) of the same P4–P6. In (C) and (D), rounded rectangles mark the helix elements and match the colour scheme of (E, F), purple dots indicate pairwise distances < 30 Å in the crystal structure, and pink dots indicate > 30 Å; in (D), magenta arrows mark hits produced by the radical source diffusing across the major or minor groove from P5b. (E, F) draw the tertiary proximity relationships from MOHCA-seq onto the M²-guided secondary structure (E) and the final single Rosetta model (F). The legend also notes that the data analysis was done in the MAPseeker package, and that pairwise-distance-based pseudo-energy restraints were used for the Rosetta modelling.",
+      "body": [
+        "The core point to make clear here is this: MCA does not attach a \"paired/unpaired\" label to each residue, but converts the chemical readout into pairwise information about \"which positions are spatially close to one another\", and this \"closeness\" is inferred, not measured directly. M² uses chemical mapping to read the perturbation of mutations, and MOHCA-seq uses hydroxyl-radical cleavage to read the relationship between the radical source and the downstream damage; the two lines both land on a proximity map, which then constrains the tertiary structure modelling.",
+        "For FoldBridge, this means that each MCA value must first answer \"which readout it comes from and which class of chemical event it corresponds to\". A MOHCA-seq hit reports \"a certain radical-source site is spatially correlated with a certain cleavage/damage site\", and an M² signal reports \"a certain point mutation changed the chemical accessibility of a certain site\". These are all contextual observations and cannot be flattened into an undifferentiated \"structure score\". The targetability gate here means: before entering the interpretation layer, first confirm the probe target (the radical source, the chemical modification site) and the readout mode, and then judge whether this value can be interpreted as MCA support."
+      ],
+      "label": "MCA F1",
+      "pmid": "26035425",
+      "pmcid": "PMC4495719",
+      "doi": "10.7554/eLife.07600",
+      "figureId": "F1",
+      "legendText": "( A ) Schematic of mutate-and-map (M 2 ) workflow, showing transcription of comprehensive point mutant library and chemical mapping of library with reverse transcription readout ( Kladwang et al., 2011a ). ( B ) Schematic of Multiplexed •OH (hydroxyl radical) Cleavage Analysis (MOHCA)-seq workflow, showing random incorporation of radical sources, fragmentation, adapter ligations, and analysis by sequencing. ( C ) M 2 data set for P4–P6 domain of Tetrahymena group I ribozyme. ( D ) MOHCA-seq data set (proximity map) for P4–P6. In ( C ) and ( D ), rounded rectangles indicate helix elements with colors matching helices in ( E – F ), purple circles indicate hits corresponding to < 30 Å pairwise distance in the crystal structure, and pink circles indicate hits corresponding to > 30 Å pairwise distance in the crystal structure. In ( D ), magenta arrows indicate MOHCA-seq hits due to diffusion across the major (top arrow) or minor (bottom arrow) grooves from radical sources located in P5b. ( E–F ) Representation of MOHCA-seq tertiary proximities on M 2 -guided secondary structure ( E ) and on final single Rosetta model ( F ). Purple lines indicate MOHCA-seq hits corresponding to < 30 Å pairwise distance in the crystal structure. Figure 1—figure supplement 1 shows stages of MOHCA-seq data analysis in the MAPseeker software package (accessible through the RNA Mapping Database server at http://rmdb.stanford.edu/tools/ ). Figure 1—figure supplement 2 shows the pseudo-energy potential used for pairwise MOHCA-seq constraints in Rosetta modeling and plots of MOHCA-seq signal vs pairwise distance. DOI: http://dx.doi.org/10.7554/eLife.07600.003"
+    },
+    {
+      "type": "heading",
+      "text": "Where the signal comes from: the radical source, cleavage and reverse-transcription termination"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-mca-f2",
+      "alt": "MCA F2",
+      "srcBasename": "mca_f2__PMC4495719__F2.jpg",
+      "legend": "**Figure 2. The RNA fragments detectable by MOHCA-seq and the sources of the signal.** Cheng et al. 2015 (PMID 26035425, DOI `10.7554/eLife.07600`) dissect the chemical sources of the signal in the legend: (A) reverse transcription initiated from the cleavage site can terminate at the radical source (these fragments can also be measured by MOHCA-gel), or at an additional oxidative-damage event caused by the same radical source (these fragments can only be measured by MOHCA-seq); (B) the sequence and secondary structure of a proof-of-concept RNA bearing a single radical-source attachment site (U13); (C) the MOHCA-seq proximity map of this RNA, showing both the expected hits (cyan) and the additional reverse-transcription terminations produced by oxidative damage on the 3′ side of the radical source and spatially correlated with it (magenta); (D, E) the cleavage rate and reverse-transcription modification rate quantified by capillary electrophoresis (CE) or paired-end sequencing, compared with a control sample without a radical source; (F, G) a comparison of the MOHCA-seq and MOHCA-gel proximity maps of P4–P6, with the legend noting that the gel is distorted because of the non-linear relationship between electrophoretic mobility and RNA length; (H–K) MOHCA-seq proximity maps obtained by doping in different 2′-NH₂-modified nucleotides (A/U/G/C) at a 0.5 molar ratio during transcription.",
+      "body": [
+        "This figure grounds MCA's \"chemical accessibility\" in a concrete mechanism: the signal is not a direct structural call, but the measured quantity that remains after cleavage and oxidative damage caused by the radical source, followed by reverse-transcription termination, library preparation and sequencing. One of MOHCA-seq's advantages over MOHCA-gel is precisely its ability to read out an additional class of fragments — \"those on the 3′ side of the radical source, spatially correlated with it\" — thereby providing more proximity information.",
+        "Therefore, for FoldBridge, each hit on the final proximity map is the result of a \"chemical event plus a readout chain\", and not \"these two sites are definitely close\" handed over directly by the probe. A hit may come from a genuine tertiary proximity, but it may also come from the radical diffusing along the groove, from background or from readout limitations — Figure 1 specifically marks hits caused by diffusion across the major/minor groove. This is precisely why any accessibility/proximity value must first confirm the probe target and context: a strong signal does not equal structural ground truth, and it first answers \"what was observed in this chemistry and readout\"."
+      ],
+      "label": "MCA F2",
+      "pmid": "26035425",
+      "pmcid": "PMC4495719",
+      "doi": "10.7554/eLife.07600",
+      "figureId": "F2",
+      "legendText": "( A ) Schematic illustrating RNA fragments detectable by MOHCA-seq. At left, reverse transcription from a strand scission position (orange bolt) terminates at the radical source (in green); these fragments are also detectable by MOHCA-gel. At right, reverse transcription from strand scission positions can also terminate at additional oxidative damage events (orange circles) caused by the same radical source; these fragments are only detectable by MOHCA-seq. ( B ) Sequence and secondary structure of a proof-of-concept RNA with one radical source attachment site (U13, in green). Cyan rounded rectangles indicate expected MOHCA-seq hits due to RT stops at the radical source after cleavage at the circled residues. ( C ) MOHCA-seq proximity map showing expected hits (cyan rounded rectangles), as well as additional reverse transcription stops occurring 3′ of the radical source position but 5′ of the cleaved and ligated position, due to oxidative damage events 3′ of the radical source that are spatially correlated with the radical source (magenta rounded rectangles). At right, strand scission rates detected by paired-end sequencing (see ( D )) are shown on a scale from white (low) to black (high) on a visualization-only model of the proof-of-concept RNA. Pairwise hits detectable by MOHCA-gel and MOHCA-seq (as in ( A ), left) are shown as cyan lines; hits detectable by MOHCA-seq only (as in ( A ), right) are shown as magenta lines. ( D ) Quantified strand scission and reverse transcription-terminating modification rates (note difference in scale) in the proof-of-concept RNA from capillary electrophoresis (CE) or paired-end sequencing data (Seq). Blue and orange bars are data for a MOHCA-seq sample with a tethered radical source, and gray bars are data for an identically treated control sample without a radical source. A ‘*’ indicates a data point that was not included in calculation of the total rate of strand scission due to high background or bleed-through of a fluorescent reference ladder peak. ( E ) Total modification rates for strand scission or reverse transcription stops calculated from CE or sequencing data. ( F – G ) MOHCA-seq ( F ) and MOHCA-gel ( G ) proximity maps of P4–P6 from single experiments. MOHCA-gel data were collected previously according to the published method, with 5′- 32 P-labeled P4–P6 RNA ( Das et al., 2008 ). Rounded rectangles indicate helix elements, purple circles indicate hits corresponding to < 30 Å pairwise distance in the crystal structure, pink circles indicate hits corresponding to > 30 Å pairwise distance in the crystal structure, and black circles indicate MOHCA-gel ‘spectator hits’, which appear due to lack of rigorous background subtraction ( Das et al., 2008 ; Kim et al., 2011 ). The pink and purple circles in ( C ) correspond to the hits annotated in Figure 1D , which shows the average of four data replicates; features that are not circled disappear after averaging. Note distortion of MOHCA-gel compared to MOHCA-seq due to nonlinearity of gel electrophoresis rates with RNA length. ( H – K ) MOHCA-seq proximity maps for P4–P6 with alternative 2′-NH 2 -modified nucleotides incorporated during transcription. Modified nucleotide triphosphate included in transcription reaction at molar ratio of 0.5 to unmodified NTP: ( H ) 2′-NH 2 -2′-dATP; ( I ) 2′-NH 2 -2′-dUTP; ( J ) 2′-NH 2 -2′-dGTP; ( K ) 2′-NH 2 -2′-dCTP. All fragmentation reactions were performed for 30 min. All four data sets were collected in one Illumina MiSeq run using a 50-cycle MiSeq Reagent Kit v2. Additional variations of the MOHCA-seq protocol are shown in Figure 2—figure supplement 1 (variation of radical source incorporation rate) and Figure 2—figure supplement 2 (variation of fragmentation reaction time). DOI: http://dx.doi.org/10.7554/eLife.07600.006"
+    },
+    {
+      "type": "heading",
+      "text": "Adding proximity restraints into modelling: structural improvement in blind tests"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-mca-f3",
+      "alt": "MCA F3",
+      "srcBasename": "mca_f3__PMC4495719__F3.jpg",
+      "legend": "**Figure 3. A comparison of the M²/MOHCA-seq/Rosetta models with the crystal structures across several RNAs.** Cheng et al. 2015 (PMID 26035425, DOI `10.7554/eLife.07600`) compare three columns across six RNAs in the legend: the M²/Rosetta model alone, the crystal structure, and the M²/MOHCA-seq/Rosetta (MCM) model with MOHCA-seq restraints added, and give the RMSD: (A) the P4–P6 domain, M²/Rosetta 38.3 Å, MCM 8.6 Å (PDB 1GID); (B) the Vibrio cholerae c-di-GMP riboswitch aptamer, 11.3 Å → 7.6 Å (PDB 3IRW); (C) the Fusobacterium nucleatum glycine riboswitch ligand-binding domain, 30.5 Å → 7.9 Å (PDB 3P49); (D) the thermophile AdoCbl riboswitch aptamer (RNA-puzzle 6), 17.1 Å → 11.9 Å (PDB 4GXY); (E) the class I ligase, global 26.3 Å → 14.5 Å (PDB 3HHN); (F) the Lariat-capping ribozyme of Didymium iridis (RNA-puzzle 5), global 9.6 Å → 8.2 Å (PDB 4P8Z). To the right of each RNA is a MOHCA-seq proximity map annotated with the helix elements and the tertiary hits (purple/pink dots).",
+      "body": [
+        "This figure shows that the real value of MCA lies in constraining tertiary structure modelling: in most cases, adding the MOHCA-seq proximity restraints markedly reduces the RMSD between the model and the crystal structure. That is, these chemical-accessibility/proximity readouts do indeed carry information usable for structural inference, and they hold up even in blind-test-style RNA-puzzle scenarios.",
+        "But for FoldBridge, the value comes precisely from preserving the distinction \"this is a restraint, not ground truth\". The MCM model is more accurate because the proximity hits were added into the modelling as pseudo-energy restraints, not because the hits were taken directly as the structure itself. The extended meaning of the targetability gate here is: MCA values can serve as powerful restraints for structural interpretation, but their interpretive range is always bound to the premise that \"a certain class of chemical event was observed\". Reading a proximity hit directly as \"these two nucleotides are definitely in contact\" skips the step of modelling and context."
+      ],
+      "label": "MCA F3",
+      "pmid": "26035425",
+      "pmcid": "PMC4495719",
+      "doi": "10.7554/eLife.07600",
+      "figureId": "F3",
+      "legendText": "( A ) P4–P6 domain: M 2 /Rosetta model (left), 38.3 Å root-mean-squared-deviation (RMSD); crystal structure (PDB ID 1GID, center left); M 2 /MOHCA-seq/Rosetta (MCM) model (center right), 8.6 Å RMSD. ( B ) V. cholerae cyclic-di-GMP riboswitch aptamer: M 2 /Rosetta model (left), 11.3 Å RMSD; crystal structure (PDB ID 3IRW, center left); MCM model (center right), 7.6 Å RMSD. ( C ) F. nucleatum double glycine riboswitch ligand-binding domain: M 2 /Rosetta model (left), 30.5 Å RMSD; crystal structure (PDB ID 3P49, center left); MCM model (center right), 7.9 Å RMSD. ( D ) S. thermophilum adenosylcobalamin (AdoCbl) riboswitch aptamer: M 2 /Rosetta submission rank 1 of 10 for RNA-puzzle 6 (left), 17.1 Å RMSD; crystal structure (PDB ID 4GXY, center left); MCM model (center right), 11.9 Å RMSD. ( E ) Class I ligase: M 2 /Rosetta model (left), 26.3 Å global RMSD, and 14.0 Å core RMSD; crystal structure (PDB ID 3HHN, center left); MCM model (center right), 14.5 Å global RMSD and 11.1 Å core RMSD. ( F ) D. iridis lariat-capping ribozyme: M 2 /Rosetta submission rank 1 of 2 for RNA-puzzle 5 (left), 17.0 Å P2.1/P4–P6 RMSD and 9.6 Å global RMSD; crystal structure (PDB ID 4P8Z, center left); MCM model (center right), 11.2 Å P2.1/P4–P6 RMSD and 8.2 Å global RMSD. In ( A – F ), MOHCA-seq proximity maps with annotated helix elements (rounded rectangles) and tertiary hits (purple and pink circles) as in Figure 1D are shown at right. Full-size proximity maps, including 5′- and 3′-flanking sequences outside the region of interest, are shown in Figure 3—figure supplement 3 . M 2 analyses of AdoCbl riboswitch aptamer, class I ligase, and lariat-capping ribozyme are shown in Figure 3—figure supplements 1, 2, 7 . Figure 3—figure supplement 4 shows comparisons of models generated by different computational methods for RNA-puzzle 6. Figure 3—figure supplements 5, 6 show comparisons of additional modeling runs for class I ligase and AdoCbl riboswitch aptamer to crystal structures. DOI: http://dx.doi.org/10.7554/eLife.07600.009"
+    },
+    {
+      "type": "heading",
+      "text": "Reading ligand- and ion-dependent conformations from proximity maps"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-mca-f4",
+      "alt": "MCA F4",
+      "srcBasename": "mca_f4__PMC4495719__F4.jpg",
+      "legend": "**Figure 4. The proximity maps of the c-di-GMP riboswitch under different ligand and Mg²⁺ conditions.** Cheng et al. 2015 (PMID 26035425, DOI `10.7554/eLife.07600`) describe condition-dependent conformational changes in the legend: (A) the proximity maps of the aptamer under 10 mM Mg²⁺ with (10 µM) or without (0 µM) c-di-GMP, annotated with the helix elements and the tertiary hits (purple/pink dots); (B) the proximity maps under 0 mM Mg²⁺ with or without c-di-GMP, showing that the tertiary proximities present under 10 mM Mg²⁺ disappear in the absence of Mg²⁺; (C) using the 0 µM c-di-GMP, 10 mM Mg²⁺ proximity map as a pseudo-energy restraint, the five lowest-Rosetta-energy MCM models, preliminarily visualising the conformational ensemble of the ligand-free state, with the crystal structure attached on the right as a comparison.",
+      "body": [
+        "This figure shows that MCA's proximity readout can reflect condition-dependent structural changes: remove the Mg²⁺, and the previously present tertiary proximities disappear; and under the ligand-free condition, the proximity restraints can even be used to preliminarily sketch a conformational ensemble. This is a real and powerful application of chemical-accessibility data — it is sensitive to environmental conditions and can capture differences in folding state.",
+        "However, precisely because the signal is sensitive to conditions, FoldBridge must all the more separate \"signal change\" from \"structural conclusion\". The appearance or disappearance of a hit on the proximity map means, first of all, \"under this ion/ligand condition, this class of chemical proximity event was or was not observed\"; interpreting it as the formation or dissociation of a tertiary contact requires structural and contextual support. The same MCA profile gives different values under different conditions, which precisely shows that, divorced from the probe target and readout context, a single number cannot independently define structure."
+      ],
+      "label": "MCA F4",
+      "pmid": "26035425",
+      "pmcid": "PMC4495719",
+      "doi": "10.7554/eLife.07600",
+      "figureId": "F4",
+      "legendText": "( A ) Proximity maps of c-di-GMP riboswitch aptamer in 10 µM (left) or 0 µM (right) c-di-GMP, folded in 10 mM Mg 2+ , with annotated helix elements (rounded rectangles) and tertiary hits (purple and pink circles). ( B ) Proximity maps of c-di-GMP riboswitch aptamer in 10 µM (left) or 0 µM (right) c-di-GMP, folded in 0 mM Mg 2+ , showing absence of tertiary proximities that are present for the aptamer folded in 10 mM Mg 2+ . ( C ) Five MCM models with lowest Rosetta energy of c-di-GMP riboswitch aptamer give an initial visualization of ligand-free ensemble (left); modeling included pseudo-energy constraints from 0 µM c-di-GMP and 10 mM Mg 2+ proximity map. The crystal structure is shown at right for comparison. DOI: http://dx.doi.org/10.7554/eLife.07600.019"
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about MCA"
+    },
+    {
+      "type": "paragraph",
+      "text": "MCA's core treatment in FoldBridge is to treat its chemical-accessibility/proximity readout as its own assay model, rather than pre-adjudicating which class it belongs to and what it can interpret according to the method names in the Zotero title (MAPseq, tagMOHCA, MOHCA-seq). Method classification follows the literature; the judgement that enters the system must land on the layer of \"which readout this value comes from and which class of chemical event it corresponds to\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "The raw values are first of all raw provenance: they can be stored, downloaded, and used for debugging and reanalysis, but they cannot automatically enter the default visualisation or confidence simply because \"the number is high\" or \"the hit exists\". What enters the default structure layer should be signal that has passed MCA's own probe target (the radical source/chemical modification site) plus a readout and mapping context check, and that can be interpreted as MCA support. In other words, the colour or connecting line a reader sees on the structure page should be something that holds up under the MCA assay model, not something taken straight from the raw cleavage rate or hit count. The threshold for the confidence layer is higher still: only sites or proximity pairs that pass the targetability, mapping and context gates can become candidates for positive confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "The gate concept to stress here is this: FoldBridge never silently pools MCA's signal together with that of other probes such as SHAPE and DMS. Even though they all belong to the broad framework of \"chemical accessibility plus sequencing\", each probe asks a different chemical question and reads out a different event — MCA's core readout is proximity relationships and condition-dependent tertiary restraints, DMS reads the A/C pairing face, and SHAPE reads 2′-OH flexibility. Combined display or joint analysis can be done, but each value must carry the label \"I come from MCA's readout\", rather than being fused into one undifferentiated, unified layer."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is not a weakening of MCA but a respect for its strength. MCA reads out tertiary proximity via chemical accessibility and then constrains modelling, which is very useful — the RMSD improvement in Figure 3 and the condition-dependent conformations in Figure 4 both prove its value; the error occurs when this strength is extended into \"every number is structural ground truth\" or \"equivalent to other probes\". FoldBridge's task is not to plot every number, but to separate \"there is a measured value\" from \"interpretable as MCA structural support\"."
+    },
+    {
+      "type": "heading",
+      "text": "A real case (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so the following is a clearly labelled illustrative scenario, used to show how a single MCA profile splits into three different layers; the pairing relationships in it are **inferred** from the proximity hits, not measured directly."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine an MCA profile flowing through FoldBridge: it performed M² chemical mapping and MOHCA-seq radical cleavage on a certain RNA, and after sequencing yielded a batch of cleavage rates, reverse-transcription termination signals and proximity hits. When this batch of data enters the system, it is first preserved in full as a raw observation — the raw value, coverage, source readout and experimental conditions (such as Mg²⁺ and ligand concentration) of each site and each proximity pair are all recorded, traceable, downloadable and re-analysable."
+    },
+    {
+      "type": "paragraph",
+      "text": "Next, the system asks whether these values can enter the visual signal. Only sites or proximity pairs whose probe target is clear (the radical source/modification site is interpretable), that can be reliably mapped to structural coordinates, and that pass the readout and context checks become MCA signal on the default structure figure. Things like the \"diffusion hits along the major/minor groove\" marked in Figure 1, the background in Figure 2, or sites that cannot be reliably located, remain at the provenance layer even when they have numbers, and do not masquerade as the same kind of evidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "Last comes the confidence candidate: building on the first two layers holding, only sites or proximity pairs that pass the full gate can possibly enter positive confidence. These three layers — raw observation, visual signal, confidence candidate — are three different things derived from the same profile, and cannot substitute for one another."
+    },
+    {
+      "type": "paragraph",
+      "text": "Translated into system behaviour, this case means that the same MCA profile derives three different things — raw observation, visual signal and confidence candidate — that cannot substitute for one another. The boundary MCA most needs to hold is that \"proximity is inferred, not measured directly\": a hit on the proximity map may come from a genuine tertiary contact, or it may come from the radical diffusing along the major/minor groove, and the final pairing/contact conclusion is modelled out by Rosetta taking the hits as pseudo-energy restraints. A paper figure can focus on a single experiment or a single model; a FoldBridge page layers many profiles, coordinates and evidence tiers together, and if an article fails to make these three layers and the \"inferred\" label clear, a reader will misread a proximity hit awaiting modelling confirmation as two nucleotides whose contact has already been directly determined. So the correct ending for an MCA article is not \"the existence of some hit shows these two sites are in contact\", but rather: MCA can provide powerful chemical-accessibility and proximity-restraint clues for the tertiary structure interpretation of RNA; in FoldBridge, such clues become part of the default visualisation and confidence only after first confirming the probe target and readout context, passing the subsequent gates, and always being kept distinct from the signals of other probes such as SHAPE/DMS."
+    }
+  ]
+}

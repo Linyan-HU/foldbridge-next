@@ -1,0 +1,4784 @@
+{
+ "schemaVersion": "empty-profile-chains.v1",
+ "description": "Chains whose every profile is empty within the render-strand window (all-NaN source or signal falls outside aligned window). Source: LIVE shard scan 2026-09-04.",
+ "grain": "pdb_id x auth",
+ "count": 272,
+ "chains": [
+  {
+   "pdb_id": "1I6U",
+   "auth": "C",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6475",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6475",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "1I6U",
+   "auth": "D",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6475",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6475",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "1KOG",
+   "auth": "I",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "1KOG",
+   "auth": "J",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "1KOG",
+   "auth": "K",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "1KOG",
+   "auth": "L",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "1KOG",
+   "auth": "M",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "1KOG",
+   "auth": "N",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "1KOG",
+   "auth": "O",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "1KOG",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6476",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "1NJM",
+   "auth": "5",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12390",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6441",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12390",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6441",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "1NJP",
+   "auth": "5",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12390",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6441",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12390",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6441",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "21CB",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "rasp_bw_0ac5e94788d5",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_1bce4cb9b4c1",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_391957bc990d",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_a98fcc4a195d",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_adb74bd90821",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_bef6067695e0",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_c8eb2a9bae27",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_ccc48c8d34b3",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_df45dbde575d",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_eee90e60acaa",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_f19b2878af92",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "21CN",
+   "auth": "A",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "rasp_bw_0ac5e94788d5",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_1bce4cb9b4c1",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_391957bc990d",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_a98fcc4a195d",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_adb74bd90821",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_bef6067695e0",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_c8eb2a9bae27",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_ccc48c8d34b3",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_df45dbde575d",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_eee90e60acaa",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "rasp_bw_f19b2878af92",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "28JW",
+   "auth": "5",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-eterna/OK3TST_2A3_0003.rdat#26055",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-eterna/OK3TST_DMS_0003.rdat#26055",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "28LU",
+   "auth": "5",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-eterna/OK3TST_2A3_0003.rdat#26055",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-eterna/OK3TST_DMS_0003.rdat#26055",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "2BTE",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6503",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6503",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "2BTE",
+   "auth": "E",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6503",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6503",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "2BYT",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6503",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6503",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "2BYT",
+   "auth": "E",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6503",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6503",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "2GJE",
+   "auth": "R",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6505",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6505",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "2GTT",
+   "auth": "W",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6507",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6507",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/POS240_2A3_0000.rdat#1461",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/POS240_DMS_0000.rdat#1461",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "2JEA",
+   "auth": "C",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3520",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3520",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "2NUE",
+   "auth": "C",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3523",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3523",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "2V0G",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6503",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6503",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "2V0G",
+   "auth": "F",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6503",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6503",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "2ZY6",
+   "auth": "A",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3571",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7479",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3571",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7479",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3ADB",
+   "auth": "C",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3579",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3579",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3ADB",
+   "auth": "D",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3579",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3579",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3ADC",
+   "auth": "C",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3579",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3579",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3ADC",
+   "auth": "D",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3579",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3579",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3ADD",
+   "auth": "C",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3579",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3579",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3ADD",
+   "auth": "D",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3579",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3579",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3CIY",
+   "auth": "D",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3524",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3524",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3ID5",
+   "auth": "D",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3521",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3521",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3ID5",
+   "auth": "H",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3521",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3521",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3VJR",
+   "auth": "B",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12390",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6441",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12390",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6441",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3VJR",
+   "auth": "D",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12390",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6441",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12390",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6441",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3W1K",
+   "auth": "F",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12391",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12391",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3W1K",
+   "auth": "G",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12391",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12391",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3W1K",
+   "auth": "H",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12391",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12391",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3W1K",
+   "auth": "I",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12391",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12391",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3W1K",
+   "auth": "J",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12391",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12391",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3WC1",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12346",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12346",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "3WC1",
+   "auth": "Q",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12346",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12346",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4IFD",
+   "auth": "R",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7464",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7464",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4KR6",
+   "auth": "C",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3571",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7479",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3571",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7479",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4KR6",
+   "auth": "D",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3571",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7479",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3571",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7479",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4KR7",
+   "auth": "M",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3571",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7479",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3571",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7479",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4KR7",
+   "auth": "X",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3571",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7479",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3571",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7479",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4KR9",
+   "auth": "M",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3571",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7479",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3571",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7479",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4KR9",
+   "auth": "X",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3571",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7479",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3571",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7479",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4PDB",
+   "auth": "I",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7490",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7490",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4PMI",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14038",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14038",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4V5Z",
+   "auth": "AH",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4545",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4545",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4X4U",
+   "auth": "B",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9409",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9409",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4X4U",
+   "auth": "D",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9409",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9409",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4X4U",
+   "auth": "G",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9409",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9409",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4X4V",
+   "auth": "B",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9409",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9409",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4X4V",
+   "auth": "D",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9409",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9409",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4YAZ",
+   "auth": "A",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9413",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9413",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4YAZ",
+   "auth": "R",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9413",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9413",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4YB0",
+   "auth": "A",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9413",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9413",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "4YB0",
+   "auth": "R",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9413",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9413",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5C0X",
+   "auth": "R",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7464",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7464",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5DH6",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9440",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9440",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5DH7",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9440",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9440",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5DH8",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9440",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9440",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5DI2",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9440",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9440",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5DI4",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9440",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9440",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5DQK",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9440",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9440",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5EAO",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9440",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9440",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5EAQ",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#9440",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#9440",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5JEA",
+   "auth": "R",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7464",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7464",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5NG6",
+   "auth": "B",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#1616",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#1616",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5NG6",
+   "auth": "D",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#1616",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#1616",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5NG6",
+   "auth": "F",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#1616",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#1616",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5NG6",
+   "auth": "H",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#1616",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#1616",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5U30",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#1628",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#1628",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/POS240_2A3_0000.rdat#1460",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/POS240_DMS_0000.rdat#1460",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5U31",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#1628",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#1628",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/POS240_2A3_0000.rdat#1460",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/POS240_DMS_0000.rdat#1460",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5U33",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#1628",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#1628",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/POS240_2A3_0000.rdat#1460",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/POS240_DMS_0000.rdat#1460",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5U34",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#1628",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#1628",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/POS240_2A3_0000.rdat#1460",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/POS240_DMS_0000.rdat#1460",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5VOE",
+   "auth": "A",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#1633",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#1633",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5VOF",
+   "auth": "A",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#1633",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#1633",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5WQE",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#1628",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#1628",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/POS240_2A3_0000.rdat#1460",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/POS240_DMS_0000.rdat#1460",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5XUS",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5XUT",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5XUU",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5XUZ",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5XUZ",
+   "auth": "F",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "5XY3",
+   "auth": "3",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4236",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4236",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6BK8",
+   "auth": "i",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#16307",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#16307",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6DCB",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11698",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11698",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6DCC",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11698",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11698",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6E8S",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11710",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11710",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6E8S",
+   "auth": "B",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11710",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11710",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6GMH",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6GOV",
+   "auth": "R",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11723",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11723",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6I1K",
+   "auth": "B",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#1616",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#1616",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6I1L",
+   "auth": "B",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#1616",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#1616",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6I1L",
+   "auth": "E",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#1616",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#1616",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6I7O",
+   "auth": "l",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11730",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11730",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6KL9",
+   "auth": "G",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11732",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11732",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6KLB",
+   "auth": "E",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11732",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11732",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6KLB",
+   "auth": "G",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11732",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11732",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6LTP",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12042",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12042",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6LTP",
+   "auth": "H",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12042",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12042",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6LTR",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12042",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12042",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6LTU",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12042",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12042",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6LU0",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12042",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12042",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6NM9",
+   "auth": "E",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6NM9",
+   "auth": "G",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6NMA",
+   "auth": "G",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6NMC",
+   "auth": "G",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6NMD",
+   "auth": "G",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6NME",
+   "auth": "G",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6O1O",
+   "auth": "N",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12041",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12041",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6OMV",
+   "auth": "G",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4232",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6P7M",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12058",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12058",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6P7N",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12058",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12058",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6P7N",
+   "auth": "F",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12058",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12058",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6QN3",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#646",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#646",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6QN3",
+   "auth": "B",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#646",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#646",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6S8B",
+   "auth": "U",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4843",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4843",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6S8E",
+   "auth": "U",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4843",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4843",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6S91",
+   "auth": "U",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4843",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4843",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6SH8",
+   "auth": "U",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4843",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4843",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6SHB",
+   "auth": "U",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4843",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4843",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6SIC",
+   "auth": "U",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#4843",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#4843",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6TED",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6UP0",
+   "auth": "C",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11710",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11710",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6UP0",
+   "auth": "D",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11710",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11710",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6VWL",
+   "auth": "5",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6VWM",
+   "auth": "5",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6VYR",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3918",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3918",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6VYZ",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6VZ2",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6VZ5",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6W64",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15670",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15670",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6WPI",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15979",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15979",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6WPI",
+   "auth": "C",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15979",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15979",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6X6T",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6X7F",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6X7K",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6X9Q",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6XDQ",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6XDR",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6XGF",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6XII",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YL5",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#323",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#323",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YL5",
+   "auth": "B",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#323",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#323",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YL5",
+   "auth": "C",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#323",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#323",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YL5",
+   "auth": "D",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#323",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#323",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YL5",
+   "auth": "E",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#323",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#323",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YL5",
+   "auth": "F",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#323",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#323",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YL5",
+   "auth": "G",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#323",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#323",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YL5",
+   "auth": "H",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#323",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#323",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YL5",
+   "auth": "I",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#323",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#323",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YL5",
+   "auth": "J",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#323",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#323",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YL5",
+   "auth": "K",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#323",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#323",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YL5",
+   "auth": "L",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#323",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#323",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YSR",
+   "auth": "w",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YSS",
+   "auth": "w",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YST",
+   "auth": "w",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6YSU",
+   "auth": "w",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6ZDP",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#5850",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#5850",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "6ZJ3",
+   "auth": "LB",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#5648",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#5648",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7BHP",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13016",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13016",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7DLZ",
+   "auth": "X",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13033",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13033",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7DLZ",
+   "auth": "Y",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13033",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13033",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7DWH",
+   "auth": "X",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13033",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13033",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7DWH",
+   "auth": "Y",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13033",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13033",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7K5L",
+   "auth": "R",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13048",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13048",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7LYS",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#966",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#966",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7LYT",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#966",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#966",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7M5O",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#966",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#966",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7MLW",
+   "auth": "F",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#980",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#980",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7N2C",
+   "auth": "Dt",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7N2U",
+   "auth": "Dt",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7N2V",
+   "auth": "Dt",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7N30",
+   "auth": "Dt",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7ODF",
+   "auth": "F",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15325",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15325",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7OGM",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15326",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15326",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7OS0",
+   "auth": "D",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15334",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15334",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7OS0",
+   "auth": "F",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15334",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15334",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7PJS",
+   "auth": "w",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7PJT",
+   "auth": "w",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7PJU",
+   "auth": "w",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7PJV",
+   "auth": "w",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7PJW",
+   "auth": "w",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7PJX",
+   "auth": "w",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7PJY",
+   "auth": "w",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7PJZ",
+   "auth": "w",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7PMM",
+   "auth": "C",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6181",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6181",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7PMM",
+   "auth": "D",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6181",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6181",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7UZW",
+   "auth": "G",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13330",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13334",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13330",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13334",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7UZZ",
+   "auth": "G",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13330",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13334",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13330",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13334",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7V01",
+   "auth": "G",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13330",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13334",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13330",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13334",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7V02",
+   "auth": "G",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13330",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13334",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13330",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13334",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7V93",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13336",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13336",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7V94",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13336",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13336",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7ZGP",
+   "auth": "E",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13361",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13361",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7ZGR",
+   "auth": "E",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13361",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13361",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7ZOL",
+   "auth": "C",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7800",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7800",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "7ZOQ",
+   "auth": "C",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7800",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7800",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8A22",
+   "auth": "A1",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7807",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7807",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8ANE",
+   "auth": "R",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7810",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7810",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8APN",
+   "auth": "A1",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7807",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7807",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8APO",
+   "auth": "A1",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#7807",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#7807",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8DO6",
+   "auth": "I",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13330",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#13334",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13330",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#13334",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8E3F",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3918",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3918",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8E3H",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3918",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3918",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8E5K",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8E5L",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8E5O",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8E5P",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8E6X",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3918",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3918",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8E6Z",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3918",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3918",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8EYU",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3920",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3920",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8EYU",
+   "auth": "B",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3920",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3920",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8EYV",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3920",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3920",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8EYV",
+   "auth": "B",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3920",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3920",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8EYW",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3920",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3920",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8EYW",
+   "auth": "B",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3920",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3920",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8F0N",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3920",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3920",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8F0N",
+   "auth": "B",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3920",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3920",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8FFR",
+   "auth": "W",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6507",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6507",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/POS240_2A3_0000.rdat#1461",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/POS240_DMS_0000.rdat#1461",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8FMW",
+   "auth": "AB",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-eterna/OK3TST_2A3_0001.rdat#22267",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-eterna/OK3TST_DMS_0001.rdat#22267",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-general/ARCHII_2A3_0000.rdat#23093",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-general/ARCHII_DMS_0000.rdat#23093",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8FN2",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-eterna/OK3TST_2A3_0001.rdat#22267",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-eterna/OK3TST_DMS_0001.rdat#22267",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-general/ARCHII_2A3_0000.rdat#23093",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-general/ARCHII_DMS_0000.rdat#23093",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8GZR",
+   "auth": "C",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11385",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11385",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8HB8",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11386",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11386",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8HBA",
+   "auth": "A",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11386",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11386",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8HBA",
+   "auth": "B",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11386",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11386",
+     "empty_type": "window_all_0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8HHL",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11387",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11387",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8HHM",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11387",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11387",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8HIO",
+   "auth": "B",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11387",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11387",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8OEU",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8OEV",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8OEW",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8OF0",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8RAM",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8RAN",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8RAO",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8RAP",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8UPO",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8UPR",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8UQL",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8UQM",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8UQP",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8UR0",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8URH",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8URI",
+   "auth": "7",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8Y5L",
+   "auth": "4",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8Y5M",
+   "auth": "4",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8Y5O",
+   "auth": "4",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8Y5P",
+   "auth": "4",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8Y5Q",
+   "auth": "4",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8Y5R",
+   "auth": "4",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8Y5S",
+   "auth": "4",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8Y5T",
+   "auth": "4",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "8YDH",
+   "auth": "4",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15668",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#15669",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#3917",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "9F9S",
+   "auth": "CM",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#12395",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#6429",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#12395",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#6429",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "9O3V",
+   "auth": "mR",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11399",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11399",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "9O3W",
+   "auth": "mR",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11399",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11399",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "9QQP",
+   "auth": "Bv",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "9QSA",
+   "auth": "Bz",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "9QWT",
+   "auth": "Bv",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "9RTU",
+   "auth": "w",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "9RTV",
+   "auth": "w",
+   "chain_type": "window_empty",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#14027",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#14027",
+     "empty_type": "NaN+0"
+    }
+   ]
+  },
+  {
+   "pdb_id": "9RZE",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "9S0U",
+   "auth": "P",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-rna-structures/PDB130_2A3_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-rna-structures/PDB130_DMS_0000.rdat#11721",
+     "empty_type": "all_NaN"
+    }
+   ]
+  },
+  {
+   "pdb_id": "9TVU",
+   "auth": "5",
+   "chain_type": "all_NaN",
+   "profiles": [
+    {
+     "profile_id": "data-eterna/OK3TST_2A3_0003.rdat#26055",
+     "empty_type": "all_NaN"
+    },
+    {
+     "profile_id": "data-eterna/OK3TST_DMS_0003.rdat#26055",
+     "empty_type": "all_NaN"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,199 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "shape-map",
+  "title": "SHAPE-MaP: Mutation-based RNA structure profiling through SHAPE chemical probing",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "25028896",
+  "rep_pmcid": "PMC4259394",
+  "rep_doi": "10.1038/nmeth.3029",
+  "asset_base": "./src/assets/generated/probing-articles/assets/shape-map",
+  "sibling_navigation": {
+    "previous": {
+      "slug": "shape-seq",
+      "title": "SHAPE-Seq"
+    },
+    "next": {
+      "slug": "icshape",
+      "title": "icSHAPE"
+    }
+  },
+  "key_innovation": "Compared with SHAPE-Seq approaches relying on reverse transcription stops, SHAPE-MaP uses mutation-aware reverse transcription to encode SHAPE modifications as nucleotide substitutions, eliminating truncation bias and enabling quantitative analysis of complex RNA structures.",
+  "body_start_heading": "A real case: how a SHAPE-MaP profile flows through three layers (illustrative)",
+  "ppt_overview": [
+    {
+      "title": "How does SHAPE-MaP transform chemical modifications into sequencing mutations?",
+      "srcBasename": "shapemap_figure1.png",
+      "alt": "Principle of SHAPE-MaP",
+      "captionTitle": "Figure 1. Principle of SHAPE-MaP.",
+      "text": "SHAPE reagents modify flexible nucleotides within RNA. During reverse transcription, the polymerase reads through these adducts and introduces mutations into cDNA. These mutations are identified by deep sequencing to generate quantitative SHAPE reactivity profiles."
+    },
+    {
+      "title": "How can SHAPE-MaP detect RNA conformational changes?",
+      "srcBasename": "shapemap_figure2.png",
+      "alt": "Nucleotide-resolution mapping of RNA structural dynamics",
+      "captionTitle": "Figure 2. Nucleotide-resolution mapping of RNA structural dynamics.",
+      "text": "SHAPE-MaP quantitatively measures nucleotide flexibility changes induced by ligand binding, revealing structural rearrangements within RNA switches."
+    },
+    {
+      "title": "How does SHAPE-MaP improve RNA structure prediction?",
+      "srcBasename": "shapemap_figure3.png",
+      "alt": "SHAPE-MaP-guided RNA secondary structure modeling",
+      "captionTitle": "Figure 3. SHAPE-MaP-guided RNA secondary structure modeling.",
+      "text": "Mutation-derived SHAPE profiles provide quantitative structural restraints that improve secondary structure prediction compared with unconstrained folding."
+    },
+    {
+      "title": "Can SHAPE-MaP resolve large and complex RNA structures?",
+      "srcBasename": "shapemap_figure4.png",
+      "alt": "Genome-scale RNA structure analysis using SHAPE-MaP",
+      "captionTitle": "Figure 4. Genome-scale RNA structure analysis using SHAPE-MaP.",
+      "text": "SHAPE-MaP enables structural modeling of long RNAs, including viral genomes, by combining high-resolution chemical probing with computational structure inference."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "The word \"mutation\" in the name SHAPE-MaP is the easiest part to misread: seeing a string of mismatches in the sequencing result, it is natural to assume these are real sequence variants on the RNA, or simply to equate \"a high mutation rate\" with a verdict of \"this base is paired/unpaired\". That reading is wrong. The mutation here is deliberately manufactured by MaP (mutational profiling) — when the reverse transcriptase reads through a SHAPE adduct it incorporates a mismatch, recording the chemical modification as a \"mutation\" in the sequencing. So the object that SHAPE-MaP interprets is the chemical accessibility of the ribose 2′-OH and the local conformational flexibility: when a nucleotide is conformationally dynamic and not locked down by pairing or by complex structure, its 2′-hydroxyl is more easily acylated by the SHAPE reagent. The 2′-OH of all four nucleotides can in principle be probed, but what is read out is local flexibility, not the pairing state directly. The key innovation of SHAPE-MaP is to read these SHAPE adducts as sequencing mutations during reverse transcription (mutational profiling, MaP). In other words, SHAPE first reports \"how flexible this site is and how accessible the 2′-OH is\", not \"this base must be paired\" or \"this base must be unpaired\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "This boundary matters a great deal for FoldBridge. FoldBridge can preserve the raw observations, and can also display the signal from the experiment on the web page; but the moment it enters the default structure colouring, the explanatory text or ANNOCONFIDENCE / FEC positive confidence, a more specific question must first be asked: can this number, under the assay model of SHAPE-MaP, be interpreted as 2′-OH flexibility/accessibility support? The raw mutation rate of SHAPE-MaP is raw provenance; it must first pass the assay chemistry (whether the acylation truly occurred at the 2′-OH) and the readout context (whether the mutation rate has had its background subtracted and been normalised) before it can become a candidate for the default structure colour or confidence."
+    },
+    {
+      "type": "heading",
+      "text": "The chemical chain of SHAPE-MaP: acylate the 2′-OH, then read the adduct as a mutation"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-shape-map-f1",
+      "alt": "SHAPE-MaP F1",
+      "srcBasename": "shapemap_f1__PMC4259394__F1.jpg",
+      "legend": "**Figure 1. The overall scheme of SHAPE-MaP: from acylation to the mutation profile.** The legend of Siegfried et al. 2014 (PMID 25028896, DOI `10.1038/nmeth.3029`) breaks SHAPE-MaP into several parts: the RNA is first treated with the SHAPE reagent, which reacts at conformationally dynamic nucleotides; reverse transcription is carried out under specific conditions that let the polymerase read through the chemical adduct on the RNA and incorporate a nucleotide non-complementary to the original sequence into the cDNA (red in the figure); the resulting cDNA is read out by any massively parallel sequencing, forming mutational profiles (MaP); after the sequencing reads are aligned to the reference sequence, the mutation rate at single-nucleotide resolution is computed, and after background correction and normalisation a standard SHAPE reactivity profile is produced. The legend also notes that such reactivity can be used to model secondary structure, visualise competing or alternative conformations, or quantify any process or function that modulates local nucleotide RNA dynamics.",
+      "body": [
+        "Following the chemical chain through this figure makes it clear: the real increment of SHAPE-MaP lies in the three words \"mutation profile\" — it first uses chemistry to turn \"the 2′-OH is accessible, locally flexible\" into an adduct on the RNA, then lets reverse transcription incorporate a mismatch as it reads through the adduct, and finally uses sequencing to count these deliberately manufactured mismatches as a mutation rate. Each step determines what the number in the final table actually represents.",
+        "More importantly, the detail in the legend of \"reading through the adduct and incorporating a non-complementary nucleotide\" is exactly the watershed between SHAPE-MaP and the traditional RT-stop readout. It keeps the modification information inside the read, rather than discarding it at the RT termination site. But this also means that the final mutation rate is an observable layered on top of chemical modification, reverse transcription, library construction, alignment and normalisation, not the structural ground truth handed out directly by the SHAPE molecule. For FoldBridge, a raw observation must first pass through the assay chemistry and the readout context before it can become a candidate for the default layer or confidence."
+      ],
+      "label": "SHAPE-MaP F1",
+      "pmid": "25028896",
+      "pmcid": "PMC4259394",
+      "doi": "10.1038/nmeth.3029",
+      "figureId": "F1",
+      "legendText": "RNA is treated with a SHAPE reagent that reacts at conformationally dynamic nucleotides. Reverse transcription is carried out under conditions such that the polymerase reads through chemical adducts in the RNA and incorporates a nucleotide non-complementary to the original sequence (in red) into the cDNA. The resulting cDNA is sequenced using any massively parallel approach to create mutational profiles (MaP). Sequencing reads are aligned to a reference sequence, and nucleotide-resolution mutation rates are calculated, corrected for background and normalized, producing a standard SHAPE reactivity profile. SHAPE reactivities can then be used to model secondary structures, visualize competing and alternative structures, or quantify any process or function that modulates local nucleotide RNA dynamics."
+    },
+    {
+      "type": "heading",
+      "text": "TPP riboswitch: subtract background first, then normalise, before talking about flexibility"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-shape-map-f2",
+      "alt": "SHAPE-MaP F2",
+      "srcBasename": "shapemap_f2__PMC4259394__F2.jpg",
+      "legend": "**Figure 2. The quantitative workflow of SHAPE-MaP and ligand-induced conformational change.** The legend of Siegfried et al. 2014 (PMID 25028896, DOI `10.1038/nmeth.3029`) uses the TPP riboswitch as an example: (a) the mutation-rate profiles of the SHAPE-modified sample and the untreated sample in the presence of ligand (top), and the mutation-rate profile of SHAPE modification carried out under denaturing conditions (bottom); (b) the quantitative SHAPE profile obtained by subtracting the untreated sample from the treated sample and then normalising with the denaturing control; (c) the SHAPE reactivity painted onto the accepted secondary structure of the ligand-bound TPP riboswitch, with red, orange and black corresponding to high, medium and low reactivity respectively; (d) the differential SHAPE profile showing the conformational change induced by ligand binding; (e) the ligand-induced conformational change overlaid onto the TPP riboswitch structure.",
+      "body": [
+        "This figure is the safeguard most worth emphasising in SHAPE-MaP. The mutation rate is not produced only by SHAPE modification: the untreated sample itself also has background mutations, and the denaturing condition provides the reference for the \"fully accessible\" end. So the raw mutation rate of a site must first have the untreated background subtracted and then be normalised with the denaturing control before it can be interpreted as a clue to 2′-OH flexibility/accessibility. The raw mutation rate itself does not equal structure.",
+        "The mistake most easily made here is to write \"a mutation was measured\" as \"a structure was measured\". The high/medium/low reactivity corresponding to red/orange/black in the legend is an accessibility measure after normalisation: high reactivity indicates the site is more flexible and the 2′-OH more accessible; low reactivity indicates it is paired or locked by conformation — but both judgements require background correction and contextual support. The ligand-induced change in the differential SHAPE profile is also a change in reactivity, not a direct flip of pairing. For FoldBridge, a raw observation must first pass through the readout context before it can become a candidate for the default layer or confidence; the raw mutation rate must not be allowed to drive the structure colouring directly."
+      ],
+      "label": "SHAPE-MaP F2",
+      "pmid": "25028896",
+      "pmcid": "PMC4259394",
+      "doi": "10.1038/nmeth.3029",
+      "figureId": "F2",
+      "legendText": "( a ) Mutation rate profiles for the SHAPE modified and untreated TPP riboswitch RNA in the presence of ligand ( top ) and for SHAPE modification performed under denaturing conditions ( bottom ). ( b ) Quantitative SHAPE profile obtained after subtracting the data from the untreated sample from data for the treated sample and normalizing by the denatured control. ( c ) SHAPE reactivities plotted on the accepted secondary structure of the ligand-bound TPP riboswitch. Red, orange, and black correspond to high, moderate, and low reactivities, respectively. ( d ) Difference SHAPE profile showing conformational changes in the TPP riboswitch upon ligand binding. ( e ) Superposition of ligand-induced conformational changes on the TPP riboswitch structure."
+    },
+    {
+      "type": "heading",
+      "text": "Read depth and hit level: the power of a quantitative constraint, and its premises"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-shape-map-f3",
+      "alt": "SHAPE-MaP F3",
+      "srcBasename": "shapemap_f3__PMC4259394__F3.jpg",
+      "legend": "**Figure 3. How SHAPE-MaP data improve the accuracy of secondary-structure modelling.** The legend of Siegfried et al. 2014 (PMID 25028896, DOI `10.1038/nmeth.3029`) explains: (a) the accuracy of secondary-structure modelling is reported as sensitivity (sens) and positive predictive value (ppv), comparing no experimental constraint, traditional capillary electrophoresis (CE) data, and the SHAPE-MaP results obtained with the 1M7 reagent or the three-reagent difference (Diff) data, with colours from red (low accuracy) to green (high accuracy); (b) the relationship between sequencing read depth, hit level and modelling accuracy, with the structure-prediction accuracy (vertical axis) expressed as the geometric mean of the sens and ppv of the predicted structure relative to the accepted model. The legend notes that for 16S rRNA this accuracy is about 50% without experimental data, can reach 89% with single-reagent SHAPE, and 91% with the three-reagent \"difference\" experiment; the boxplot samples 100 folding trajectories at each simulated read depth, with the box showing the interquartile range and the centre line the median. The legend further defines hit level as the total signal above the normalised background at each transcript nucleotide.",
+      "body": [
+        "This figure places the value of SHAPE-MaP in the right position: as a quantitative constraint, it can significantly raise the accuracy of structure modelling from 50%. But the rise in accuracy has a premise — it depends on sufficient read depth and hit level. Hit level is itself defined as \"the signal above the normalised background\", which again reminds the reader: what enters the modelling is not the bare mutation counts, but an accessibility signal that has had its background subtracted and reached a certain signal-to-noise.",
+        "For FoldBridge, this means that the \"interpretability\" of the same SHAPE-MaP site is not uniform: at sites with insufficient read depth or a low hit level, the power of the reactivity as a structural constraint declines. This is exactly why the raw numeric value cannot directly drive the default colouring — it needs to be evaluated together with readout context such as coverage/hit-level. The finer the quantitative analysis, the more chemical reactivity, accessibility, base pairing and sequencing depth/background must be separated."
+      ],
+      "label": "SHAPE-MaP F3",
+      "pmid": "25028896",
+      "pmcid": "PMC4259394",
+      "doi": "10.1038/nmeth.3029",
+      "figureId": "F3",
+      "legendText": "( a ) Secondary structure modeling accuracies reported as a function of sensitivity (sens) and positive predictive value (ppv) for calculations performed without experimental constraints, with conventional capillary electrophoresis (CE) data, and with SHAPE-MaP data obtained with the 1M7 reagent 22 , 38 or with three-reagent differential (Diff) data 19 . Results are colored on a scale to reflect low (red) to high (green) modeling accuracy. ( b ) Relationship between sequencing read depth, hit level, and accuracy of RNA structure modeling. Structure prediction accuracy (vertical axis) is shown as the geometric average of the sens and ppv of predicted structures with respect to the accepted model 38 . For the 16S rRNA, this accuracy ranges from 50% in the absence of experimental data to 89% for single-reagent SHAPE (shown), and to 91% for the three-reagent “differential” 19 experiment. Boxplots summarize modeling the secondary structure of the 16S ribosomal RNA as a function of simulated SHAPE-MaP read depth. At each depth, 100 folding trajectories were sampled. The line at the center of the box indicates the median value and boxes indicate the interquartile range. Whiskers contain data points that are within 1.5 times the interquartile range and outliers are indicated with (+) marks. Hit level is the total signal above normalized background per transcript nucleotide."
+    },
+    {
+      "type": "heading",
+      "text": "The HIV-1 genome: low SHAPE-low entropy can locate functional structure, but it is still a flexibility readout"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-shape-map-f4",
+      "alt": "SHAPE-MaP F4",
+      "srcBasename": "shapemap_f4__PMC4259394__F4.jpg",
+      "legend": "**Figure 4. The structural and functional readout of SHAPE-MaP across the whole HIV-1 genome.** The legend of Siegfried et al. 2014 (PMID 25028896, DOI `10.1038/nmeth.3029`) explains: (a) the SHAPE reactivity of the NL4-3 HIV-1 genomic RNA, shown as the centred 55-nt median window relative to the global median, with regions above or below the baseline being respectively more flexible or more constrained than the median; the Shannon entropy is computed from the pairing probabilities of each nucleotide over all structures in the Boltzmann ensemble constrained by 1M7 and differential SHAPE, reflecting the degree of certainty of the secondary-structure model in each region; the arcs representing base pairing are coloured by pairing probability, green arcs indicating high-probability helices, dense overlapping arcs indicating multiple potential structures, and pseudoknots (PK) marked by black arcs. (b) RNA regions identified as biologically functional, with brackets enclosing high-certainty regions that correspond to low SHAPE-low Shannon entropy domains and extend to all intersecting helices in the minimum free energy structure; the 5′/3′ UTRs are brown, the splice acceptor/donor green/blue respectively, the polypurine tract yellow, the variable domains purple, and the frameshift and RRE domains red, with these elements falling in low SHAPE-low entropy regions far more often than at random (p=0.002). (c) the secondary-structure models identified de novo for those low SHAPE reactivity, low Shannon entropy regions, with nucleotides coloured by SHAPE reactivity and pseudoknot structures marked in blue.",
+      "body": [
+        "This figure shows the appeal of SHAPE-MaP at the whole-genome scale: combining SHAPE reactivity with Shannon entropy can locate regions that are both constrained and high in model certainty, and these \"low SHAPE-low entropy\" domains happen to be enriched in known functional elements. For non-specialist readers, this is a very persuasive result — the readout of chemical flexibility can illuminate real biological structure.",
+        "But take care: reactivity itself is still a readout of 2′-OH flexibility/accessibility, not base-level ground truth of pairing. A region being \"low SHAPE\" indicates that it is overall more constrained and lower in flexibility, and this constraint may come from pairing, but may also come from tertiary structure or other conformational protection; what truly writes it as \"structure\" is an inference jointly supported by reactivity together with entropy, pairing probability and the free-energy model, not a single mutation rate. When FoldBridge cites such results, it should write \"this region has a low SHAPE-low entropy feature and correlates with known functional elements\", rather than \"this base is paired here\". The prettier the functional interpretation, the more the flexibility readout must be separated from structural ground truth."
+      ],
+      "label": "SHAPE-MaP F4",
+      "pmid": "25028896",
+      "pmcid": "PMC4259394",
+      "doi": "10.1038/nmeth.3029",
+      "figureId": "F4",
+      "legendText": "( a ) SHAPE reactivities for the NL4-3 HIV-1 genomic RNA. Reactivities are shown as the centered 55-nt median window, relative to the global median; regions above or below the line are more flexible or constrained than the median, respectively. Shannon entropy values for 55-nt windows were calculated by considering the pairing probability of a nucleotide over all structures in a 1M7 and differential SHAPE 19 reactivity data-constrained Boltzmann ensemble and reflect how well determined the secondary structure model is for each nucleotide region. Arcs representing base pairs are colored by their respective pairing probabilities, with green arcs indicating highly probable helices. Areas with many overlapping arcs have multiple potential structures. Pseudoknots (PK) are indicated by black arcs. ( b ) RNA regions identified as having biological functions. Brackets enclose well-determined regions and are drawn to emphasize locations of these regions relative to known RNA features in the context of the viral genome. Regions correspond to low SHAPE-low Shannon entropy domains and are extended to include all intersecting helices from the lowest predicted free-energy secondary structure. 5’ and 3’ UTRs are brown; splice acceptors and donors are green and blue, respectively; polypurine tracts are yellow; variable domains are purple; and the frameshift and RRE domains are red. These elements fall within regions with low SHAPE and low Shannon entropy much more frequently than expected by chance ( p = 0.002; see Online Methods). ( c ) Secondary structure models for regions, identified de novo , with low SHAPE reactivities and low Shannon entropies. Nucleotides are colored by SHAPE reactivity and pseudoknotted structures are labeled in blue. Larger figure images, showing nucleotide identities, are provided in Supplementary Fig. 7 ."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about SHAPE-MaP"
+    },
+    {
+      "type": "paragraph",
+      "text": "SHAPE-MaP does not have a clear \"A/C interpretable, G/U not interpretable\" base-target boundary like DMS — its target is the ribose 2′-OH, and in principle every nucleotide has a 2′-OH that can be probed by acylation. So the interpretive gate of SHAPE-MaP is not \"which base can be coloured\", but a multi-level gate oriented towards 2′-OH flexibility/accessibility: the assay chemistry (whether the adduct at this site truly formed and was read as a mutation in MaP), the readout context (whether the mutation rate has had its untreated background subtracted, whether it has been normalised with the denaturing control, and whether the read depth and hit level are sufficient), and the mapping and claim gate (whether the coordinates are reliable and whether it holds under this experimental condition)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Only reactivities that pass all these gates simultaneously can enter the default visualisation and confidence layer. The raw mutation rate itself is only raw provenance: it should be preserved in full, downloadable and traceable, but should not automatically drive the default structure colouring. The default structure figure of ANNOJOIN should read the `visual_colormap_value` after background correction and targetability processing, rather than the bare `raw_numeric_value`. In this way, the colour the reader sees on the structure page is a colour interpretable under the SHAPE-MaP assay model. The requirements of ANNOCONFIDENCE / FEC are higher still: only reactivity observations that pass the chemistry, readout, mapping, claim and context gates may become positive-confidence candidates."
+    },
+    {
+      "type": "paragraph",
+      "text": "This does not weaken SHAPE-MaP, but respects its strengths. SHAPE-MaP is highly powerful for 2′-OH flexibility/accessibility, and because the MaP readout can retain multiple modifications within a single read it supports high-density quantification; the error occurs when \"high reactivity\" is uniformly written as \"unpaired\", \"low reactivity\" uniformly written as \"paired\", or the raw mutation rate written as structural ground truth. Precisely because MaP records modifications as \"mutations\", FoldBridge must all the more separate \"a mutation was measured at a site\" from \"this mutation rate can serve as flexibility evidence\". The default colour on the web page answers \"within the interpretive boundary of SHAPE-MaP, what readable signal does this site carry\"; the detail table answers \"what was recorded in the raw data\". Once these two layers are mixed together, the \"mutation\" recorded by MaP would be read on through as a pairing verdict stamped and approved by SHAPE-MaP."
+    },
+    {
+      "type": "paragraph",
+      "text": "So, for non-specialist readers, the most suitable statement of SHAPE-MaP is \"turning the local flexibility of the 2′-OH into a sequencing-readable accessibility clue\". This statement preserves the power of the method, and also preserves the scientific boundary: it does not write a background mutation as a SHAPE target signal, nor write a normalised reactivity as a pairing verdict."
+    },
+    {
+      "type": "heading",
+      "text": "A real case: how a SHAPE-MaP profile flows through three layers (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so the following is a clearly labelled illustrative scenario, used to explain how the same SHAPE-MaP profile splits into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine a SHAPE-MaP profile measured with the 1M7 reagent entering FoldBridge. The first layer is the raw observation: the per-site mutation rate, the corresponding untreated background and denaturing control, the read depth and hit level, the library metadata and the sequencing coordinates — all preserved as they are, as provenance, downloadable and recomputable. What they record is \"how many mutations were noted at each site\", not yet the flexibility conclusion for this site."
+    },
+    {
+      "type": "paragraph",
+      "text": "The second layer is the visual signal: after the mutation rate has had the untreated background subtracted, been normalised with the denaturing control, and passed the mapping and readout (including read depth/hit level) gate, one obtains a 2′-OH flexibility/accessibility value (`visual_colormap_value`) that can be coloured on the structure page. The colour the reader sees at first glance should come from this layer, because it is a colour interpretable under the SHAPE-MaP assay model, rather than the bare mutation counts."
+    },
+    {
+      "type": "paragraph",
+      "text": "The third layer is the confidence candidate: only those reactivity observations that pass both the chemistry and readout gate, and the mapping/claim/context checks, enter the ANNOCONFIDENCE / FEC evaluation, and they must still carry the qualification that \"high/low reactivity reflects local flexibility, and the pairing interpretation still needs the joint support of entropy, pairing probability and the free-energy model\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "The value of this illustrative scenario lies in landing the characteristic of the MaP readout onto system behaviour: the same SHAPE-MaP profile can simultaneously produce raw observation, visualisation signal and confidence candidate, and the three are not the same thing. That MaP records modifications as sequencing \"mutations\" is itself a reminder — the mutation rate is an observable deliberately manufactured and then processed layer upon layer. If the explainer article cannot separate these three layers, the reader will, following the word \"mutation\", take the background mismatch as a SHAPE signal and the normalised reactivity as a pairing verdict. The more automated the layers, the more clearly the colour and confidence must explain which processing steps each number has been through."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct ending for a SHAPE-MaP article is not \"a high signal proves the base is unpaired\", but rather: SHAPE-MaP can provide powerful 2′-OH flexibility/accessibility clues for RNA structure interpretation; within FoldBridge, such clues become part of the default structural interpretation and confidence only after they have first been preserved as raw provenance and then passed the assay chemistry and readout, mapping, claim, context and other gates."
+    }
+  ]
+}

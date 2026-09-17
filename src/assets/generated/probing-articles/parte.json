@@ -1,0 +1,53 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "parte",
+  "title": "PARTE: Parallel Analysis of RNA structures with Temperature Elevation",
+  "date": "",
+  "figure_count": 3,
+  "rep_pmid": "22981864",
+  "rep_pmcid": "PMC3483374",
+  "rep_doi": "10.1016/j.molcel.2012.08.008",
+  "asset_base": "./src/assets/generated/probing-articles/assets/parte",
+  "key_innovation": "Compared with conventional RNA structure probing approaches that provide static structural snapshots, PARTE introduces temperature-resolved RNase V1 footprinting coupled with deep sequencing, enabling genome-wide measurement of local RNA melting transitions and thermodynamic stability landscapes.",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "How does PARTE measure RNA structural stability across temperatures?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-parte-f1",
+      "alt": "PARTE workflow showing temperature-dependent RNase V1 footprinting and RNA melting transitions",
+      "srcBasename": "parte_f1__PMC3483374__F1.jpg",
+      "legend": "**Figure 1. Principle of PARTE: temperature-dependent RNase V1 footprinting reveals RNA melting transitions.** PARTE uses temperature-dependent RNase V1 cleavage coupled with deep sequencing to determine RNA melting behavior. RNA fragments generated at different temperatures are mapped back to the transcript, where increased RNase V1 cleavage indicates persistent double-stranded regions, whereas loss of cleavage signals reflects structural melting. The resulting nucleotide-resolution melting profiles identify local RNA structural transitions and melting temperatures.",
+      "label": "PARTE F1",
+      "figureId": "F1"
+    },
+    {
+      "type": "heading",
+      "text": "How does PARTE identify local RNA melting transitions?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-parte-f2",
+      "alt": "Temperature-dependent RNase V1 profiles and local RNA melting transition temperatures",
+      "srcBasename": "parte_f2__PMC3483374__F2.jpg",
+      "legend": "**Figure 2. Temperature-dependent RNase V1 profiles define local RNA melting transitions.** PARTE generates RNase V1 cleavage profiles at multiple temperatures, allowing quantitative analysis of structural transitions at individual nucleotides. Temperature-dependent changes in RNase V1 signal reveal when double-stranded regions unfold into flexible single-stranded conformations. Computational analysis identifies transition temperatures for individual nucleotides, generating a transcriptome-wide map of RNA melting temperatures.",
+      "label": "PARTE F2",
+      "figureId": "F2"
+    },
+    {
+      "type": "heading",
+      "text": "Can PARTE distinguish structural stability among different RNA classes?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-parte-f3",
+      "alt": "PARTE thermodynamic stability landscapes of coding and non-coding RNAs",
+      "srcBasename": "parte_f3__PMC3483374__F3.jpg",
+      "legend": "**Figure 3. PARTE reveals distinct thermodynamic landscapes of coding and non-coding RNAs.** Genome-wide PARTE analysis reveals different structural stability profiles among RNA classes. Structured non-coding RNAs display higher melting temperatures than mRNAs, reflecting their conserved structural roles. PARTE therefore provides a quantitative measure of RNA structural stability beyond static secondary structure prediction.",
+      "label": "PARTE F3",
+      "figureId": "F3"
+    }
+  ]
+}

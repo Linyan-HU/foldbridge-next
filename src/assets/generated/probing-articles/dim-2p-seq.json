@@ -1,0 +1,178 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "dim-2p-seq",
+  "title": "DIM-2P-seq: Mapping mRNA 3′-end RNA structures and their regulatory roles in polyadenylation",
+  "date": "",
+  "figure_count": 3,
+  "rep_pmid": "28525757",
+  "rep_pmcid": "PMC5546744",
+  "rep_doi": "10.1016/j.cell.2017.04.036",
+  "asset_base": "./src/assets/generated/probing-articles/assets/dim-2p-seq",
+  "key_innovation": "Compared with conventional DMS probing methods, DIM-2P-seq uses an optimized DMS analogue to quantitatively profile intracellular RNA structures, enabling transcriptome-wide analysis of mRNA 3′-end folding and its functional impact on poly(A)-site selection.",
+  "body_start_heading": "A real example (illustrative)",
+  "ppt_overview": [
+    {
+      "title": "How does DIM-2P-seq measure RNA structures at mRNA 3′ ends?",
+      "srcBasename": "dim2pseq_figure1.png",
+      "alt": "DIM-2P-seq workflow and structural mapping around polyadenylation sites",
+      "captionTitle": "Figure 1. DIM-2P-seq workflow and structural mapping around polyadenylation sites.",
+      "text": "DIM-2P-seq applies intracellular DMS probing to polyadenylated transcripts and detects RNA structural accessibility within mRNA 3′-terminal regions. DMS selectively modifies exposed adenine and cytosine residues, and reverse transcription introduces mutation signatures that are quantified by sequencing. The resulting nucleotide-resolution profiles reveal RNA structural patterns surrounding endogenous poly(A) sites."
+    },
+    {
+      "title": "How does DIM-2P-seq demonstrate that RNA structures regulate poly(A)-site selection?",
+      "srcBasename": "dim2pseq_figure2.png",
+      "alt": "RNA structure controls poly(A)-site selection",
+      "captionTitle": "Figure 2. RNA structure controls poly(A)-site selection.",
+      "text": "DIM-2P-seq-guided analyses identified conserved RNA structures near polyadenylation sites. Mutational perturbation of CENPB 3′-end structures altered poly(A)-site usage, whereas compensatory mutations restoring base pairing rescued processing efficiency. These results establish a causal relationship between RNA folding and 3′-end processing."
+    },
+    {
+      "title": "Can DIM-2P-seq identify functional RNA structures in endogenous transcripts?",
+      "srcBasename": "dim2pseq_figure3.png",
+      "alt": "Functional RNA structures revealed by DIM-2P-seq",
+      "captionTitle": "Figure 3. Functional RNA structures revealed by DIM-2P-seq.",
+      "text": "DIM-2P-seq profiling identified structured regions in endogenous transcripts, including TFE3 and ILVBL 3′-end regions. Mutational analyses confirmed that these structures influence poly(A)-site selection, demonstrating that endogenous RNA folding landscapes contribute to gene regulation."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you look only at the data table, DIM-2P-seq is easily misread as a probe that \"can assign a structural score to every base at the mRNA 3' end\". That reading is wrong. The essence of DIM-2P-seq (Wu & Bartel) is to bring DMS chemical probing into living cells (in vivo), paired with a library strategy aimed specifically at the 3' end region of polyadenylated transcripts, in order to study how mRNA 3' end structure influences cleavage, polyadenylation and stability. What it actually reports is still the chemical accessibility of A and C on their Watson-Crick pairing face: the N1 of A and the N3 of C are more readily methylated when they are not paired, not occluded by a protein or ligand, and not protected by a complex conformation. In other words, what DIM-2P-seq reports first is whether a class of chemical sites is accessible in living cells, not directly whether \"this base is definitely paired\" or \"this base is definitely unpaired\", and still less does it assign an equal structural label to every residue in the 3' end region."
+    },
+    {
+      "type": "paragraph",
+      "text": "This boundary matters greatly for FoldBridge. Because DIM-2P-seq inherits the chemistry of DMS, it follows the same A/C target boundary: when the signal falls on A/C, it reflects the accessibility of the pairing face; G/U were never the principal interpretable objects under this DMS readout in the first place. More importantly, the readout of DIM-2P-seq is also shaped by the 3' end region and library strategy it deals with specifically. It only measures near the 3' end of polyadenylated transcripts, so the coverage of the signal, what it can explain and what it cannot, are all bounded by this 3' end context. FoldBridge can preserve the raw observations and can display experimental signal on its web pages; but as soon as anything enters default structure colouring, interpretive text or ANNOCONFIDENCE / FEC positive confidence, the raw signal must first pass checks on assay chemistry and readout context before it can become a candidate for default colouring or confidence. For DIM-2P-seq, this check likewise begins with `DMS_AC_ONLY`, only with an additional layer of qualification from the 3' end region and library strategy."
+    },
+    {
+      "type": "heading",
+      "text": "3' end structure influences polyadenylation: from distance distributions to library experiments"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-dim-2p-seq-f1",
+      "alt": "DIM-2P-seq F1",
+      "srcBasename": "dim2pseq_f1__PMC5546744__F1.jpg",
+      "legend": "**Figure 1. How structure in the 3' end region influences processing from the PAS to the poly(A) site.** Wu & Bartel 2017 (PMID 28525757, DOI `10.1016/j.cell.2017.04.036`). This figure first tallies the distribution of distances from the canonical PAS (AAUAAA/AUUAAA) to the poly(A) site across human RefSeq mRNAs, and then uses a plasmid library experiment to measure the processing efficiency of a large number of 3' end variants simultaneously: each library member carries two potential poly(A) sites, with the queried 3' end region upstream, one segment of which (in red) is randomised in both base composition and length so that the PAS-to-poly(A)-site distance D spans 5-41 nt; the downstream site is the 3' end of β-globin. The legend plots cleavage efficiency and predicted folding stability against this distance, comparing transcripts cleaved at the query site (cleaved) with those that were not cleaved and instead used the downstream β-globin site (uncleaved).",
+      "body": [
+        "What this figure shows is that the secondary structure of the 3' end region genuinely influences the choice of polyadenylation site, and that explaining this influence clearly requires a library strategy able to sweep across a large number of variants at once. It also signals, in advance, the boundary of what DIM-2P-seq studies: not the whole mRNA, but this short 3' end region between the PAS and the poly(A) site. For FoldBridge, this means that even once in vivo DMS signal is introduced later, every row entering the database must remember which context it came from: the signal is measured around the 3' end processing region and cannot be taken as a general description of the structure of the entire transcript."
+      ],
+      "label": "DIM-2P-seq F1",
+      "pmid": "28525757",
+      "pmcid": "PMC5546744",
+      "doi": "10.1016/j.cell.2017.04.036",
+      "figureId": "F1",
+      "legendText": "(A) The distribution of distances between canonical PASs (AAUAAA/AUUAAA) and poly(A) sites in human RefSeq mRNA annotations with a canonical PAS within their last 100 nt. (B) Schematic of an experiment that simultaneously measured the processing efficiency of many 3′-end variants encoded by a library of plasmids. Each member of the library contained two potential poly(A) sites. The upstream poly(A) site was within the query 3′-end region, which included a segment (red bar) that was randomized (red Ns) with respect to both nucleotide identity and nucleotide number, such that the distance between the query PAS and the poly(A) site ( D ) ranged from 5–41 nt. The downstream poly(A) site was from the β-globin 3′-end region. (C) Relationship between cleavage efficiency and PAS–poly(A) site distance. Plotted are the numbers of reads representing variants with each indicated distance, distinguishing between reads for transcripts processed at the query site (cleaved, red) and those for transcripts that failed to be processed at the query site but were processed at the downstream β-globin site (uncleaved, blue). (D) Relationship between the predicted folding stability differences and PAS–poly(A) site distance. Plotted is the difference of average predicted folding stability (−Δ G ) observed between transcripts processed at the query site (cleaved) and transcripts that failed to be processed at the query site but were processed at the downstream β-globin site (uncleaved). Transcripts with <7 reads were excluded."
+    },
+    {
+      "type": "heading",
+      "text": "Evidence at the prediction level: regions downstream of the PAS favour stable folding"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-dim-2p-seq-f2",
+      "alt": "DIM-2P-seq F2",
+      "srcBasename": "dim2pseq_f2__PMC5546744__F2.jpg",
+      "legend": "**Figure 2. Pairing tendency and folding stability upstream and downstream of the PAS in endogenous mRNAs.** Wu & Bartel 2017 (PMID 28525757, DOI `10.1016/j.cell.2017.04.036`). Using computational prediction, this figure groups endogenous 3' ends by the distance from the PAS to the poly(A) site (10-nt sliding window, 1-nt step) and uses a heatmap to display the mean pairing probability at each position relative to the poly(A) site (position 0); it also compares the difference in folding stability between PAS-downstream sequences, length-matched PAS-upstream sequences and their respective shuffled controls. The legend further gives the proportion of PAS-downstream and PAS-upstream regions that fold significantly more stably than the shuffled control (P<0.05), plotted as a function of the PAS-poly(A) distance; the larger fluctuations at greater distances reflect the smaller number of samples in such regions.",
+      "body": [
+        "This step is an argument purely at the prediction level: it first uses sequence folding prediction to show that the region downstream of the PAS is more inclined to form stable structure, providing a computable piece of corroborating evidence for \"3' end structure influences processing\". It is worth noting that no DMS chemical signal has yet been introduced here: this is an in silico folding tendency, not an in vivo accessibility measurement. For FoldBridge, this is a timely reminder: a predicted pairing probability and an experimentally measured A/C accessibility are two different kinds of evidence, and they should not be conflated in the default layer simply because both point to \"there is structure here\". Prediction can propose hypotheses, but the threshold for entering confidence should be reserved for experimental signal that has passed the assay gate."
+      ],
+      "label": "DIM-2P-seq F2",
+      "pmid": "28525757",
+      "pmcid": "PMC5546744",
+      "doi": "10.1016/j.cell.2017.04.036",
+      "figureId": "F2",
+      "legendText": "(A) Differences in pairing probabilities upstream and downstream of endogenous mRNA PASs. Each row of the heat map shows the mean probabilities (color-coded according to the key) predicted for the group of 3′ ends with similar PAS–poly(A) site distance (10-nt sliding window, 1-nt step), and each column shows the mean probabilities at the indicated position relative to the poly(A) site (position 0). (B) Differences in predicted folding stability observed between PAS-downstream sequences and shuffled sequences (red), and between length-matched PAS-upstream sequences and shuffled sequences (black), plotted with respect to PAS–poly(A) distance. The 3′-end regions were grouped by PAS–poly(A) site distance as in (A). Each color depicts the overlay of 1,000 lines, with each line showing the result of one random shuffling. The increased fluctuation observed at larger distances reflects the fewer regions with larger distances. (C) The fraction of PAS-downstream regions (red) and PAS-upstream regions (black) predicted to be significantly more stably folded ( P <0.05) than shuffled control sequences, plotted as a function of PAS–poly(A) distance. The 3′-end regions were grouped by PAS–poly(A) site distance as in (A)."
+    },
+    {
+      "type": "heading",
+      "text": "DIM-2P-seq itself: in vivo DMS connected to a 3' end library readout"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-dim-2p-seq-f3",
+      "alt": "DIM-2P-seq F3",
+      "srcBasename": "dim2pseq_f3__PMC5546744__F3.jpg",
+      "legend": "**Figure 3. How DIM-2P-seq probes 3' end structure in living cells.** Wu & Bartel 2017 (PMID 28525757, DOI `10.1016/j.cell.2017.04.036`). This figure gives a schematic of the DIM-2P-seq workflow, a method for probing RNA structure in the 3' end region of polyadenylated transcripts within cells, and uses the last 100 nt of the RPS5 mRNA as an example to show the results: the mutation frequency from DIM-2P-seq represents the in-cell DMS accessibility of A and C residues, drawn both as a bar chart and annotated by a colour scale on the predicted secondary structure (this region has coverage of >70,000 reads, with nucleotides upstream and downstream of the PAS motif AAUAAA numbered −1 and +1, respectively). The legend also generates a heatmap in the same way as Figure 2A, except that the values are replaced by the mean DIM-2P-seq mutation frequency of A and C residues.",
+      "body": [
+        "This figure is the core of the whole method, and the place where the chemical boundary most needs to be made explicit. The legend states it plainly: the mutation frequency represents the DMS accessibility of A and C residues, not all bases, but precisely A and C. This is entirely consistent with `DMS_AC_ONLY`: a high mutation frequency on A/C suggests the pairing face is more accessible, and a low frequency may suggest pairing or protection, but both judgements require context; G/U do not provide the same DMS signal under this readout, and they should not be treated as positive evidence for a structural feature simply because the table also contains values for them. At the same time, DIM-2P-seq connects this A/C chemistry into a particular library and readout framework, measuring only in the 3' end region, around the PAS and poly(A) site. So when interpreting that elegant structure-coloured figure for RPS5, FoldBridge must hold two lines at once: chemically, only A/C count; contextually, only the 3' end processing region counts. Treating the coloured figure as \"every base of the entire mRNA has been measured accurately\" crosses both of these boundaries at once."
+      ],
+      "label": "DIM-2P-seq F3",
+      "pmid": "28525757",
+      "pmcid": "PMC5546744",
+      "doi": "10.1016/j.cell.2017.04.036",
+      "figureId": "F3",
+      "legendText": "(A) Schematic of DIM-2P-seq, a method for intracellular probing of RNA structure within 3′-end regions of polyadenylated transcripts. See text for details. (B) Probing results for the last 100 nt of RPS5 mRNA. The DIM-2P-seq mutation frequencies, which represent intracellular DMS accessibility of A and C residues, are plotted in the bar graph and color-coded on the predicted secondary structure, according to the key. DIM-2P-seq coverage for this region was >70,000 reads. The nucleotides immediately upstream and downstream of the AAUAAA PAS motif are numbered −1 and +1, respectively. (C) Differences in intracellular structure-probing results upstream and downstream of endogenous mRNA PASs. The heat map was generated as in Figure 2A , except the values represent the mean DIM-2P-seq mutation frequencies at A and C residues. See also Figure S1 ."
+    },
+    {
+      "type": "heading",
+      "text": "Causal validation at the single-molecule level: mutations and compensatory mutations"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-dim-2p-seq-f4",
+      "alt": "DIM-2P-seq F4",
+      "srcBasename": "dim2pseq_f4__PMC5546744__F4.jpg",
+      "legend": "**Figure 4. The causal influence of the CENPB 3' end stem-loop structure on poly(A) site usage.** Wu & Bartel 2017 (PMID 28525757, DOI `10.1016/j.cell.2017.04.036`). This figure focuses on a conserved stem-loop at the CENPB 3' end: genome browser tracks display the 3P-seq signal, RefSeq annotation and mammalian PhastCons conservation, and positions with multiple covariation supporting pairing are marked on the predicted structure; a plasmid library experiment similar to that in Figure 1B is then used to measure the processing efficiency of a large number of CENPB 3' end variants, giving the relationship between usage and predicted folding stability (−ΔG), and a sequence logo is used to show the effect of single-nucleotide substitutions on poly(A) site usage. The legend also gives an example of a mutant-rescue pair (wild type, the G27C mutant, and the G27C+C7G compensatory mutant), as well as the relative usage of all 48 complementary mutation pairs and 96 non-complementary mutation pairs, marking the pairings that do not match the rescue expectation and their corresponding P values.",
+      "body": [
+        "This figure pushes the evidence from \"correlation\" to \"causation\": the covariation analysis shows that the structure is evolutionarily conserved, while the mutation-compensatory-mutation experiment directly verifies that it is the pairing structure, rather than sequence alone, that regulates poly(A) site usage. It corroborates the earlier in vivo DMS probing: chemical accessibility, computational prediction, covariation conservation and mutant rescue, four kinds of evidence pointing to the same conclusion, but each with its own interpretive boundary. For FoldBridge, this is a good reminder: even when multiple lines of evidence converge, their sources must still be kept distinct when they land in the database. DMS mutation frequency belongs to the layer of A/C accessibility, while covariation and mutant rescue belong to another kind of structural evidence; they can support one another, but they should not be compressed into the same \"score\" in the default layer."
+      ],
+      "label": "DIM-2P-seq F4",
+      "pmid": "28525757",
+      "pmcid": "PMC5546744",
+      "doi": "10.1016/j.cell.2017.04.036",
+      "figureId": "F4",
+      "legendText": "(A) A conserved stem-loop within the CENPB 3′-end region. Genome-browser tracks (top) show 3P-seq signal in HEK293T cells, RefSeq gene annotations, and mammalian PhastCons conservation scores. The secondary structure (bottom) shows the predicted fold of the CENPB segment spanning the PAS and the poly(A) site. Positions with multiple covariations supporting pairing among the aligned mammalian genomes are highlighted, with alternative pairs and their frequencies listed (green). (B) Schematic of an experiment resembling that of Figure 1B , which simultaneously measured the processing efficiency of many CENPB 3′-end variants encoded by a library of plasmids. See also Figure S2 . (C) The relationship between usage and predicted folding stability (−Δ G ) for CENPB 3′-end variants. Plotted are results for all variants with ≥20 reads supporting cleavage at the β-globin poly(A) site in HEK293T cells. (D) The effect of single-nucleotide substitutions on poly(A)-site usage, depicted as a sequence logo. The height of each base was scaled by its usage relative to wild type, and bases were stacked, placing the substitutions with stronger effects closer to the x-axis. The sequence and secondary structure (bracket notation) are shown above. The logo plot was generated by k pLogo ( Wu and Bartel, 2017 ). (E) Example of a mutant–rescue pair. Shown are the predicted secondary structure, predicted Δ G of folding, and relative usage for the wild type, mutant (G27C), and compensatory mutant (G27C+C7G). (F) The relative usage for all 48 mutant–compensatory-mutant pairs (left) and all 96 mutant–noncompensatory-mutant pairs (right) in the library. Pairs with usage values inconsistent with rescue are highlighted (red). Shown at the top are the ratios of rescueinconsistent: rescue-consistent pairs, as well as the P value for observing at least this number of rescue-consistent pairs, estimated from 10 6 shufflings of the usage measurements."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about DIM-2P-seq"
+    },
+    {
+      "type": "paragraph",
+      "text": "DIM-2P-seq is an in vivo DMS method, so it directly inherits the core rule `DMS_AC_ONLY`, only fitted into a 3' end region library readout framework. A/C are targetable bases; G/U/T/unknown are non-target bases. The legend of Figure 3 has already made it clear for us: the mutation frequency of DIM-2P-seq represents the in-cell DMS accessibility of A and C residues. Even where G/U/T/unknown rows carry numbers, they can only be retained as raw provenance, debug information or download-table fields, and should not automatically enter positive confidence simply because they arise in a finely designed 3' end probing experiment."
+    },
+    {
+      "type": "paragraph",
+      "text": "The default structure figure in ANNOJOIN should not read raw values directly, but should first pass them through the `DMS_AC_ONLY` targetability gate: A/C rows enter the default layer and contribute `visual_colormap_value` only after passing, while G/U/T/unknown rows are held out of default colouring. For DIM-2P-seq, one more layer of 3' end context must be added: the colouring value holds only within the actually probed region near the PAS and poly(A) site. Only then is the colour that readers see on the structure page a colour that is interpretable under the in vivo DMS assay model and within the 3' end interpretive range. The requirements of ANNOCONFIDENCE / FEC are higher still: only A/C rows that pass the assay targetability, mapping, claim and context gates may enter the positive confidence candidate set. This chemistry gate is identical to the one in the DMS article; the difference is that DIM-2P-seq has an extra layer of context gate, since its signal is only meaningful in the 3' end processing region. So when interpreting, one must ask both \"is this an A/C?\" and \"does this fall within the 3' end range the method actually probes?\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is not a weakening of DIM-2P-seq. On the contrary, it respects its strengths. DIM-2P-seq strings together in vivo DMS A/C accessibility, library screening, covariation analysis and mutant rescue to explain thoroughly how mRNA 3' end structure influences polyadenylation and stability; the error occurs when this 3'-end-specific strength is extended into \"a uniform reactivity for every base of the entire mRNA\". FoldBridge's task is not to draw every number, but to separate \"there is an observation\" from \"it can be interpreted as structural support\", and to record clearly \"over which region it is interpretable\" along with it."
+    },
+    {
+      "type": "paragraph",
+      "text": "So a DIM-2P-seq technical article should not write only \"the signal is high at a certain site\" or \"the 3' end has strong structure\". A more complete sentence should read: in the in vivo DMS assay of DIM-2P-seq, this A/C site has a relatively high accessibility signal within the mRNA 3' end region; if mapping, coverage, background and 3' end context all pass the checks, this signal can serve as support for structural interpretation. Spelling out the 3' end context condition is wordier, but it avoids reading a regional preference as a per-base pairing call."
+    },
+    {
+      "type": "heading",
+      "text": "A real example (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so what follows is a clearly labelled illustrative scenario, used to show how a single DIM-2P-seq profile separates into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine a DIM-2P-seq profile flowing into FoldBridge: it comes from a round of DMS probing within living cells, covering a number of consecutive sites in an mRNA 3' end region, near the PAS and poly(A) site. In the ANNOJOIN visual track, this profile is naturally split into two classes: sites falling on A/C, and sites falling on G/U/T or at positions that are unresolved. The former are DMS-interpretable targets, the latter are not; and the entire profile itself is also confined to the context of this 3' end region."
+    },
+    {
+      "type": "paragraph",
+      "text": "The conclusion this division gives the reader is very direct: a per-position DIM-2P-seq observation is not equivalent to per-position DMS positive support. For A/C, in vivo DMS can provide a strong accessibility clue; for G/U/T/unknown, the value is first of all raw provenance. Only the former, after passing the mapping and context gates, may enter ANNOCONFIDENCE / FEC positive confidence. Here the context gate must additionally confirm that the site does indeed fall within the 3' end region the method can probe, rather than being extrapolated to the body of the transcript that the method does not cover."
+    },
+    {
+      "type": "paragraph",
+      "text": "If every site on this profile were coloured by its raw value, the page would look fuller, but the interpretation would get worse. Non-target positions should not participate in the default DMS positive signal; rows at unresolved positions cannot pretend to have already been mapped to reliable structural coordinates; and inferences beyond the 3' end probing range should not be mixed in either. Instead, the A/C-targetable layer within the 3' end region is the DIM-2P-seq layer that readers should see first. The remaining rows can still be traced in the details, because they have value for provenance, debugging and reanalysis, but they should not masquerade as the same kind of evidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "When this example lands on actual system behaviour, the same DIM-2P-seq profile derives three different layers: the raw observation layer records \"what the experiment measured\", the visualisation signal layer shows only \"what can be read out under in vivo DMS and within the 3' end interpretive boundary\", and the confidence layer receives only the interpretable evidence that has passed the gates. There are two misreadings most specific to DIM-2P-seq: treating values outside A/C as DMS signal, and extrapolating a readout that covers only the 3' end into a structural description of the entire mRNA. A single profile carries DMS accessibility, folding prediction and covariation evidence at once, and if the automated layer does not separate them, it will magnify both kinds of overreach together: readers would think FoldBridge had vouched for every base of the entire transcript."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct ending for a DIM-2P-seq article is not \"a high signal proves the base is unpaired\", nor \"the 3' end has structure, so the entire mRNA is explained\", but: DIM-2P-seq can, in living cells and for the mRNA 3' end region, provide a powerful A/C accessibility clue for RNA structure interpretation and for the influence of structure on polyadenylation and stability; in FoldBridge, such a clue becomes part of structural interpretation and confidence only after passing `DMS_AC_ONLY` and the subsequent gates (including the 3' end context check)."
+    }
+  ]
+}

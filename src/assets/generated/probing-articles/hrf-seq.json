@@ -1,0 +1,66 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "hrf-seq",
+  "title": "HRF-seq: Sequencing-based mapping of RNA solvent accessibility by hydroxyl radical cleavage",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "24569351",
+  "rep_pmcid": "PMC4005689",
+  "rep_doi": "10.1093/nar/gku167",
+  "asset_base": "./src/assets/generated/probing-articles/assets/hrf-seq",
+  "key_innovation": "Compared with classical hydroxyl radical footprinting, HRF-seq combines hydroxyl radical cleavage chemistry with barcode-based next-generation sequencing, enabling quantitative, nucleotide-resolution profiling of RNA solvent accessibility across structured RNAs.",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "How does HRF-seq convert hydroxyl radical cleavage into sequencing signals?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-hrf-seq-f1",
+      "alt": "Major experimental steps of the HRF-Seq method",
+      "srcBasename": "hrfseq_f1__PMC4005689__F1.jpg",
+      "legend": "**Figure 1. Major experimental steps of the HRF-Seq method.** Following hydroxyl radical probing, primers containing a 5′ Illumina adaptor overhang are extended by reverse transcriptase to positions of radical-induced RNA backbone breaks. Adapters containing a 7-nt barcode are ligated to the 3′ ends of cDNAs, followed by PCR amplification with Illumina-compatible adaptor and index sequences. After size selection, libraries are sequenced using Illumina paired-end sequencing to determine probing and priming positions.",
+      "label": "HRF-seq F1",
+      "figureId": "F1"
+    },
+    {
+      "type": "heading",
+      "text": "How does HRF-seq measure RNA solvent accessibility at nucleotide resolution?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-hrf-seq-f2",
+      "alt": "HRF-Seq analysis of RNase P RNA specificity domain",
+      "srcBasename": "hrfseq_f2__PMC4005689__F2.jpg",
+      "legend": "**Figure 2. HRF-Seq analysis of RNase P RNA specificity domain.** HRF-seq cleavage signals were calculated from reverse transcription termination events and normalized by sequencing coverage. The resulting HRF-seq accessibility profile correlates with ribose accessibility and ribose through-space contacts derived from the RNase P crystal structure, demonstrating that HRF-seq accurately reports RNA solvent exposure.",
+      "label": "HRF-seq F2",
+      "figureId": "F2"
+    },
+    {
+      "type": "heading",
+      "text": "Can HRF-seq profile accessibility landscapes in large structured RNAs?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-hrf-seq-f3",
+      "alt": "HRF-Seq analysis of E. coli 16S rRNA",
+      "srcBasename": "hrfseq_f3__PMC4005689__F3.jpg",
+      "legend": "**Figure 3. HRF-Seq analysis of E. coli 16S rRNA.** HRF-seq signals were mapped across the E. coli 16S rRNA. Sequenced fragments, termination signals, coverage, and termination coverage ratios were used to calculate normalized HRF-seq accessibility profiles. The measured signals showed strong correlation with ribose accessibility calculated from the 16S rRNA crystal structure.",
+      "label": "HRF-seq F3",
+      "figureId": "F3"
+    },
+    {
+      "type": "heading",
+      "text": "How does HRF-seq visualize RNA tertiary solvent accessibility in three dimensions?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-hrf-seq-f4",
+      "alt": "16S rRNA accessibility surface representation of HRF-Seq data",
+      "srcBasename": "hrfseq_f4__PMC4005689__F4.jpg",
+      "legend": "**Figure 4. 16S rRNA accessibility surface representation of HRF-Seq data.** The RNA component of the 16S ribosomal subunit was colored according to ribose accessibility calculated from the crystal structure and normalized HRF-seq signals. The three-dimensional representation demonstrates that HRF-seq accessibility patterns correspond to solvent-exposed RNA surfaces within the ribosome structure.",
+      "label": "HRF-seq F4",
+      "figureId": "F4"
+    }
+  ]
+}

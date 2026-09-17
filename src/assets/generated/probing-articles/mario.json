@@ -1,0 +1,76 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "mario",
+  "title": "MARIO: Global mapping of protein-mediated RNA–RNA interactions in living cells",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "27338251",
+  "rep_pmcid": "",
+  "rep_doi": "10.1038/ncomms12023",
+  "asset_base": "./src/assets/generated/probing-articles/assets/mario",
+  "sibling_navigation": {
+    "previous": {
+      "slug": "ligr-seq",
+      "title": "LIGR-seq"
+    },
+    "next": {
+      "slug": "ric-seq",
+      "title": "RIC-seq"
+    }
+  },
+  "key_innovation": "Compared with RNA duplex mapping methods that directly capture base-paired RNA regions, MARIO uses RNA–protein crosslinking and protein-mediated proximity ligation to identify spatially associated RNAs, enabling transcriptome-wide reconstruction of RNA interaction networks and protein-assisted RNA architectures in living cells.",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "How does MARIO capture RNA–RNA interactions through protein-mediated proximity ligation?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-mario-f1",
+      "alt": "Principle and workflow of MARIO-mediated RNA interaction mapping",
+      "srcBasename": "mario_f1__F1.png",
+      "legend": "**Figure 1. Principle and workflow of MARIO-mediated RNA interaction mapping.** MARIO captures RNA–RNA interactions by crosslinking RNAs with endogenous RNA-binding proteins, fragmenting and biotinylating RNA–protein complexes, immobilizing RNA-binding proteins, and performing proximity ligation between spatially associated RNA fragments. The resulting chimeric RNA molecules are purified and identified by high-throughput sequencing, enabling genome-wide mapping of protein-mediated RNA interaction networks.",
+      "label": "MARIO F1",
+      "figureId": "F1"
+    },
+    {
+      "type": "heading",
+      "text": "How does MARIO reveal global RNA interaction networks?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-mario-f2",
+      "alt": "Transcriptome-wide RNA interaction networks identified by MARIO",
+      "srcBasename": "mario_f2__F2.png",
+      "legend": "**Figure 2. Transcriptome-wide RNA interaction networks identified by MARIO.** MARIO maps extensive RNA–RNA interactions among diverse RNA classes, including mRNAs, long non-coding RNAs, microRNAs, pseudogene transcripts, and antisense RNAs. The resulting interaction network displays scale-free properties and identifies highly connected RNA interaction hubs.",
+      "label": "MARIO F2",
+      "figureId": "F2"
+    },
+    {
+      "type": "heading",
+      "text": "How can MARIO-identified RNA interactions be validated in cells?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-mario-f3",
+      "alt": "Cellular validation of MARIO-detected RNA interactions",
+      "srcBasename": "mario_f3__F3.png",
+      "legend": "**Figure 3. Cellular validation of MARIO-detected RNA interactions.** MARIO-identified RNA interactions are validated by single-molecule RNA fluorescence in situ hybridization, demonstrating spatial co-localization between interacting RNA molecules in living cells.",
+      "label": "MARIO F3",
+      "figureId": "F3"
+    },
+    {
+      "type": "heading",
+      "text": "How does MARIO identify nucleotide-level RNA interaction sites?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-mario-f4",
+      "alt": "Identification and characterization of RNA interaction regions",
+      "srcBasename": "mario_f4__F4.png",
+      "legend": "**Figure 4. Identification and characterization of RNA interaction regions.** MARIO interaction reads define localized RNA contact sites by clustering overlapping chimeric fragments. These interaction regions show favorable RNA–RNA binding energies and evolutionary conservation, supporting their biological relevance.",
+      "label": "MARIO F4",
+      "figureId": "F4"
+    }
+  ]
+}

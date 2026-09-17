@@ -1,0 +1,46 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "keth-seq",
+  "title": "Keth-seq: Sequencing-based mapping of guanine accessibility using N3-kethoxal modification",
+  "date": "",
+  "figure_count": 2,
+  "rep_pmid": "32015521",
+  "rep_pmcid": "PMC7182492",
+  "rep_doi": "10.1038/s41589-019-0459-3",
+  "asset_base": "./src/assets/generated/probing-articles/assets/keth-seq",
+  "sibling_navigation": {
+    "next": {
+      "slug": "edc-probing",
+      "title": "EDC probing"
+    }
+  },
+  "key_innovation": "Compared with conventional nucleotide-specific probing approaches, Keth-seq introduces a sequencing-compatible Kethoxal modification strategy that enables transcriptome-wide mapping of guanine accessibility and RNA structures at single-nucleotide resolution.",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "How does N3-kethoxal selectively label accessible guanine bases?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-keth-seq-f1",
+      "alt": "Principle and validation of N3-kethoxal RNA modification",
+      "srcBasename": "kethseq_f1__PMC7182492__F1.jpg",
+      "legend": "**Figure 1. Principle and validation of N3-kethoxal RNA modification.** N3-kethoxal selectively reacts with exposed guanine bases through modification of the Watson–Crick interface. The azide-functionalized reagent enables bioorthogonal biotinylation and enrichment of modified RNAs, while maintaining rapid cellular permeability and reversible labeling properties. These features establish N3-kethoxal as a suitable chemical probe for transcriptome-wide RNA structure mapping.",
+      "label": "Keth-seq F1",
+      "figureId": "F1"
+    },
+    {
+      "type": "heading",
+      "text": "How does Keth-seq convert guanine modification into transcriptome-wide RNA structural profiles?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-keth-seq-f2",
+      "alt": "Transcriptome-wide RNA structure mapping using Keth-seq",
+      "srcBasename": "kethseq_f2__PMC7182492__F2.jpg",
+      "legend": "**Figure 2. Transcriptome-wide RNA structure mapping using Keth-seq.** Keth-seq combines N3-kethoxal modification with sequencing-based detection of reverse transcription stops. Modified guanine residues generate position-specific RT termination signals, which are normalized against controls to produce nucleotide-resolution structural profiles. The method accurately captures RNA structural features and shows strong agreement with established structure-probing approaches.",
+      "label": "Keth-seq F2",
+      "figureId": "F2"
+    }
+  ]
+}

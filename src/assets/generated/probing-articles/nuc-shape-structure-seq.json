@@ -1,0 +1,159 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "nuc-shape-structure-seq",
+  "title": "Nuc-SHAPE-Structure-Seq: two chemistries in the nucleus that must not be written as the same evidence",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "33397430",
+  "rep_pmcid": "PMC7784297",
+  "rep_doi": "10.1186/s13059-020-02236-4",
+  "asset_base": "./src/assets/generated/probing-articles/assets/nuc-shape-structure-seq",
+  "sibling_navigation": {
+    "next": {
+      "slug": "cotranscriptional-shape-seq",
+      "title": "Cotranscriptional SHAPE-seq"
+    }
+  },
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you look only at the data table, Nuc-SHAPE-Structure-Seq is easily misread as a method that kneads two kinds of chemistry into the same structural evidence. That reading is wrong. Within the cell nucleus this method uses two distinct sets of chemistry at the same time: SHAPE (using the NAI reagent in this work) probes the accessibility of the ribose 2'-OH, that is, the flexibility of the backbone — as long as a nucleotide is in a single-stranded, unpaired, flexible state not locked by conformation or protein, its 2'-OH is more easily modified, and this chemistry applies in principle to all four bases A/U/G/C; the Structure-seq branch follows DMS chemistry, reporting the accessibility of the N1 of A and the N3 of C on the Watson-Crick pairing face, with interpretable signal only for the two base classes A/C. Put differently, SHAPE answers \"is the backbone of this nucleotide flexible\", whereas DMS answers \"is the pairing face of this A/C accessible\". These are two different chemical questions, falling on two different sets of targets, and they cannot be treated as the same evidence merely because they are written into the same method name and the same data table."
+    },
+    {
+      "type": "paragraph",
+      "text": "This boundary matters a great deal for FoldBridge. FoldBridge can preserve the raw observations, and can also display the signal from the experiment on the web page; but the moment it enters the default structure colouring, the explanatory text or ANNOCONFIDENCE / FEC positive confidence, it must first be made clear: which set of chemistry does this number come from, and can it be interpreted as structural support under the corresponding assay model. The SHAPE signal must follow the 2'-OH flexibility target boundary (all four bases are interpretable, but what is read out is flexibility rather than pairing state); the DMS / Structure-seq signal must follow the `DMS_AC_ONLY` A/C target boundary. The two gates must be labelled and judged separately, and a SHAPE flexibility reading and a DMS A/C accessibility reading must never be merged into a single undifferentiated \"structural signal\"."
+    },
+    {
+      "type": "heading",
+      "text": "Nuc-SHAPE-Structure-Seq can accurately probe RNA structure in the living cell nucleus"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-nuc-shape-structure-seq-f1",
+      "alt": "Nuc-SHAPE-Structure-Seq F1",
+      "srcBasename": "nucshapestructureseq_f1__PMC7784297__F1.jpg",
+      "legend": "**Figure 1. Nuc-SHAPE-Structure-Seq can accurately probe the living-cell structure of nuclear RNA.** Liu et al. 2021 (PMID 33397430, DOI `10.1186/s13059-020-02236-4`) first give the method workflow in this figure: NAI is applied directly in Arabidopsis seedlings for in vivo SHAPE treatment, single-stranded nucleotides are modified (asterisks in the figure), and then deep sequencing is carried out and reverse-transcription termination sites are counted; the right side shows the \"deproteinized\" control in which nuclei are first isolated and protein removed before SHAPE. The legend also shows the SHAPE reactivity curves of the U1 and U12 snRNAs: double-stranded regions are marked in grey, Sm protein binding sites are marked in yellow boxes, and at the Sm sites the SHAPE reactivity under the deproteinized condition is significantly higher than under the in vivo condition (paired t-test, P values of 6.8e−3 and 3.1e−6 for U1 and U12 respectively); after colouring by reactivity, the results are consistent with the phylogenetically inferred U1/U12 structures.",
+      "body": [
+        "The first thing this figure conveys is that the credibility of the method comes from consistency with known structures, not from \"it gives every nucleotide a uniform score\". What is read out here is SHAPE 2'-OH flexibility — NAI leaves a modification on flexible, unshielded nucleotides, so the rise in reactivity at the Sm sites after deproteinization reflects the removal of protein protection and the backbone becoming accessible again, rather than a change in the pairing state itself. This is exactly why the SHAPE branch must be labelled on its own: a high signal means the 2'-OH is more accessible and the backbone more flexible, not that the pairing face of some A/C is more accessible.",
+        "Corresponding to the other branch in the method name, the Structure-seq / DMS channel reports entirely different chemical sites: the N1 of A and the N3 of C. Even if both datasets ultimately enter the same profile, FoldBridge must split them across two target boundaries — SHAPE rows interpreted by 2'-OH flexibility, covering all four bases; DMS rows interpreted by `DMS_AC_ONLY`, recognising only A/C. Treating a method validated in the nucleus as \"exempt from inspection\", or colouring the values of the two chemistries mixed in one column, would mislead the reader into thinking they are the same evidence."
+      ],
+      "label": "Nuc-SHAPE-Structure-Seq F1",
+      "pmid": "33397430",
+      "pmcid": "PMC7784297",
+      "doi": "10.1186/s13059-020-02236-4",
+      "figureId": "F1",
+      "legendText": "Nuc-SHAPE-Structure-Seq method can accurately probe the in vivo RNA structure of nuclear RNAs. a Schematic pipeline of Nuc-SHAPE-Structure-Seq for both in vivo and deproteinized conditions. Asterisks, SHAPE modification; blue oval, protein; RT, reverse transcription. For in vivo treatments (left), NAI was applied to Arabidopsis thaliana seedlings directly and single-stranded nucleotides of RNA were modified. SHAPE treatment was also applied on the RNAs after nuclei isolation and protein removal, which we termed the “ deproteinized condition” (right). Deep sequencing was performed followed by the RT-stop counting. b SHAPE reactivity profiles of U1 and U12 snRNAs. SHAPE reactivity profiles of both in vivo (blue) and deproteinized (orange) conditions were shown. Double-stranded regions were shaded with gray. Sm protein binding sites were highlighted with yellow boxes. At Sm protein binding sites, significantly higher SHAPE reactivities were observed under the deproteinized condition rather than the in vivo condition for both U1 and U12 snRNAs (paired t test, P value = 6.8e−3 and 3.1e−6 for U1 and U12 snRNA, respectively). c SHAPE reactivities are consistent with the phylogenetically derived U1 and U12 snRNA structures. Sm protein binding sites were highlighted with black boxes. Nucleotides were color-coded according to in vivo and deproteinized SHAPE reactivity values (SHAPE reactivity 0.6–1.0 marked in red, 0.3–0.6 marked in yellow, 0–0.3 marked in green)"
+    },
+    {
+      "type": "heading",
+      "text": "Nuclear mRNA structure differs from cytoplasmic mRNA: what is read is still SHAPE flexibility"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-nuc-shape-structure-seq-f2",
+      "alt": "Nuc-SHAPE-Structure-Seq F2",
+      "srcBasename": "nucshapestructureseq_f2__PMC7784297__F2.jpg",
+      "legend": "**Figure 2. Nuclear mRNA structure near the translation start and stop sites differs from cytoplasmic mRNA.** Liu et al. 2021 (PMID 33397430, DOI `10.1186/s13059-020-02236-4`) compare in the legend the average SHAPE reactivity of nuclear and cytoplasmic mRNA near the start codon and the stop codon: downstream of the start codon, the average SHAPE reactivity of nuclear mRNA is significantly higher than that of cytoplasmic mRNA (Mann-Whitney test, with the highest and lowest P values among the first ten nucleotides of the CDS marked in the figure); whereas at the stop codon, the SHAPE reactivity of nuclear mRNA is significantly lower than that of cytoplasmic mRNA.",
+      "body": [
+        "Everything this figure compares is SHAPE reactivity, that is, 2'-OH flexibility. So the correct reading is: downstream of the start codon the backbone of nuclear mRNA is more flexible and more accessible, and at the stop codon it is more constrained — this is a difference in backbone flexibility between subcellular compartments, not a direct readout of \"some base-pairing state\". The power of SHAPE lies precisely in its ability to give a flexibility signal for all four bases, so that continuous comparison can be made across regions of varied sequence composition such as the CDS.",
+        "But this is exactly the place where it must be labelled separately from DMS. The high/low of SHAPE reflects 2'-OH accessibility, the high/low of DMS reflects A/C pairing-face accessibility, and even if the two appear to point in the same direction, the type of evidence is different. When FoldBridge writes about such compartmental differences, it should make clear that this is a conclusion of the SHAPE flexibility channel; if there are also DMS / Structure-seq data at the same site, that branch must pass the A/C target gate on its own, and must not borrow the SHAPE curve to vouch for the A/C conclusion of DMS, nor the other way round."
+      ],
+      "label": "Nuc-SHAPE-Structure-Seq F2",
+      "pmid": "33397430",
+      "pmcid": "PMC7784297",
+      "doi": "10.1186/s13059-020-02236-4",
+      "figureId": "F2",
+      "legendText": "In vivo nuclear mRNA structures are different from cytosolic mRNA structures across translation start and stop sites. a Comparison of average SHAPE reactivity profiles between nuclear and cytosolic mRNAs across the translation start codon. Average SHAPE reactivities downstream of the start codon are significantly higher in nuclear mRNAs compared to cytosolic mRNAs (Mann-Whitney test, the highest and lowest P values for the first ten nucleotides of the CDS region are shown). b Comparison of SHAPE reactivity profiles between nuclear and cytosolic mRNAs across the translation stop codon. Average SHAPE reactivities at the stop codon are significantly lower in nuclear mRNAs compared to cytosolic mRNAs (Mann-Whitney test, the P values were shown)"
+    },
+    {
+      "type": "heading",
+      "text": "Structural features upstream of the 5′ splice site and at the branch point: high SHAPE = single-stranded flexibility"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-nuc-shape-structure-seq-f3",
+      "alt": "Nuc-SHAPE-Structure-Seq F3",
+      "srcBasename": "nucshapestructureseq_f3__PMC7784297__F3.jpg",
+      "legend": "**Figure 3. The pre-mRNA secondary-structure features upstream of the 5′ss and at the branch point correlate with splicing and alternative splice-site selection.** Liu et al. 2021 (PMID 33397430, DOI `10.1186/s13059-020-02236-4`) show in the legend the SHAPE reactivity curves spanning the 5′ss, branch point and 3′ss under in vivo (a) and deproteinized (b) conditions, comparing spliced (red) and unspliced (black) events: at the −1, −2 positions of the 5′ss and at the branch point, the SHAPE reactivity of spliced events is significantly higher (asterisk-marked, Mann-Whitney test). For alternative 5′ss (c, d) and alternative 3′ss (e, f) events, the significantly elevated SHAPE reactivity appears only upstream of the major site actually used (major distal or major proximal), at the −1, −2 positions, or at the branch point of the major site, and not at the minor sites, with the legend listing the P values for the corresponding positions.",
+      "body": [
+        "What this figure illustrates is a SHAPE flexibility feature: spliced events have higher SHAPE reactivity at the −1, −2 positions of the 5′ss, meaning the 2'-OH of these two nucleotides is more accessible and more like a single-stranded/flexible state. The reader should understand this as \"the backbone is looser at these two positions and more easily recognised by machinery such as U1\", not \"these two bases must be unpaired\" — SHAPE reports accessibility and flexibility, and equating it directly with the ground truth of pairing would cross the chemical boundary. Both the in vivo and deproteinized conditions show the same pattern, which further indicates that this is a structural feature of the RNA itself rather than purely protein occupancy.",
+        "In the FoldBridge context, this kind of \"single-stranded flexibility\" conclusion must hang under the SHAPE 2'-OH channel, holding for all four bases; it and the DMS reading of A/C pairing-face accessibility are two different things. If the −1, −2 positions happen to be A or C, the DMS channel might give an independent A/C signal, but that line of evidence must pass `DMS_AC_ONLY` and the context gate on its own, and cannot be substituted by the SHAPE curve. Writing the \"high signal\" of the two chemistries together as one sentence \"it is single-stranded here\" would make the downstream unable to tell whether the evidence comes from backbone flexibility or from pairing-face accessibility."
+      ],
+      "label": "Nuc-SHAPE-Structure-Seq F3",
+      "pmid": "33397430",
+      "pmcid": "PMC7784297",
+      "doi": "10.1186/s13059-020-02236-4",
+      "figureId": "F3",
+      "legendText": "pre-mRNA secondary structure features upstream of 5′ss and at the branch site are associated with splicing and alternative splice site selection. a , b SHAPE reactivity profiles across 5′ss, branch point, and 3′ss for in vivo ( a ) and deproteinized ( b ) conditions. Average SHAPE reactivity profiles for spliced (red) versus unspliced (black) events are shown. Significantly higher SHAPE reactivities are observed at the − 1 and − 2 nt positions of 5′ss and the branch site for spliced events rather than unspliced events (marked with asterisks, Mann-Whitney test, P values are shown). c SHAPE reactivity profiles for alternative 5′ss events with the distal 5′ss as the major one. Average SHAPE reactivity profiles of both in vivo (dark blue) and deproteinized (light blue) conditions are shown. Significantly higher SHAPE reactivities only appear at − 1 and − 2 positions upstream of the major distal 5′ss rather than the minor proximal 5′ss (Mann-Whitney test, P value = 1.6e−4 and < 2.2e−16 at − 1 and − 2 positions under in vivo condition; P value = 6.1e−9 and < 2.2e−16 at − 1 and − 2 positions under deproteinized condition). d SHAPE reactivity profiles for alternative 5′ss events with the proximal 5′ss as the major one. The significantly higher SHAPE reactivities of − 1 and − 2 positions only appear upstream of the major proximal 5′ss rather than the minor distal 5′ss (Mann-Whitney test, P value = 3.3e−12 at − 1 position under in vivo condition; no significant difference was detected at − 2 position under in vivo condition; P value = 3.1e−5 and < 2.2e−16 at − 1 and − 2 positions under deproteinized condition). e SHAPE reactivity profiles for alternative 3′ss events with the distal 3′ss as the major one. Average SHAPE reactivity profiles of both in vivo (dark purple) and deproteinized (light purple) conditions across different 3′ss and the corresponding branch points are shown. Significantly higher SHAPE reactivity only appears at the branch site of the major distal 3′ss rather than the minor proximal 3′ss (Mann-Whitney test, P value = 1.2e−3 and 2.8e−4 at branch point under in vivo and deproteinized conditions, respectively). f SHAPE reactivity profiles for alternative 3′ss events with the proximal 3′ss as the major one. The significantly higher SHAPE reactivity only appears at the branch point of the major proximal 3′ss rather than the minor distal 3′ss (Mann-Whitney test, P value = 1.4e−2 and 1.7e−3 at the branch point under in vivo and deproteinized conditions, respectively)"
+    },
+    {
+      "type": "heading",
+      "text": "The −1/−2 single-stranded feature can regulate splicing: from structural signal to functional validation"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-nuc-shape-structure-seq-f4",
+      "alt": "Nuc-SHAPE-Structure-Seq F4",
+      "srcBasename": "nucshapestructureseq_f4__PMC7784297__F4.jpg",
+      "legend": "**Figure 4. The dinucleotide single-stranded structural feature at the −1, −2 positions upstream of the 5′ss can regulate splicing.** Liu et al. 2021 (PMID 33397430, DOI `10.1186/s13059-020-02236-4`) take the first intron of AT5G56870 as an example in the legend: under both the in vivo and deproteinized conditions, the −1, −2 positions upstream of the 5′ss (yellow shading) both show high SHAPE reactivity, consistent with the global curve of spliced events. This is then verified by functional experiments: after inserting a sequence upstream of the U1 binding site so that the entire binding site is fully paired into a stable hairpin, splicing is completely suppressed; while disrupting the pairing state of the −1, −2 positions by an \"AA\" or \"GG\" mutation (Mutation-1) can restore splicing; Mutation-2–10, which disrupt the pairing at other positions of the U1 binding site, all fail to restore splicing. Transient expression in tobacco plus semi-quantitative RT-PCR uses the same pair of primers to distinguish spliced from unspliced products.",
+      "body": [
+        "This figure pushes the SHAPE flexibility signal all the way to functional causality: the high SHAPE reactivity at the −1, −2 positions (highly accessible 2'-OH, indicating single-stranded) is not a bystander correlation, but a structural feature required for splicing — artificially locking these two positions into pairing switches off splicing, and unlocking these two positions alone rescues splicing. This shows that the backbone flexibility reported by SHAPE does, here, correspond to a functionally meaningful single-stranded conformation.",
+        "But even with functional validation, the type of evidence still has to be made clear: the key to rescuing splicing is that the pairing state of the −1, −2 positions is disrupted, and what reads out this state is the SHAPE 2'-OH chemistry, not DMS. For FoldBridge, this means that this SHAPE flexibility feature can be written as strong evidence, but it still hangs under the SHAPE channel; it does not automatically become support for the DMS A/C channel. The two chemistries each report their own sites, and the functional validation strengthens the conclusion of the SHAPE branch, rather than merging the two branches into one."
+      ],
+      "label": "Nuc-SHAPE-Structure-Seq F4",
+      "pmid": "33397430",
+      "pmcid": "PMC7784297",
+      "doi": "10.1186/s13059-020-02236-4",
+      "figureId": "F4",
+      "legendText": "The two-nucleotide single-stranded RNA structure feature at − 1 and − 2 nt positions upstream of 5′ss can regulate splicing. a SHAPE reactivity profiles across 5′ss of the first intron of AT5G56870 . High SHAPE reactivities are observed at − 1 and − 2 nt positions (shaded in yellow) upstream of 5′ss under both in vivo (top) and deproteinized (bottom) conditions, which resemble the global SHAPE reactivity profiles for spliced events. b Schematic of experimental design to validate the effect of single-strandedness at the − 1 and − 2 positions of 5′ss on splicing of the first intron of AT5G56870 . A short sequence (blue) was inserted immediately upstream of the U1 snRNA binding site (red dashed box) to form a stable hairpin structure with the whole U1 binding site completely base-paired. The exon and intron sequences are colored in black and gray, respectively. A series of mutations were introduced at different positions of the inserted sequence to disrupt the base-pairing status of different nucleotides. Two types of mutations (with/without bracket) were designed for each position to avoid potential effects due to changing the sequence content. c , d Determination of splicing events by transient expression assay in Nicotiana benthamiana . The spliced and unspliced products were distinguished by semiquantitative RT-PCR using the same pair of primers located upstream and downstream of the intron. Spliced and unspliced products are indicated by bands with different sizes. The construct with native sequence was successfully spliced (lane 1). Splicing was completely inhibited in the stem design (lane 2). The mutation “AA” or “GG” disrupted the base-pairing status at − 1 and − 2 positions upstream of 5′ss (Mutation-1) and rescued the splicing (lanes 3 and 4). All other mutations (Mutation-2–10) designed to disrupt other base-pairing sites across the U1 binding site did not rescue the splicing (lanes 5–22). Lane 23, the DNA marker"
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about Nuc-SHAPE-Structure-Seq"
+    },
+    {
+      "type": "paragraph",
+      "text": "The core way to write Nuc-SHAPE-Structure-Seq is to maintain the target boundaries of the two chemistries separately, never merging them. The SHAPE channel follows the 2'-OH flexibility boundary: all four bases A/U/G/C are interpretable, but what is read out is backbone accessibility and the degree of single-strandedness/flexibility, not the ground truth of pairing. The DMS / Structure-seq channel follows `DMS_AC_ONLY`: A/C are the targetable bases, reporting N1/N3 pairing-face accessibility; G/U/T/unknown are non-target bases, and even with numbers can only be kept as raw provenance, debug information or download-table fields. The two gates have different target sets and different readout meanings, and must each have their source chemistry labelled and then be judged separately."
+    },
+    {
+      "type": "paragraph",
+      "text": "The default structure figure of ANNOJOIN should read the `visual_colormap_value` that has passed the corresponding targetability mask, rather than reading the raw values directly, and should retain the source mark of \"does this signal come from SHAPE or from DMS\". In this way, the colour the reader sees on the structure page is a colour interpretable under the correct assay model. The requirements of ANNOCONFIDENCE / FEC are higher still: SHAPE rows may enter positive-confidence candidates only after passing the 2'-OH flexibility targetability, mapping, claim and context gates; DMS rows must additionally pass `DMS_AC_ONLY`. A SHAPE flexibility line of evidence and a DMS A/C line of evidence can corroborate each other, but they cannot substitute for one another, and still less be merged into one undifferentiated signal at the confidence layer."
+    },
+    {
+      "type": "paragraph",
+      "text": "This does not weaken the method. On the contrary, it respects its design: it is strong precisely because it obtains two complementary chemical readouts at the same time within the nucleus — SHAPE looks at backbone flexibility and covers all four bases, DMS looks at A/C pairing-face accessibility. The error occurs when these two readouts are written as the same evidence. The task of FoldBridge is not to paint all the numbers in one colour, but to separate \"which signal comes from which chemistry\", \"there is an observed value\" and \"interpretable as structural support\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "So a Nuc-SHAPE-Structure-Seq technology article should not merely write \"the signal at a site is high\". A more complete sentence should read: in the SHAPE channel of Nuc-SHAPE-Structure-Seq, this nucleotide has a relatively high 2'-OH accessibility signal, indicating that the backbone is more flexible and more likely to be single-stranded; if the mapping, coverage, background and context all pass inspection, this SHAPE flexibility signal can serve as support for structural interpretation. And when the conclusion concerns A/C pairing-face accessibility, it must be made clear that this comes from the DMS / Structure-seq channel and passes `DMS_AC_ONLY` separately. Writing it this way is a little more long-winded, but it is scientifically more robust, and better suited to entering FoldBridge's long-term knowledge base."
+    },
+    {
+      "type": "heading",
+      "text": "A real case (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so the following is a clearly labelled illustrative scenario, used to explain how the same Nuc-SHAPE-Structure-Seq profile splits into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine a Nuc-SHAPE-Structure-Seq profile flowing into FoldBridge: it comes from a nuclear experiment, and on the same stretch of RNA there are both NAI SHAPE readings and DMS / Structure-seq readings. In the ANNOJOIN visual track, this profile must first be split into two branches by source chemistry — the SHAPE rows interpreted by 2'-OH flexibility (all four bases readable, but what is read is flexibility), the DMS rows interpreted by `DMS_AC_ONLY` (recognising only A/C pairing-face accessibility); DMS rows falling on G/U/T or on unresolved positions are not interpretable targets."
+    },
+    {
+      "type": "paragraph",
+      "text": "The conclusion this division gives the reader is very direct: a per-position observed value does not equal per-position structural support, and support from different chemistries cannot be lumped together. SHAPE can provide strong backbone flexibility clues in the living nucleus, and DMS can provide A/C pairing-face accessibility clues, but each holds only within its own target boundary; the DMS values of G/U/T/unknown are first of all raw provenance. Only after passing their respective mapping and context gates can the corresponding rows possibly enter ANNOCONFIDENCE / FEC positive confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "The value of this case lies in carrying the source mark of the two chemistries all the way through the three layers: the same profile can simultaneously produce raw observation, visualisation signal and confidence candidate, but each layer must remember \"does this row come from SHAPE or DMS\". The raw-observation layer records \"what each of the two chemistries measured\", the visualisation-signal layer only shows \"what can be read out within each assay's interpretive boundary, with the source chemistry labelled\", and the confidence layer only accepts interpretable evidence that has passed the corresponding gates. Merging the 2'-OH flexibility of SHAPE and the A/C accessibility of DMS into one undifferentiated curve, the most dangerous consequence is not a vague \"wrong colour\", but that the reader takes backbone flexibility for pairing-face accessibility, or the other way round — especially when a single site carries both sets of values and the automated layer lets this mix-up spread across the whole nuclear structure figure."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct ending for a Nuc-SHAPE-Structure-Seq article is not \"a high signal proves the base is unpaired\", and not \"both chemistries measured it so it counts as double confirmation\", but rather: this method can simultaneously provide the 2'-OH flexibility clues of SHAPE and the A/C accessibility clues of DMS in the living cell nucleus; within FoldBridge, these two kinds of clue each become part of structural interpretation and confidence only after they have passed their own target boundary (SHAPE through the 2'-OH flexibility gate, DMS through `DMS_AC_ONLY`) and the subsequent gates — they can corroborate each other, but they are forever two kinds of evidence."
+    }
+  ]
+}

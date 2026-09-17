@@ -1,0 +1,50 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "edc-probing",
+  "title": "EDC probing: In-cell mapping of G and U base-pairing interactions",
+  "date": "",
+  "figure_count": 2,
+  "rep_pmid": "30389828",
+  "rep_pmcid": "",
+  "rep_doi": "10.1261/rna.067561.118",
+  "asset_base": "./src/assets/generated/probing-articles/assets/edc-probing",
+  "sibling_navigation": {
+    "previous": {
+      "slug": "keth-seq",
+      "title": "Keth-seq"
+    },
+    "next": {
+      "slug": "laser-seq",
+      "title": "LASER-seq"
+    }
+  },
+  "key_innovation": "Compared with DMS, which primarily interrogates adenine and cytosine, EDC expands nucleotide-specific probing to guanine and uracil residues and enables analysis of RNA base-pairing states in living cells.",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "How does EDC enable G/U-specific RNA structure probing inside cells?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-edc-probing-f1",
+      "alt": "Development of EDC as an in-cell RNA structure probe",
+      "srcBasename": "edcprobing_f1__PMC6098520__F1.png",
+      "legend": "**Figure 1. Development of EDC as an in-cell RNA structure probe.** EDC is a membrane-permeable carbodiimide reagent that selectively modifies accessible guanine and uracil residues. Following reverse transcription, modification sites are detected to generate nucleotide-resolution RNA structure profiles. This approach extends chemical probing beyond DMS-accessible adenine and cytosine residues.",
+      "label": "EDC probing F1",
+      "figureId": "F1"
+    },
+    {
+      "type": "heading",
+      "text": "How can EDC complement DMS to improve RNA structure determination?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-edc-probing-f2",
+      "alt": "Combining EDC and DMS reveals complementary RNA structural information",
+      "srcBasename": "edcprobing_f2__PMC6098520__F2.png",
+      "legend": "**Figure 2. Combining EDC and DMS reveals complementary RNA structural information.** EDC and DMS provide complementary nucleotide-specific information by interrogating different Watson–Crick faces. Integration of both datasets improves secondary structure modeling of cellular RNAs, including structured regions within long noncoding RNAs.",
+      "label": "EDC probing F2",
+      "figureId": "F2"
+    }
+  ]
+}

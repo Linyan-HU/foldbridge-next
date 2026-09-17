@@ -1,0 +1,50 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "ligr-seq",
+  "title": "LIGR-seq: Ligation-based RNA–RNA interaction mapping by in vivo crosslinking and proximity ligation",
+  "date": "",
+  "figure_count": 2,
+  "rep_pmid": "27184080",
+  "rep_pmcid": "",
+  "rep_doi": "10.1016/j.molcel.2016.04.030",
+  "asset_base": "./src/assets/generated/probing-articles/assets/ligr-seq",
+  "sibling_navigation": {
+    "previous": {
+      "slug": "splash",
+      "title": "SPLASH"
+    },
+    "next": {
+      "slug": "mario",
+      "title": "MARIO"
+    }
+  },
+  "key_innovation": "Compared with conventional RNA–RNA interaction mapping approaches, LIGR-seq introduces in vivo psoralen-mediated crosslinking combined with proximity ligation and strand-specific sequencing, enabling transcriptome-wide identification of RNA duplexes and intermolecular RNA–RNA interactions with nucleotide-level resolution in living cells.",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "How does LIGR-seq capture RNA–RNA interactions through psoralen crosslinking and proximity ligation?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-ligr-seq-f1",
+      "alt": "Overview of the LIGR-seq strategy for transcriptome-wide RNA–RNA interaction mapping",
+      "srcBasename": "ligrseq_f1__F1.png",
+      "legend": "**Figure 1. Overview of the LIGR-seq strategy for transcriptome-wide RNA–RNA interaction mapping.** LIGR-seq uses AMT-mediated psoralen crosslinking to stabilize RNA duplexes in living cells, followed by RNA fragmentation, proximity ligation, crosslink enrichment, and high-throughput sequencing. The resulting chimeric reads are computationally analyzed to identify significant RNA–RNA interactions and reconstruct cellular RNA interaction networks.",
+      "label": "LIGR-seq F1",
+      "figureId": "F1"
+    },
+    {
+      "type": "heading",
+      "text": "Can LIGR-seq identify known RNA duplex structures in living cells?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-ligr-seq-f2",
+      "alt": "Validation of LIGR-seq by detecting established RNA–RNA interactions",
+      "srcBasename": "ligrseq_f2__F2.png",
+      "legend": "**Figure 2. Validation of LIGR-seq by detecting established RNA–RNA interactions.** LIGR-seq recovers known spliceosomal snRNA interactions, including U2–U6 and U4–U6 RNA duplexes, demonstrating its ability to capture endogenous RNA helices and intermolecular RNA contacts in vivo.",
+      "label": "LIGR-seq F2",
+      "figureId": "F2"
+    }
+  ]
+}

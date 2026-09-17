@@ -1,0 +1,91 @@
+{
+  "schema_version": "about.v1",
+  "hero": {
+    "title": "FoldBridge",
+    "summary": "A curated database linking RNA chemical-probing data to experimentally resolved tertiary structures."
+  },
+  "sections": [
+    {
+      "id": "data-sources",
+      "title": "Data sources",
+      "kind": "cards",
+      "items": [
+        { "name": "RMDB", "body": "Community-deposited RNA chemical-probing reactivity profiles." },
+        { "name": "RASP", "body": "RNA structure-probing cases linking probing-derived sequences to PDB hits." },
+        { "name": "PDB", "body": "Experimentally resolved tertiary structures used as structural ground truth." }
+      ]
+    },
+    {
+      "id": "data-collection",
+      "title": "Data collection and alignment",
+      "kind": "prose",
+      "body": "FoldBridge combines per-residue chemical-probing data from RMDB / RASP with experimentally resolved PDB chains. Each probing sequence is aligned to its corresponding chain, and only residues with resolved structural coordinates enter confidence scoring. Records without a usable mapping or signal are flagged or excluded rather than force-scored."
+    },
+    {
+      "id": "structure-truth",
+      "title": "Structural ground truth",
+      "kind": "table",
+      "items": [
+        { "term": "Paired state (paired / unpaired)", "body": "Parsed from the chain's dot-bracket secondary-structure annotation and aligned to PDB coordinates." },
+        { "term": "Solvent-accessible surface area (SASA)", "body": "Computed per residue on the mmCIF structure with the Shrake-Rupley algorithm; author and label residue numbering are reconciled before joining." },
+        { "term": "Spatial contact", "body": "Determined from inter-residue atom distances and used as ground truth for contact-based methods." }
+      ]
+    },
+    {
+      "id": "pipeline",
+      "title": "ANNOJOIN pipeline",
+      "kind": "pipeline",
+      "steps": ["probing data", "sequence match", "PDB entry", "confidence scoring", "structure-linked record"]
+    },
+    {
+      "id": "confidence-overview",
+      "title": "Confidence labels",
+      "kind": "prose",
+      "body": "A confidence label combines a measurement family with a calibrated recall tier. The family names the physical quantity measured; it is not a quality grade. The tier states how reliably the evidence recovers the deposited structure after quality gates and a permutation test."
+    },
+    {
+      "id": "confidence-families",
+      "title": "Measurement families",
+      "kind": "table",
+      "items": [
+        { "term": "A — base-specific chemistry", "body": "Reagents that hit the Watson-Crick face of specific bases (DMS, CMCT, Keth-seq). Statistic auc_unpaired_vs_paired, positive class = unpaired: high signal means that base is unpaired." },
+        { "term": "B — backbone flexibility", "body": "SHAPE reagents that report 2′-OH flexibility on any of the four bases. Same statistic as A (auc_unpaired_vs_paired), positive class = unpaired: high signal means a flexible, likely unpaired residue." },
+        { "term": "C — enzymatic (direction reversed)", "body": "Nucleases such as PARS / PARTE cleave paired stems, so the logic is reversed. Statistic auc_paired_vs_unpaired (= 1 − AUC), positive class = paired: high signal means paired." },
+        { "term": "D — solvent accessibility", "body": "Hydroxyl-radical and related probes (RL-Seq, HRF, Lead-seq, icLASER) report how exposed the backbone is. Statistic Spearman(reactivity, SASA): more signal should track more exposed surface. When SASA is missing it falls back to an AUC proxy (flagged PAIRING_PROXY_FALLBACK, and a hard cap keeps it out of STRONG)." },
+        { "term": "E — spatial contacts", "body": "Methods (MCA / MOHCA) that report which residue pairs sit close together in 3D. Statistic contact_pair_auc: near equals a hit." },
+        { "term": "F — base-pair sets", "body": "Mutate-and-map approaches that infer an entire set of base pairs, scored against the reference pair set. Statistic pair-set F1 (precision / recall / F1)." }
+      ]
+    },
+    {
+      "id": "confidence-computation",
+      "title": "LSS confidence calculation",
+      "kind": "prose",
+      "body": "LSS (Local Structure-Signal Support) is calculated for each (profile, PDB entry, chain) segment. It asks whether probing values agree with the paired/unpaired or geometric state in the deposited structure. A segment needs at least 15 evaluable residues, including 5 paired and 5 unpaired; otherwise it is UNDERPOWERED."
+    },
+    {
+      "id": "confidence-calibration",
+      "title": "Tier calibration",
+      "kind": "prose",
+      "body": "Every valid segment is compared with shuffled structure labels to estimate an empirical p-value. STRONG requires p ≤ 0.05, AUC ≥ 0.70, at least 20 evaluable residues, self-containment ≥ 0.70 and conflict ≤ 0.25. MODERATE uses relaxed gates; evidence that does not beat chance is NOT_SUPPORTED."
+    },
+    {
+      "id": "confidence-tiers",
+      "title": "Recall tiers",
+      "kind": "table",
+      "items": [
+        { "term": "STRONG", "body": "Permutation-calibrated and satisfying every STRONG gate (p ≤ 0.05, AUC ≥ 0.70, n ≥ 20, self-containment ≥ 0.70, low conflict). The evidence strongly supports the structure." },
+        { "term": "MODERATE", "body": "Satisfies the relaxed gates (p ≤ 0.10, AUC ≥ 0.65, self-containment ≥ 0.50). The evidence supports the structure reasonably well. When uncalibrated it appears as MODERATE_CANDIDATE." },
+        { "term": "WEAK", "body": "AUC clears the bar but the secondary gates (self-containment / conflict / sample size) do not; flagged auc_supported_but_not_self_contained." },
+        { "term": "DISCORDANT", "body": "The directional metric falls into the conflict band, or the conflict fraction is too high — the probing signal disagrees in direction with the structural truth and needs review." },
+        { "term": "UNDERPOWERED", "body": "Fails the evaluability gates (n_eval < 15, or fewer than 5 paired or unpaired). Too little data to draw a conclusion." },
+        { "term": "NOT_SUPPORTED", "body": "Not significant under the permutation test (p > 0.10): even a high-looking AUC is no better than chance once the labels are shuffled." }
+      ]
+    },
+    {
+      "id": "thresholds",
+      "title": "Thresholds",
+      "kind": "prose",
+      "body": "Most A/B/C cut-points (0.70 / 0.65 / 0.55) are operating values, not published thresholds. Only the RL-Seq Spearman cut-points (0.50 / 0.40 / 0.30) are literature-set. The registry labels each technology's threshold basis so values still awaiting calibration remain explicit."
+    }
+  ]
+}

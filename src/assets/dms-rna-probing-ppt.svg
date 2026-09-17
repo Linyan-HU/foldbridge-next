@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">DMS RNA structure probing schematic</title>
+  <desc id="desc">An original Chinese infographic explaining how dimethyl sulfate marks exposed unpaired adenine and cytosine in RNA and how the modifications are detected by reverse transcription and sequencing.</desc>
+  <defs>
+    <linearGradient id="hero" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0D3655"/>
+      <stop offset="1" stop-color="#155F7A"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#123047" flood-opacity=".14"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#ED7A39"/>
+    </marker>
+    <style>
+      .sans { font-family: Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+      .title { font: 700 58px Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #FFFFFF; }
+      .subtitle { font: 400 24px Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #D9EFF7; }
+      .step { font: 700 22px Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #155F7A; letter-spacing: 1px; }
+      .card-title { font: 700 31px Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #123047; }
+      .body { font: 400 22px Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #3D5361; }
+      .small { font: 400 18px Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #587180; }
+      .chem { font: 600 28px Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #233B4A; }
+      .base { font: 700 23px Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #FFFFFF; text-anchor: middle; dominant-baseline: middle; }
+      .pill { font: 700 19px Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif; fill: #155F7A; text-anchor: middle; dominant-baseline: middle; }
+    </style>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#F7FBFC"/>
+  <rect x="0" y="0" width="1920" height="196" fill="url(#hero)"/>
+  <circle cx="1770" cy="-46" r="220" fill="#2A92A0" opacity=".25"/>
+  <circle cx="1635" cy="174" r="95" fill="#F0B04F" opacity=".20"/>
+  <text x="110" y="93" class="title">DMS RNA 结构探测原理</text>
+  <text x="112" y="140" class="subtitle">Dimethyl sulfate selectively marks exposed, unpaired A and C bases</text>
+
+  <!-- Cards -->
+  <rect x="95" y="266" width="475" height="605" rx="28" fill="#FFFFFF" filter="url(#shadow)"/>
+  <rect x="723" y="266" width="475" height="605" rx="28" fill="#FFFFFF" filter="url(#shadow)"/>
+  <rect x="1351" y="266" width="475" height="605" rx="28" fill="#FFFFFF" filter="url(#shadow)"/>
+
+  <!-- Step 1 -->
+  <circle cx="143" cy="318" r="25" fill="#DFF3F3"/>
+  <text x="143" y="319" class="pill">1</text>
+  <text x="184" y="326" class="step">加入探针</text>
+  <text x="135" y="389" class="card-title">DMS（dimethyl sulfate）</text>
+  <text x="135" y="425" class="body">二甲基硫酸酯：甲基供体</text>
+
+  <!-- DMS molecular formula -->
+  <rect x="135" y="468" width="394" height="205" rx="18" fill="#FFF8EC" stroke="#F3D29A" stroke-width="2"/>
+  <text x="170" y="579" class="chem">CH₃</text>
+  <line x1="244" y1="570" x2="286" y2="570" stroke="#394F5D" stroke-width="5" stroke-linecap="round"/>
+  <text x="296" y="579" class="chem">O</text>
+  <line x1="319" y1="570" x2="355" y2="570" stroke="#394F5D" stroke-width="5" stroke-linecap="round"/>
+  <text x="367" y="579" class="chem" fill="#DD6D34">S</text>
+  <line x1="389" y1="570" x2="425" y2="570" stroke="#394F5D" stroke-width="5" stroke-linecap="round"/>
+  <text x="435" y="579" class="chem">O</text>
+  <line x1="458" y1="570" x2="493" y2="570" stroke="#394F5D" stroke-width="5" stroke-linecap="round"/>
+  <text x="501" y="579" class="chem">CH₃</text>
+  <line x1="378" y1="548" x2="378" y2="510" stroke="#394F5D" stroke-width="4"/>
+  <line x1="387" y1="548" x2="387" y2="510" stroke="#394F5D" stroke-width="4"/>
+  <text x="371" y="499" class="chem">O</text>
+  <line x1="378" y1="594" x2="378" y2="631" stroke="#394F5D" stroke-width="4"/>
+  <line x1="387" y1="594" x2="387" y2="631" stroke="#394F5D" stroke-width="4"/>
+  <text x="371" y="662" class="chem">O</text>
+  <text x="331" y="720" class="small">(CH₃O)₂SO₂</text>
+  <rect x="135" y="760" width="394" height="61" rx="30" fill="#FFF0DE"/>
+  <text x="332" y="790" class="pill" fill="#B95726">转移 —CH₃（甲基）</text>
+
+  <!-- Step 2 -->
+  <circle cx="771" cy="318" r="25" fill="#DFF3F3"/>
+  <text x="771" y="319" class="pill">2</text>
+  <text x="812" y="326" class="step">标记 RNA 可及位点</text>
+  <text x="763" y="389" class="card-title">只有暴露、未配对的碱基</text>
+  <text x="763" y="425" class="body">更容易被 DMS 甲基化</text>
+
+  <!-- RNA hairpin -->
+  <path d="M835 745 L835 605 C835 536 877 502 930 502 C983 502 1025 536 1025 605 L1025 745" fill="none" stroke="#75B6C3" stroke-width="14" stroke-linecap="round"/>
+  <path d="M870 745 L870 608 C870 563 894 540 930 540 C966 540 990 563 990 608 L990 745" fill="none" stroke="#B7DAE0" stroke-width="8" stroke-linecap="round"/>
+  <!-- paired stem bases -->
+  <g>
+    <circle cx="835" cy="727" r="22" fill="#155F7A"/><text x="835" y="727" class="base">G</text>
+    <circle cx="1025" cy="727" r="22" fill="#4E88A5"/><text x="1025" y="727" class="base">C</text>
+    <line x1="861" y1="727" x2="999" y2="727" stroke="#B7C9D1" stroke-width="3" stroke-dasharray="5 5"/>
+    <circle cx="835" cy="672" r="22" fill="#4E88A5"/><text x="835" y="672" class="base">C</text>
+    <circle cx="1025" cy="672" r="22" fill="#155F7A"/><text x="1025" y="672" class="base">G</text>
+    <line x1="861" y1="672" x2="999" y2="672" stroke="#B7C9D1" stroke-width="3" stroke-dasharray="5 5"/>
+    <circle cx="835" cy="617" r="22" fill="#4E88A5"/><text x="835" y="617" class="base">U</text>
+    <circle cx="1025" cy="617" r="22" fill="#155F7A"/><text x="1025" y="617" class="base">A</text>
+    <line x1="861" y1="617" x2="999" y2="617" stroke="#B7C9D1" stroke-width="3" stroke-dasharray="5 5"/>
+  </g>
+  <!-- exposed loop bases -->
+  <circle cx="880" cy="520" r="30" fill="#ED7A39"/><text x="880" y="520" class="base" font-size="26">A</text>
+  <circle cx="980" cy="520" r="30" fill="#ED7A39"/><text x="980" y="520" class="base" font-size="26">C</text>
+  <path d="M862 493 C879 471 900 461 926 461" fill="none" stroke="#ED7A39" stroke-width="3"/>
+  <path d="M998 493 C981 471 960 461 934 461" fill="none" stroke="#ED7A39" stroke-width="3"/>
+  <rect x="770" y="781" width="377" height="50" rx="25" fill="#FFF0DE"/>
+  <text x="958" y="806" class="pill" fill="#B95726">橙色：DMS 高反应性 / 未配对</text>
+  <text x="778" y="857" class="small">蓝色碱基被配对或结构保护，反应性较低</text>
+
+  <!-- Step 3 -->
+  <circle cx="1399" cy="318" r="25" fill="#DFF3F3"/>
+  <text x="1399" y="319" class="pill">3</text>
+  <text x="1440" y="326" class="step">读取与定位</text>
+  <text x="1391" y="389" class="card-title">DMS 加入甲基后</text>
+  <text x="1391" y="425" class="body">逆转录（RT）出现停顿或突变</text>
+  <rect x="1391" y="473" width="175" height="103" rx="18" fill="#FFF0DE"/>
+  <text x="1422" y="517" class="chem" fill="#B95726">A</text>
+  <text x="1465" y="517" class="body">→ m¹A</text>
+  <text x="1422" y="552" class="small">N1 甲基化</text>
+  <rect x="1590" y="473" width="175" height="103" rx="18" fill="#FFF0DE"/>
+  <text x="1620" y="517" class="chem" fill="#B95726">C</text>
+  <text x="1663" y="517" class="body">→ m³C</text>
+  <text x="1620" y="552" class="small">N3 甲基化</text>
+  <path d="M1430 659 H1725" stroke="#9DC8D0" stroke-width="12" stroke-linecap="round"/>
+  <path d="M1430 692 H1685" stroke="#C9E2E6" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="1560" cy="659" r="18" fill="#ED7A39"/>
+  <path d="M1560 627 V598" stroke="#ED7A39" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="1430" y="741" class="body">RT stop / mutation</text>
+  <path d="M1490 774 H1700" stroke="#ED7A39" stroke-width="5" marker-end="url(#arrow)"/>
+  <text x="1430" y="827" class="card-title" font-size="27">测序 → RNA 可及性图谱</text>
+
+  <!-- connectors -->
+  <path d="M593 569 H692" fill="none" stroke="#ED7A39" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <text x="605" y="539" class="small" fill="#B95726">DMS 处理</text>
+  <path d="M1221 569 H1320" fill="none" stroke="#ED7A39" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <text x="1230" y="539" class="small" fill="#B95726">甲基化</text>
+
+  <!-- Bottom takeaway -->
+  <rect x="95" y="932" width="1731" height="92" rx="24" fill="#E5F4F5"/>
+  <circle cx="151" cy="978" r="24" fill="#155F7A"/>
+  <text x="151" y="978" class="base">!</text>
+  <text x="199" y="973" class="body" font-weight="700">结论：</text>
+  <text x="286" y="973" class="body">DMS 信号高通常表示 A/C 碱基更暴露、较少参与 Watson–Crick 配对；信号低则可能代表碱基配对或被蛋白质保护。</text>
+  <text x="199" y="1007" class="small">注：此图为原创教学示意，适合在 PPT 中解释 DMS footprinting、DMS-seq 或 Structure-seq 的基本原理。</text>
+</svg>

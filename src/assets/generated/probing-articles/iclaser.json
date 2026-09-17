@@ -1,0 +1,159 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "iclaser",
+  "title": "icLASER: reading the solvent accessibility of purine C8 in living cells",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "34634799",
+  "rep_pmcid": "PMC8599799",
+  "rep_doi": "10.1093/nar/gkab885",
+  "asset_base": "./src/assets/generated/probing-articles/assets/iclaser",
+  "sibling_navigation": {
+    "previous": {
+      "slug": "cotranscriptional-shape-seq",
+      "title": "Cotranscriptional SHAPE-seq"
+    }
+  },
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you only look at the data table, icLASER is easily mistaken for yet another equivalent of SHAPE or DMS, as if it too were reading the base-pairing face and could be merged directly with their values. That understanding is wrong. icLASER (in-cell Light Activated Structural Examination of RNA) does not annotate each residue as paired or unpaired; instead it uses a LASER-driven photocatalytic reaction to perform acylation (C8 amidation) at the C8 position of solvent-accessible purines in living cells, and then reads this out by RT-stop sequencing. In other words, what it reports is \"whether the C8 of this purine is solvent-accessible inside the cell\", and this is a different chemical target from the 2′-OH probed by SHAPE or the Watson-Crick pairing face probed by DMS."
+    },
+    {
+      "type": "paragraph",
+      "text": "This boundary is crucial for FoldBridge. icLASER's purine-C8 accessibility is its own assay model: the raw RT-stop signal can be stored and can be displayed on a web page, but the moment it enters the default structure colouring, the explanatory text or the confidence layer, one specific question must be asked first — can this number, under icLASER's chemistry targetability and readout context, be interpreted as icLASER support? Precisely for this reason, FoldBridge must not merge icLASER's signal directly with the signals of SHAPE or DMS as though they were equivalent; their in-cell-plus-sequencing frameworks are similar, but their chemical targets differ."
+    },
+    {
+      "type": "heading",
+      "text": "icLASER and icSHAPE: the same framework, different chemical targets"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-iclaser-f1",
+      "alt": "icLASER F1",
+      "srcBasename": "iclaser_f1__F1.jpg",
+      "legend": "**Figure 1. The juxtaposed workflow of icLASER and icSHAPE.** Wolf et al. 2021 (PMID 34634799, DOI `10.1093/nar/gkab885`) place icSHAPE and icLASER side by side in the same schematic for comparison: (A) the chemical treatment workflow of each; (B) the way both can be integrated into the same transcriptome-wide library preparation method; (C) the structure of the dibenzylcyclooctyne biotin (DBCO biotin) used for the copper-free \"click\" reaction; (D) the final product structure of the azido-modified structure probe with DBCO biotin. The key point conveyed by the legend is that the readout workflows of icLASER and icSHAPE are highly similar, but their chemical targets differ — icLASER hits the purine C8, whereas icSHAPE hits the 2′-OH.",
+      "body": [
+        "This figure highlights one thing: icLASER and icSHAPE share the overall framework of in-cell treatment plus sequencing library preparation, so their data tables may look very similar. But a similar workflow does not amount to the same chemical meaning. icLASER reports the solvent accessibility of purine C8, whereas icSHAPE reports the flexibility of the 2′-OH. The two are complementary, but not equivalent.",
+        "For FoldBridge, this is precisely why the two sets of signal cannot be silently merged. Even if icLASER and icSHAPE follow the same library preparation workflow and produce values in similar formats, the chemistry targetability behind them is not the same. Mixing icLASER's C8 signal and icSHAPE's 2′-OH signal into the same default layer amounts to erasing the most critical interpretive premise of all — \"which class of chemical site is this number asking about\"."
+      ],
+      "label": "icLASER F1",
+      "pmid": "34634799",
+      "pmcid": "PMC8599799",
+      "doi": "10.1093/nar/gkab885",
+      "figureId": "F1",
+      "legendText": "Schematic for icSHAPE and icLASER. ( A ) Chemical protocol for icSHAPE ( 10 ) and icLASER. ( B ) Protocol for library preparation for icSHAPE and icLASER, which could be integrated in the same protocol method for RNA structure probing, transcriptome-wide. ( C ) Chemical structure of dibenzylcyclooctyne biotin (DBCO biotin) used for copper-free ‘click’ reaction with azido-modified structure probes. ( D ) Chemical structure of the final product between azido-modified structure probes and DBCO biotin."
+    },
+    {
+      "type": "heading",
+      "text": "A bifunctional probe: amidation at purine C8"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-iclaser-f2",
+      "alt": "icLASER F2",
+      "srcBasename": "iclaser_f2__F2.jpg",
+      "legend": "**Figure 2. icLASER's bifunctional probe and the C8 amidation chemistry.** Wolf et al. 2021 (PMID 34634799, DOI `10.1093/nar/gkab885`) present the bi-functional probe developed for icLASER: (A) a schematic of the LASER reaction, which uses NAz to complete amidation at the purine C8; (B) the synthetic route to the probe NAz-N₃; (C) the structures of NAz-N₃ and the control probes, used for UV-VIS spectroscopy and photoactivation analysis; (D, E) the UV-VIS spectra of these compounds and the long wavelength used for the photoactivation of NAz-N₃; (F) a streptavidin-HRP dot blot of NAz-N₃-modified RNA, in which RNA was incubated with NAz-N₃ under long-wavelength UV, then precipitated, ligated to biotin via SPAAC, and finally blotted; (G, H) denaturing gel electrophoresis and the integrated signal of the modified SAM-I control RNA, where the enriched cDNA stops correspond to NAz-N₃ modification sites; (I) the analysis of the enriched sites. The core of the legend is this: icLASER's probe performs amidation at the purine C8 site via the LASER, thereby labelling solvent-accessible purines.",
+      "body": [
+        "This figure makes icLASER's chemical target clear: it reports the solvent accessibility of purine C8, which is icLASER's unique chemistry targetability. C8 lies on the solvent-facing side of the purine ring, and when a purine is exposed — not blocked by pairing, stacking, protein or ligand — it is more readily acylated photocatalytically.",
+        "Consequently, the numbers in the final data table are not \"structural labels\" handed over directly by the probe, but the measured quantities that remain after C8 modification, enrichment, reverse transcription, library preparation, alignment and normalisation. For FoldBridge, this means that even a very strong signal first answers \"is the C8 of this purine accessible\", not \"this base is definitely unpaired\". A low C8 signal at a purine site may come from pairing, but it may also come from stacking, tertiary structure or protein binding, and context is needed to judge. Non-purine sites are not, in this chemistry, the primary interpretable objects in the first place."
+      ],
+      "label": "icLASER F2",
+      "pmid": "34634799",
+      "pmcid": "PMC8599799",
+      "doi": "10.1093/nar/gkab885",
+      "figureId": "F2",
+      "legendText": "Development of a bi-functional probe for icLASER. ( A ) Reaction schematic for LASER, with C8 amidation utilizing NAz. ( B ) Synthetic scheme for the probe NAz-N 3 . ( C ) Structure of NAz-N 3 and control probes for analysis of UV-VIS spectroscopy and light activation. ( D ) UV–VIS spectra of compounds from panel C. ( E ) Zoomed in UV-Vis spectra and corresponding wavelength used for light-activation of NAz-N 3 and control compounds in panel C. ( F ) Streptavin-HRP dot blot of NAz-N 3 -modified RNA. RNA was incubated with NAz-N 3 in the presence of long-wavelength UV light. RNA was precipitated and conjugated with biotin using SPAAC, as denoted in Figure 1 . Following SPAAC, RNA was blotted. ( G ) Denaturing gel electrophoresis of modified SAM-I control RNA with NAz or NAz-N 3 . RNA was incubated with NAz-N 3 in the presence of long-wavelength UV light. RNA was precipitated and conjugated with biotin using SPAAC. RNA was then enriched over magnetic streptavidin beads and eluted. Eluted RNA was reverse transcribed with 32 P labeled primer and cDNA analyzed on denaturing gel. Ratio of full-length cDNA to modification was calculated against position 82 in the denaturing gel to demonstrate de-enrichment of the full length in comparison to the enriched modified position. ( H ) Integrated signal from panel G, for cDNA stops due to NAz-N 3 modification of SAM-I RNA. NAz-N 3 . ( I ) Analysis of enriched positions from panel F."
+    },
+    {
+      "type": "heading",
+      "text": "Comparing RT-stops: complementary but not equivalent"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-iclaser-f3",
+      "alt": "icLASER F3",
+      "srcBasename": "iclaser_f3__F3.jpg",
+      "legend": "**Figure 3. A comparison of the RT-stops of icLASER and icSHAPE.** Wolf et al. 2021 (PMID 34634799, DOI `10.1093/nar/gkab885`) compare the RT-stop profiles of the two probes on the same RNA element: (A) the icSHAPE profile of an IRE associated with heavy chain ferritin (genomic coordinates 45459777–45459811 on chromosome 7); (B) the icLASER profile of the same IRE; (C, D) the icSHAPE and icLASER data each overlaid on the IRE secondary structure; (E, F) the differential reactivity of the two probes each overlaid on the PDB model of the IRE/IRP complex (PDB ID 3SNP). The legend explains that, when compared via RT-stop profiles, icLASER and icSHAPE give complementary but non-identical accessibility information on the same RNA.",
+      "body": [
+        "This figure grounds \"complementary does not equal equivalent\" in concrete data. On the same stretch of IRE, what icSHAPE sees is the distribution of 2′-OH flexibility, whereas what icLASER sees is the degree of purine-C8 exposure; when the two sets of signal are overlaid on the same structure, they highlight different features at different positions. This is precisely why using the two methods together is more valuable — they look at different facets of the RNA.",
+        "But for FoldBridge, the value comes precisely from preserving the difference, not from flattening it. The values of the two probes each have their own interpretive range; if they are to be displayed together or merged downstream, then each value must be annotated with the assay it came from. Reading icLASER's C8 signal as if it were icSHAPE's 2′-OH signal, or vice versa, yields conclusions that look elegant but are misaligned. Per-assay interpretation is not redundancy; it is the precondition for \"complementary\" to genuinely hold."
+      ],
+      "label": "icLASER F3",
+      "pmid": "34634799",
+      "pmcid": "PMC8599799",
+      "doi": "10.1093/nar/gkab885",
+      "figureId": "F3",
+      "legendText": "Analysis of icLASER and icSHAPE RT-stops. ( A ) icSHAPE profile at the IRE associated with heavy chain ferritin. The IRE genomic coordinates are chromosome seven from position 45459777 to 45459811. ( B ) icLASER profile at the IRE associated with heavy chain ferritin. ( C ) Secondary structure of the IRE element with icSHAPE data overlaid. ( D ) Secondary structure of the IRE element with icLASER data overlaid. ( E ) PDB model of the IRE/IRP complex with differential icSHAPE reactivities overlaid. ( F ) PDB model of the IRE/IRP complex with differential icLASER reactivities overlaid. PDB ID for the IRE/IRP model is 3SNP."
+    },
+    {
+      "type": "heading",
+      "text": "Using accessibility data to predict RNA-protein interactions"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-iclaser-f4",
+      "alt": "icLASER F4",
+      "srcBasename": "iclaser_f4__F4.jpg",
+      "legend": "**Figure 4. Predicting RNA-protein interactions with icLASER/icSHAPE data.** Wolf et al. 2021 (PMID 34634799, DOI `10.1093/nar/gkab885`) show how structure-probing data can be used to predict transcriptome-wide RNA-protein interactions: (A) the overall workflow for probing RNA structure inside cells, testing RNA-protein interactions and predicting binding with an SVM model; (B, D, F, H) icSHAPE and icLASER difference maps comparing in-cell and in vitro probing, centred respectively on the motifs of TRA2A, RBFOX2, QK1 and PUM2; (C, E, G, I) the crystal/PDB structures of the corresponding protein-bound RNAs (PDB 2KXN, 2ERR, 4JVH, 3Q0Q); (J) the ROC analysis of classifiers trained with icLASER, icSHAPE or both to predict RNA–protein interaction, with training and test sets drawn from in vivo and in vitro eCLIP bound sites. The legend explains that accessibility changes can be interpreted as clues to protein-binding interfaces.",
+      "body": [
+        "This figure shows that accessibility data can serve downstream prediction: the differences in C8 or 2′-OH accessibility between in-cell and in vitro conditions often appear near protein-binding motifs, and can therefore be used by machine-learning models to predict interfaces. This is a real and powerful application of icLASER data.",
+        "Even so, the predictive conclusions must still return to each assay's targetability and context. A signal change on a difference map is, first of all, \"the accessibility of a certain class of chemical site has changed between two conditions\"; interpreting it as protein binding requires structural and contextual support. For FoldBridge, this reaffirms the same principle: icLASER and icSHAPE can be used jointly in prediction tasks (the classifier in the figure can even take both profiles at once), but the precondition for combining them is that the system knows clearly which chemistry each feature comes from and how far it can be interpreted, rather than mixing them together as the same kind of evidence."
+      ],
+      "label": "icLASER F4",
+      "pmid": "34634799",
+      "pmcid": "PMC8599799",
+      "doi": "10.1093/nar/gkab885",
+      "figureId": "F4",
+      "legendText": "Utilizing icSHAPE and icLASER data to predict RNA-protein interactions transcriptome-wide. ( A ) Overview of methods to probe RNA structure in cells and test RNA-protein interactions in cells and predict binding using SVM models. ( B ) icSHAPE and icLASER difference maps between RNA probed inside living cells and in vitro centered at the motif for TRA2A. ( C ) X-Ray structure of TRA2A bound to RNA (PDB 2KXN). ( D ) icSHAPE and icLASER difference maps between RNA probed inside living cells and in vitro centered at the motif for RBFOX2. ( E ) X-ray structure of RBFOX2 bound to RNA (PDB 2ERR). ( E ) X-ray structure of RBFOX2 bound to RNA (PDB 2ERR). ( F ). icSHAPE and icLASER difference maps between RNA probed inside living cells and in vitro centered at the motif for QK1. ( G ) X-ray structure of QK1 bound to RNA (PDB 4JVH). ( H ) icSHAPE and icLASER difference maps between RNA probed inside living cells and in vitro centered at the motif for PUM2. ( I ). X-Ray structure of PUM2 bound to RNA (PDB 3Q0Q). ( J ) ROC analysis for predicting RNA–protein interactions using icLASER and/or icSHAPE structure probing. For each RNA-binding protein, we selected eCLIP bound sites in vivo and in vitro . A portion of this dataset was used as a training set, and the remainder was used to test the classifier. The classifier was trained using icSHAPE profiles, icLASER profiles, or both."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about icLASER"
+    },
+    {
+      "type": "paragraph",
+      "text": "icLASER's core treatment in FoldBridge is to treat purine-C8 solvent accessibility as its own assay model. The raw RT-stop values are first and foremost raw provenance: they can be stored, downloaded, and used for debugging and reanalysis, but they cannot automatically enter the default visualisation or confidence simply because \"the number is high\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "What enters the default structure layer should be signal that has passed icLASER's own chemistry targetability (purine C8) plus a readout / mapping context check, and that can be interpreted as icLASER support. In other words, the colour a reader sees on the structure page should be a colour that holds up under the icLASER assay model, not a number taken straight from raw RT-stops. The threshold for the confidence layer is higher still: only sites that pass the targetability, mapping and context gates can become candidates for positive confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "The gate concept to stress here is this: FoldBridge never silently pools icLASER's signal together with that of SHAPE or DMS. Even though their in-cell-plus-sequencing workflows are similar and their data formats alike, the difference in chemical target means that every one of their values is asking a different question. Combined display or joint analysis can be done, but each value must carry the label \"I come from icLASER's C8 chemistry\", rather than being fused into one undifferentiated, unified layer."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is not a weakening of icLASER but a respect for its strength. icLASER's probing of purine-C8 solvent accessibility is very useful, especially when complementary to icSHAPE; the error occurs when this strength is extended into \"uniform accessibility for all bases\" or \"equivalent to other probes\". FoldBridge's task is not to plot every number, but to separate \"there is a measured value\" from \"interpretable as icLASER structural support\"."
+    },
+    {
+      "type": "heading",
+      "text": "A real case (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so the following is a clearly labelled illustrative scenario, used to show how a single icLASER profile splits into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine an icLASER profile flowing through FoldBridge: in living cells it performed C8 acylation on a certain RNA, and sequencing yielded a string of RT-stop signal. When this signal enters the system, it is first preserved in full as a raw observation — the raw value, coverage and source assay of each site are all recorded, traceable, downloadable and re-analysable."
+    },
+    {
+      "type": "paragraph",
+      "text": "Next, the system asks whether these values can enter the visual signal. Only sites that fall on purines, are interpretable under C8 chemistry, and pass the mapping and context checks become the icLASER accessibility colour on the default structure figure. Non-purine sites, or sites that cannot be reliably mapped to structural coordinates, remain at the provenance layer even when they have numbers, and do not masquerade as the same kind of evidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "Last comes the confidence candidate: building on the first two layers holding, only sites that pass the full gate can possibly enter positive confidence. These three layers — raw observation, visual signal, confidence candidate — are three different things derived from the same profile, and cannot substitute for one another."
+    },
+    {
+      "type": "paragraph",
+      "text": "Translated into system behaviour, this case means that the same icLASER profile derives three things — raw observation, visual signal and confidence candidate — that cannot substitute for one another. icLASER's most characteristic misreading arises because its workflow is almost identical to that of icSHAPE and its data format alike, so a reader is apt to read the solvent accessibility of purine C8 as icSHAPE's 2′-OH flexibility, and vice versa — yet the two are complementary, not equivalent. A paper figure can focus on a single experiment; a FoldBridge page layers many profiles, coordinates and evidence tiers together, and if an article fails to make these three layers, and the chemical boundary \"C8 is not 2′-OH, nor the WC face\", clear, signals mixed into the same undifferentiated layer will be misread. So the correct ending for an icLASER article is not \"a high signal at some purine shows it is unpaired\", but rather: icLASER can provide powerful purine-C8 accessibility clues for the structural interpretation of RNA; in FoldBridge, such clues become part of the default visualisation and confidence only after passing icLASER's own chemistry targetability and the subsequent gates, and always being kept distinct from the SHAPE/DMS signals."
+    }
+  ]
+}

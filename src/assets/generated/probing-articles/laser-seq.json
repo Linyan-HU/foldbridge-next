@@ -1,0 +1,59 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "laser-seq",
+  "title": "LASER-seq: Transcriptome-wide RNA solvent accessibility mapping using photoactivated chemical probing",
+  "date": "",
+  "figure_count": 3,
+  "rep_pmid": "30476193",
+  "rep_pmcid": "",
+  "rep_doi": "10.1093/nar/gky1172",
+  "asset_base": "./src/assets/generated/probing-articles/assets/laser-seq",
+  "sibling_navigation": {
+    "previous": {
+      "slug": "edc-probing",
+      "title": "EDC probing"
+    }
+  },
+  "key_innovation": "Compared with conventional chemical probing approaches, LASER-seq introduces a photoactivated NAz probe that forms C8 nucleobase adducts on accessible purines, enabling transcriptome-wide measurement of RNA solvent accessibility through reverse transcription stops or mutation-based readouts.",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "How does LASER-seq convert photoactivated chemical modification into RNA structure information?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-laser-seq-f1",
+      "alt": "Principle and workflow of LASER-seq chemical probing",
+      "srcBasename": "laserseq_f1__PMC6280660__F1.png",
+      "legend": "**Figure 1. Principle and workflow of LASER-seq chemical probing.** Nicotinoyl azide (NAz) is activated by long-wavelength UV irradiation to generate reactive intermediates that form C8 adducts on adenine and guanine residues. These modifications alter reverse transcription, producing either RT-stop signals (LASER-seq) or nucleotide misincorporations (LASER-MaP). Following NAz probing, RNA is extracted, fragmented, reverse transcribed, and converted into sequencing libraries for transcriptome-wide structure analysis.",
+      "label": "LASER-seq F1",
+      "figureId": "F1"
+    },
+    {
+      "type": "heading",
+      "text": "How does LASER-seq convert photoactivated chemical modification into RNA structure information?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-laser-seq-f2",
+      "alt": "Detection of NAz modification through RT stops and mutation signatures",
+      "srcBasename": "laserseq_f2__PMC6280660__F2.png",
+      "legend": "**Figure 2. Detection of NAz modification through RT stops and mutation signatures.** LASER-seq detects NAz-induced modifications through reverse transcription termination, whereas LASER-MaP converts these modifications into mutation signatures. Comparison between NAz-treated and untreated samples reveals modification-dependent signals at nucleotide resolution, demonstrating the specificity of LASER-based probing.",
+      "label": "LASER-seq F2",
+      "figureId": "F2"
+    },
+    {
+      "type": "heading",
+      "text": "How does LASER-seq report RNA solvent accessibility in structured RNAs?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-laser-seq-f3",
+      "alt": "NAz reactivity reflects nucleotide solvent accessibility",
+      "srcBasename": "laserseq_f3__PMC6280660__F3.png",
+      "legend": "**Figure 3. NAz reactivity reflects nucleotide solvent accessibility.** LASER-MaP reactivity correlates with experimentally determined solvent accessibility of ribosomal RNA structures. NAz-derived modification patterns accurately identify exposed nucleotides, demonstrating that LASER-seq reports RNA surface accessibility rather than backbone flexibility measured by SHAPE chemistry.",
+      "label": "LASER-seq F3",
+      "figureId": "F3"
+    }
+  ]
+}

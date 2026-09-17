@@ -1,0 +1,141 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "mutate-and-map",
+  "title": "The pairings given by mutate-and-map are \"inferred\", not read out directly",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "22109276",
+  "rep_pmcid": "PMC3725140",
+  "rep_doi": "10.1038/nchem.1176",
+  "asset_base": "./src/assets/generated/probing-articles/assets/mutate-and-map",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-26"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you only look at a beautiful mutate-and-map (M²) two-dimensional heatmap, it is easy to misread it as \"chemical probing directly read out which two bases are paired\". That reading is wrong. mutate-and-map is not in itself an experiment that can prove pairing at a single chemical site. Its approach is this: it makes systematic single-point mutations to an RNA, then performs chemical probing on each mutant separately (the 2′-OH acylation of SHAPE, the A/C methylation of DMS, or the G/U modification of CMCT), and then observes \"whether, after introducing a mutation at one site, the chemical accessibility at some distant site changes\". If mutating site A systematically changes the reactivity of site B, then this pair of sites is read as having a structural coupling, in most cases a base pairing or a tertiary contact. That is to say, the pairing reported by M² is **inferred (inference)**: it comes from mutational perturbation plus chemical readout plus Z-score analysis plus computational modelling, rather than from a ground truth given directly by any chemical site."
+    },
+    {
+      "type": "paragraph",
+      "text": "This boundary is crucial for FoldBridge. The chemical probing layer still reads the chemical site of each respective assay: SHAPE reports the flexibility/accessibility of the 2′-OH, DMS reports the accessibility of A/C, and CMCT reports the accessibility of G/U. The so-called \"pairing\" of M² is a conclusion analysed and modelled from the two-dimensional pattern that these signals present across the whole mutational perturbation matrix. FoldBridge must therefore preserve both layers of context, the assay and the inference: the raw chemical probing signal, the pairing candidates inferred from the two-dimensional Z-score, and the final confidence after computational modelling and gates must be stored in separate layers; the pairing inferred by M² cannot be upgraded into a direct chemical ground truth or a direct positive confidence."
+    },
+    {
+      "type": "heading",
+      "text": "The core logic of two-dimensional inference: perturbing distant accessibility"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-mutate-and-map-f1",
+      "alt": "mutate-and-map F1",
+      "srcBasename": "mutateandmap_f1__PMC3725140__F1.jpg",
+      "legend": "**Figure 1. How mutate-and-map reads out three-dimensional interactions from single-point mutations.** The illustration of Kladwang et al. 2011 (Nature Chemistry, PMID 22109276, DOI `10.1038/nchem.1176`) explains that mutating one nucleotide and imaging its chemical accessibility can reveal the interactions within the three-dimensional structure of an RNA. In the legend, the traces compare the wild type (blue) of the add adenine riboswitch binding domain with the C18G mutant (red), using fluorescent-primer reverse transcription plus capillary electrophoresis to read out the 2′-OH acylation (SHAPE) signal; arrows mark the mutation site C18 itself becoming exposed, and the distant site \"drawn closer\" and exposed because the pairing was disrupted, namely its pairing partner G78. Figure b is the complete mutate-and-map dataset of 71 single mutants (greyscale image), from which many structural elements can be read: bands along the main diagonal (the local perturbation by a mutation), discrete points marking specific base pairs (C18-G78, C26-G44, C54-G72), the more diffuse effects brought by helix mutations, secondary structure rearrangement, the loss of adenine binding, and the long-range L2-L3 tertiary contact.",
+      "body": [
+        "This figure is the core of the two-dimensional inference logic of M². Looking at a single pair of traces (figure a), the conclusion is not \"the chemical site of C18 directly tells us that it is paired with G78\", but \"after disrupting C18, the accessibility of G78 changed, so we infer that there is a pairing coupling between C18 and G78\". Extending this logic to all sites yields the matrix of figure b: each row is the probing result of one mutant, and the discrete off-diagonal signal points are the inferred pairing/contact relationships. In other words, the pairing information is hidden in the two-dimensional pattern of \"perturbation-response\", not in the absolute value of any single chemical site."
+      ],
+      "label": "Kladwang(M2) nchem.1176 F1",
+      "pmid": "22109276",
+      "pmcid": "PMC3725140",
+      "doi": "10.1038/nchem.1176",
+      "figureId": "F1",
+      "legendText": "a , Mutating a nucleotide and mapping chemical accessibility reveals interactions in the three-dimensional structure of the RNA. The traces are for wild-type (blue) and C18G-mutated (red) variants of the adenine-binding domain of the add riboswitch. These 2′-OH acylation (SHAPE) data were read out by reverse transcription with fluorescently labelled primers and capillary electrophoresis; peaks (left to right) correspond to nucleotides from the 5′ to 3′ end of the RNA. Arrows mark exposure of the mutation site (C18) and of sequence-distant regions brought near this nucleotide by base-pairing (partner G78). b , Entire mutate-and-map data set across 71 single mutations, plotted in grey scale, revealing numerous elements of riboswitch structure. Dark features highlight: (I) the main diagonal stripe showing localized perturbations following C18G mutation; (II–IV) punctate features marking base pairs C18–G78, C26–G44 and C54–G72 in three different helices; (V–VII) more delocalized effects upon helix mutations G14C, G44C and G59C; (VIII) large-scale changes from C69G mutation due to secondary structure rearrangement; (IX) perturbations consistent with loss of adenine binding in A52U variant; (X) evidence for long-range tertiary contact between L2 and L3 upon mutation of C60 and C61 in L3; (XI) ‘symmetric’ mutations in L2 that affect L3; (XII) evidence for U22–A52 base pair in the adenine binding site."
+    },
+    {
+      "type": "heading",
+      "text": "Recovering known structures across multiple independent RNAs"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-mutate-and-map-f2",
+      "alt": "mutate-and-map F4",
+      "srcBasename": "mutateandmap_f2__PMC3725140__F4.jpg",
+      "legend": "**Figure 2. mutate-and-map recovers secondary structure across multiple RNAs.** Kladwang et al. 2011 (Nature Chemistry, PMID 22109276, DOI `10.1038/nchem.1176`) shows the mutate-and-map Z-score data of three independent RNAs and the secondary structure models inferred from them: the P4-P6 domain of the Tetrahymena group I ribozyme, E. coli 5S rRNA, and the V. cholerae VC1722 c-di-GMP riboswitch binding domain. In the legend, the squares represent the experimental data (the Z-score matrix), and the lines and nucleotides represent the structure inferred from the data.",
+      "body": [
+        "The significance of this figure is the generalisability of the method: M² does not just contrive an answer on one carefully chosen RNA, but can recover the known secondary structure on multiple RNAs of differing structure and function. But note that the structure models in the figure were not directly \"measured\": they are the result of Z-score data plus computational modelling inference. From the same Z-score matrix, a different set of modelling constraints or parameters may yield different structural details. This is precisely why the output of M² must be stored with the label \"it is an inference\", and cannot be treated as direct evidence on a par with a crystal structure."
+      ],
+      "label": "Kladwang(M2) nchem.1176 F4",
+      "pmid": "22109276",
+      "pmcid": "PMC3725140",
+      "doi": "10.1038/nchem.1176",
+      "figureId": "F4",
+      "legendText": "a – f , Mutate-and-map Z -score data and resulting secondary structure models for the P4–P6 domain of the Tetrahymena group I ribozyme ( a , b ), the 5S ribosomal RNA from E. coli ( c , d ) and the domain that binds cyclic di-guanosine monophosphate from the V. cholerae VC1722 riboswitch (in the presence of 10 μM ligand; e , f ). Colouring of squares ( a , c , e ) and lines and nucleotides ( b , d , f ) are as in Fig. 3 ."
+    },
+    {
+      "type": "heading",
+      "text": "A methodological foundation: the MedLoop model RNA"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-mutate-and-map-f3",
+      "alt": "mutate-and-map F1",
+      "srcBasename": "mutateandmap_f3__PMC3039151__F1.jpg",
+      "legend": "**Figure 3. The model system that established the mutate-and-map methodology.** Kladwang et al. 2011 (RNA, PMID 21239468, DOI `10.1261/rna.2516311`) uses a designed 80-nt MedLoop RNA as a model system for validating M². The legend describes its structure: a 10-bp hairpin plus a 15-nt internal loop (residues 1-35), with 10 nt on the 5′ side and 35 nt on the 3′ side (including the primer binding site).",
+      "body": [
+        "This is the foundational paper of M² methodology. Before applying M² to real functional RNAs such as riboswitches and ribozymes, the authors first used a MedLoop RNA of known and controllable structure to confirm that \"systematic single-point mutation plus chemical probing can stably read out known base pairs\". Proving the readout logic holds on a controlled model first, and then generalising to unknown structures, is the starting point for the credibility of the M² inference chain."
+      ],
+      "label": "Kladwang(M2) rna.2516311 F1",
+      "pmid": "21239468",
+      "pmcid": "PMC3039151",
+      "doi": "10.1261/rna.2516311",
+      "figureId": "F1",
+      "legendText": "Model system for establishing the mutate-and-map methodology for RNA structure inference. The 80-residue MedLoop RNA was designed as a 10-bp hairpin with a 15-nt internal loop (residues 1 to 35), a 10-residue 5′-flanking sequence (residues −9 to 0), and a 35-residue 3′-flanking sequence (residues 36 to 70) containing the primer binding site."
+    },
+    {
+      "type": "heading",
+      "text": "How two-dimensional data reveals pairing at single-nucleotide resolution"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-mutate-and-map-f4",
+      "alt": "mutate-and-map F3",
+      "srcBasename": "mutateandmap_f4__PMC3039151__F3.jpg",
+      "legend": "**Figure 4. The mutate-and-map dataset of the MedLoop RNA.** Kladwang et al. 2011 (RNA, PMID 21239468, DOI `10.1261/rna.2516311`) shows the complete M² dataset of the MedLoop RNA, overlaying the two chemical accessibilities of DMS (blue, marking A/C) and CMCT (red, marking G/U), read out by high-throughput reverse transcription with fluorescent primers plus capillary electrophoresis. The legend marks several features: bands along the main diagonal (local perturbation), discrete off-diagonal signals corresponding to base pairs, protection within the loop, flanking protection associated with conformational change, sites experimentally protected but computationally predicted to be exposed, and an unexplained U exposure near the mutation site.",
+      "body": [
+        "This figure shows both the power of the two-dimensional data of M² and its honesty. On the one hand, after DMS and CMCT are overlaid, the discrete off-diagonal signals can identify base pairs at single-nucleotide resolution: this is exactly the increment of M² over a single round of chemical probing. On the other hand, the legend clearly marks the sites where experiment and computational prediction disagree, as well as features that cannot be explained. These \"disagreements\" and \"unexplained\" features echo exactly the core boundary: the pairing of M² is inferred, it depends on modelling assumptions, it will clash with predictions, and it will leave behind signals that cannot be explained. Smoothing this information into a clean pairing diagram amounts to throwing away the most important part of the evidence structure."
+      ],
+      "label": "Kladwang(M2) rna.2516311 F3",
+      "pmid": "21239468",
+      "pmcid": "PMC3039151",
+      "doi": "10.1261/rna.2516311",
+      "figureId": "F3",
+      "legendText": "Mutate-and-map data set for the MedLoop RNA. Chemical accessibility data for dimethyl sulfate alkylation (DMS, blue) at A's and C's and for carbodiimide modification (CMCT, red) at G's and U's are overlaid. Chemical modifications were read out by high-throughput reverse transcription with fluorescently labeled primers and capillary electrophoresis, with faster electrophoretic mobility products on the right . Raw fluorescence data (arbitrary units) are shown after automated alignment of traces and normalization to mean intensity. Ten features are marked on the data: (I) The main diagonal stripe showing localized perturbations in the U30A variant; (II–VI) punctate, off-diagonal signals corresponding to the MedLoop RNA base pairs revealed at nucleotide resolution for U30A, C10G, C10A, U35A, and A1U; (VII) protection within the 15-nt loop for G11U; (VIII) more extensive perturbations due to specific mutations, here G4U; (IX) protection of flanking regions correlated with large conformational changes in G4U; (X–XI) sites protected in experimental measurements that are predicted to be exposed by computational secondary structure prediction; (XII) unexplained exposure of multiple U's near mutation site in U28G."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write up mutate-and-map"
+    },
+    {
+      "type": "paragraph",
+      "text": "The output of mutate-and-map is an \"inferred pairing/structure model\", and FoldBridge must store it together with the assay context, never upgrading it into a direct chemical ground truth or a direct positive confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "Specifically, three layers must be distinguished. The first layer is the raw chemical probing signal: the per-position reactivity of each mutant under SHAPE / DMS / CMCT; the interpretive boundary of this layer is consistent with each respective assay, SHAPE being 2′-OH flexibility, DMS being A/C accessibility, and CMCT being G/U accessibility, and this layer is raw provenance. The second layer is the two-dimensional inference: the pairing candidate of \"there is a coupling between two sites\" obtained after Z-score analysis of the whole mutational perturbation matrix; this layer is the inference product specific to M², and it must be clearly labelled as coming from the perturbation matrix rather than from a single-point chemical site. The third layer is the structure model and confidence after computational modelling: only after passing the assay, mapping, claim, and context gates may an inferred pairing candidate enter the confidence candidate pool."
+    },
+    {
+      "type": "paragraph",
+      "text": "This layering is not a weakening of M², but a respect for its strengths. M² is good at \"solving out\" base pairings and long-range tertiary contacts from one-dimensional chemical probing using perturbation-response patterns; the error occurs when this inferred result is treated as a ground truth on a par with direct structural determination. FoldBridge must also preserve two kinds of information that are easily smoothed away: the sites where experiment and computational prediction disagree, and the features that cannot be explained. These are not noise, but direct evidence of inferential uncertainty, and they should be preserved as provenance, not quietly deleted during visualisation."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct statement for the reader is not \"M² measured that C18 and G78 are paired\", but: in the mutate-and-map experiment, mutating C18 systematically changes the chemical accessibility of G78, from which it is inferred that there is a pairing coupling between the two; this pairing candidate becomes part of structural interpretation, entering the confidence layer of FoldBridge, only after passing the modelling and gate checks."
+    },
+    {
+      "type": "heading",
+      "text": "A real case: the three-layer separation of an M² profile within FoldBridge (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine FoldBridge receiving a mutate-and-map profile resembling that of the add riboswitch binding domain (this is illustrative here, and does not represent any specific internal ID or ground truth). The system should split it into three layers for processing, rather than directly colouring the heatmap into a pairing diagram."
+    },
+    {
+      "type": "paragraph",
+      "text": "The first layer, raw chemical probing provenance: preserve the per-position SHAPE/DMS/CMCT reactivity of each mutant, and state the respective assay interpretive boundaries. Even where the values in this layer are very high, they are only a chemical accessibility signal of some kind, not directly equivalent to pairing. The second layer, the inferred pairing candidates of the two dimensions: after Z-score analysis of the perturbation matrix, a number of off-diagonal coupling points are obtained (for example, the illustrative C18-G78, C26-G44 and the like), labelled as pairing candidates \"inferred from the perturbation matrix, awaiting modelling confirmation\", with the corresponding experiment-prediction disagreements and unexplained features attached alongside. The third layer, the confidence after the gates: only pairing candidates that pass the assay targetability, mapping, claim, and context gates enter positive confidence; the rest remain in the provenance and debug layers, traceable but not posing as structural ground truth."
+    },
+    {
+      "type": "paragraph",
+      "text": "Grounded in system behaviour, this case means that the same M² profile derives three different things: the raw chemical observation, the inferred pairing candidates of the two dimensions, and the confidence candidates. The boundary that M² most needs to have made clear is hidden precisely in the second layer: those off-diagonal coupling points are inferences Z-scored out of the perturbation-response matrix, and may still clash with predictions; they are not a ground truth given directly by some chemical site. If FoldBridge does not separate these three layers, and the label \"pairing is inferred\", the reader will misread a coupling diagram awaiting modelling confirmation as M² having directly measured which two bases are paired."
+    }
+  ]
+}

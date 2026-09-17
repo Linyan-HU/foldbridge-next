@@ -1,0 +1,202 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "dms",
+  "title": "DMS: Chemical probing of DMS-seq RNA secondary structures through selective base modification",
+  "date": "",
+  "figure_count": 2,
+  "rep_pmid": "17948004",
+  "rep_pmcid": "PMC2701642",
+  "rep_doi": "10.1038/nprot.2007.380",
+  "key_innovation": "Compared with classical RNA structure analysis methods, DMS probing provides nucleotide-resolution structural information by selectively methylating the Watson–Crick faces of adenine and cytosine, allowing RNA base-pairing accessibility to be monitored through reverse transcription.",
+  "asset_base": "./src/assets/generated/probing-articles/assets/dms",
+  "body_start_heading": "A real case: 5GAG / SRPECLI_DMS_0001",
+  "ppt_overview": [
+    {
+      "title": "How does DMS probing work?",
+      "srcBasename": "dms_principle_figure1.png",
+      "alt": "Principle of DMS probing",
+      "captionTitle": "Figure 1. Principle of DMS Probing.",
+      "text": "DMS selectively methylates the Watson–Crick faces of adenine (N1) and cytosine (N3). During reverse transcription, the enzyme terminates one nucleotide upstream of the modified nucleotide, generating cDNA fragments of different lengths. These fragments are separated by denaturing PAGE and aligned with sequencing ladders to identify modified nucleotides. DMS probing is typically performed under single-hit conditions, so band intensity reflects nucleotide accessibility."
+    },
+    {
+      "title": "How can DMS probing monitor RNA folding and molecular interactions?",
+      "srcBasename": "dms_rna_folding_figure2.png",
+      "alt": "DMS footprinting monitors RNA folding and molecular interactions",
+      "captionTitle": "Figure 2. Monitoring RNA folding by DMS footprinting.",
+      "text": "DMS modification patterns change when RNA adopts different conformations or interacts with proteins. Protection indicates reduced accessibility caused by base pairing or molecular contacts, whereas enhanced modification reflects increased exposure during structural rearrangement."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-23"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you go by the data table alone, DMS is easily misread as an RNA structure stain that \"gives every base a score\". That reading is wrong. The classical interpretive target of DMS is the chemical accessibility of A and C on the Watson-Crick base-pairing face: the N1 of A and the N3 of C are more readily methylated when they are unpaired, not occluded by protein or ligand, and not protected by a complex conformation. In other words, what DMS reports first is whether a class of chemical site is accessible, not directly that \"this base is definitely paired\" or \"this base is definitely unpaired\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "This boundary is crucial for FoldBridge. FoldBridge can preserve the raw observed values and can also display experimental signal on the web; but the moment anything enters default structure colouring, interpretive text or ANNOCONFIDENCE / FEC positive confidence, a more specific question must be asked: under the current assay model, can this number be interpreted as DMS support? For DMS, the answer begins with `DMS_AC_ONLY`."
+    },
+    {
+      "type": "heading",
+      "text": "How does DMS probing work?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-tijerina-2007-f1",
+      "alt": "Tijerina et al. 2007 F1",
+      "srcBasename": "tijerina2007_f1__PMC2701642__F1.jpg",
+      "legend": "**Figure 1. The basic readout of traditional DMS footprinting.** The schematic in Tijerina et al. 2007 (PMID 17948004, DOI `10.1038/nprot.2007.380`) breaks DMS footprinting into three stages: DMS leaves a detectable methylation modification on the N1 of A and the N3 of C; primer extension stops one position before the modified site; and the bands on the gel are then located back onto the RNA sequence using sequencing lanes. The legend also stresses one experimental condition: the DMS reaction is usually kept under limiting conditions, so that on average a single RNA molecule carries no more than one detectable modification, which keeps band intensity closer to the degree of modification at each site.",
+      "body": [
+        "The first-order intuition this figure gives the reader is that traditional DMS footprinting answers, first of all, \"where is protected and where is accessible\". It is not assigning a uniform structural label to every base, but reading the difference between modification and protection at specific chemical sites.",
+        "This figure is already enough to make DMS's first red line clear: it is not a readout in which \"every residue carries equal chemical meaning\". A high signal at A/C can indicate that the pairing face is accessible; a reduced signal may come from Watson-Crick pairing, but it may also come from tertiary structure, protein binding, ligand protection or experimental readout limits. By contrast, G and U are not the primary interpretable objects in this primer-extension readout to begin with. Plotting the values of G/U/T/unknown directly as positive support conflates the chemical site with the data-table field."
+      ],
+      "label": "Tijerina et al. 2007 F1",
+      "pmid": "17948004",
+      "pmcid": "PMC2701642",
+      "doi": "10.1038/nprot.2007.380",
+      "figureId": "F1",
+      "legendText": "a, The modifications detected by this method are methylation at N1 of adenine and N3 of cytosine, as indicated in yellow. b, Primer extension. The DMS modification reaction is carried out under limiting conditions so that each molecule has no more than an average of one detectable modification. Reverse transcription is illustrated (product in green) proceeding from a radiolabeled primer (blue line) until it is blocked at a position one nucleotide upstream from a methylated A or C nucleotide. This reaction on a population of modified RNAs generates a family of radiolabeled products whose lengths are determined by the positions of modifications, and the proportions of these different products reflect the extents of modification at each position. c, PAGE analysis of reverse transcription products. Sequencing lanes at the left are used to determine the position of modification for each experimental band. To the left and right of the gel is shown the sequence of the RNA, as determined from the sequencing reactions. The four lanes at the right show expected results from the experimental lanes. The lane illustrating a reaction that was not treated with DMS (the ‘No DMS’ lane) displays several bands, which is a typical result. These are DMS-independent positions of reverse transcriptase stopping or pausing. In contrast, the bands that are enriched in the DMS treated samples (‘Unfolded’, ‘Folded’, and ‘+ protein’) reflect DMS modification. Note that these bands are one position lower on the gel than A and C nucleotides as determined in the sequencing lanes. This is because reverse transcriptase is blocked one position upstream from the modified position. Nucleotides that give changes in extent of modification upon folding or protein binding are indicated with asterisks and ‘P’ for protection or ‘E’ for enhancement."
+    },
+    {
+      "type": "heading",
+      "text": "How can DMS probing monitor RNA folding and molecular interactions?"
+    },
+    {
+      "type": "paragraph",
+      "text": "DMS modification patterns change when RNA adopts different conformations or interacts with proteins. Protection indicates reduced accessibility caused by base pairing or molecular contacts, whereas enhanced modification reflects increased exposure during structural rearrangement."
+    },
+    {
+      "type": "figure",
+      "anchor": "slide-figure-dms-rna-folding",
+      "alt": "DMS footprinting monitors RNA folding and molecular interactions",
+      "srcBasename": "dms_rna_folding_figure2.png",
+      "legend": "**Figure 2. Monitoring RNA folding by DMS footprinting.** DMS modification patterns change when RNA adopts different conformations or interacts with proteins. Protection indicates reduced accessibility caused by base pairing or molecular contacts, whereas enhanced modification reflects increased exposure during structural rearrangement.",
+      "label": "DMS RNA folding and molecular interactions",
+      "pmid": "17948004",
+      "pmcid": "PMC2701642",
+      "doi": "10.1038/nprot.2007.380",
+      "figureId": "F4",
+      "legendText": "Quantitative analysis of DMS footprinting to monitor RNA folding."
+    },
+    {
+      "type": "heading",
+      "text": "DMS-MaPseq: sequencing amplifies the signal, and amplifies the interpretive responsibility too"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-zubradt-2017-f1",
+      "alt": "Zubradt et al. 2017 F1",
+      "srcBasename": "zubradt2017_f1__PMC5508988__F1.jpg",
+      "legend": "**Figure 2. How DMS-MaPseq feeds chemical modification into sequencing.** The schematic in Zubradt et al. 2017 (PMID 27819661, DOI `10.1038/nmeth.4057`) compares the traditional cDNA truncation strategy with DMS-MaPseq. The key change in DMS-MaPseq is that it converts the DMS modification into a mutation signal during reverse transcription, which is then read out by sequencing. The legend is short, but its information is critical enough: DMS-MaPseq is a library preparation strategy, not a structure determiner that bypasses the interpretive boundary.",
+      "body": [
+        "The values in the final table are therefore not a \"structural label\" given directly by the DMS molecule, but an observable that has passed through chemical modification, reverse transcription, library construction, alignment and normalisation. This observable can be very useful, but it needs to be interpreted."
+      ],
+      "label": "Zubradt et al. 2017 F1",
+      "pmid": "27819661",
+      "pmcid": "PMC5508988",
+      "doi": "10.1038/nmeth.4057",
+      "figureId": "F1",
+      "legendText": "Schematic of library preparation strategies for cDNA truncation approaches (a) and for DMS-MaPseq (b) ."
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-zubradt-2017-f2",
+      "alt": "Zubradt et al. 2017 F2",
+      "srcBasename": "zubradt2017_f2__PMC5508988__F2.jpg",
+      "legend": "**Figure 3. The background, enzyme and base-composition issues of DMS-MaPseq.** This figure in Zubradt et al. 2017 shows the mutation types produced under different reverse transcription conditions, the detection of endogenous modifications, the mismatch nucleotide composition, and the DMS reactivity of an mRNA positive control. The legend points out in particular that G and U bases may show high background signal; these positions cannot be taken as evidence of DMS-supported A/C accessibility just because the value is high.",
+      "body": [
+        "This is the safeguard most worth stressing in the DMS-MaPseq article: the sequencing readout broadens the coverage of DMS, but it also broadens the opportunity for background and bias to enter the interpretive chain. For FoldBridge, a raw observation must first pass through chemistry targetability and readout context before it can become a candidate for the default layer or confidence.",
+        "These two figures place the advantages and risks of modern sequencing-based DMS side by side: sequencing lets DMS extend to genome-wide or targeted profiling, but it also makes readout, background, coverage and normalisation easier to misread. FoldBridge therefore cannot let `raw_numeric_value` drive default structure colouring directly. `raw_numeric_value` should first be preserved as raw provenance, and then an assay-specific gate decides whether it can enter visualisation and confidence.",
+        "The easiest mistake here is to write \"a mutation was measured\" as \"a structure was measured\". The mutation signal of DMS-MaPseq does indeed come from the chemical modification after DMS treatment, but this signal has passed through the enzyme, the library, alignment, coverage and the background model in between. A high signal at an A/C site usually suggests that the pairing face is more accessible; a low signal at an A/C site may suggest pairing or protection; but both judgements need context. Local RNA conformation, ionic conditions, protein or small-molecule binding, RT bias and local sequence alignability can all affect the final number.",
+        "So, when writing for a non-specialist reader, the most appropriate way to describe DMS-MaPseq is \"turning the DMS modification into a sequencing-readable accessibility cue\". This phrasing preserves the power of the method and preserves the scientific boundary too. It will not write the background signal of G and U as DMS target signal, nor will it write a normalised value as structural ground truth."
+      ],
+      "label": "Zubradt et al. 2017 F2",
+      "pmid": "27819661",
+      "pmcid": "PMC5508988",
+      "doi": "10.1038/nmeth.4057",
+      "figureId": "F2",
+      "legendText": "a , Distribution of mutation type generated by SSII/Mn 2+ or TGIRT reverse transcription from in vivo DMS-treated yeast mRNA. b , Endogenous m 1 A modifications in yeast 25S rRNA transcript reveal superior modification detection with TGIRT. Average percent modification (bar) detected at the position across two biological DMS-treated replicates (circles) with error bars representing standard deviation from the average. c , Nucleotide composition of mismatches from TGIRT or SSII/Mn 2+ approaches. d , Yeast RPS28B mRNA positive control structure with nucleotides colored by DMS reactivity in vivo . Black boxes outline G/U bases with high background signal. DMS reactivity was calculated as the average ratiometric DMS signal per position across two biological replicates normalized to the highest number of reads in displayed region, which is set to 1.0. e , Genome-wide DMS-MaPseq replicates compared by Pearson’s r value and Gini index for yeast mRNA regions (requiring 15x coverage, resulting in 733 and 272 regions displayed for TGIRT and SSII/Mn 2+ , respectively)."
+    },
+    {
+      "type": "heading",
+      "text": "Quantitative DMS can constrain structure, but it cannot cancel the assay boundary"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-cordero-2012-f1",
+      "alt": "Cordero et al. 2012 F1",
+      "srcBasename": "cordero2012_f1__PMC3448840__F1.jpg",
+      "legend": "**Figure 4. How DMS data enter secondary structure inference.** Cordero et al. 2012 (PMID 22913637, DOI `10.1021/bi3008802`) show DMS-guided secondary structure models for 6 non-coding RNAs. The legend clearly distinguishes missed base pairs, mis-predicted base pairs, helix bootstrap confidence, and the G/U or missing-reactivity positions marked in grey. The meaning of this figure is not that \"DMS can interpret every base\", but that \"DMS can serve as a constraint on a structure model, whilst the uninterpretable or unusable positions must be preserved\".",
+      "body": [
+        "This figure places the value of DMS in the right position: DMS data can help constrain a structure model, but the model still has to distinguish experimental support, prediction errors, confidence and unusable positions. What it supports is \"DMS is a useful constraint\", not \"DMS can cancel the assay-specific interpretive boundary\".",
+        "This is exactly the way FoldBridge needs to write it: DMS signal can help interpret a structure model and can help the reader understand which regions look more like accessible A/C; but it cannot bypass assay chemistry. The more refined the quantitative analysis, the greater the need to separate chemical reactivity, accessibility, base pairing, tertiary protection, protein/ligand protection and sequencing bias.",
+        "When DMS is used as a structural constraint, the article must also avoid another common misreading: not every colour in the model figure is equivalent. The DMS reactivity of A/C can serve as a constraint; a missing value means there is not enough information; G/U positions may be marked grey in the DMS primer-extension context, because they do not provide the same DMS signal to begin with. When the reader sees the same structure figure, they need to know which colours are experimental support, which colours are unusable or uninterpretable regions, and which lines represent prediction errors or confidence. Otherwise, \"the figure looks beautiful\" will mask the real structure of the evidence."
+      ],
+      "label": "Cordero et al. 2012 F1",
+      "pmid": "22913637",
+      "pmcid": "PMC3448840",
+      "doi": "10.1021/bi3008802",
+      "figureId": "F1",
+      "legendText": "Pseudo-energy-guided secondary structure models using DMS data on 6 non-coding RNAs. DMS data and secondary structure models for E. coli tRNA phe , the P4-P6 domain of the Tetrahymena group I ribozyme, E. coli 5S rRNA, the V. vulnificus add adenine riboswitch, V. cholerae cyclic di-GMP riboswitch, and F. nucleatum glycine riboswitch. Missed base pairs are highlighted in blue lines; mis-predicted base pairs are indicated by orange lines. Helix bootstrap confidence values are shown in red. G and U nucleotides which don’t give DMS signals in primer extension and nucleotides with unavailable reactivities are colored gray."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about DMS"
+    },
+    {
+      "type": "paragraph",
+      "text": "`DMS_AC_ONLY` is the core rule that the formal article must preserve. A/C are targetable bases; G/U/T/unknown are non-target bases. Even if the G/U/T/unknown rows have numbers, they can only be preserved as raw provenance, debug information or download-table fields, and cannot automatically enter positive confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "The default ANNOJOIN structure figure should read the `visual_colormap_value` that has passed through the targetability mask, rather than reading the raw value directly. Only then is the colour the reader sees on the structure page a colour that is interpretable under the DMS assay model. The requirement for ANNOCONFIDENCE / FEC is higher still: only A/C rows that pass the assay targetability, mapping, claim and context gates may enter the positive confidence candidates."
+    },
+    {
+      "type": "paragraph",
+      "text": "This does not weaken DMS. On the contrary, it respects DMS's strengths. DMS is very useful for the accessibility of the A/C pairing face; the error occurs when this strength is stretched into \"uniform reactivity across all bases\". The task of FoldBridge is not to plot every number, but to separate \"there is an observed value\" from \"it can be interpreted as structural support\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "This way of writing also protects the downstream reader. The default colour on the web should answer \"within the current technical interpretive boundary, what readable signal does this site have\"; the detail table answers \"what was recorded in the raw data\". If these two questions are mixed together, the reader will mistakenly believe that FoldBridge endorses every displayed number. The correct approach is: do not lose raw provenance, do not hand out default interpretation carelessly, and let the confidence layer accept only interpretable evidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "So, a DMS technical article should not just write \"the signal at a given site is high\". A more complete sentence should be written as: in the DMS assay, this A/C site has a relatively high accessibility signal; if mapping, coverage, background and context all pass inspection, this signal can serve as support for structural interpretation. This sentence is a little wordier than \"high signal equals unpaired\", but it is more robust scientifically and more suited to entering FoldBridge's long-term knowledge base."
+    },
+    {
+      "type": "heading",
+      "text": "A real case: 5GAG / SRPECLI_DMS_0001"
+    },
+    {
+      "type": "paragraph",
+      "text": "Take `5GAG / SRPECLI_DMS_0001` as an example. This profile has 116 rows in the ANNOJOIN visual track: 53 rows enter the default visual signal, 60 rows are `DMS_NON_TARGET_BASE`, and 3 rows are `POSITION_UNRESOLVED`."
+    },
+    {
+      "type": "paragraph",
+      "text": "The conclusion this set of numbers gives the reader is very direct: a per-position DMS observation is not the same as per-position DMS positive support. For A/C, DMS can provide a strong accessibility cue; for G/U/T/unknown, the value is first of all raw provenance. Only the former, after passing the mapping and context gates, can possibly enter ANNOCONFIDENCE / FEC positive confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "If all 116 rows were coloured by their raw values, the page would look fuller, but the interpretation would get worse. The 60 `DMS_NON_TARGET_BASE` rows should not take part in the default DMS positive signal; the 3 `POSITION_UNRESOLVED` rows cannot pretend to have been mapped to reliable structural coordinates either. By contrast, the 53 rows of default visual signal are the DMS layer the reader should see first. The remaining rows can still be traced in the detail view, because they have value for provenance, debugging and re-analysis, but they should not disguise themselves as the same kind of evidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "The value of this case lies not in the numbers themselves, but in the way it grounds the earlier principles of the article in actual system behaviour: the same experimental profile can simultaneously produce a raw observation, a visualisation signal and a confidence candidate; the three are not the same thing. If a popular-science article about DMS cannot separate these three, the reader will end up misunderstanding FoldBridge's structure figures."
+    },
+    {
+      "type": "paragraph",
+      "text": "In other words, a DMS article cannot only explain the experiment; it must also explain why the display system has to exercise restraint. The more automated the layer, the more clearly its interpretability must be written out; otherwise automation will only spread misinterpretation faster."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is also the difference between FoldBridge and ordinary interpretation of paper figures. A paper figure can focus on one experiment or one model; a FoldBridge page puts many profiles, structural coordinates and evidence layers together. If the rules are not clear enough, the reader can easily take \"a value that exists in the database\", \"a colour displayed on the layer\" and \"the confidence the system gives\" to be the same thing. DMS is the example best suited to explaining this difference, because its chemical target is clear enough and the consequences of misreading are intuitive enough."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct ending for a DMS article is not \"a high signal proves this base is unpaired\", but rather: DMS data can provide powerful A/C accessibility cues for RNA structure interpretation; in FoldBridge, such a cue becomes part of structural interpretation and confidence only after it passes `DMS_AC_ONLY` and the subsequent gates."
+    }
+  ]
+}

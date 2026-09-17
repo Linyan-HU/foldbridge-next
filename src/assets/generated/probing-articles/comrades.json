@@ -1,0 +1,59 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "comrades",
+  "title": "COMRADES: Targeted mapping of RNA–RNA interactions and RNA structures in living cells",
+  "date": "",
+  "figure_count": 3,
+  "rep_pmid": "30202058",
+  "rep_pmcid": "",
+  "rep_doi": "10.1038/s41592-018-0121-0",
+  "asset_base": "./src/assets/generated/probing-articles/assets/comrades",
+  "sibling_navigation": {
+    "previous": {
+      "slug": "ric-seq",
+      "title": "RIC-seq"
+    }
+  },
+  "key_innovation": "Compared with transcriptome-wide RNA interaction mapping approaches, COMRADES combines antisense oligonucleotide-guided RNA capture with proximity ligation and deep sequencing, enabling targeted detection of RNA–RNA interactions and structural rearrangements of specific RNA molecules inside living cells.",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "How does COMRADES capture RNA–RNA interactions in living cells?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-comrades-f1",
+      "alt": "Principle and workflow of COMRADES-mediated RNA interaction mapping",
+      "srcBasename": "comrades_f1__F1.png",
+      "legend": "**Figure 1. Principle and workflow of COMRADES-mediated RNA interaction mapping.** COMRADES uses antisense oligonucleotides to selectively target RNA molecules, followed by chemical probing, biotin-assisted purification, proximity ligation, and high-throughput sequencing. The resulting chimeric reads identify RNA–RNA interactions with nucleotide-level resolution. Validation using ribosomal RNAs demonstrates that COMRADES accurately recovers known RNA interaction patterns and generates reproducible interaction maps.",
+      "label": "COMRADES F1",
+      "figureId": "F1"
+    },
+    {
+      "type": "heading",
+      "text": "How does COMRADES reveal RNA genome architecture and alternative RNA conformations?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-comrades-f2",
+      "alt": "Mapping viral RNA architecture and structural dynamics using COMRADES",
+      "srcBasename": "comrades_f2__F2.png",
+      "legend": "**Figure 2. Mapping viral RNA architecture and structural dynamics using COMRADES.** COMRADES identifies long-range RNA–RNA interactions within the Zika virus genome, revealing genome cyclization elements and higher-order RNA structures in living cells. Interaction-supported structures are used to distinguish alternative RNA conformations and define experimentally validated RNA folding landscapes.",
+      "label": "COMRADES F2",
+      "figureId": "F2"
+    },
+    {
+      "type": "heading",
+      "text": "How does COMRADES identify functional RNA–RNA interactions?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-comrades-f3",
+      "alt": "Identification of functional RNA interactions between viral and host RNAs",
+      "srcBasename": "comrades_f3__F3.png",
+      "legend": "**Figure 3. Identification of functional RNA interactions between viral and host RNAs.** COMRADES maps interactions between the Zika virus genome and cellular RNAs, including microRNAs and host transcripts. These interaction maps reveal potential regulatory RNA networks and provide structural insights into host–virus RNA recognition mechanisms.",
+      "label": "COMRADES F3",
+      "figureId": "F3"
+    }
+  ]
+}

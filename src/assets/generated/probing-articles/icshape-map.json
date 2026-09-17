@@ -1,0 +1,195 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "icshape-map",
+  "title": "icSHAPE-MaP: In vivo RNA structure profiling using selective 2′-hydroxyl acylation and mutation detection by reverse transcription",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "34099665",
+  "rep_pmcid": "PMC8184798",
+  "rep_doi": "10.1038/s41467-021-23607-w",
+  "asset_base": "./src/assets/generated/probing-articles/assets/icshape-map",
+  "sibling_navigation": {
+    "previous": {
+      "slug": "icshape",
+      "title": "icSHAPE"
+    },
+    "next": {
+      "slug": "nai-map",
+      "title": "NAI-MaP"
+    }
+  },
+  "key_innovation": "Compared with conventional icSHAPE approaches, icSHAPE-MaP converts SHAPE-induced reverse transcription events into nucleotide-resolution mutation signatures, enabling transcriptome-wide RNA structure profiling in intact cellular environments without requiring RT-stop detection.",
+  "body_start_heading": "A real example: how an icSHAPE-MaP profile flows through three layers (illustrative)",
+  "ppt_overview": [
+    {
+      "title": "How does icSHAPE-MaP convert RNA flexibility into sequencing-based structural signals?",
+      "srcBasename": "icshapemap_figure1.png",
+      "alt": "Principle and validation of icSHAPE-MaP for probing intact RNA structures",
+      "captionTitle": "Figure 1. Principle and validation of icSHAPE-MaP for probing intact RNA structures.",
+      "text": "icSHAPE-MaP combines NAI-N3 selective acylation of flexible RNA nucleotides with mutational profiling during reverse transcription. Modified nucleotides are converted into characteristic cDNA mutations, which are quantified by high-throughput sequencing to generate icSHAPE-MaP scores. The method accurately captures RNA structural accessibility in intact cellular RNA, as demonstrated by human 5S rRNA profiling."
+    },
+    {
+      "title": "How can icSHAPE-MaP reveal RNA structures of biologically important RNA substrates?",
+      "srcBasename": "icshapemap_figure2.png",
+      "alt": "icSHAPE-MaP profiles reveal structural features of Dicer-associated RNAs",
+      "captionTitle": "Figure 2. icSHAPE-MaP profiles reveal structural features of Dicer-associated RNAs.",
+      "text": "RIP-icSHAPE-MaP combines RNA immunoprecipitation with icSHAPE-MaP profiling to characterize structures of RNAs recognized by Dicer. icSHAPE-MaP-guided structural modeling improves secondary structure prediction and reveals structural features that distinguish Dicer substrates from non-substrate RNAs."
+    },
+    {
+      "title": "Can icSHAPE-MaP identify structural features governing RNA processing?",
+      "srcBasename": "icshapemap_figure3.png",
+      "alt": "RNA structural landscapes define functional substrate classes",
+      "captionTitle": "Figure 3. RNA structural landscapes define functional substrate classes.",
+      "text": "Genome-wide icSHAPE-MaP profiles of Dicer-associated RNAs were analyzed by clustering approaches to identify distinct structural signatures. Differential structural patterns correlate with Dicer enrichment, cleavage efficiency, and small RNA production, demonstrating that RNA folding landscapes influence RNA processing."
+    },
+    {
+      "title": "How does icSHAPE-MaP reveal the structural determinants of RNA processing?",
+      "srcBasename": "icshapemap_figure4.png",
+      "alt": "Experimental RNA structures reveal spatial constraints controlling Dicer processing",
+      "captionTitle": "Figure 4. Experimental RNA structures reveal spatial constraints controlling Dicer processing.",
+      "text": "icSHAPE-MaP-derived structural information combined with computational modeling identifies structural parameters that determine Dicer cleavage positions. Structural distance measurements and mutational analyses demonstrate how RNA architecture influences generation of mature miRNAs."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you look only at the data table, icSHAPE-MaP is easily misread as \"the reverse transcriptase read out a mutation there, so the pairing state of that base has been measured directly\". That reading is wrong. icSHAPE-MaP strings together in-cell 2′-OH acylation and the mutational profiling (MaP) readout into a single chain: NAI-N3 acylates 2′-OH in vivo, and reverse transcription reads these adducts as sequencing mutations, where the mutation rate reflects 2′-OH accessibility rather than the ground truth of pairing. Its object of interpretation is the chemical accessibility and flexibility of the ribose 2′-OH in living cells (in vivo): when a nucleotide's 2′-hydroxyl is not paired, not occluded by a protein or ligand, and not protected by a complex conformation, it is more readily modified by an acylating reagent such as NAI-N3. That is to say, what icSHAPE-MaP reports first is whether a class of chemical sites is accessible, not directly whether \"this base is definitely paired\" or \"this base is definitely unpaired\". High accessibility suggests a greater likelihood of being unpaired, but this is not the ground truth of pairing."
+    },
+    {
+      "type": "paragraph",
+      "text": "Here it must be distinguished carefully from the existing icSHAPE article. Classic icSHAPE uses click chemistry to attach biotin to the acylated sites, performs affinity enrichment, and then reads out the signal by having reverse transcription stop in front of the modified site (RT-stop). icSHAPE-MaP changes the readout: it retains in-cell 2′-OH acylation, but uses mutational profiling (MaP) to read the adduct on 2′-OH as a sequencing mutation during reverse transcription, rather than as an RT-stop. The significance of this step lies in sidestepping the biases inherent in the RT-stop readout: RT-stop is affected by premature termination, fragment length and enrichment efficiency, whereas MaP places each modification directly onto a base mismatch after alignment, allowing multiple modifications within a single molecule to be recorded. This boundary matters greatly for FoldBridge: FoldBridge can preserve the raw observations and can display experimental signal on its web pages; but as soon as anything enters default structure colouring, interpretive text or the confidence layer, a more specific question must be asked first: can this number, under the assay model of icSHAPE-MaP, be interpreted as support for 2′-OH accessibility? The raw mutation count is raw provenance; it must first pass the assay chemistry and the background/readout context before it can become a candidate for default structure colour or confidence."
+    },
+    {
+      "type": "heading",
+      "text": "The chemistry and readout chain of icSHAPE-MaP: acylate 2′-OH, then read it out by mutational profiling"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-icshape-map-f1",
+      "alt": "icSHAPE-MaP F1",
+      "srcBasename": "icshapemap_f1__PMC8184798__F1.jpg",
+      "legend": "**Figure 1. The icSHAPE-MaP workflow, mutation spectrum and single-base accessibility readout.** Luo et al. 2021 (PMID 34099665, DOI `10.1038/s41467-021-23607-w`). The legend breaks icSHAPE-MaP into several parts: (a) a schematic of the overall icSHAPE-MaP workflow; (b) the mutation spectrum of human 5S rRNA under the DMSO control (grey) and NAI-N3 treatment (red); (c) the secondary structure model of 5S rRNA and the icSHAPE-MaP score of each base, with different colours representing different score ranges and grey indicating that the site lacks a score; (d) box plots of the mutation rate of the four bases in the DMSO, in vivo and in vitro samples, with the box plot representing the median (orange line), the 25th/75th percentiles (box bounds) and 1.5 times the interquartile range (whiskers); (e) cumulative distribution curves of the Pearson correlation coefficient of the NAI-N3 mutation rate between two replicates, with each line corresponding to a different read coverage.",
+      "body": [
+        "This figure makes clear the increment that icSHAPE-MaP brings: it does not label every base out of thin air, but first uses chemistry to turn the fact that \"2′-OH is accessible\" into a sequenceable mutation signal. NAI-N3 acylates 2′-OH, reverse transcription reads the adduct as a mismatch, and after alignment these mismatches become the mutation rate at each position; only after subtracting the DMSO background does it approach a true measure of accessibility. Compared with the RT-stop readout of classic icSHAPE, MaP lets multiple modifications within a single molecule each fall on a mismatch and be recorded individually, rather than terminating only at the first modification. The rise in the mutation rate of the NAI-N3 sample relative to DMSO in panel b is direct evidence of this chemistry chain.",
+        "Panel d is especially worth pausing on: it separates the mutation rates of the four bases under the three conditions of DMSO, in vivo and in vitro. This reminds the reader of two things. First, the background (DMSO) itself has a non-negligible mutation rate, so accessibility must be the quantity \"treatment minus background\", not a bare mutation count. Second, the accessibility of the same stretch of RNA differs between living cells and the test tube, because in living cells there are proteins, ions and crowded conformations. For FoldBridge, this means the icSHAPE-MaP signal cannot be interpreted apart from \"under which condition it was measured\", and the raw provenance must be preserved together with the assay context. The replicate correlation in panel e improving as coverage rises shows that this is a readout with a statistical premise: the accessibility value at a low-coverage position should not be treated as an equally reliable structural clue."
+      ],
+      "label": "icSHAPE-MaP F1",
+      "pmid": "34099665",
+      "pmcid": "PMC8184798",
+      "doi": "10.1038/s41467-021-23607-w",
+      "figureId": "F1",
+      "legendText": "a Flowchart of the icSHAPE-MaP protocol. b DMSO (gray) and NAI-N 3 (red) mutation profiles of human 5S rRNA. c The secondary structure model and icSHAPE-MaP score for each base of 5S rRNA, with different colors representing different range of scores. Gray color indicates a missing score. d Box plot of mutation rates of four bases in DMSO ( n = 3156, 3493, 2978, or 3411, respectively), in vivo ( n = 2871, 3229, 4002, or 4671, respectively), and in vitro samples ( n = 3117, 3485, 3049, or 3539, respectively). Box plots are shown with median (orange horizontal line), 25th and 75th percentiles (box edges), and 1.5-fold of the interquartile range (whiskers). e The cumulative distribution curve for the Pearson correlation coefficient of NAI-N 3 mutation rates between two replicates. Each line represents a different read coverage with different colors. Source data are provided as a Source Data file."
+    },
+    {
+      "type": "heading",
+      "text": "Connecting accessibility to biology: enriching small amounts of RNA can still illuminate functional structure"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-icshape-map-f2",
+      "alt": "icSHAPE-MaP F2",
+      "srcBasename": "icshapemap_f2__PMC8184798__F2.jpg",
+      "legend": "**Figure 2. RIP-icSHAPE-MaP and pre-miRNA structure inference.** Luo et al. 2021 (PMID 34099665, DOI `10.1038/s41467-021-23607-w`). The legend shows: (a) a schematic of the RIP-icSHAPE-MaP workflow; (b) a ring chart of the number of different types of RNA enriched by Dicer that have an icSHAPE-MaP score; (c) a bar chart of the relative expression of the 150 most highly expressed pre-miRNAs (mapped reads divided by RNA length), with green for those that have an icSHAPE-MaP score and brown for those that do not; (d) a violin plot of the area under the ROC curve (AUC) of the icSHAPE-MaP score for the secondary structures of 209 tRNAs from the GtRNAdb database; (e) the secondary structure model and icSHAPE-MaP score of hsa-miR-125a, with the top modelled by RNAStructure using the icSHAPE-MaP score as a constraint and the bottom from miRBase; (f) a heatmap of the differences between pre-miRNA structure models built with and without the icSHAPE-MaP score as a constraint, where a purple box indicates single-stranded in the experimentally inferred structure but paired in miRBase, an orange box the reverse, a cyan box paired in both models but with a different pairing partner, and a grey box that the two model structures agree; (g) a violin plot of the terminal loop length distribution of pre-miRNAs based on the miRBase prediction (blue) or icSHAPE-MaP (green), with p values determined by a two-sided paired t-test.",
+      "body": [
+        "This figure shows a very practical benefit of the MaP readout of icSHAPE-MaP: it can give usable signal even for low-abundance RNAs. Combined with RIP (first enriching the RNA bound by Dicer), even pre-miRNAs and tRNAs that are not highly expressed can obtain per-position accessibility. In panel c a considerable proportion of pre-miRNAs obtain a score, and in panel d the AUC of the icSHAPE-MaP score against known tRNA structures is clearly high, both saying the same thing: this accessibility profile is indeed correlated with the real structure.",
+        "But read carefully the boundary that panels e, f and g aim to convey. Structures built using the icSHAPE-MaP score as a constraint differ systematically from the annotated structures in the database, especially in terminal loop length. This does not mean \"the experiment must be right and the database must be wrong\"; rather, it means accessibility provides a structural constraint, not a structural determination. The purple and orange boxes in panel f mark the inconsistency of \"single-stranded vs paired\"; for FoldBridge, such sites are precisely where the qualification most needs to be written out clearly: icSHAPE-MaP reports that the 2′-OH at this site is more or less accessible, and whether it is ultimately paired must be decided jointly by modelling and context, not settled directly by a single score."
+      ],
+      "label": "icSHAPE-MaP F2",
+      "pmid": "34099665",
+      "pmcid": "PMC8184798",
+      "doi": "10.1038/s41467-021-23607-w",
+      "figureId": "F2",
+      "legendText": "a Flowchart of the RIP-icSHAPE-MaP protocol. b Ring diagram of the number of different types of Dicer-enriched RNAs in different colors with icSHAPE-MaP scores. c Bar plot of the relative expression level of the top 150 pre-miRNAs, calculated as the number of mapped reads divided by the RNA length. The green bars denote the pre-miRNAs with icSHAPE-MaP scores, and the brown bars indicate those without icSHAPE-MaP scores. d Violin plot of Area Under ROC Curves (AUCs) of icSHAPE-MaP scores for 209 tRNA secondary structures from the GtRNAdb database. e The secondary structure models and icSHAPE-MaP scores of hsa-miR-125a. The structure on the top was modeled using the RNAStructure software with icSHAPE-MaP scores as constraints; the structure on the bottom is from the miRBase database. f A Heatmap highlighting differences between secondary structure models of pre-miRNAs built with or without icSHAPE-MaP scores as constraints. Purple boxes indicate that these nucleotides are single-stranded in the experimentally inferred structures but are base-paired in the structures from the miRBase; orange boxes indicate the opposite. Cyan boxes indicate that these nucleotides are based paired in both structural models, but with different pairing counterparts. Gray boxes indicate those nucleotide positions with identical structures in both models, either single-stranded or base-paired with the same counterparts. g A violin plot showing the length distribution of the terminal loop for pre-miRNAs based on the structural models from miRBase prediction (blue) or icSHAPE-MaP (green). p Values were determined with a two-sided paired Student’s t test. Violin plots show the median (white circle), 25/75 percentiles, and the smallest/largest values within 1.5 times the interquartile range above/below quartiles. Source data are provided as a Source Data file."
+    },
+    {
+      "type": "heading",
+      "text": "An accessibility profile can group substrates, but the grouping is a pattern, not the ground truth of pairing"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-icshape-map-f3",
+      "alt": "icSHAPE-MaP F3",
+      "srcBasename": "icshapemap_f3__PMC8184798__F3.jpg",
+      "legend": "**Figure 3. Grouping of Dicer substrates based on the icSHAPE-MaP accessibility profile.** Luo et al. 2021 (PMID 34099665, DOI `10.1038/s41467-021-23607-w`). The legend explains: (a) a scatter plot of PC1 (10.2%) and PC2 (6.8%) from a PCA using the icSHAPE-MaP scores of the 30 nt on either side of each central loop, with point colour representing RNA class, transparent points indicating RNAs not enriched by Dicer RIP, and K-means dividing all RNAs into three clusters marked by different background colours; (b) a heatmap of the weights of each position on PC1 and PC2 in the PCA; (c) a heatmap of the icSHAPE-MaP scores of Dicer substrates, each column marking the cluster ID, RNA class, icSHAPE-MaP score, enrichment score and Dicer cleavage score; (d) the icSHAPE-MaP score profile (left) and cartoon (right) of a representative RNA from each cluster; (e) violin plots of the enrichment score, Dicer cleavage score and AGO2-IP-enriched sRNA expression of the RNAs in the three clusters, with p values determined by a two-sided paired t-test; (f) an in vitro dicing assay verifying that several selected snoRNAs are Dicer cleavage substrates, with the experiment repeated twice with consistent results.",
+      "body": [
+        "This figure shows an aggregate use of icSHAPE-MaP: taking the per-position accessibility profiles of many RNAs to perform PCA and clustering, where the resulting three clusters correspond to Dicer enrichment, cleavage activity and downstream sRNA expression. In other words, the accessibility profile carries function-related structural patterns, not just noise. The in vitro validation in panel f further grounds the computational grouping at the biochemical level.",
+        "For FoldBridge, this figure suggests an interpretive direction that is easily overstated. Dimensionality-reduction clustering such as PCA and K-means yields \"similarity of accessibility patterns\"; it helps to discover regularities, but it is not a per-base pairing call. An RNA falling into a particular cluster means that its accessibility profile as a whole resembles that class of substrate, not that some position within it is \"definitely paired\" or \"definitely single-stranded\". Translating a cluster label directly into base-level structural ground truth is exactly the misreading the icSHAPE-MaP article wants to avoid. When FoldBridge cites such results, it should write \"the icSHAPE-MaP accessibility profile of this RNA resembles a certain class of Dicer substrate\", leaving base-level judgements to the visualisation and confidence layers that have passed the complete gate."
+      ],
+      "label": "icSHAPE-MaP F3",
+      "pmid": "34099665",
+      "pmcid": "PMC8184798",
+      "doi": "10.1038/s41467-021-23607-w",
+      "figureId": "F3",
+      "legendText": "a Scatter plot of PC1 (10.2%) and PC2 (6.8%) in the PCA analysis using icSHAPE-MaP scores of 30 nt flanking each of the center loops. The dot color indicates its RNA category. Transparent dots suggest that they are not enriched by Dicer RIP. K-means clustering divides all RNAs into three clusters with different background colors. b Heatmap of the weights of each position for PC1 and PC2 in the PCA analysis. c Heatmap of icSHAPE-MaP scores of Dicer substrates. For each column, the cluster ID, RNA category, icSHAPE-MaP scores, enrichment score, and Dicer cleavage score are indicated. d icSHAPE-MaP score profiles (left) and cartoon diagrams (right) for representative RNAs of each cluster are shown. e Violin plots of enrichment scores (left, n = 91, 99, or 43, respectively), Dicer cleavage scores (middle, n = 91, 99, or 43, respectively), and sRNA expression level enriched by AGO2 IP in HEK293T cells (right, n = 87, 76, or 33, respectively) for RNAs in the three clusters of Dicer substrates. p values were determined with a two-sided paired Student’s t test. Violin plots show the median (white circle), 25/75 percentiles, and the smallest/largest values within 1.5 times the interquartile range above/below quartiles. f In vitro dicing assay validated selected snoRNAs as Dicer cleavage substrates. The experiment was repeated two times with similar results. Source data are provided as a Source Data file."
+    },
+    {
+      "type": "heading",
+      "text": "From accessibility to three-dimensional distance: the deeper the interpretation, the more the source must be marked"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-icshape-map-f4",
+      "alt": "icSHAPE-MaP F4",
+      "srcBasename": "icshapemap_f4__PMC8184798__F4.jpg",
+      "legend": "**Figure 4. icSHAPE-MaP-constrained three-dimensional structure and Dicer cleavage site selection.** Luo et al. 2021 (PMID 34099665, DOI `10.1038/s41467-021-23607-w`). The legend explains: (a) a cartoon of the workflow for computing the spatial distance between a mature miRNA and the arm of its pre-miRNA; (b) box plots of the spatial distance between the Dicer cleavage site on the 3p arm of the pre-miRNA and its 3′ end, with each box representing the top 50 three-dimensional structures predicted by Rosetta for each pre-miRNA, pre-miRNAs divided into three groups by annotated length, and p values determined by a two-sided unpaired t-test with FDR correction; (c) a Venn diagram of the logical relationships among the several Dicer cleavage site selection rules obtained from RIP-icSHAPE-MaP; (d) about 20 nt sRNA-Seq showing the consistency of Dicer cleavage site selection on the 3p arm of pre-miR-217 variants, marking the relative expression and distance of each isoform, with nucleotide substitutions on the variant in red, the possible first nucleotide at the 5′ end in green, and the NAI-N3 reactivity of some nucleotides assessed by in vitro SHAPE shown as coloured dots (high/medium/low reactivity in red/orange/black, respectively); (e) an in vitro dicing assay confirming the direct role of Dicer in the cleavage site selection in (d), with the experiment repeated three times with consistent results; (f) a scatter plot showing that isoforms with a D3p_miRNA close to 59 Å are relatively more highly expressed; (g) an sRNA northern blot showing the length heterogeneity of the miR-217-5p isoform, with mmu-miR-124-1-3p and has-miR-15b-5p as loading controls, the experiment repeated three times with consistent results.",
+      "body": [
+        "This figure pushes the interpretive chain of icSHAPE-MaP to its furthest extent: from per-position accessibility, to secondary structure constraints, to Rosetta three-dimensional modelling, and finally to a geometric rule such as \"the spatial distance from the cleavage site to the 3′ end is about 59 Å\". It elegantly shows that an accessibility profile from living cells can be fed all the way into structural modelling and correspond to Dicer cleavage and isoform expression.",
+        "But the more elegant the functional interpretation, the more the evidence from different sources must be kept distinct. The \"spatial distances\" in panels b and f are not measured directly, but derived layer by layer from accessibility constraints, secondary structure and then three-dimensional prediction, each layer carrying its own assumptions and errors. Panel d also mixes in the reactivity coloured dots from in vitro SHAPE, which is another measurement under test-tube conditions and cannot be treated as the same quantity as the in vivo icSHAPE-MaP score. For FoldBridge, this is exactly why the assay context must be preserved: the same page may simultaneously show in vivo accessibility, in vitro reactivity and predicted three-dimensional distance, whose reliability and interpretive boundaries differ. Blending them into a single sentence about \"what the structure is here\" turns inference into observation and the test tube into living cells. The correct way to write it is to label, layer by layer, the source and condition of each number."
+      ],
+      "label": "icSHAPE-MaP F4",
+      "pmid": "34099665",
+      "pmcid": "PMC8184798",
+      "doi": "10.1038/s41467-021-23607-w",
+      "figureId": "F4",
+      "legendText": "a Cartoon shows the computational pipeline to calculate the spatial distance for mature miRNAs and their arms of pre-miRNAs. b Box plots of spatial distance between Dicer cleavage site on 3p arm of pre-miRNAs and their 3′ end. Each box represents the top 50 3D structures of each pre-miRNA predicted by the Rosetta software. Pre-miRNAs are divided into three groups with the number of annotated nucleotides in length with different colors. p Values were determined with a two-sided unpaired Student’s t test and were adjusted by their false discovery rate (FDR). Boxplots show the median (orange horizontal line), 25th and 75th percentiles (box edges), and 1.5-fold of the interquartile range (whiskers). c A Venn diagram shows all logical relations between different rules of Dicer cleavage-site selection on pre-miRNAs obtained by RIP-icSHAPE-MaP. d sRNA-Seq for ~20-nt long RNAs indicates a consistency for Dicer cleavage-site selection on 3p arms of pre-miR-217 variants, based on their spatial distance. The relative expression level and distance are shown for each isoform (shown as a blunt-ended line). The nucleotide substitutions on pre-miR217 variants are colored in red. The first nucleotides which may correspond to 5′ end of pre-miR-217 isoforms are colored in green. Reactivity to NAI-N 3 , assessed by in vitro SHAPE analysis, are shown as colored dots for select nucleotides. The reactivity is defined as the ratio of darkness quantified by Image J between the NAI-N 3 (−) and NAI-N 3 (+) sample of the gel. High reactivity (ratio > 1.6), medium reactivity (1.2 < ratio ≤ 1.6) or low reactivity (ratio ≤ 1.2) are denoted as red, orange or black points. e In vitro Dicing assay confirms Dicer’s direct role on cleavage-site selection shown in panel ( d ). The experiment was repeated three times with similar results. f Scatter plot indicating that the isoforms having D 3p_miRNA closer to 59 Å will yield relatively higher expression, compared to their counterparts outside this distance range. g sRNA northern blots showing the heterogeneity in the lengths of the miR-217-5p isoforms. mmu-miR-124-1-3p and has-miR-15b-5p were used to show approximately equal loading. The experiment was repeated three times with similar results. Source data are provided as a Source Data file."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about icSHAPE-MaP"
+    },
+    {
+      "type": "paragraph",
+      "text": "icSHAPE-MaP differs from DMS in that it has no clear base-target boundary of \"A/C interpretable, G/U not interpretable\"; its target is the ribose 2′-OH, and in principle every nucleotide has a 2′-OH. So the interpretive gate of icSHAPE-MaP is not \"which base can be coloured\", but a multi-stage gate oriented toward 2′-OH accessibility: chemical target reachability (whether the 2′-OH at this site is effectively acylated and read out by MaP in the current library), readout context (whether the mutation rate has had the DMSO background subtracted, whether coverage is sufficient, and whether scaling and normalisation have been performed), and the mapping and claim gate (whether the coordinates are reliable and whether they hold under this experimental condition). The key difference from classic icSHAPE must be stated here: the raw signal of icSHAPE-MaP is a per-position mutation rate, not an RT-stop count; the MaP readout avoids RT-stop bias, but it has its own background (the DMSO mutation rate) and coverage premise and likewise needs correction."
+    },
+    {
+      "type": "paragraph",
+      "text": "Only accessibility that passes all of these gates can enter the default visualisation and confidence layers. The raw mutation count is itself only provenance: it should be preserved in full, downloadable and traceable, but it should not automatically drive default structure colouring. The default structure figure in ANNOJOIN should read the visualisation value after background correction and targetability processing, not the bare mutation rate. The requirements of confidence / FEC are higher still: only accessibility observations that pass the chemistry, readout, mapping, claim and context gates may become candidates for positive confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is not a weakening of icSHAPE-MaP, but a respect for its strengths. icSHAPE-MaP is very powerful for in-cell 2′-OH accessibility, especially in scenarios involving low-abundance RNA and where single-molecule multi-modification information is needed; the error occurs when \"a decrease in accessibility\" is uniformly written as \"pairing\", or the raw mutation rate is written as structural ground truth. Even though MaP retains multiple modifications on a single read, FoldBridge must separate \"a mutation was measured at a certain site\" from \"this mutation rate can serve as evidence of flexibility\". The default colour on the web page answers \"what readable signal does this site have within the icSHAPE-MaP interpretive boundary\"; the details table answers \"what is recorded in the raw data\". Once these two layers are mixed together, the multiple mutations recorded on a single-molecule read will be taken as a structural judgement that icSHAPE-MaP has already certified."
+    },
+    {
+      "type": "heading",
+      "text": "A real example: how an icSHAPE-MaP profile flows through three layers (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so what follows is a clearly labelled illustrative scenario, used to show how a single icSHAPE-MaP profile separates into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine an icSHAPE-MaP profile measured in human cells after RIP enrichment entering FoldBridge. The first layer is the raw observation: the per-position mutation rate, the corresponding DMSO control mutation rate, the read coverage, the library metadata and the sequencing coordinates, all preserved as-is, as provenance, downloadable and recomputable. They record \"how many mutations were read on a low-abundance RNA\", not yet a flexibility conclusion for the site."
+    },
+    {
+      "type": "paragraph",
+      "text": "The second layer is the visual signal: after subtracting the DMSO background from the mutation rate, filtering by coverage, scaling to 0 to 1, and passing the mapping and readout gates, one obtains the 2′-OH accessibility value that can be coloured on the structure page. The colour the reader sees first should come from this layer, because it is a colour interpretable under the icSHAPE-MaP assay model, not a bare mutation count."
+    },
+    {
+      "type": "paragraph",
+      "text": "The third layer is the confidence candidate: only those accessibility observations that pass both the chemistry and readout gates and the mapping/claim/context checks enter the confidence assessment, and they must still carry the qualification \"accessibility reflects 2′-OH flexibility and suggests being unpaired rather than the ground truth of pairing\". Sites with insufficient coverage, or that hold only under a certain condition, should not be treated as equally strong evidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "The value of this illustrative scenario lies in grounding the combined chain of click enrichment plus MaP mutation readout in system behaviour: the same icSHAPE-MaP profile can simultaneously produce the raw observation, the visualisation signal and the confidence candidate, but these three stop at different interpretive depths. If a popular-science article on icSHAPE-MaP mixes these three into one, the reader will take \"reverse transcription read a mutation\" directly as \"the pairing state is settled\", and so misread FoldBridge's structure figure. MaP avoids RT-stop bias, but it has not cancelled the qualification that \"the mutation rate reflects 2′-OH accessibility and suggests being unpaired rather than the ground truth of pairing\"; the more automatic the colouring, the more this qualification and the coverage premise must be written next to the colour."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct ending for an icSHAPE-MaP article is not \"a low signal proves the base is paired\", but: icSHAPE-MaP can provide a powerful in vivo 2′-OH accessibility clue for RNA structure interpretation and avoids RT-stop bias through the MaP readout; in FoldBridge, such a clue becomes part of default structural interpretation and confidence only after first being preserved as raw provenance and then passing the chemistry, readout, mapping, claim and context gates."
+    }
+  ]
+}

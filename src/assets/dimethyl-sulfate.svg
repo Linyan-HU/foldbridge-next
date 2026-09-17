@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="102pt" height="71.25pt" viewBox="0 0 136 95" role="img" aria-labelledby="title desc">
+  <title id="title">Dimethyl sulfoxide</title>
+  <desc id="desc">Structural formula of dimethyl sulfoxide, with a sulfur oxygen double bond and two methyl groups.</desc>
+  <g fill="none" stroke="#111111" stroke-width="1.6" stroke-linecap="round">
+    <line x1="65" y1="33" x2="65" y2="19"/>
+    <line x1="70" y1="33" x2="70" y2="19"/>
+    <line x1="58" y1="53" x2="41" y2="64"/>
+    <line x1="78" y1="53" x2="94" y2="64"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12pt" text-anchor="middle">
+    <text x="68" y="18" fill="#ff0000">O</text>
+    <text x="68" y="51" fill="#c49000">S</text>
+    <text x="20" y="79" fill="#111111">H₃C</text>
+    <text x="114" y="79" fill="#111111">CH₃</text>
+  </g>
+</svg>

@@ -1,0 +1,153 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "cotranscriptional-shape-seq",
+  "title": "Cotranscriptional SHAPE-seq: reading 2′-OH accessibility as RNA folds while being transcribed",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "27798597",
+  "rep_pmcid": "PMC5497173",
+  "rep_doi": "10.1038/nsmb.3316",
+  "asset_base": "./src/assets/generated/probing-articles/assets/cotranscriptional-shape-seq",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you only look at that elegant reactivity matrix, Cotranscriptional SHAPE-seq is easily misread as a structural camera that can \"directly photograph RNA pairing step by step during transcription\". That understanding is wrong. The interpretable object of Cotranscriptional SHAPE-seq is still the chemical accessibility/flexibility of the ribose 2′-OH: when the 2′-hydroxyl of a nucleotide is not paired, not shielded by protein or ligand, and not protected by a complex conformation, it is more readily acylated by the SHAPE reagent. What is unique about this method is that, within a single round of in vitro transcription, it uses roadblocks to stall the transcription complex at a series of different lengths, and then probes these stalled intermediates with SHAPE simultaneously — so what is obtained is an accessibility trajectory with time/length resolution, not the ground truth of pairing. The readout is still 2′-OH accessibility, not \"this base is definitely paired at this length\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "This boundary is crucial for FoldBridge. FoldBridge can store the raw observations and can display the experimental signal on a web page; but the moment it enters the default structure colouring, the explanatory text or the confidence layer, a more specific question must be asked first: can this number, under the assay model of Cotranscriptional SHAPE-seq, be interpreted as 2′-OH accessibility support? The per-length SHAPE reactivity is raw provenance; it must first pass the assay chemistry, the background/readout context, and the qualification \"this is the accessibility at a certain transcript length, not a pairing call\", before it can become a candidate for default structure colour or confidence."
+    },
+    {
+      "type": "heading",
+      "text": "Stalling transcription at every length: roadblock + synchronised SHAPE probing"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-cotranscriptional-shape-seq-f1",
+      "alt": "Cotranscriptional_SHAPE-seq F1",
+      "srcBasename": "cotranscriptionalshapeseq_f1__PMC5497173__F1.jpg",
+      "legend": "**Figure 1. The overall scheme of Cotranscriptional SHAPE-seq.** The legend of Watters et al. 2016 (PMID 27798597, DOI `10.1038/nsmb.3316`) breaks the method into several stages: (a) a set of templates is constructed, each containing an E. coli promoter, a variable-length RNA template region and an EcoRI Gln111 roadblock site; using a template library with roadblocks at each intermediate length, single-round in vitro transcription (IVT) is carried out by E. coli RNA polymerase (RNAP), after which these stalled complexes are simultaneously probed with SHAPE and taken through sequencing library preparation; (b) paired-end sequencing reads out both the SHAPE modification position and the 3′ end of each nascent RNA transcript, and after binning by transcript length, the SHAPE reactivity profile at each length is computed and then stacked into a reactivity matrix; the rise or fall of the reactivity of certain nucleotides (columns) between different transcript lengths (rows) reveals cotranscriptional folding events.",
+      "body": [
+        "From this figure one can see the logic of Cotranscriptional SHAPE-seq: it does not \"see\" folding out of thin air, but first uses roadblocks to cut a continuous transcription process into a set of reproducible length snapshots, and then performs the same chemical probing on each snapshot. The physical quantity read out is always the degree to which the 2′-OH is acylated — that is, accessibility — except that now each length has its own accessibility profile.",
+        "More importantly, only after these profiles are stacked by length into a matrix do the differences between rows become the source of \"folding events\". In other words, the method itself does not directly report pairing; it reports that \"the accessibility of a certain site changed as transcription lengthened\". For FoldBridge, this means that the same nucleotide will have different SHAPE values at different lengths, and the raw provenance must be stored together with the label \"which transcript length this is\", otherwise a number divorced from its length context cannot be interpreted."
+      ],
+      "label": "Cotranscriptional_SHAPE-seq F1",
+      "pmid": "27798597",
+      "pmcid": "PMC5497173",
+      "doi": "10.1038/nsmb.3316",
+      "figureId": "F1",
+      "legendText": "Cotranscriptional SHAPE-Seq overview. ( a ) A set of templates are generated that each contain an E. coli promoter, a variable length RNA template, and an EcoRI Gln111 roadblock site. Single-round in vitro transcription (IVT) with E. coli RNA polymerase (RNAP) is performed using a template library containing a roadblock site at each intermediate transcript length, followed by simultaneous SHAPE probing of the arrested complexes and preparation for sequencing. ( b ) Paired-end sequencing reveals the SHAPE modification position and the 3’ end of each nascent RNA transcript. Reads are binned by transcript length and used to calculate SHAPE reactivity profiles that are stacked to generate the reactivity matrix. Increases or decreases in reactivity between transcript lengths (rows) at particular nts (columns) of this matrix reveal cotranscriptional folding events."
+    },
+    {
+      "type": "heading",
+      "text": "SRP RNA: accessibility changes with length, tracing out a folding trajectory"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-cotranscriptional-shape-seq-f2",
+      "alt": "Cotranscriptional_SHAPE-seq F2",
+      "srcBasename": "cotranscriptionalshapeseq_f2__PMC5497173__F2.jpg",
+      "legend": "**Figure 2. The cotranscriptional folding of SRP RNA.** The legend of Watters et al. 2016 (PMID 27798597, DOI `10.1038/nsmb.3316`) explains: (a) the final folded secondary structure of SRP RNA, coloured by the reactivity intensity at length L₄ (125 nt), with the structure drawn according to the crystal structure of Batey et al.; (b) the Cotranscriptional SHAPE-seq reactivity matrix of the SRP RNA folding pathway (left), with lengths L₁, L₂, L₃, L₄ corresponding to 50, 75, 100, 125 nt respectively, and the selected bar charts and the matrix rows immediately above and below on the right showing the reactivity from L₂ to L₄, with the reactivity changes from L₂→L₃ and L₃→L₄ marked by arrows; (c) the reactivity values of the sites U14, C31, U41, G57 throughout the transcription process, where U14 undergoes a loop→helix transition at length 117 and C31 becomes paired at length 96, with the curve colours corresponding to the base positions marked in (d); (d) the SRP RNA folding pathway proposed accordingly and consistent with these transitions, with the 14 nt RNAP footprint at each length shown in grey, and the ~5 nt in the RNA exit channel marked as small dots. Figures b and c are n=1, representative of three biological replicates.",
+      "body": [
+        "This figure is the most intuitive display of Cotranscriptional SHAPE-seq, and also the place most easily over-interpreted. Seeing the reactivity of U14 and C31 in (c) suddenly drop at a certain length, a reader will naturally say \"it paired here\". But strictly speaking, what the method measures is that the 2′-OH accessibility of these sites decreased as transcription lengthened; the researchers interpret this decrease as a loop→helix transition or \"becoming paired\", which is a reasonable inference based on the crystal structure and the folding model, not the ground truth of pairing handed over directly by the SHAPE signal. A drop in accessibility can come from pairing, and equally from conformational tightening or being shielded by RNAP.",
+        "Note the 14 nt RNAP footprint in the figure: nucleotides near the 3′ end, still inside the polymerase or in the exit channel, simply cannot be read for normal accessibility in the first place. This precisely shows why every number in Cotranscriptional SHAPE-seq is inseparable from the context \"at which length, how far from the 3′ end\". For FoldBridge, this means that the SHAPE value of the same site is \"an accessibility observation at a certain transcript length\", not a static pairing label; writing a trajectory like (c) as \"this base is paired at length N\" carries the accessibility readout past the boundary where it ought to stop."
+      ],
+      "label": "Cotranscriptional_SHAPE-seq F2",
+      "pmid": "27798597",
+      "pmcid": "PMC5497173",
+      "doi": "10.1038/nsmb.3316",
+      "figureId": "F2",
+      "legendText": "SRP RNA cotranscriptional folding. ( a ) Secondary structure of the final SRP RNA fold colored by reactivity intensity at length L 4 (125 nts) drawn according to a crystal structure determined in Batey et al . 23 . ( b ) Cotranscriptional SHAPE-Seq reactivity matrix for the SRP RNA folding pathway (left). Lengths L 1 , L 2 , L 3 , and L 4 correspond to 50, 75, 100, and 125 nts, respectively. Selected bar charts and corresponding matrix rows above and below (right) display reactivities for L 2 to L 4 . Reactivity changes for L 2 → L 3 and for L 3 → L 4 are marked with arrows. ( c ) Reactivity values for positions U14, C31, U41, and G57 over the course of transcription. U14 undergoes a loop → helix transition at length 117. Similarly, C31 becomes paired at length 96. Plot colors correspond to the marked base positions in ( d ) outlining a proposed folding pathway of the SRP RNA that is consistent with these transitions. The 14 nt RNAP footprint 24 for each length is indicated with gray, with the ~5 nts in the RNA exit channel marked as small circles. Results shown in b and c are n=1 and are representative of three biological replicates ( Supplementary Fig. 9a )."
+    },
+    {
+      "type": "heading",
+      "text": "The fluoride riboswitch: with or without ligand, the folding trajectory forks"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-cotranscriptional-shape-seq-f3",
+      "alt": "Cotranscriptional_SHAPE-seq F3",
+      "srcBasename": "cotranscriptionalshapeseq_f3__PMC5497173__F3.jpg",
+      "legend": "**Figure 3. Cotranscriptional SHAPE-seq data for the B. cereus fluoride riboswitch.** The legend of Watters et al. 2016 (PMID 27798597, DOI `10.1038/nsmb.3316`) explains: (a) the antiterminated and terminated folds of the fluoride riboswitch, coloured by the reactivity values at lengths 90 nt and 82 nt respectively (below); (b) the Cotranscriptional SHAPE-seq reactivity matrices of this riboswitch transcribed under 10 mM (top) or 0 mM NaF (bottom); (c) the reactivity difference (Δρ) between the two matrices in (b), annotated by the folding events during transcription. The reactivity changes occurring during transcription suggest that the fluoride riboswitch follows two different cotranscriptional folding pathways depending on whether the ligand is present. Figures b and c are n=1, representative of three biological replicates.",
+      "body": [
+        "This figure is the most persuasive application of Cotranscriptional SHAPE-seq: for the same stretch of RNA, merely because of whether the fluoride ligand is present during transcription, the reactivity matrix traces out two different trajectories, corresponding to the antiterminated and terminated fates. This is precisely the essence of a riboswitch \"deciding while being transcribed\", and the method can unfold this decision process along length to view it.",
+        "But the readout still needs to be spelt out. The colour in (b) is the 2′-OH accessibility at each length, and the Δρ in (c) is the accessibility difference of \"with ligand minus without ligand\". A position with a large Δρ shows that the ligand changed the accessibility there — possibly because pairing was rearranged, and possibly because the conformation or local environment changed. The researchers annotate these differences as folding events, an interpretation made by combining the two known folds. For FoldBridge, an honest sentence is \"at this length and this ligand condition, the SHAPE accessibility of this site differs\", not \"this base is paired in the presence of fluoride\". The more dramatic the ligand-dependent difference, the more the accessibility difference must be separated from the pairing call."
+      ],
+      "label": "Cotranscriptional_SHAPE-seq F3",
+      "pmid": "27798597",
+      "pmcid": "PMC5497173",
+      "doi": "10.1038/nsmb.3316",
+      "figureId": "F3",
+      "legendText": "B. cereus fluoride riboswitch cotranscriptional SHAPE-Seq data. ( a ) The antiterminated and terminated folds 26 of the fluoride riboswitch, colored by the reactivity values at lengths 90 nt and 82 nt, respectively (bottom). ( b ) Cotranscriptional SHAPE-Seq reactivity matrices for the fluoride riboswitch transcribed with 10 mM (top) or 0 mM NaF (bottom). ( c ) Reactivity differences (Δρ) between the matrices in (b) annotated according to folding events during transcription. The reactivity changes that occur over the course of transcription suggest that the fluoride riboswitch traverses two cotranscriptional folding pathways depending on the presence of ligand. Results shown in b and c are n=1 and are representative of three biological replicates ( Supplementary Fig. 9c,d )."
+    },
+    {
+      "type": "heading",
+      "text": "Single-nucleotide trajectories: only cotranscriptional folding resolves the ligand-dependent structure"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-cotranscriptional-shape-seq-f4",
+      "alt": "Cotranscriptional_SHAPE-seq F4",
+      "srcBasename": "cotranscriptionalshapeseq_f4__PMC5497173__F4.jpg",
+      "legend": "**Figure 4. The change in single-nucleotide reactivity with transcript length, highlighting the structural transitions along the cotranscriptional folding pathway of the fluoride riboswitch.** The legend of Watters et al. 2016 (PMID 27798597, DOI `10.1038/nsmb.3316`) explains: (a) the single-nucleotide reactivity trajectories of nucleotides participating in several key structural transitions, when transcribed under 0 mM (grey) or 10 mM NaF (black) conditions, with these trajectories forking at the lengths where the structural transitions occur, the data taken from the matrix in Figure 3b; (b) the same as (a), but the RNA is first transcribed, extracted and denatured, then equilibrium-refolded in a transcription buffer containing 0 mM (grey) or 10 mM NaF (black), and only then subjected to SHAPE modification; the equilibrium-refolded trajectories lack the forking between them, showing that obtaining these ligand-dependent different structures must rely on cotranscriptional folding, the data taken from the matrix in Supplementary Figure 8a.",
+      "body": [
+        "This figure lays out the most valuable point within the interpretive boundary of Cotranscriptional SHAPE-seq: the per-length reactivity trajectories in (a) fork at certain lengths, suggesting ligand-dependent structural transitions; whereas the control experiment in (b) shows that if the RNA is first fully transcribed, denatured and then equilibrium-refolded in a tube, this forking disappears. In other words, the ligand-dependent different structures appear only with \"folding while being transcribed\", and cannot be seen in the equilibrium end state. This is the real insight of this work — the folding pathway, not just the endpoint, determines the fate of the RNA.",
+        "It is precisely for this reason that FoldBridge must preserve this layer of assay context. The forking in (a) is the forking of accessibility trajectories, from which the researchers inferred structural transitions; this is a strong conclusion about folding kinetics, but it is still built on differences in 2′-OH accessibility, not the per-base ground truth of pairing. Equally crucial, these conclusions hold only under cotranscriptional conditions — the equilibrium data in (b) show no forking. So a complete sentence should be: under cotranscriptional conditions and this ligand condition, the trajectory of the 2′-OH accessibility of this site along length forks from the control, suggesting a structural transition; this interpretation depends on the cotranscriptional context, and does not hold if switched to equilibrium refolding."
+      ],
+      "label": "Cotranscriptional_SHAPE-seq F4",
+      "pmid": "27798597",
+      "pmcid": "PMC5497173",
+      "doi": "10.1038/nsmb.3316",
+      "figureId": "F4",
+      "legendText": "Changes in reactivities over transcript lengths for single nucleotides highlight structural transitions in the cotranscriptional folding pathway of the B. cereus fluoride riboswitch. ( a ) Single nucleotide reactivity trajectories for nucleotides involved in several key structural transitions when transcribed with either 0 mM (gray) or 10 mM NaF (black). The trajectories diverge at lengths were structural transitions occur. Results shown are extracted from the matrices presented in Fig. 3b . ( b ) As in (a), except that the RNAs were transcribed, extracted, denatured, and equilibrium refolded in transcription buffer with either 0 mM (gray) or 10 mM NaF (black) prior to SHAPE modification. The lack of divergence between the equilibrium refolding trajectories indicates that cotranscriptional folding is required to obtain alternate ligand-dependent structures. Results shown are extracted from the matrices presented in Supplementary Fig. 8a ."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about Cotranscriptional SHAPE-seq"
+    },
+    {
+      "type": "paragraph",
+      "text": "Cotranscriptional SHAPE-seq does not have a clear \"A/C interpretable, G/U uninterpretable\" base-target boundary like DMS — like icSHAPE, its target is the ribose 2′-OH, and in principle every nucleotide has a 2′-OH. But it has one more dimension than static SHAPE: transcript length. So its interpretive gate is not \"which base can be coloured\", but a multi-stage gate oriented to 2′-OH accessibility and carrying a length dimension: chemical-target accessibility (whether the 2′-OH of this site was effectively acylated and read out in the library at that length, and whether it falls within the RNAP footprint where it cannot be read), readout context (whether the reactivity has had background subtracted, been scaled and normalised, and been correctly binned by length), and the mapping and claim gate (whether the coordinates are reliable, which transcript length this number belongs to, and whether it holds under that transcript/ligand condition)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Only accessibility that simultaneously passes these gates can enter the default visualisation and confidence layers. The per-length raw reactivity is itself only provenance: it should be preserved in full, downloadable and traceable, and must carry the label \"which transcript length this is\", but it should not automatically drive the default structure colouring. The default structure figure of ANNOJOIN should read the visualisation values that have been background-corrected and processed for targetability and length context, not the bare reactivity. The requirement for confidence / FEC is higher: only accessibility observations that pass the chemistry, readout, mapping, claim and context (including transcript length and cotranscriptional condition) gates can become candidates for positive confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is not a weakening of Cotranscriptional SHAPE-seq but a respect for its strength. This method is very powerful for the accessibility trajectory of \"how RNA folds step by step during transcription\"; the error occurs when \"accessibility falls along length\" is uniformly written as \"pairing\", or when the reactivity at a certain length is written as static structural ground truth and the length context is discarded. This method measures an entire folding trajectory unfolding along length, so FoldBridge must not only separate \"there is a measured value\" from \"interpretable as structural support\", but also additionally remember which transcript length each observation belongs to. The default colour on the web page answers \"within the interpretive boundary of Cotranscriptional SHAPE-seq, and at this transcript length, what readable signal does this site have\"; the details table answers \"what was recorded per length in the raw data\". When these two questions are mixed together, the reader will think that FoldBridge has endorsed every number shown, and will further think it is a static structure."
+    },
+    {
+      "type": "heading",
+      "text": "A real case: how a cotranscriptional reactivity matrix would flow through three layers (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so the following is a clearly labelled illustrative scenario, used to show how a single Cotranscriptional SHAPE-seq matrix splits into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine a reactivity matrix of a fluoride riboswitch entering FoldBridge: the rows are transcript lengths, and the columns are nucleotide sites. The first layer is the raw observation: the reactivity of each (length, site) cell, the corresponding background and control, the ligand condition (0 or 10 mM NaF), the library metadata, the sequencing coordinates, and the RNAP footprint range at each length — these are all preserved as-is, as provenance, downloadable and re-computable. They are the answer to \"what was recorded per length in the raw data\", but they are not yet structure, still less a folding pathway."
+    },
+    {
+      "type": "paragraph",
+      "text": "The second layer is the visual signal: after the reactivity has had background subtracted, been scaled, passed the mapping and readout gates, and been correctly placed by length, one obtains the 2′-OH accessibility values that can be coloured onto the structure page. The colour a reader sees at first glance should come from this layer, and should make clear which transcript length it corresponds to, because it is a colour interpretable under the Cotranscriptional SHAPE-seq assay model, not a bare count divorced from length."
+    },
+    {
+      "type": "paragraph",
+      "text": "The third layer is the confidence candidate: only those accessibility observations that pass both the chemistry and readout gates and the mapping/claim/context (including transcript length and cotranscriptional condition) checks enter the confidence assessment, and still carry two qualifications — \"the accessibility change may come from pairing, and equally from conformation or RNAP shielding\", and \"this conclusion depends on the cotranscriptional context and may not hold at equilibrium\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "The value of this illustrative scenario lies in carrying the \"transcript length\" dimension all the way through the three layers: the same cotranscriptional matrix can simultaneously produce raw observations, per-length visualisation signal and confidence candidates, all threaded by the length dimension yet stopping at different interpretive depths. If a popular-science article about Cotranscriptional SHAPE-seq mixes these three layers into one, and also fails to make clear that \"the folding trajectory is inferred, not directly photographed pairing\", the most dangerous consequence is that the reader pictures the length snapshots, one by one, as a continuous RNA folding movie, taking the inferred folding pathway as a directly photographed pairing process. The more it is automatically laid out by length and automatically coloured, the more the two notes — \"the accessibility change may come from pairing, and equally from conformation or RNAP shielding\" and \"the conclusion depends on the cotranscriptional context\" — must be written beside the trajectory."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct ending for a Cotranscriptional SHAPE-seq article is not \"a signal drop at some length proves the base is paired here\", but rather: Cotranscriptional SHAPE-seq can provide powerful 2′-OH accessibility trajectories with time/length resolution for RNA structure interpretation; in FoldBridge, such clues become part of the default structural interpretation and confidence only after first being stored as raw provenance (carrying the transcript length) and then passing the chemistry and readout, mapping, claim and context gates."
+    }
+  ]
+}

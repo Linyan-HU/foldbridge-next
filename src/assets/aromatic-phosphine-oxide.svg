@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="162pt" height="108pt" viewBox="0 0 216 144" role="img" aria-labelledby="title desc">
+  <title id="title">Aromatic phosphine oxide structure</title>
+  <desc id="desc">A benzoyl phosphine oxide structural formula with three uniformly drawn aromatic rings and methyl substituents.</desc>
+  <defs>
+    <!-- One reusable regular hexagon: every aromatic ring has identical geometry. -->
+    <g id="benzene">
+      <polygon points="-28,0 -14,-24.249 14,-24.249 28,0 14,24.249 -14,24.249"/>
+      <line x1="-20" y1="-1" x2="-9.5" y2="-19.2"/>
+      <line x1="9.5" y1="-19.2" x2="20" y2="-1"/>
+      <line x1="10" y1="17.2" x2="-10" y2="17.2"/>
+    </g>
+  </defs>
+  <g fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="scale(.75)">
+    <use href="#benzene" transform="translate(66 112)"/>
+    <use href="#benzene" transform="translate(172 59)"/>
+    <use href="#benzene" transform="translate(201 129)"/>
+
+    <!-- Benzoyl linkage to the phosphorus center. -->
+    <line x1="94" y1="112" x2="112" y2="101"/>
+    <line x1="109" y1="98" x2="109" y2="70"/>
+    <line x1="115" y1="98" x2="115" y2="70"/>
+    <line x1="112" y1="101" x2="129" y2="116"/>
+
+    <!-- Phosphorus bonds to the two aryl groups and its oxygen. -->
+    <line x1="148" y1="111" x2="158" y2="86"/>
+    <line x1="149" y1="128" x2="173" y2="129"/>
+    <line x1="133" y1="134" x2="125" y2="146"/>
+    <line x1="139" y1="136" x2="131" y2="149"/>
+
+    <!-- Methyl substituent bonds. -->
+    <line x1="52" y1="87.751" x2="52" y2="70"/>
+    <line x1="38" y1="112" x2="20" y2="122"/>
+    <line x1="80" y1="136.249" x2="91" y2="154"/>
+    <line x1="186" y1="34.751" x2="196" y2="22"/>
+    <line x1="215" y1="153.249" x2="232" y2="163"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12pt" text-anchor="middle">
+    <text x="84" y="47" fill="#ff0000">O</text>
+    <text x="103" y="95" fill="#c49000">P</text>
+    <text x="95" y="124" fill="#ff0000">O</text>
+    <text x="39" y="46" fill="#111111">CH₃</text>
+    <text x="20" y="103" fill="#111111">H₃C</text>
+    <text x="70" y="132" fill="#111111">CH₃</text>
+    <text x="155" y="12" fill="#111111">CH₃</text>
+    <text x="188" y="131" fill="#111111">CH₃</text>
+  </g>
+</svg>

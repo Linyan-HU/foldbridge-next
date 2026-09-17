@@ -1,0 +1,72 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "paris",
+  "title": "PARIS: Psoralen-based mapping of RNA duplex structures and RNA–RNA interactions",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "27180905",
+  "rep_pmcid": "",
+  "rep_doi": "10.1016/j.cell.2016.04.028",
+  "asset_base": "./src/assets/generated/probing-articles/assets/paris",
+  "sibling_navigation": {
+    "next": {
+      "slug": "splash",
+      "title": "SPLASH"
+    }
+  },
+  "key_innovation": "Compared with conventional RNA structure probing approaches that mainly report local nucleotide accessibility, PARIS introduces in vivo psoralen crosslinking and proximity ligation to directly capture RNA duplexes, enabling transcriptome-wide identification of RNA–RNA interactions and long-range base-paired structures at nucleotide resolution.",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "How does PARIS capture RNA duplex structures in living cells?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-paris-f1",
+      "alt": "Principle of PARIS-mediated RNA duplex mapping",
+      "srcBasename": "paris_f1__F1.png",
+      "legend": "**Figure 1. Principle of PARIS-mediated RNA duplex mapping.** PARIS combines in vivo psoralen crosslinking, RNA proximity ligation, and high-throughput sequencing to identify RNA duplex structures. Psoralen derivatives intercalate into double-stranded RNA regions and covalently crosslink paired nucleotides upon UV irradiation. After partial RNase digestion, crosslinked RNA fragments are purified, proximity ligated, and converted into sequencing libraries. The resulting chimeric reads directly represent RNA duplex regions and RNA–RNA interaction sites.",
+      "label": "PARIS F1",
+      "figureId": "F1"
+    },
+    {
+      "type": "heading",
+      "text": "How does PARIS validate RNA duplex detection with known RNA structures?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-paris-f2",
+      "alt": "Validation of PARIS-detected RNA duplexes against known structures",
+      "srcBasename": "paris_f2__F2.png",
+      "legend": "**Figure 2. Validation of PARIS-detected RNA duplexes against known structures.** PARIS sequencing reads were grouped into duplex groups (DGs) representing individual RNA helices. Known structures of U4/U6 snRNAs and other structured RNAs were accurately recovered, demonstrating that PARIS can identify canonical RNA helices and RNA–RNA interactions in vivo. The detected duplex structures were consistent with previously solved structural models.",
+      "label": "PARIS F2",
+      "figureId": "F2"
+    },
+    {
+      "type": "heading",
+      "text": "How does PARIS reveal global RNA structural organization inside cells?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-paris-f3",
+      "alt": "Transcriptome-wide mapping of RNA duplex architecture",
+      "srcBasename": "paris_f3__F3.png",
+      "legend": "**Figure 3. Transcriptome-wide mapping of RNA duplex architecture.** PARIS identified thousands of RNA duplex structures across human transcriptomes. Duplex groups revealed diverse structural organizations, including local stem structures and long-range interactions connecting distant regions within the same RNA molecule. These data provide a global view of RNA higher-order architecture in living cells.",
+      "label": "PARIS F3",
+      "figureId": "F3"
+    },
+    {
+      "type": "heading",
+      "text": "How does PARIS reconstruct higher-order RNA architectures?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-paris-f4",
+      "alt": "Reconstruction of large-scale RNA architecture from PARIS interaction maps",
+      "srcBasename": "paris_f4__F4.png",
+      "legend": "**Figure 4. Reconstruction of large-scale RNA architecture from PARIS interaction maps.** PARIS revealed extensive long-range RNA duplex interactions within the XIST lncRNA, enabling reconstruction of its higher-order structural domains. Integration with icSHAPE and evolutionary conservation further supported the functional RNA architecture.",
+      "label": "PARIS F4",
+      "figureId": "F4"
+    }
+  ]
+}

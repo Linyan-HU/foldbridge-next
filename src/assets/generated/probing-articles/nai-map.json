@@ -1,0 +1,195 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "nai-map",
+  "title": "NAI-MaP: NAI-based mutational profiling for nucleotide-resolution RNA structure probing",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "26426499",
+  "rep_pmcid": "PMC4900152",
+  "rep_doi": "10.1038/nprot.2015.103",
+  "asset_base": "./src/assets/generated/probing-articles/assets/nai-map",
+  "sibling_navigation": {
+    "previous": {
+      "slug": "icshape-map",
+      "title": "icSHAPE-MaP"
+    },
+    "next": {
+      "slug": "smartshape",
+      "title": "SmartSHAPE"
+    }
+  },
+  "key_innovation": "Compared with traditional SHAPE methods that rely on reverse-transcription stops, NAI-MaP converts NAI-induced RNA modifications into mutation signatures, enabling quantitative structure probing through sequencing-based mutational profiling.",
+  "body_start_heading": "A real case: how a NAI-MaP profile flows through three layers (illustrative)",
+  "ppt_overview": [
+    {
+      "title": "How does NAI-MaP convert RNA modifications into mutation signals?",
+      "srcBasename": "naimap_figure1.png",
+      "alt": "Principle of NAI-MaP mutational profiling",
+      "captionTitle": "Figure 1. Principle of NAI-MaP mutational profiling",
+      "text": "NAI modifies flexible RNA nucleotides through 2′-hydroxyl acylation. During reverse transcription, modified nucleotides are bypassed and recorded as mutations in cDNA. Sequencing-based mutation counting generates nucleotide-resolution RNA structural reactivity profiles."
+    },
+    {
+      "title": "Why does mutation-based readout improve RNA structure probing?",
+      "srcBasename": "naimap_figure2.png",
+      "alt": "Mutation profiling provides quantitative SHAPE reactivity measurements",
+      "captionTitle": "Figure 2. Mutation profiling provides quantitative SHAPE reactivity measurements",
+      "text": "Unlike conventional RT-stop approaches, MaP detects chemical modifications as mutations distributed throughout cDNA molecules, improving signal retention and allowing quantitative measurement of RNA structural dynamics."
+    },
+    {
+      "title": "How can NAI-MaP improve RNA structure modeling?",
+      "srcBasename": "naimap_figure3.png",
+      "alt": "Structure prediction guided by mutation-derived reactivities",
+      "captionTitle": "Figure 3. Structure prediction guided by mutation-derived reactivities",
+      "text": "NAI-MaP-derived reactivity profiles can be incorporated into RNA secondary structure prediction algorithms, improving structural models compared with sequence-only prediction."
+    },
+    {
+      "title": "What biological information can NAI-MaP reveal?",
+      "srcBasename": "naimap_figure4.png",
+      "alt": "Mapping RNA structural landscapes in complex biological systems",
+      "captionTitle": "Figure 4. Mapping RNA structural landscapes in complex biological systems",
+      "text": "NAI-MaP enables structural analysis of long and complex RNAs by capturing heterogeneous conformational states that are difficult to resolve using traditional probing approaches."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "The place where NAI-MaP is most often misread is in taking the beautiful base-pairing arc plot from the same piece of work as a direct readout of the NAI probe, as if NAI-MaP measured accessibility on the one hand whilst also conveniently measuring which two stretches of bases pair together. In fact these are two classes of signal from different chemistries and different readouts. The interpretive object of NAI-MaP itself is the chemical accessibility and flexibility of the ribose 2′-OH: NAI is a SHAPE-class acylation reagent, and when the 2′ hydroxyl of a nucleotide is unpaired, not occluded by protein or ligand, and not protected by a complex conformation, it is more readily acylated by NAI, leaving an adduct at the ribose 2′ position. In other words, what NAI-MaP reports first is whether a class of chemical site is accessible and flexible, not directly that \"this base is definitely paired\" or \"this base is definitely unpaired\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "This boundary is crucial for FoldBridge. The MaP (mutational profiling) in the name NAI-MaP explains its readout: when the acylated 2′-OH adduct is passed during reverse transcription, it makes the reverse transcriptase misread the base, and so the chemical modification is recorded as a mutation in the sequencing. This means the values in the final table are not a \"structural label\" given directly by the NAI molecule, but an observable that has passed through acylation, reverse transcription mismatch, library construction, alignment and normalisation. FoldBridge can preserve the raw observed values and can also display experimental signal on the web; but the moment anything enters default structure colouring, interpretive text or a confidence layer, a more specific question must be asked first: under the NAI-MaP assay model, can this number be interpreted as support for 2′-OH accessibility? The raw mutation rate is raw provenance; it must first pass the SHAPE acylation chemistry and the MaP readout context before it can become a candidate for the default structure colour or confidence."
+    },
+    {
+      "type": "heading",
+      "text": "NAI acylates the 2′-OH, then mutational profiling reads out the accessibility"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-nai-map-f1",
+      "alt": "NAI-MaP F1",
+      "srcBasename": "naimap_f1__PMC6441010__F1.jpg",
+      "legend": "**Figure 1. Genome-wide structure mapping of the DENV and ZIKV genomes inside virus particles.** The legend of Huber et al. 2019 (PMID 30926818, DOI `10.1038/s41467-019-09391-8`) breaks the workflow into several stages: (a) the full-length genomes of eight viruses are probed inside virus particles using the SHAPE-class chemical reagent NAI, which modifies the single-stranded regions on the genome; at the same time biotinylated psoralen crosslinks the paired regions inside the particles, yielding two classes of experimental data, local and paired, which are then used to constrain a computational model to obtain more accurate structure predictions for DENV and ZIKV, with mutagenesis and viral fitness experiments determining the functional impact of conserved and paired interactions; (b) NAI-MaP reactivity and Shannon entropy along the viral genome: the upper part is the raw NAI-MaP reactivity of DENV1 along the genome, with red, yellow and black denoting high, medium and low reactivity respectively, and the lower part is the Shannon entropy, where low values suggest a more likely defined structure at that position; (c, d) the NAI-MaP structure signal mapped onto the known structures of the 5′ UTR and 3′ UTR of the DENV2 genome, the higher the reactivity the redder the colour, suggesting the base is more likely single-stranded; (d) the scatter plot above shows the sequence identity and structural similarity within a 100 nt window for each pair of DENV strains, with red dots being positions where structural similarity exceeds sequence similarity by more than one standard deviation from the mean, and each row below marking the positions of these high-structural/sequence-similarity regions along the genome (in the 200, 900, 2000, 3800, 4000, 4200, 4600, 6500, 7000, 10,400 and 10,600 nt regions, marked with stars), showing that this high structural conservation is not random.",
+      "body": [
+        "The key when reading this workflow diagram is to see clearly NAI-MaP's own chain (distinct from the other psoralen-crosslinking experiment in the figure): it first uses the SHAPE-class chemistry of NAI to turn \"the 2′-OH is accessible, flexible\" into a physical signal that can be read out by sequencing. NAI acylates the unprotected 2′-OH, leaving an adduct, and reverse transcription passing through reads it as a mutation, so high reactivity (the red in the figure) corresponds to positions more likely to be single-stranded and flexible. This is exactly how MaP mutational profiling works: the chemical adduct is translated into a mismatch in the sequencing during the RT stage.",
+        "But note that the Shannon entropy drawn alongside in (b) reminds us that reactivity alone is not enough. High reactivity suggests the 2′-OH is accessible; low reactivity may come from pairing, but it may also come from protein, ligand or conformational protection; and whether there is \"a defined structure\" must additionally be judged in conjunction with metrics such as entropy. What NAI-MaP reports is the chemical quantity that is 2′-OH accessibility/flexibility, not the ground truth of base pairing. For FoldBridge, this means the raw reactivity must be preserved together with the assay context: it is an accessibility cue obtained inside virus particles, by NAI acylation, read out via MaP, not a direct structural determination."
+      ],
+      "label": "NAI-MaP F1",
+      "pmid": "30926818",
+      "pmcid": "PMC6441010",
+      "doi": "10.1038/s41467-019-09391-8",
+      "figureId": "F1",
+      "legendText": "Genome-wide structure mapping of DENV and ZIKV genomes inside virions. a Schematic showing the workflow for identifying functional structural elements in eight viruses. Full-length virus genomes are probed inside their virus particles using a SHAPE-like chemical, NAI, which modifies single-stranded regions along the genome. Pair-wise interactions within the virus genomes are also interrogated using biotinylated psoralen, which crosslinks base-paired regions inside the virus. The local and pair-wise experimental data are then used to constrain computational models to derive more accurate structure predictions for DENV and ZIKV. We also identify structurally conserved virus structures and determine the functional impacts of conserved and pair-wise interactions through mutagenesis and virus fitness assays. b NAI-MaP reactivities and Shannon entropy along viral genome. Top: raw NAI-MaP reactivities along DENV1: Y -axis indicates the extent of NAI reactivity, and X -axis indicates position along the genome. Red, yellow, and black bars indicates high, medium, and low reactivities respectively. Bottom: Shannon entropy across the DENV1 genome. Low values indicate higher probability of having a defined structure. c , d NAI-MaP structure signals maps to known structures in the 5′ UTR and 3′ UTR of DENV2 virus genomes. A higher NAI-MaP reactivity is colored to be more red, indicating that a base is likely to be single-stranded. d Top: scatterplot showing the sequence identity and structure similarity derived by NAI-MaP between each pair of DENV strains in 100-nt windows. The red dots show locations whereby structure similarity is greater than sequence similar by 1 standard deviation from mean. Bottom: each row indicates the locations of the high structure/sequence similarity regions (top) in each DENV pair, along the DENV genome. The structure conserved regions are consistently located at specific locations along the genome (200-, 900-, 2000-, 3800-, 4000-, 4200-, 4600-, 6500-, 7000-, 10,400-, and 10,600-nt regions, starred), indicating that the high structure conservation is not random and is an evolutionary constraint on structure beyond constraints on sequence alone"
+    },
+    {
+      "type": "heading",
+      "text": "Using NAI-MaP reactivity to constrain the structure model, but not cancelling the chemical boundary"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-nai-map-f2",
+      "alt": "NAI-MaP F2",
+      "srcBasename": "naimap_f2__PMC6441010__F2.jpg",
+      "legend": "**Figure 2. The DENV genome contains many conserved structural elements.** The legend of Huber et al. 2019 (PMID 30926818, DOI `10.1038/s41467-019-09391-8`) explains: (a) along the four DENV genomes, the 100 nt regions that are highly similar in structure (grey), highly double-stranded (black), and have low accumulated synonymous mutation levels (blue) are marked separately; regions satisfying two of the above three criteria simultaneously are selected as consensus regions (purple), which may be functionally important, and the structurally conserved regions from Figure 1e are marked with blue asterisks; (b) using NAI-MaP as an experimental constraint, structure models of the DENV1 genome are built for the 16 consensus regions identified in (a), and the NAI-MaP reactivity and covariation information (green circles) are mapped onto the structure.",
+      "body": [
+        "This figure places the value of NAI-MaP in the right position: reactivity data can serve as a constraint to help build a secondary structure model, but the model itself is still a product that synthesises multiple lines of evidence (structural similarity, double-strandedness, synonymous mutation, covariation), not a result determined by NAI-MaP reactivity alone. The role NAI-MaP plays here is \"a useful constraint\", not \"a base-level ground-truth generator\".",
+        "This is exactly the way FoldBridge needs to write it: the 2′-OH accessibility signal of NAI-MaP can help interpret a structure model and can help the reader understand which regions look more like flexible single-stranded ones; but it cannot bypass the two gates of SHAPE acylation chemistry and MaP readout. A consensus region marked as \"structurally conserved\" has multiple lines of evidence stacked behind it; extracting the NAI-MaP reactivity alone and writing it as \"this base is paired/unpaired\" misreads a constraint as a determination. The more refined the constraint, the greater the need to separate chemical reactivity, accessibility, pairing, protection and the computational model."
+      ],
+      "label": "NAI-MaP F2",
+      "pmid": "30926818",
+      "pmcid": "PMC6441010",
+      "doi": "10.1038/s41467-019-09391-8",
+      "figureId": "F2",
+      "legendText": "DENV genome contains many conserved structural elements. a Plots show 100-nucleotide regions across four DENV genomes that have highly similar structures (gray), are highly double-stranded (black), and accumulate low levels of synonymous mutations (blue). Regions that fulfill two out of three of the above criteria are selected as consensus regions (purple) and are potentially functionally important. The structurally conserved regions from Fig. 1e are starred in blue. b A structure model of the DENV1 genome using NAI-MaP as experimental constraints, for the 16 consensus regions identified in a . The NAI-MaP reactivities and covariation information (green circles) are mapped onto the structures"
+    },
+    {
+      "type": "heading",
+      "text": "Pairing interactions: another class of signal, not to be conflated with 2′-OH accessibility"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-nai-map-f3",
+      "alt": "NAI-MaP F3",
+      "srcBasename": "naimap_f3__PMC6441010__F3.jpg",
+      "legend": "**Figure 3. The DENV and ZIKV genomes form extensive pairing interactions.** The legend of Huber et al. 2019 (PMID 30926818, DOI `10.1038/s41467-019-09391-8`) shows: (a) an arc plot displays the top 75 most abundant pairing interactions in the DENV1 genome inside virus particles, with known cyclisation signals marked in dark blue; (b) above, peak calling is performed on the cyclisation interaction regions, with pairing peaks appearing at positions 95 and 10,641, and below, the RNAcofold program is used to predict hybridisation for the sequences near the peaks, identifying the three best-known cyclisation signals; (c) a bar chart shows the number of unique-interaction and multiple-interaction peaks along the genome, with more than 40% of interactions in DENV and ZIKV not being unique; (d) a box plot shows that regions with alternate pairing have higher Shannon entropy than all genome regions (all), both for DENV1 and the French Polynesia strain of ZIKV, with the box being the first and third quartiles, the median marked inside the box, the whiskers being the minimum and maximum after excluding outliers beyond 1.5× the interquartile range, outliers shown as dots, and p values by t-test; (e) an arc plot shows a set of alternate interactions on the French Polynesia ZIKV genome; (f) RNAcofold models the pairing interactions of the alternate structure in (e), with mutations on the two strands marked in blue and green respectively; (g) qPCR analysis of the yield of mutant (from f) and wild-type virus in Huh7 cells and supernatant at 24 and 48 hours post-infection, with the Y axis being mutant virus yield relative to wild type, statistics using a one-tailed Student's t-test to judge whether the mutant virus is attenuated relative to wild type, *p<0.05, error bars SEM.",
+      "body": [
+        "This figure reminds the reader that there are in fact two classes of experimental signal in this piece of work: one is the local 2′-OH accessibility reported by NAI-MaP, and the other is the pairing interactions obtained by biotinylated psoralen crosslinking and SPLASH-class methods (the lines in the arc plot). The pairing interactions answer \"which two stretches of sequence pair together in space\", and this is not the same question as the one NAI-MaP answers, namely \"is the 2′-OH at a given site accessible and flexible\".",
+        "For FoldBridge, this must be written clearly: the lines in the arc plot are not NAI-MaP reactivity; the two come from different chemistries and different readouts. Mixing them into the same colour or the same confidence would make the reader think \"NAI-MaP measured pairing directly\". The correct approach is to state them separately: NAI-MaP provides a per-position 2′-OH accessibility cue, and the pairing/crosslinking data provide a pairing-relationship cue; the two can corroborate one another, but their provenance and interpretive boundaries are each independent. The mutant virus experiment (g) goes on to show that the functional significance of these structural cues needs to be confirmed by an independent perturbation experiment, not read directly off the reactivity values."
+      ],
+      "label": "NAI-MaP F3",
+      "pmid": "30926818",
+      "pmcid": "PMC6441010",
+      "doi": "10.1038/s41467-019-09391-8",
+      "figureId": "F3",
+      "legendText": "DENV and ZIKV genomes form extensive pair-wise interactions. a Arc plot showing the most abundant top 75 pair-wise interactions in the DENV1 genome inside virions. The known circularization signal is colored in dark blue. b Top: peak calling of the circularization interaction region shows that the peak of base pairing occurs at positions 95 and 10,641. Bottom: prediction of hybridization using RNAcofold program using sequences around the called peaks identified three of the best known circularization signals. c Bar charts showing the number of peaks that interact uniquely and with other regions along the genome. Greater than forty percent of DENV and ZIKV interactions are not unique. d Boxplot showing that regions with alternative base pairing (alternate) have higher Shannon entropies than all regions present in the genome (all) for both DENV1 and ZIKV French Polynesia strain. Box encompasses first and third quartiles, with the median indicated in the box. Whiskers are at minimum and maximum of points excluding deviations of 1.5× interquartile (Q3–Q1) range from Q1 to Q3 as outliers. Outliers are indicated as dots. p -Value calculated using T -test. e Arc plot showing one set of alternative interactions found along the ZIKV French Polynesia genome. f Structure models of the pair-wise interactions for the alternative structures in e , using the program RNAcofold. Mutations along each strand of the pair-wise interaction are in blue and green respectively. g qPCR analysis of the amount of mutant (from f ) and WT virus that are produced in Huh7 cells and supernatant, 24 and 48 h post infection. The Y -axis shows that amount of mutant virus produced as compared to wild type. Statistical analysis was performed using Student’s T -test (one tail) to determine if the mutant viruses are attenuated compared to wild type. * p -value < 0.05. Error bars represent SEM. Two biological replicates of Gibson assembly were performed to generate WT and MT viruses and two biological replicates of Huh7 infection were performed"
+    },
+    {
+      "type": "heading",
+      "text": "The functional interpretation of long-range interactions must still be kept apart from accessibility ground truth"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-nai-map-f4",
+      "alt": "NAI-MaP F4",
+      "srcBasename": "naimap_f4__PMC6441010__F4.jpg",
+      "legend": "**Figure 4. Two different modes of long-range interaction in DENV and ZIKV.** The legend of Huber et al. 2019 (PMID 30926818, DOI `10.1038/s41467-019-09391-8`) explains: (a) a Venn diagram shows the overlap of interactions among two, three and four viral strains for DENV (top) and ZIKV (bottom) within the top 250 most significant interactions of each strain, where an interaction is considered shared if both ends are within ±100 nt of each other; (b) a violin plot shows the distance to the nearest similar interaction between two viruses relative to a random distribution, with highly similar viruses such as ZIKV-SIN, ZIKV-FP and ZIKV-BR having very short average distances to the related interaction, suggesting high conservation, p values by Wilcoxon rank-sum test, with minimum, median and maximum marked by horizontal lines; (c) an arc plot shows the top 100 conserved long-range interactions present in two or more different DENV (top) and ZIKV (bottom) viruses, with the pink and grey interactions further characterised in (d) and (e); (d) a conserved long-range interaction in DENV and ZIKV that uses similar sequences to bring the E and NS4B regions together, with the SPLASH interaction peaks between E and NS4B for different viruses above, and the RNAcofold-predicted hybridisation model below, with homologous and covarying bases between different viruses circled in red and green respectively, and pink arrows indicating the interaction peak positions; (e) a long-range interaction in DENV and ZIKV that uses different sequences to bring the NS4 and NS5 regions closer, with the SPLASH interaction peaks between NS4 and NS5 above, the RNAcofold-predicted hybridisation model below, and grey arrows indicating the peak positions.",
+      "body": [
+        "What this figure shows is the evolutionary conservation and functional interpretation of long-range pairing interactions, and it is very beautiful: the conserved E-NS4B and NS4-NS5 long-range contacts recur across multiple viral strains. But take care: these are pairing relationships obtained from crosslinking/SPLASH and computational modelling, not the 2′-OH accessibility readout of NAI-MaP. The more attractive the functional interpretation, the greater the need to distinguish it from the chemical quantity reported by NAI-MaP.",
+        "This is exactly why FoldBridge must preserve the assay context. The reactivity of NAI-MaP answers \"is this 2′-OH accessible and flexible inside the virus particle\", whereas the long-range interactions answer \"do these two stretches of sequence pair together\". If a single low NAI-MaP reactivity is used to determine \"there is pairing here\", several possible kinds of protection (pairing, protein, conformation) get compressed into a single conclusion; if the conserved interactions of the arc plot are written as \"NAI-MaP proved this base is paired\", two independent lines of evidence get blended into one. The complete sentence should be: under this condition, the 2′-OH accessibility at this site is relatively low or high, which is the chemical cue reported by NAI-MaP; whether it corresponds to a particular pairing must be judged in conjunction with independent evidence such as crosslinking, covariation and modelling."
+      ],
+      "label": "NAI-MaP F4",
+      "pmid": "30926818",
+      "pmcid": "PMC6441010",
+      "doi": "10.1038/s41467-019-09391-8",
+      "figureId": "F4",
+      "legendText": "Two different modes of long-range interactions in DENV and ZIKV. a Venn diagram showing overlap of DENV (top) and ZIKV (bottom) interactions between two, three, and four viral strains, for the 250 most prominent interactions in each strain. The interaction is considered to be shared if both ends are within ±100 nt of one another (e.g. 1200–7000 would be considered shared with 1299–7000 in another strain). b Violin plots showing the distribution of the distance of the closest similar interaction between two viruses versus random. Highly similar viruses such as ZIKV-SIN, ZIKV-FP, and ZIKV-BR show that the average distances to a related interaction are very short, indicating a high level of conservation. p -Value is calculated using the Wilcoxon rank-sum test. Minimum, median, and maximum are indicated as horizontal bars. c Arc plots showing the top 100 conserved long-range interactions that are present in two of more different DENV (top) and ZIKV viruses (bottom). The pink and gray interactions are further characterized in d and e . d Conserved long-range interaction in DENV and ZIKV viruses that use similar sequences to bring E and NS4B regions together. Top: SPLASH interaction peaks between E and NS4B for different viruses. Bottom: predicted hybridization models for the long-range interaction using RNAcofold. Homologous and covaried bases between the different viruses are circled in red and green respectively. The pink arrows indicate the position of the peak of the interaction. e Long-range interaction in DENV and ZIKV viruses that use different sequences to bring NS4 and NS5 regions close together. Top: SPLASH interaction peaks between NS4 and NS5 for different viruses. Bottom: predicted hybridization models for the long-range interaction using RNAcofold. The gray arrows indicate the position of the peak of the interaction"
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about NAI-MaP"
+    },
+    {
+      "type": "paragraph",
+      "text": "NAI-MaP does not have a clear \"A/C interpretable, G/U uninterpretable\" base-target boundary like DMS; its target is the ribose 2′-OH, and in principle every nucleotide has a 2′-OH. So the interpretive gate of NAI-MaP is not \"which base can be coloured\", but a multi-level gate oriented to 2′-OH accessibility/flexibility: chemical-target reachability (is the 2′-OH at this site effectively acylated by NAI in the current library), MaP readout context (has the adduct-induced mutation rate had its background subtracted, has it been normalised, does the mutation really come from acylation rather than sequencing or alignment noise), and the mapping and claim gate (are the coordinates reliable, does it hold under this experimental condition, for example inside virus particles)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Only accessibility that passes all these gates simultaneously can enter the default visualisation and confidence layer. The raw mutation rate itself is only provenance: it should be preserved in full, downloadable and traceable, but it should not automatically drive default structure colouring. The default ANNOJOIN structure figure should read the visualisation value after background correction and targetability processing, rather than the bare mutation count. The requirement for confidence / FEC is higher still: only accessibility observations that pass the chemistry, readout, mapping, claim and context gates may become candidates for positive confidence, and they must carry the qualifier \"low reactivity may come from pairing, but it may also come from protein or conformational protection\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "This does not weaken NAI-MaP; it respects its strengths. NAI-MaP is very powerful for 2′-OH accessibility/flexibility and can also work inside an environment close to the real state, such as virus particles; the error occurs when \"high or low reactivity\" is uniformly written as \"paired/unpaired\", or the raw mutation rate is written as structural ground truth, or the pairing/crosslinking data from the same piece of work are mixed into the NAI-MaP accessibility layer. The more NAI-MaP can obtain multiple kinds of data inside virus particles at once, the more FoldBridge must separate \"a mutation was measured at a given site\" from \"this mutation rate can serve as accessibility evidence\". The default colour on the web answers \"within the NAI-MaP interpretive boundary, what readable signal does this site have\"; the detail table answers \"what was recorded in the raw data\". Once these two layers are mixed together, the pairing or crosslinking data from the same piece of work will be taken by the reader as an accessibility conclusion certified by NAI-MaP itself."
+    },
+    {
+      "type": "heading",
+      "text": "A real case: how a NAI-MaP profile flows through three layers (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so what follows is a clearly labelled illustrative scenario, used to show how a single NAI-MaP profile divides into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine a DENV NAI-MaP profile measured inside virus particles entering FoldBridge. The first layer is the raw observation: the per-position mutation rate, the corresponding no-NAI background control, the library metadata, the sequencing coordinates, all preserved as is, as provenance, downloadable and recomputable. What they record is \"how many mutations were measured inside the virus particles\", not yet an accessibility conclusion for this site. The very fact that the NAI acylation adduct is read by MaP as a mutation reminds us: this layer records the sequencing imprint of a chemical modification, not a pairing state."
+    },
+    {
+      "type": "paragraph",
+      "text": "The second layer is the visual signal: after the mutation rate has had its background subtracted, been normalised, and passed the chemistry targetability and MaP readout gate, one obtains a 2′-OH accessibility/flexibility value that can be coloured on the structure page. The colour the reader sees first should come from this layer, because it is a colour that is interpretable under the NAI-MaP assay model, not the bare mutation count. A high value suggests the 2′-OH at this site is more accessible and flexible, a low value suggests it is paired or protected, but both judgements need background correction and contextual support."
+    },
+    {
+      "type": "paragraph",
+      "text": "The third layer is the confidence candidate: only those accessibility observations that pass both the SHAPE acylation and MaP readout gate, and the mapping/claim/context check, enter the confidence assessment, and they must still carry the qualifier \"low accessibility may come from pairing, but it may also come from protein or conformational protection\". The pairing interactions from crosslinking/SPLASH are another class of evidence and should not be quietly folded into the NAI-MaP accessibility confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "The value of this illustrative scenario is that it puts the two classes of signal in this piece of NAI-MaP work each in their proper place: the same NAI-MaP profile can simultaneously produce a raw observation, a visualisation signal and a confidence candidate, whilst the pairing interactions from psoralen crosslinking are yet another independent line of evidence, all four with their own provenance. If a popular-science article about NAI-MaP blends the accessibility readout and the crosslinking pairing into one colour, the reader will think \"NAI measured pairing directly\", and that is precisely the misreading this method must most guard against. The more automated the layer, the more \"2′-OH accessibility\" and \"pairing relationship\" must be marked as two different things in the colour and the confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct ending for a NAI-MaP article is not \"high reactivity proves this base is unpaired\", but rather: NAI-MaP can provide powerful 2′-OH accessibility/flexibility cues for RNA structure interpretation, and reads out the chemical adduct robustly via mutational profiling; in FoldBridge, such a cue becomes part of the default structural interpretation and confidence only after it is first preserved as raw provenance and then passes the gates of SHAPE chemistry and MaP readout, mapping, claim and context."
+    }
+  ]
+}

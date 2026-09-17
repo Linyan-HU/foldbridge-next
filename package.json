@@ -1,0 +1,35 @@
+{
+  "name": "foldbridge-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "test:stats": "node --test test/site-stats-build.test.js test/stats-dashboard.test.js test/site-stats-store.test.js test/stats-page.test.js test/stats-dashboard-integration.test.js test/probing-overview.test.js test/home-stats.test.js test/dashboard-view-model.test.js",
+    "build:site-stats": "node scripts/build-site-stats.mjs",
+    "build:static": "node scripts/build.mjs",
+    "build:annojoin-atlas": "node scripts/build-annojoin-atlas.mjs",
+    "build:annojoin-atlas:index": "node scripts/build-annojoin-atlas.mjs --index-only",
+    "build:rmdb-cases": "node scripts/build-rmdb-cases.mjs",
+    "build:family-detail-titles": "node scripts/sync-family-detail-titles.mjs",
+    "build:probing-articles": "node scripts/build-probing-articles.mjs",
+    "build:pdb-citations": "node scripts/build-pdb-primary-citations.mjs",
+    "build:case-public-techniques": "node scripts/build-case-public-techniques.mjs",
+    "build:search-docs": "node scripts/build-search-docs.mjs",
+    "build:search-index": "pagefind --site dist/search-docs --output-path dist/pagefind",
+    "build:site": "npm run build:static && npm run build:search-docs && npm run build:search-index",
+    "build": "npm run build:site",
+    "build:pages": "npm run build && node scripts/build-pages.mjs",
+    "dev": "node scripts/dev.mjs",
+    "serve": "node scripts/serve.mjs",
+    "verify:mvp": "node scripts/verify-mvp.mjs",
+    "verify:annojoin-atlas": "node scripts/verify-annojoin-atlas-smoke.mjs",
+    "verify:case-public-techniques": "node scripts/verify-case-public-techniques.mjs"
+  },
+  "devDependencies": {
+    "pagefind": "^1.5.2"
+  },
+  "dependencies": {
+    "brotli-wasm": "^3.0.1"
+  }
+}

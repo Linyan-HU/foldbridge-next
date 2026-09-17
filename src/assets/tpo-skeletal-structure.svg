@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="162pt" height="126.75pt" viewBox="0 0 216 169" role="img" aria-labelledby="title desc">
+  <title id="title">2,4,6-Trimethylbenzoyl diphenylphosphine oxide</title>
+  <desc id="desc">Vector trace of the supplied TPO reference structure, retaining its ring layout, skeletal methyl bonds, carbonyl, phosphorus, and red reaction-site highlight.</desc>
+  <defs>
+    <g id="phenyl-flat">
+      <polygon points="-26,0 -13,-22.517 13,-22.517 26,0 13,22.517 -13,22.517"/>
+      <line x1="-8.5" y1="-17.517" x2="8.5" y2="-17.517"/>
+      <line x1="-19" y1="3" x2="-10" y2="18.5"/>
+      <line x1="19" y1="3" x2="10" y2="18.5"/>
+    </g>
+  </defs>
+  <g fill="none" stroke="#111111" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <!-- The left ring is rotated to match the reference image. -->
+    <polygon points="63,80 85.517,93 85.517,119 63,132 40.483,119 40.483,93"/>
+    <line x1="61.5" y1="85.9" x2="44.7" y2="95.6"/>
+    <line x1="80.517" y1="96" x2="80.517" y2="116"/>
+    <line x1="45" y1="116" x2="62" y2="126"/>
+
+    <use href="#phenyl-flat" transform="translate(175 47)"/>
+    <use href="#phenyl-flat" transform="translate(187 121)"/>
+
+    <!-- 2,4,6-trimethylbenzoyl fragment. -->
+    <line x1="85.517" y1="93" x2="106" y2="80"/>
+    <line x1="103" y1="77" x2="103" y2="52"/>
+    <line x1="109" y1="77" x2="109" y2="52"/>
+    <line x1="106" y1="80" x2="126" y2="91"/>
+    <line x1="63" y1="80" x2="63" y2="56"/>
+    <line x1="40.483" y1="119" x2="10" y2="136"/>
+    <line x1="85.517" y1="119" x2="106" y2="132"/>
+
+    <!-- Phosphine oxide connections, preserving the reference orientation. -->
+    <line x1="146" y1="87" x2="162" y2="69.517"/>
+    <line x1="147" y1="106" x2="161" y2="121"/>
+    <line x1="133" y1="109" x2="125" y2="124"/>
+    <line x1="139" y1="111" x2="131" y2="126"/>
+  </g>
+  <!-- Reference-image reaction-site marker, overlaid as in the supplied image. -->
+  <circle cx="85.517" cy="93" r="11" fill="#ff6b6b" opacity="0.55"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12pt" text-anchor="middle">
+    <text x="106" y="44" fill="#ff0000">O</text>
+    <text x="137" y="103" fill="#c49000">P</text>
+    <text x="125" y="143" fill="#ff0000">O</text>
+  </g>
+</svg>

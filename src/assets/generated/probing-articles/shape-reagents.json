@@ -1,0 +1,242 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "shape-reagents",
+  "title": "SHAPE: RNA structure probing through selective 2′-hydroxyl acylation of flexible nucleotides",
+  "date": "",
+  "figure_count": 3,
+  "rep_pmid": "",
+  "rep_pmcid": "",
+  "rep_doi": "10.1021/ja043822v",
+  "asset_base": "./src/assets/generated/probing-articles/assets/shape-reagents",
+  "key_innovation": "Compared with traditional base-targeting chemical probing methods, SHAPE detects RNA backbone flexibility by measuring the reactivity of ribose 2′-hydroxyl groups, providing nucleotide-resolution information on RNA conformational dynamics.",
+  "body_start_heading": "A real case (illustrative): the three-layer handling of a single SHAPE profile",
+  "ppt_overview": [
+    {
+      "title": "How does SHAPE chemistry selectively probe RNA structure?",
+      "srcBasename": "shape_figure1.png",
+      "alt": "Chemical basis of SHAPE reactivity",
+      "captionTitle": "Figure 1. Chemical basis of SHAPE reactivity.",
+      "text": "SHAPE reagents such as NMIA react with the 2′-hydroxyl group of ribose through formation of a 2′-O-adduct. Nucleotides with flexible ribose conformations favor acylation, whereas structurally constrained nucleotides show reduced reactivity."
+    },
+    {
+      "title": "How does SHAPE distinguish structured and flexible RNA regions?",
+      "srcBasename": "shape_figure2.png",
+      "alt": "Structure-dependent SHAPE modification",
+      "captionTitle": "Figure 2. Structure-dependent SHAPE modification.",
+      "text": "SHAPE reactivity depends on local RNA backbone dynamics rather than nucleotide identity or solvent accessibility. Flexible single-stranded regions show higher 2′-O-adduct formation, whereas constrained nucleotides within structured regions are less reactive."
+    },
+    {
+      "title": "How can SHAPE data be converted into nucleotide-resolution RNA structures?",
+      "srcBasename": "shape_figure3.png",
+      "alt": "SHAPE-guided RNA structure analysis",
+      "captionTitle": "Figure 3. SHAPE-guided RNA structure analysis.",
+      "text": "SHAPE modification profiles are measured by primer extension and mapped onto RNA secondary structures. Reactivity values provide quantitative constraints that improve RNA structure modeling."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-26"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you only look at a single reactivity heatmap, SHAPE is easily misread as a structural stain that \"tells you directly which base is paired and which is unpaired\". That understanding is wrong. SHAPE (Selective 2′-Hydroxyl Acylation analysed by Primer Extension) chemistry reads the local flexibility and accessibility of the ribose 2′-hydroxyl: when a nucleotide is conformationally free and not constrained by pairing or stacking, its 2′-OH is more readily modified by the acylating reagent; when it is locked into a particular conformation by Watson-Crick pairing, base stacking, tertiary structure or protein/ligand protection, the reactivity of the 2′-OH drops. In other words, what SHAPE reports first is the local flexibility of a class of chemical site, not directly \"this base is definitely paired\" or \"this base is definitely single-stranded\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "This boundary is crucial for FoldBridge. FoldBridge can store the raw SHAPE observations and can display the experimental signal on a web page; but the moment it enters the default structure colouring, the explanatory text or the confidence candidates, a more specific question must be asked first: can this reactivity, under the current assay model (2′-OH acylation), be interpreted as structural support? The SHAPE reagent family has several members — NMIA, 1M7, BzCN — which are different implementations of the same chemistry, differing in kinetics and time resolution, and their normalisation and comparability must be accounted for as well. (All three sources of this article are ACS journal articles, with no PMC/PMID, so the figure legends below cite the DOI only.)"
+    },
+    {
+      "type": "heading",
+      "text": "NMIA: the classic 2′-OH acylation chemistry"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-shape-reagents-f1",
+      "alt": "NMIA F1",
+      "srcBasename": "shapereagents_nmia_f1__10_1021_ja043822v__F1.gif",
+      "legend": "**Figure 1. The core mechanism of SHAPE chemistry: the acylation reaction of the 2′-hydroxyl with NMIA.** The schematic of Merino et al. 2005 (DOI `10.1021/ja043822v`, original Figure 1) gives the chemical basis of SHAPE: the ribose 2′-hydroxyl is first deprotonated to form an oxyanion nucleophile, which then attacks NMIA. The legend stresses the origin of the selectivity — when a nucleotide is constrained in a conformation such as C3′-endo, the neighbouring 3′-phosphodiester destabilises this oxyanion (marked by the red overlapping symbol in the figure), making that site less reactive.",
+      "body": [
+        "This figure highlights the essence of SHAPE: the signal is not a direct readout of pairing, but a readout of the local chemical environment of the 2′-OH. Flexible, conformationally free nucleotides are highly reactive; nucleotides locked down by pairing, stacking or tertiary structure are weakly reactive. Writing high reactivity straight off as \"this base is definitely unpaired\" skips over the layer that is actually being measured — flexibility."
+      ],
+      "label": "NMIA F1",
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.1021/ja043822v",
+      "figureId": "F1",
+      "legendText": "Figure 1 Reaction of a ribose 2‘-hydroxyl with NMIA via formation of an oxyanion nucleophile. Nucleotides constrained in the RNA C3‘-endo and other conformations are unreactive due to destabilization (red overlap symbol) of the oxyanion by the proximal 3‘-phosphodiester."
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-shape-reagents-f2",
+      "alt": "NMIA F2",
+      "srcBasename": "shapereagents_nmia_f2__10_1021_ja043822v__F2.gif",
+      "legend": "**Figure 2. The structural selectivity and kinetics of the reaction of NMIA with the ribose hydroxyl.** Merino et al. 2005 (DOI `10.1021/ja043822v`, original Figure 2) use a comparison of ATP and 3′-deoxy-ATP to localise the formation of the 2′-ester: nucleotides modified by NMIA show reduced mobility in polyacrylamide gel electrophoresis (A); the legend also gives a kinetic analysis of adduct formation (B), where the curves are least-squares fits according to eq 1.",
+      "body": [
+        "The significance of this figure lies in grounding \"reactivity\" in a measurable rate constant. SHAPE is not a qualitative present-or-absent judgement, but a difference in the 2′-OH acylation rate between different sites. This is also a reminder to the reader that the numbers in the final heatmap are measured quantities — chemical reaction rates after readout and normalisation — that need to be interpreted, not a ready-made structural label."
+      ],
+      "label": "NMIA F2",
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.1021/ja043822v",
+      "figureId": "F2",
+      "legendText": "Figure 2 Structure-selective reaction of NMIA with ribose hydroxyl groups. (A) Visualizing nucleotide 2‘-ester formation with ATP and 3‘-deoxy-ATP. NMIA-modified nucleotides migrate with reduced mobility by polyacrylamide gel electrophoresis. (B) Kinetic analysis of nucleotide adduct formation; lines represent least-squares fits to eq 1."
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-shape-reagents-f3",
+      "alt": "NMIA F6",
+      "srcBasename": "shapereagents_nmia_f6__10_1021_ja043822v__F6.gif",
+      "legend": "**Figure 3. NMIA's 2′-hydroxyl acylation is selective for unpaired nucleotides.** Merino et al. 2005 (DOI `10.1021/ja043822v`, original Figure 6) compare the single-stranded and double-stranded forms of the same oligonucleotide (5′-UACUAACACC-ddC) (A, with the labelled sites indicated by asterisks), and quantitatively analyse the mean adduct rate over the ten hydroxyls (B): after fitting the reaction rates of the single-stranded form (triangles) and the double-stranded form (squares) to eq 1, the difference is clear.",
+      "body": [
+        "This is the most direct evidence of SHAPE selectivity: for the same sequence, 2′-OH acylation is fast when single-stranded and becomes slow once paired into a duplex. The source of the difference is conformational constraint, not the sequence itself. This is precisely SHAPE's strength, and also its boundary: it is sensitive to \"flexible vs constrained\", but \"constrained\" can come from pairing, and equally from stacking, tertiary structure or ligand protection. A low readout does not equal definite pairing."
+      ],
+      "label": "NMIA F6",
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.1021/ja043822v",
+      "figureId": "F6",
+      "legendText": "Figure 6 2‘-Hydroxyl acylation by NMIA is selective for unpaired nucleotides. (A) 2‘-Adduct formation with the oligonucleotide (5‘-UACUAACACC-ddC) and the corresponding duplex visualized by gel electrophoresis. Site of [ 32 P]-label is indicated with an asterisk. (B) Quantitative analysis of 2‘-O-adduct formation averaged over the 10 hydroxyl groups in the labeled oligonucleotide. Rates for the single strand (triangles) and duplex (squares) were obtained by fitting to eq 1."
+    },
+    {
+      "type": "heading",
+      "text": "1M7: an improved reagent for a fast, one-step reaction"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-shape-reagents-f4",
+      "alt": "1M7 F1",
+      "srcBasename": "shapereagents_1m7_f1__10_1021_ja0704028__F1.gif",
+      "legend": "**Figure 4. The chemical mechanism of RNA SHAPE (the 1M7 perspective).** The schematic of Mortimer & Weeks 2007 (DOI `10.1021/ja0704028`, original Figure 1) reiterates the same principle: the nucleophilic reactivity of the 2′-hydroxyl is selectively enhanced at flexible sites (A); meanwhile, N-methylisatoic anhydride-type reagents react with the 2′-hydroxyl of RNA and also undergo a parallel reaction with water (B, reagent initial concentration 5 mM).",
+      "body": [
+        "1M7 (1-methyl-7-nitroisatoic anhydride) shares the 2′-OH acylation mechanism with NMIA, and still reads local flexibility rather than the ground truth of pairing. Worth noting is the parallel hydrolysis reaction with water: while the reagent modifies the RNA, it also self-inactivates. This competition sets the time window of the reaction and is also the key variable for distinguishing the three reagents later."
+      ],
+      "label": "1M7 F1",
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.1021/ja0704028",
+      "figureId": "F1",
+      "legendText": "Figure 1 Mechanism of RNA SHAPE chemistry. (A) The nucleophilic reactivity of the 2’-hydroxyl group is selectively enhanced at flexible positions. 4 (B) Parallel reaction of N -methylisatoic anhydride derivatives with RNA 2‘-hydroxyl groups and with water. [reagent] 0 was 5 mM."
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-shape-reagents-f5",
+      "alt": "1M7 F2",
+      "srcBasename": "shapereagents_1m7_f2__10_1021_ja0704028__F2.gif",
+      "legend": "**Figure 5. A comparison of the reactivity of 1M7 and NMIA.** Mortimer & Weeks 2007 (DOI `10.1021/ja0704028`, original Figure 2) compare the hydrolysis (left) and the formation of the 2′-O-adduct on pAp-ethyl (right) for the two reagents. 1M7 reacts markedly faster than NMIA (this rate comparison follows the body of the same paper).",
+      "body": [
+        "This figure illustrates 1M7's practical advantage over NMIA: it reacts faster and can complete a one-step treatment in a shorter time. This makes 1M7 a single-component, easy-to-handle and commonly used SHAPE reagent — there is no need to wait through the longer reaction time that NMIA requires, and the window for background and degradation is more controllable."
+      ],
+      "label": "1M7 F2",
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.1021/ja0704028",
+      "figureId": "F2",
+      "legendText": "Figure 2 Comparative reactivity of 1M7 and NMIA via hydrolysis (left) and 2‘- O -adduct formation with pAp-ethyl (right)."
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-shape-reagents-f6",
+      "alt": "1M7 F3",
+      "srcBasename": "shapereagents_1m7_f3__10_1021_ja0704028__F3.gif",
+      "legend": "**Figure 6. The per-nucleotide reactivity of 1M7 with and without Mg2+.** Mortimer & Weeks 2007 (DOI `10.1021/ja0704028`, original Figure 3) use histograms and a difference plot to show the change in the absolute nucleotide reactivity measured by 1M7 in the presence and absence of 6 mM Mg2+.",
+      "body": [
+        "Ionic conditions alter RNA conformation, and in turn alter the local flexibility of the 2′-OH, so the reactivity profile of the same stretch of RNA changes before and after adding Mg2+. This matters for interpretation: SHAPE reactivity is an assay signal, and it depends on the experimental conditions (ions, temperature, reagent, time). Divorced from this context, a single value cannot be taken directly as structural ground truth."
+      ],
+      "label": "1M7 F3",
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.1021/ja0704028",
+      "figureId": "F3",
+      "legendText": "Figure 3 Histograms and difference plot of absolute nucleotide reactivities for SHAPE experiments performed with 1M7 in the presence and absence of 6 mM Mg 2+ ."
+    },
+    {
+      "type": "heading",
+      "text": "BzCN: sub-second, capable of time-resolved folding kinetics"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-shape-reagents-f7",
+      "alt": "BzCN F1",
+      "srcBasename": "shapereagents_bzcn_f1__10_1021_ja8061216__F1.gif",
+      "legend": "**Figure 7. The RNA SHAPE chemical mechanism of BzCN.** The schematic of Mortimer & Weeks 2008 (DOI `10.1021/ja8061216`, original Figure 1) explains that BzCN (benzoyl cyanide) both reacts with the 2′-hydroxyl at flexible sites of the RNA to form a 2′-O-adduct and rapidly inactivates through hydrolysis (its sub-second timescale follows the body of the same paper).",
+      "body": [
+        "BzCN is still 2′-OH acylation chemistry, and still reads flexibility rather than the ground truth of pairing. What is special about it is its speed: BzCN completes its reaction and inactivates on a sub-second timescale, which is equivalent to taking an extremely short-exposure snapshot of the RNA folding process."
+      ],
+      "label": "BzCN F1",
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.1021/ja8061216",
+      "figureId": "F1",
+      "legendText": "Figure 1. Mechanism of RNA SHAPE chemistry with BzCN. BzCN reacts both with 2′-hydroxyl groups at flexible positions in RNA to form a 2′- O -adduct and also undergoes inactivation by hydrolysis."
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-shape-reagents-f8",
+      "alt": "BzCN F2",
+      "srcBasename": "shapereagents_bzcn_f2__10_1021_ja8061216__F2.gif",
+      "legend": "**Figure 8. A comparison of the reactivity of 1M7 and BzCN on the RNase P specificity domain.** Mortimer & Weeks 2008 (DOI `10.1021/ja8061216`, original Figure 2) use histograms to compare the absolute SHAPE reactivity of this domain with and without Mg2+, measured respectively with 1M7 (top) and BzCN (bottom), and mark the loop (Lx) and joining (Jx) structural landmarks.",
+      "body": [
+        "This figure shows that the reactivity profiles measured by BzCN and 1M7 corroborate each other at the structural landmarks: the two reagents read the same physical quantity (2′-OH flexibility), so they give consistent trends in the loop and joining regions. The difference comes mainly from the reaction timescale, not from any difference in chemical essence."
+      ],
+      "label": "BzCN F2",
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.1021/ja8061216",
+      "figureId": "F2",
+      "legendText": "Figure 2. Histograms comparing absolute SHAPE reactivities for the RNase P specificity domain in the presence and absence of Mg 2+ obtained using 1M7 (top) and BzCN (bottom). Loop (L x ) and joining structure (J x ) landmarks are emphasized."
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-shape-reagents-f9",
+      "alt": "BzCN F5",
+      "srcBasename": "shapereagents_bzcn_f5__10_1021_ja8061216__F5.gif",
+      "legend": "**Figure 9. The folding mechanism of the RNase P specificity domain.** Mortimer & Weeks 2008 (DOI `10.1021/ja8061216`, original Figure 5) give the folding pathway: tertiary interactions that form rapidly in the intermediate state are marked in red, interactions that form in the rate-determining step are marked in blue, and the structure is drawn according to the approximate arrangement of the helices in three-dimensional space.",
+      "body": [
+        "This is precisely the capability that BzCN's sub-second reaction buys: time-resolved SHAPE can sample at different time points of folding, thereby resolving the intermediate states and the rate-determining step. NMIA and 1M7 are suited to steady-state structure profiling, whereas BzCN pushes the same 2′-OH acylation chemistry into the time dimension of folding kinetics. What the reader must remember is this: whether or not it is time-resolved, what is measured is always local flexibility, not the pairing state directly."
+      ],
+      "label": "BzCN F5",
+      "pmid": "",
+      "pmcid": "",
+      "doi": "10.1021/ja8061216",
+      "figureId": "F5",
+      "legendText": "Figure 5. Mechanism for folding of the RNase P specificity domain. Fast-forming tertiary interactions found in the intermediate are red, interactions that form in the rate-determining step are in blue. Structure is drawn to approximate the arrangement of helices in three-dimensional space. (9)"
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about SHAPE reagents"
+    },
+    {
+      "type": "paragraph",
+      "text": "SHAPE reactivity is an assay signal, not structural ground truth. Both the formal article and the system behaviour must preserve the assay/reagent context: raw reactivity should not directly drive the default structure colouring or positive confidence, but must first pass the assay model (the interpretability of 2′-OH acylation) and the mapping/context gate. The interpretable object of SHAPE chemistry is the local flexibility of the ribose 2′-hydroxyl, and all four classes of base can give signal, but the signal means \"this site is more flexible/more accessible\", not \"this site is unpaired\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "The differences between reagents must be recorded and not flattened out during normalisation. NMIA is classic and reacts relatively slowly; 1M7 is fast, single-component and easy to handle; BzCN is sub-second and can do time-resolved folding kinetics. Different reagents have different reaction kinetics and time windows, and ionic conditions, temperature and reagent concentration also alter the reactivity profile. When FoldBridge makes cross-experiment comparisons or normalises, it should preserve the reagent identity and the experimental conditions, avoiding treating values from different assay contexts as fully comparable."
+    },
+    {
+      "type": "paragraph",
+      "text": "Therefore, when speaking to the reader, the most robust statement about SHAPE is \"it turns the local flexibility of the 2′-OH into a readable reactivity clue\". This statement preserves the power of the method and also preserves the scientific boundary: high reactivity suggests greater flexibility (common in loops, single strands or flexible regions), low reactivity suggests constraint (pairing, stacking, tertiary structure or protein/ligand protection), but both judgements need context, and neither can skip the assay model to become structural ground truth directly."
+    },
+    {
+      "type": "heading",
+      "text": "A real case (illustrative): the three-layer handling of a single SHAPE profile"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so the following is a clearly labelled illustrative scenario, used to show how a single SHAPE profile splits into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine a SHAPE profile measured with 1M7 entering FoldBridge. The system splits it into three layers, rather than using the same set of values as three things at once."
+    },
+    {
+      "type": "paragraph",
+      "text": "The first layer is raw provenance: the raw reactivity of each site, the reagent identity (1M7) and the experimental conditions (ions, temperature, normalisation method) are preserved as-is, traceable in the details and the download table. The second layer is the visualisation signal: the default structure figure reads the colormap values that have passed assay-model interpretation, colouring the sites that are \"interpretable as flexible under the 2′-OH acylation framework\", rather than tiling the page directly with the raw values. The third layer is the confidence candidate: only sites that pass the assay targetability (the interpretability of 2′-OH acylation), mapping and context gates enter positive confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "Translated into system behaviour, this case means that the same SHAPE profile derives three different things — raw observation, visualisation signal and confidence candidate. The two misreadings SHAPE most easily falls into correspond exactly to the confusion between these three layers: reading \"high reactivity was measured\" as \"single strand was measured\", and reading \"the colour shown\" as \"the confidence endorsed by the system\". And what SHAPE actually measures is only the local flexibility of the 2′-OH — constraint can come from pairing, and equally from stacking, tertiary structure or protein/ligand protection. Add to this that NMIA, 1M7 and BzCN differ in kinetics and time window, and if the reagent identity and experimental conditions are flattened out during normalisation, cross-experiment comparison will treat incomparable values as comparable. Only when these three layers, together with the reagent-and-condition context, are spelt out clearly does the SHAPE reagent family become a good example for explaining \"flexibility ≠ the ground truth of pairing\"."
+    }
+  ]
+}

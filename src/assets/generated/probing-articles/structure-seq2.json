@@ -1,0 +1,178 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "structure-seq2",
+  "title": "Structure-seq2: Improved transcriptome-wide RNA structure mapping through optimized DMS probing and sequencing",
+  "date": "",
+  "figure_count": 3,
+  "rep_pmid": "28637286",
+  "rep_pmcid": "PMC5737731",
+  "rep_doi": "10.1093/nar/gkx533",
+  "key_innovation": "Compared with Structure-seq, Structure-seq2 improves sequencing quality by reducing ligation bias, removing unwanted by-products, and increasing signal sensitivity through optimized library preparation.",
+  "asset_base": "./src/assets/generated/probing-articles/assets/structure-seq2",
+  "ppt_overview": [
+    {
+      "title": "How was Structure-seq optimized for improved RNA structure profiling?",
+      "srcBasename": "structureseq2_f1__PMC5737731__F1.jpg",
+      "alt": "Structure-seq2 library construction strategy",
+      "captionTitle": "Figure 1. Structure-seq2 library construction strategy.",
+      "text": "Structure-seq2 introduces improved adaptor ligation, purification strategies, and optional biotin-based enrichment to increase library quality and sequencing efficiency."
+    },
+    {
+      "title": "How does Structure-seq2 reduce sequencing bias?",
+      "srcBasename": "structureseq2_f2__PMC5737731__F2.jpg",
+      "alt": "Reduction of ligation bias in Structure-seq2",
+      "captionTitle": "Figure 2. Reduction of ligation bias in Structure-seq2.",
+      "text": "The optimized ligation strategy minimizes adaptor-related artifacts and improves nucleotide representation in sequencing libraries."
+    },
+    {
+      "title": "What biological insights can Structure-seq2 reveal?",
+      "srcBasename": "structureseq2_f3__PMC5737731__F3.jpg",
+      "alt": "Identification of RNA modifications and structural features",
+      "captionTitle": "Figure 3. Identification of RNA modifications and structural features.",
+      "text": "Structure-seq2 improves read coverage and enables detection of previously inaccessible RNA regions, including structured rRNA regions and nucleotide modifications."
+    }
+  ],
+  "body_start_heading": "A real case (illustrative)",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you go by the data table alone, the place where Structure-seq2 is most likely to mislead is in reading \"a cleaner library and fuller coverage\" as \"now every base can be scored, and all high signal is DMS evidence\", as if, once data quality is upgraded, the interpretable chemical target expands along with it. That reading is wrong. Structure-seq2 is the upgraded version of Structure-seq (Ding 2014): it does not change the nature of the chemistry, but makes library preparation, readout coverage and systematic bias cleaner. What it genuinely reports is still the chemical accessibility of A and C on the Watson-Crick base-pairing face: the N1 of A and the N3 of C are more readily methylated by DMS when they are unpaired, not occluded by protein or ligand, and not protected by a complex conformation. In other words, what Structure-seq2 reports first is whether a class of chemical site is accessible inside the living cell, not directly that \"this base is definitely paired\" or \"this base is definitely unpaired\", and certainly not assigning a uniform structural label to every residue transcriptome-wide. What it upgrades is engineering quality, not the chemical target."
+    },
+    {
+      "type": "paragraph",
+      "text": "Precisely because the upgrade touches the engineering rather than the chemistry, this boundary must be preserved exactly as is inside FoldBridge. Because Structure-seq2 still inherits the chemistry of DMS, it follows the same A/C target boundary: when signal falls on A/C, it reflects the accessibility of the pairing face; G/U are not the primary interpretable objects in this DMS readout to begin with. The improvements in Structure-seq2, for example ligation with a hairpin adapter, a purification step to remove a by-product, and more uniform denaturation coverage, make the data more trustworthy, the coverage more even and the bias smaller, but these improvements act on \"signal quality\" and do not expand \"the interpretable chemical target\". FoldBridge can preserve the raw observed values and can also display experimental signal on the web; but the moment anything enters default structure colouring, interpretive text or ANNOCONFIDENCE / FEC positive confidence, the raw signal must first pass the checks of assay chemistry and readout context before it can become a candidate for the default colouring or confidence. For Structure-seq2, this check likewise begins with `DMS_AC_ONLY`, only applied to a transcriptome-wide dataset with a cleaner library and more uniform coverage."
+    },
+    {
+      "type": "heading",
+      "text": "Workflow upgrade: a cleaner library, unchanged chemistry"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-structure-seq2-f1",
+      "alt": "Structure-seq2 F1",
+      "srcBasename": "structureseq2_f1__PMC5737731__F1.jpg",
+      "legend": "**Figure 1. The two versions of Structure-seq2 and the library improvements.** This workflow diagram in Ritchey et al. 2017 (PMID 28637286, DOI `10.1093/nar/gkx533`) breaks Structure-seq2 apart: RNA is first modified by DMS or another chemical reagent readable through reverse transcription, then converted into cDNA, ligated to an adapter, amplified and linked to TruSeq primer sequences, and finally run on an Illumina NGS using a custom sequencing primer. The legend uses a box to highlight in particular several improvements over the original Structure-seq protocol: ligation using a hairpin adapter plus T4 DNA ligase, and an added purification step to remove a deleterious by-product; purification has two alternative options, PAGE purification (A) or biotin-streptavidin bead pull down (B).",
+      "body": [
+        "The one point the reader should grasp from this figure is this: what Structure-seq2 upgrades is \"how to turn the modification cleanly into a sequencing read\", not \"the number of chemical sites it can measure has increased\". From RNA modification through cDNA, ligation, amplification and sequencing, the whole chain has been engineered and refined, but the starting point is still the chemical modification of A/C accessibility by DMS. For FoldBridge, this means that even with a higher-quality library, every row entering the database still has to be referred back to the assay model for interpretation: the signal of A/C can be read as an accessibility cue, but the strength of this cue is still jointly influenced by pairing, tertiary structure, protein or ligand protection, and sequencing background. A cleaner library does not mean the values are exempt from inspection; it only means the \"observable that needs interpreting\" is collected more reliably."
+      ],
+      "label": "Structure-seq2 F1",
+      "pmid": "28637286",
+      "pmcid": "PMC5737731",
+      "doi": "10.1093/nar/gkx533",
+      "figureId": "F1",
+      "legendText": "Two versions of Structure-seq2 produce high quality data. In Structure-seq2, RNA (kelly green) is first modified by DMS or another chemical that can be read-out through reverse transcription. The RNA is then prepared for Illumina NGS sequencing by conversion to cDNA (Step 1A/1B, blue), ligating an adaptor (Step 3A/3B), and amplifying the products while incorporating TruSeq primer sequences (Step 5A/5B). In order to increase library quality, numerous improvements were made to the original Structure-seq protocol (boxed). These include performing the ligation with a hairpin adaptor and T4 DNA ligase (Step 3A/3B; pink) ( 10 ), and adding various purification steps to remove a deleterious by-product (Figure 2A ). We present two options for purification: PAGE purification ( A ) or a biotin–streptavidin pull down ( B ). In the PAGE purification method, an additional PAGE purification step is added after reverse transcription (Step 2A). In the biotin–streptavidin pull down method, biotinylated dNTPs (cyan) are incorporated into the extended product during reverse transcription (Step 1B) and are purified via a magnetic streptavidin pull down after reverse transcription (Step 2B) and after ligation (Step 4B). There is also a common, final PAGE purification step following amplification (Step 5A/5B). Finally, a custom sequencing primer (light green) is used during sequencing (Step 7A/7B) to further provide high quality data. Supplementary Figure S1 is a version of this figure with all the nucleotides shown explicitly."
+    },
+    {
+      "type": "heading",
+      "text": "Lower ligation bias: what is reduced is bias, not the target"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-structure-seq2-f2",
+      "alt": "Structure-seq2 F2",
+      "srcBasename": "structureseq2_f2__PMC5737731__F2.jpg",
+      "legend": "**Figure 2. Structure-seq2 brings lower ligation bias.** This figure in Ritchey et al. 2017 (PMID 28637286, DOI `10.1093/nar/gkx533`) illustrates a specific source of bias: after reverse transcription, an excess of the 27 nt primer remains in solution, and in the ligation step it ligates with the 40 nt hairpin adapter into a 67 nt by-product with no insert, producing sequencing reads of no value (A). The legend goes on to compare the ligation bias: the new method based on T4 DNA ligase (-DMS and +DMS) significantly reduces ligation bias compared with the previous Circligase-based method, bringing the ligation proportions of the four nucleotides closer to the ideal transcriptome distribution (B).",
+      "body": [
+        "This figure places one core improvement of Structure-seq2 at the level of evidence: what it suppresses is the systematic bias introduced by library preparation, bringing the measured nucleotide distribution closer to the true transcriptome composition. But note that reducing ligation bias improves \"how clean and representative the measured signal is\", not \"which bases DMS can interpret\". Lower bias means the accessibility readout on A/C is more trustworthy and less contaminated by library-construction artefacts; it does not turn G/U into interpretable DMS targets. For FoldBridge, these are precisely the two things to keep apart: a quality improvement makes the raw observation more worthy of trust, but the chemistry gate still only lets through the interpretable signal that falls on A/C. Misreading \"lower ligation bias\" as \"now every base can be scored\" mistakes engineering progress for an expansion of the chemical boundary."
+      ],
+      "label": "Structure-seq2 F2",
+      "pmid": "28637286",
+      "pmcid": "PMC5737731",
+      "doi": "10.1093/nar/gkx533",
+      "figureId": "F2",
+      "legendText": "Structure-seq2 leads to a lower ligation bias. ( A ) After RT (Figure 1 , step 1A/1B), excess of the 27 nt primer (blue, top, right) is still present in the solution. During ligation (Figure 1 , step 3A/3B), this primer can also ligate to the 40 nt hairpin adaptor (pink) to form an unwanted 67 nt by-product which has no insert and so results in sequencing reads with no utility. ( B ) The complement of the first nucleotide after the adaptor sequence read during sequencing is the nucleotide that ligated to the adaptor. Our new T4 DNA ligase-based method (green, –DMS and pink, +DMS) substantially decreases ligation bias as compared to the previous Circligase-based method (blue). Percentages equaling the transcriptomic distribution of the four nucleotides (black) are ideal."
+    },
+    {
+      "type": "heading",
+      "text": "More uniform coverage: more regions are read, the target boundary unchanged"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-structure-seq2-f3",
+      "alt": "Structure-seq2 F3",
+      "srcBasename": "structureseq2_f3__PMC5737731__F3.jpg",
+      "legend": "**Figure 3. Structure-seq2 improves coverage uniformity and reveals m¹A on 25S rRNA.** This figure in Ritchey et al. 2017 (PMID 28637286, DOI `10.1093/nar/gkx533`) compares the effect of the reverse transcription denaturation conditions: under the original Structure-seq conditions (65 °C, no monovalent salt) some regions are read with no reads at all (marked by arrows); after raising the denaturation conditions (90 °C, with added monovalent salt), these regions can be read, the low-coverage regions are narrowed, and the total read count is similar (A, B). The legend also points out that the only region in 25S still not read has, just downstream, a sharp drop in reads, corresponding to a known m¹A site in yeast, human and H. marismortui; this site shows as a high RT stop count at a precise position in the -DMS data (C, D).",
+      "body": [
+        "This figure shows the improvement of Structure-seq2 in coverage: stronger denaturation lets the RT pass through structured or GC-rich regions that were previously unreadable, making coverage more uniform, and incidentally letting a known m¹A endogenous modification emerge from the RT stop signal. But more uniform coverage changes \"how many positions we can read\", not \"DMS can be interpreted as structural signal at every position\". In the newly read regions, it is still the signal on A/C that falls within the interpretable range of DMS; whereas endogenous modifications like m¹A, or RT stops in the -DMS background, are exactly what remind the reader that a high signal does not equal the A/C accessibility probed by DMS, since it may also come from a natural modification, sequence composition or a readout artefact. For FoldBridge, the coverage improvement gives more A/C sites a chance to be sampled, but before any new site enters default colouring or confidence it must first be confirmed to fall on an interpretable A/C target and not to be confounded by an endogenous modification or background signal."
+      ],
+      "label": "Structure-seq2 F3",
+      "pmid": "28637286",
+      "pmcid": "PMC5737731",
+      "doi": "10.1093/nar/gkx533",
+      "figureId": "F3",
+      "legendText": "Structure-seq2 identifies a previously unreported m 1 A in 25S rRNA. ( A ) Using the original Structure-seq method for RT denaturation (65°C with no monovalent salt), there are regions that receive no reads (denoted with arrows). ( B ) Increasing the denaturation conditions (90°C with monovalent salt) allows these regions to be read (denoted with color-matched arrows) and narrows regions of low read depth. Total number of reads is similar in panels a and b. Location of the large drop in reads downstream of the single region in 25S that remains absent of reads (red arrow) corresponds to a site known to contain a m 1 A in yeast, human, and H. marismortui ( C , Supplementary Figure S13 ) ( 16 , 18 ). Reads continue to decrease until they go to zero at nucleotide 539. The region between nucleotides 432 and 644 is 79% GC-rich with a read depth <100 on each nucleotide. ( D ) This site corresponds to a high RT stop count at the precise location in the –DMS data."
+    },
+    {
+      "type": "heading",
+      "text": "RT stop signal can also locate structural events, but the source must be distinguished"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-structure-seq2-f4",
+      "alt": "Structure-seq2 F4",
+      "srcBasename": "structureseq2_f4__PMC5737731__F4.jpg",
+      "legend": "**Figure 4. Structure-seq2 reveals two hidden breaks on chloroplast rRNA.** This figure in Ritchey et al. 2017 (PMID 28637286, DOI `10.1093/nar/gkx533`) shows that, at two positions of chloroplast rRNA where a hidden break is known to exist, the -DMS RT stop count shows a spike. The spike at the first hidden break (A) is one nucleotide away from the published cleavage site in spinach and Arabidopsis, possibly due to slight sequence differences between species; the spike at the second hidden break (B) falls precisely on the published cleavage site in spinach and Arabidopsis. The legend treats these two spikes as evidence that the method can precisely locate real structural events (strand breaks).",
+      "body": [
+        "This figure pushes the post-improvement data quality of Structure-seq2 to an interesting boundary: in the -DMS (that is, without DMS modification) control data, the RT stop count itself also carries information and can precisely locate a hidden break on the RNA strand. This shows that a cleaner, more precisely localised readout lets structural events be captured precisely. But it is at the same time a clear reminder: not every useful spike comes from the A/C chemistry of DMS. The RT stop at a hidden break comes from the physical breakage of the strand, not from a DMS report of pairing-face accessibility. For FoldBridge, this is precisely the source question to distinguish within the readout context: the same \"high RT stop signal\" may come from a DMS-modified site, but it may also come from an endogenous modification, a strand break or a sequence feature. Conflating these sources writes a -DMS background signal as evidence of DMS-supported A/C accessibility. The high-quality data of Structure-seq2 makes these signals clearer, but it also requires the article all the more to make clear \"which class of signal counts as DMS-interpretable evidence\"."
+      ],
+      "label": "Structure-seq2 F4",
+      "pmid": "28637286",
+      "pmcid": "PMC5737731",
+      "doi": "10.1093/nar/gkx533",
+      "figureId": "F4",
+      "legendText": "Structure-seq2 demonstrates the presence of two hidden breaks in chloroplast rRNA. At the two locations known to harbor hidden breaks in chloroplast rRNA, the –DMS RT stop count data spike. The spike at the first hidden break ( A ) differs by one nucleotide from the published break site in spinach and Arabidopsis ( 21 , 28 ), which could be due to the slight sequence variation between species (Arabidopsis: 5′-GGGAGUGAAA*UAGAACA-3′, Rice: 5′-GGGUAGUGAAAU*AGAACG-3′, where * indicates the proposed break site). The spike at the second hidden break ( B ) occurs precisely at the published cleavage site for spinach and Arabidopsis ( 21 , 28 )."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about Structure-seq2"
+    },
+    {
+      "type": "paragraph",
+      "text": "Structure-seq2 is a literally DMS-based method, the upgraded version of Structure-seq, so it directly inherits the core rule `DMS_AC_ONLY`; what is upgraded is library quality and coverage, not the chemical target. A/C are targetable bases; G/U/T/unknown are non-target bases. Even if the G/U/T/unknown rows have numbers, they can only be preserved as raw provenance, debug information or download-table fields, and cannot automatically enter positive confidence just because they come from a cleaner, more uniformly covered experiment."
+    },
+    {
+      "type": "paragraph",
+      "text": "The default ANNOJOIN structure figure should read the `visual_colormap_value` that has passed through the targetability mask, rather than reading the raw value directly. Only then is the colour the reader sees on the structure page a colour that is interpretable under the Structure-seq2 (that is, improved in vivo DMS) assay model. The requirement for ANNOCONFIDENCE / FEC is higher still: only A/C rows that pass the assay targetability, mapping, claim and context gates may enter the positive confidence candidates. This chemistry gate is exactly the same as in the DMS and Structure-seq articles; what is different about Structure-seq2 is that its data is cleaner, its coverage fuller and its bias lower, so it can sample more A/C sites, the gate has more work to do, and the discipline can be relaxed even less."
+    },
+    {
+      "type": "paragraph",
+      "text": "This does not weaken Structure-seq2. On the contrary, it respects its strengths. Structure-seq2 measures the accessibility of the A/C pairing face inside living cells more cleanly, more uniformly and with less bias; the error occurs when \"higher data quality\" is read as \"now every base can be scored, and all high signal is DMS evidence\". For a method like Structure-seq2 whose selling point is \"cleaner\", FoldBridge must especially remember that \"the values are more trustworthy\" and \"the values are more interpretable\" are two different things. The cleaner the library and the fuller the coverage, the more chemical reactivity, accessibility, base pairing, tertiary protection, protein/ligand protection, endogenous modification, strand break and sequencing bias must be discussed separately."
+    },
+    {
+      "type": "paragraph",
+      "text": "So a Structure-seq2 technical article should not just write \"our library has lower bias\" or \"our coverage is more uniform\". A more complete sentence should be written as: in the improved in vivo DMS assay of Structure-seq2, this A/C site has a relatively high accessibility signal; if mapping, coverage, background, endogenous modification and context all pass inspection, this signal can serve as support for structural interpretation. Stressing that higher quality does not equal a wider interpretive boundary is wordy, but it avoids the cleaner library being misread as a pairing judgement on every base."
+    },
+    {
+      "type": "heading",
+      "text": "A real case (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so what follows is a clearly labelled illustrative scenario, used to show how a single Structure-seq2 profile divides into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine a Structure-seq2 profile flowing into FoldBridge: it comes from an improved in vivo DMS + sequencing experiment, the library was built with the new T4 DNA ligase method, the coverage is more uniform thanks to stronger denaturation conditions, and it covers a stretch of consecutive positions on an mRNA. In the ANNOJOIN visual track, this profile is naturally divided into two classes, the positions that fall on A/C, and the positions that fall on G/U/T or are position unresolved. The former are DMS-interpretable targets, the latter are not. A cleaner library and fuller coverage mean both classes of position are sampled more completely than in the previous generation, but the classification criterion has not changed."
+    },
+    {
+      "type": "paragraph",
+      "text": "The conclusion this division gives the reader is very direct: a per-position Structure-seq2 observation is not the same as per-position DMS positive support. For A/C, the improved in vivo DMS can provide a cleaner accessibility cue; for G/U/T/unknown, the value is first of all raw provenance. Only the former, after passing the mapping and context gates, can possibly enter ANNOCONFIDENCE / FEC positive confidence. The extra positions brought by the coverage improvement are the same: reading more regions is a good thing, but the newly read A/C sites still have to pass the gate, and the newly read non-target positions are still only provenance."
+    },
+    {
+      "type": "paragraph",
+      "text": "If all positions on this profile were coloured by their raw values, the page would look fuller, but the interpretation would get worse. Non-target positions should not take part in the default DMS positive signal; position unresolved rows cannot pretend to have been mapped to reliable structural coordinates either; and endogenous modifications like m¹A, or the -DMS RT stop at a hidden break, can even less be taken as the A/C accessibility probed by DMS. By contrast, the A/C-targetable layer is the Structure-seq2 layer the reader should see first. The remaining rows can still be traced in the detail view, because they have value for provenance, debugging and re-analysis, but they should not disguise themselves as the same kind of evidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "What this illustrative scenario really wants to say is not some number, but that the same Structure-seq2 profile lives as three identities in the system at once: a raw observation, a visualisation signal and a confidence candidate. These three layers each mind their own business; the raw observation layer records \"what the experiment measured\", the visualisation signal layer displays only \"what can be read out within the interpretive boundary of improved in vivo DMS\", and the confidence layer accepts only interpretable evidence that has passed the gates. There is also a layer of confusion specific to Structure-seq2 to fend off here: higher quality and fuller coverage make it easy to mistake \"the values are more trustworthy\" for \"the values are more interpretable\". But a cleaner library does not change the source of the signal; an m¹A endogenous modification, or a -DMS RT stop at a hidden break, however clear the signal, is not a DMS report of A/C accessibility. Once a popular-science article cannot tell these three layers apart, and cannot tell these several signal sources apart, the reader will take the non-DMS signal in high-quality data as A/C evidence, and this misreading will be spread all the more efficiently by fuller coverage and an automated layer."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct ending for a Structure-seq2 article is not \"a high signal proves this base is unpaired\", nor \"a cleaner library and fuller coverage equal interpreting more bases\", but rather: building on Structure-seq, Structure-seq2 makes the in vivo, transcriptome-wide A/C accessibility readout cleaner, more uniform and less biased; in FoldBridge, this higher-quality cue still becomes part of structural interpretation and confidence only after it passes `DMS_AC_ONLY` and the subsequent gates."
+    }
+  ]
+}

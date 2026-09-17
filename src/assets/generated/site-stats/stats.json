@@ -1,0 +1,74 @@
+{
+  "schema_version": "site-stats.v2",
+  "entry_schema_version": "entry-table.v1",
+  "entry_contract": {
+    "metrics": {
+      "rna_chains": 17843,
+      "pdb_structures": 5321,
+      "chains_with_probing_profiles": 14953,
+      "pdbs_with_high_confidence_chain": 2698
+    },
+    "distributions": {
+      "rna_class": {
+        "rRNA": 8794,
+        "tRNA": 3763,
+        "other_RNA": 1628,
+        "mRNA": 1544,
+        "ribozyme": 493,
+        "riboswitch": 492,
+        "snRNA": 489,
+        "viral": 304,
+        "aptamer": 128,
+        "synthetic_RNA": 92,
+        "SRP_RNA": 75,
+        "designed_RNA": 35,
+        "Unclassified RNA": 6
+      },
+      "chain_confidence": {
+        "high": 5544,
+        "low": 2646,
+        "not_supported": 9653
+      },
+      "source_coverage": {
+        "rmdb": 14832,
+        "geo": 9066,
+        "rasp": 8264
+      }
+    }
+  },
+  "metrics": {
+    "rna_chains": 17843,
+    "pdb_structures": 5321,
+    "chains_with_probing_profiles": 14953,
+    "pdbs_with_high_confidence_chain": 2698,
+    "registered_technologies": 34,
+    "explainer_articles": 37
+  },
+  "distributions": {
+    "rna_class": {
+      "rRNA": 8794,
+      "tRNA": 3763,
+      "other_RNA": 1628,
+      "mRNA": 1544,
+      "ribozyme": 493,
+      "riboswitch": 492,
+      "snRNA": 489,
+      "viral": 304,
+      "aptamer": 128,
+      "synthetic_RNA": 92,
+      "SRP_RNA": 75,
+      "designed_RNA": 35,
+      "Unclassified RNA": 6
+    },
+    "chain_confidence": {
+      "high": 5544,
+      "low": 2646,
+      "not_supported": 9653
+    },
+    "source_coverage": {
+      "rmdb": 14832,
+      "geo": 9066,
+      "rasp": 8264
+    }
+  }
+}

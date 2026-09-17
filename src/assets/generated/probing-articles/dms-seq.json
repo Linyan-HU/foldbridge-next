@@ -1,0 +1,178 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "dms-seq",
+  "title": "DMS-seq: Transcriptome-wide RNA structure profiling by coupling DMS modification with sequencing",
+  "date": "",
+  "figure_count": 3,
+  "rep_pmid": "24336214",
+  "rep_pmcid": "PMC3966492",
+  "rep_doi": "10.1038/nature12894",
+  "key_innovation": "Compared with classical DMS probing, DMS-seq couples DMS chemistry with next-generation sequencing, enabling transcriptome-wide measurement of RNA structure at single-nucleotide resolution.",
+  "asset_base": "./src/assets/generated/probing-articles/assets/dms-seq",
+  "ppt_overview": [
+    {
+      "title": "How does DMS-seq convert chemical modifications into genome-wide structural maps?",
+      "srcBasename": "dmsseq_f1__PMC3966492__F1.jpg",
+      "alt": "Workflow of DMS-seq",
+      "captionTitle": "Figure 1. Workflow of DMS-seq.",
+      "text": "DMS-treated RNA is fragmented and converted into sequencing libraries. Reverse transcriptase stops one nucleotide upstream of DMS-modified A and C residues, and the resulting cDNA 5′ ends are mapped to identify modification sites across the transcriptome."
+    },
+    {
+      "title": "What structural information can DMS-seq reveal in vivo?",
+      "srcBasename": "dmsseq_f2__PMC3966492__F2.jpg",
+      "alt": "DMS-seq structural accessibility patterns in vivo",
+      "captionTitle": "Figure 2. Genome-wide DMS reactivity profiles.",
+      "text": "DMS-seq identifies nucleotide-resolution structural accessibility patterns across cellular RNAs and reveals regions protected by RNA folding or cellular interactions."
+    },
+    {
+      "title": "How can DMS-seq data reveal RNA structural landscapes?",
+      "srcBasename": "dmsseq_f3__PMC3966492__F3.jpg",
+      "alt": "Transcriptome-wide RNA structure analysis using DMS-seq",
+      "captionTitle": "Figure 3. Transcriptome-wide RNA structure analysis using DMS-seq.",
+      "text": "Genome-wide DMS reactivity maps reveal that cellular RNAs contain dynamic structures that differ from predictions based only on naked RNA folding."
+    }
+  ],
+  "body_start_heading": "A real case (illustrative)",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you only look at the data table, the easiest way to misread DMS-seq is to treat the reactivity measured in vivo as a context-free structural ground truth, ignoring the difference between it and the denatured and in vitro controls. That misses precisely what is most distinctive about this method: the cell is actively using energy to alter RNA structure. That reading is wrong. DMS-seq, proposed by Rouskin, Zubradt and colleagues in 2014, is essentially DMS chemical probing taken to a genome-wide scale: RNA is first modified with DMS in living cells, then high-throughput sequencing extends the readout across the whole transcriptome. What it actually reports is still the chemical accessibility of A and C on the Watson-Crick pairing face: the N1 of A and the N3 of C are more readily methylated when they are not paired, not shielded by a protein or ligand, and not protected by a complex conformation. In other words, what DMS-seq reports first is whether a class of chemical site is accessible in living cells, rather than directly reporting that \"this base must be paired\" or \"this base must be unpaired\", and still less assigning an equal structural label to every residue in the genome."
+    },
+    {
+      "type": "paragraph",
+      "text": "Placing this boundary into FoldBridge is a gate that DMS-seq must pass before it enters the database. Because DMS-seq inherits the chemistry of DMS, it follows the same A/C target boundary: when the signal falls on A/C, it reflects the accessibility of the pairing face; G/U were never the main interpretable objects in this DMS readout. FoldBridge can preserve the raw observed values, and it can display experimentally derived signal on the web; but as soon as the signal enters default structure colouring, interpretive text, or ANNOCONFIDENCE / FEC positive confidence, the raw signal must first pass checks on assay chemistry and readout context before it can become a candidate for default colouring or confidence. For DMS-seq, this check likewise begins with `DMS_AC_ONLY`, only applied at genome-wide scale. And the most distinctive contribution of the DMS-seq paper is that, having brought this chemistry into living cells, it revealed a phenomenon that traditional in vitro experiments cannot see: the cell actively expends energy to unfold RNA structure, that is, active unfolding."
+    },
+    {
+      "type": "heading",
+      "text": "Library strategy and A/C enrichment: what DMS-seq reads"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-dms-seq-f1",
+      "alt": "DMS F1",
+      "srcBasename": "dmsseq_f1__PMC3966492__F1.jpg",
+      "legend": "**Figure 1. The library strategy and A/C enrichment of DMS-seq.** This figure from Rouskin et al. 2014 (PMID 24336214, DOI `10.1038/nature12894`) shows the strategy for library preparation using DMS-modified RNA, and demonstrates that DMS-seq data are highly reproducible and robust across different treatment times and DMS concentrations. The legend also points out a key control design: in vivo DMS treatment significantly enriches sequencing reads that map to A/C bases, while the experiment ran three sets of samples in parallel, in vivo, denatured, and in vitro, with the denatured sample serving as the \"unstructured\" control.",
+      "body": [
+        "This figure makes clear something that could easily be mistaken for a bug: the DMS-seq signal is naturally biased towards A/C, and this is not a defect but is determined by the chemistry. After in vivo treatment, reads mapping to A/C are significantly enriched, which is exactly what shows that the DMS modification sites fall on the N1 of A and the N3 of C; sequencing simply converts these modifications into readable counts. For FoldBridge, this means that the interpretable DMS-seq signal is concentrated on A/C from the outset; even where G/U have counts in the table, they are not the main objects this chemistry reports on. The denatured control is equally important: it provides the baseline for \"how accessible A/C should be in the absence of structure\", so it is the difference between in vivo and denatured, rather than the raw counts themselves, that is the source of structural information. A validated enrichment does not amount to an inspection-free number."
+      ],
+      "label": "DMS F1",
+      "pmid": "24336214",
+      "pmcid": "PMC3966492",
+      "doi": "10.1038/nature12894",
+      "figureId": "F1",
+      "legendText": "a , Schematic of strategy for library preparation with DMS-modified RNAs. b , DMS-seq data is highly reproducible and robust against changes in time and DMS concentration. c , In vivo DMS treatment dramatically enriches for sequencing reads mapping to A/C bases compared to untreated control. d , DMS-seq was completed for in vivo , denatured, and in vitro samples. The denatured sample served as an ‘unstructured’ control."
+    },
+    {
+      "type": "heading",
+      "text": "Consistency with known structures: accuracy comes from validation"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-dms-seq-f2",
+      "alt": "DMS F2",
+      "srcBasename": "dmsseq_f2__PMC3966492__F2.jpg",
+      "legend": "**Figure 2. The consistency of DMS-seq signal with known secondary structures.** This figure from Rouskin et al. 2014 (PMID 24336214, DOI `10.1038/nature12894`) maps the in vivo DMS signal on HAC1 and ASH1 onto their known secondary structures, with each nucleotide coloured by DMS-seq signal; it also ranks the signal of the A bases of 18S rRNA from lowest to highest, and presents an ROC curve for the A/C bases. The legend notes that on 18S rRNA, a threshold of 0.2 on the A bases corresponds to 94% accuracy. It should be made clear that all the signals here have been normalised: the number of reads at each position is normalised to the highest read count within the region under consideration (set to 1.0).",
+      "body": [
+        "This figure then grounds credibility in validation: the confidence of DMS-seq comes from its consistency with known structures, not from any claim that \"it can score every base\". The known structures of HAC1 and ASH1 provide ground truth, while the ROC curve quantifies the discriminative power of the A/C signal into a single accuracy figure. For FoldBridge, this ROC has two implications. First, it confirms that the DMS-seq signal on A/C does carry interpretable structural information: 94% did not come from nowhere. Second, it reminds us that this accuracy rests on A/C and depends on a threshold and a normalisation scheme: an A base below the threshold does not automatically become unpaired, and an A base above the threshold still has to be interpreted back within its context. In other words, validation gives us the confidence to use the A/C signal, but it does not remove the step in which every row must still be interpreted through the assay model."
+      ],
+      "label": "DMS F2",
+      "pmid": "24336214",
+      "pmcid": "PMC3966492",
+      "doi": "10.1038/nature12894",
+      "figureId": "F2",
+      "legendText": "A–b , DMS signal in (a) HAC1 (position 1 corresponds to chrVI:75828) (b) ASH1 (position 1 corresponds to chrXI:96245). Number of reads per position was normalized to the highest number of reads in the inspected region, which is set to 1.0. Also shown are the known secondary structures with nucleotides color-coded reflecting DMS-seq signal in vivo . c , DMS signal on 18S rRNA A bases plotted from least to most reactive. d , ROC curve on the DMS signal for A/C bases from the 18S rRNA. Threshold at 94% accuracy corresponds to 0.2 for the A bases."
+    },
+    {
+      "type": "heading",
+      "text": "Distinguishing structured regions: the Gini index and the in vivo / in vitro comparison"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-dms-seq-f3",
+      "alt": "DMS F3",
+      "srcBasename": "dmsseq_f3__PMC3966492__F3.jpg",
+      "legend": "**Figure 3. Distinguishing structured regions at transcriptome scale using the Gini index.** This figure from Rouskin et al. 2014 (PMID 24336214, DOI `10.1038/nature12894`) first colours the in vitro DMS signal of RPL33A mRNA by intensity and plots it onto the Mfold-predicted structure, then defines two metrics for delineating structured regions within an mRNA, and, using windows of 50 A/C nucleotides, plots a scatter of the Gini index against the r value in yeast and K562 cells. The legend explains that the scatter comes both from biological replicates and from the comparison of in vivo and in vitro against denatured samples; red points represent regions spanning validated mRNA structures, blue points come from rRNA, and the in vivo evaluated regions in yeast and K562 number 23,412 and 17,242 respectively.",
+      "body": [
+        "This figure is the core step that distinguishes DMS-seq from ordinary whole-transcriptome probing: it is not content with per-position reactivity, but uses the Gini index, a metric measuring \"whether the signal is concentrated\", at the scale of 50-A/C windows to judge whether a stretch of RNA is structured at all. In a structured region, the DMS signal will be concentrated on a few accessible A/C (high Gini); in an unstructured region, the signal is spread more evenly. The key point is that all these judgements rest on A/C nucleotides: the windows are defined by A/C count, and the scatter is computed from A/C signal too. This is exactly how `DMS_AC_ONLY` manifests at transcriptome-wide scale: even though the analysis method has been upgraded to a region-level Gini index, the underlying evidence is still A/C accessibility. For FoldBridge, this means that even when the upstream analysis has aggregated the signal into a regional metric, every row that enters the database must remember that its interpretability comes from A/C, not from G/U counts. The side-by-side comparison of in vivo with in vitro and denatured then sets up the next figure: structure inside living cells is not the same as inside a test tube."
+      ],
+      "label": "DMS F3",
+      "pmid": "24336214",
+      "pmcid": "PMC3966492",
+      "doi": "10.1038/nature12894",
+      "figureId": "F3",
+      "legendText": "a , DMS signal in RPL33A mRNA, position 1 corresponds to chrXVI:282824. In vitro DMS signal color-coded proportional to intensity and plotted onto the Mfold structure prediction. b , Schematic representation of the two metrics used to define structured regions within mRNAs. C–d , Scatter plots of Gini index versus r value from biological replicates or in vivo and in vitro relative to denatured samples for non-overlapping mRNA regions of 50 A/C nucleotides for (c) yeast and (d) K562 cells. 5,000 randomly selected regions are shown. Red dots represent regions spanning validated mRNA structures and blue dots are regions from rRNA. Evaluated regions have a minimum of 15 reads per A/C on average and their total number for in vivo data is (c) 23,412 and (d)17,242."
+    },
+    {
+      "type": "heading",
+      "text": "Active unfolding: why living cells differ from the test tube"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-dms-seq-f4",
+      "alt": "DMS F4",
+      "srcBasename": "dmsseq_f4__PMC3966492__F4.jpg",
+      "legend": "**Figure 4. Active unfolding of RNA inside living cells.** This figure from Rouskin et al. 2014 (PMID 24336214, DOI `10.1038/nature12894`) shows how the DMS signal of RPL33A and RPS28B changes under in vivo and in vitro conditions as temperature rises; it tabulates the distribution of the in vitro melting temperature (T_unf) across denatured and structured regions; and it compares the Gini index difference between ATP-depleted and wild-type yeast samples. The legend also provides a direct contrast: the Gini index difference, relative to wild-type yeast, in ATP-depleted yeast or in vitro refolded mRNA, together with examples of in vivo structural changes during ATP depletion.",
+      "body": [
+        "This figure is the most distinctive finding of the DMS-seq paper, and the one that can least be conflated with an ordinary DMS review: RNA in living cells is \"looser\" than in the test tube, and maintaining this looseness requires the expenditure of ATP. When the cell is depleted of ATP, the Gini index of many mRNA regions shifts in the \"more structured\" direction, approaching the in vitro state; that is, under normal conditions the cell is actively expending effort to unfold RNA structure (active unfolding), rather than letting RNA fold quietly to its thermodynamic minimum. The temperature experiment further corroborates this: in vitro RNA displays its own melting behaviour as temperature changes, whereas the in vivo picture is additionally shaped by energy-driven processes. For FoldBridge, this finding elevates the distinction between in vivo and in vitro from a \"technical detail\" to an \"interpretive premise\": at the same A/C site, accessibility in living cells may be higher than in vitro because of active unfolding, and this difference is itself a biological signal, not noise. The DMS-seq number therefore carries a strong context dependence: it reports \"how accessible this A/C is in this cell, in this energy state\", rather than a context-free structural ground truth. This is precisely the best example of why assay context must enter the interpretive chain."
+      ],
+      "label": "DMS F4",
+      "pmid": "24336214",
+      "pmcid": "PMC3966492",
+      "doi": "10.1038/nature12894",
+      "figureId": "F4",
+      "legendText": "a , Example of DMS signal changes for RPL33A and RPS28B in vivo and in vitro with increasing temperature. b , Histogram of in vitro unfolding temperature (T unf ) for denatured (green bars) or structured (red bars) regions in vivo . c , Histogram of Gini index difference between ATP-depleted and wildtype yeast samples. d , Gini index differences in ATP-depleted yeast or in vitro refolded mRNAs relative to wildtype yeast, calculated over 50 A/C nucleotides. e , Example of in vivo structure changes during ATP depletion. Position 1 corresponds to chrXVI:643,069."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write up DMS-seq"
+    },
+    {
+      "type": "paragraph",
+      "text": "DMS-seq is a DMS-based method in the literal sense, so it directly inherits the core rule `DMS_AC_ONLY`, only applied at genome-wide scale. A/C are targetable bases; G/U/T/unknown are non-target bases. Even where G/U/T/unknown rows have numbers, they can only be retained as raw provenance, debug information, or download-table fields; they cannot automatically enter positive confidence merely because they were measured in a transcriptome-wide experiment or took part in a regional metric such as the Gini index."
+    },
+    {
+      "type": "paragraph",
+      "text": "The default structure diagram in ANNOJOIN should read the `visual_colormap_value` that has passed through the targetability mask, rather than reading the raw values directly. Only then is the colour readers see on the structure page a colour that is interpretable under the DMS-seq (that is, in vivo DMS) assay model. ANNOCONFIDENCE / FEC require more: only A/C rows that pass the assay targetability, mapping, claim, and context gates may enter the positive confidence candidate pool. For DMS-seq, the context gate is especially important here, because active unfolding means that the accessibility of the same site varies with the cell's energy state: the in vivo / in vitro / ATP state is itself context that must be recorded and must take part in interpretation, and cannot be flattened into an unconditional reactivity number."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is not a weakening of DMS-seq. On the contrary, it respects its strengths. DMS-seq is very useful for the accessibility of the A/C pairing face in living cells, and it was the first to let anyone see active unfolding at transcriptome scale; the error occurs when this strength is extended into \"a uniform reactivity for every base across the whole transcriptome\", or when the in vivo number is treated as a structural ground truth detached from the energy state. What FoldBridge must do, within the vast quantity of numbers that a transcriptome represents, is to always distinguish between \"an A/C count was measured\" and \"this count can support a structural interpretation\". The larger the scale and the more active the biological background, the more one must talk separately about chemical reactivity, accessibility, base pairing, tertiary protection, protein/ligand protection, active unfolding, and sequencing bias."
+    },
+    {
+      "type": "paragraph",
+      "text": "So a DMS-seq technical article should not merely state that \"the signal at some site is high\" or that \"we covered the whole transcriptome\". A more complete sentence should read: in the in vivo DMS assay of DMS-seq, and in the recorded cellular energy state, this A/C site shows a higher accessibility signal; if mapping, coverage, background, and context all pass the checks, this signal can serve as support for structural interpretation. Spelling out the premise of the cellular energy state is verbose, but it avoids treating a number influenced by active unfolding as a context-free pairing ground truth."
+    },
+    {
+      "type": "heading",
+      "text": "A real case (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so what follows is a clearly labelled illustrative scenario, used to explain how a single DMS-seq profile is separated into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine a DMS-seq profile flowing into FoldBridge: it comes from an in vivo DMS plus sequencing experiment, covers a run of consecutive positions on an mRNA, and is accompanied by denatured and in vitro controls of the same object. In the ANNOJOIN visual track, this profile is naturally split into two classes: positions that fall on A/C, and positions that fall on G/U/T or on positions that are unresolved. The former are DMS-interpretable targets, the latter are not."
+    },
+    {
+      "type": "paragraph",
+      "text": "The conclusion this division gives the reader is very direct: a per-position DMS-seq observation is not the same as per-position DMS positive support. For A/C, DMS in living cells can provide a strong accessibility clue, and the difference between in vivo and denatured / in vitro itself carries the biological information of active unfolding; for G/U/T/unknown, the number is first of all raw provenance. Only the former, after passing the mapping and context gates, may enter ANNOCONFIDENCE / FEC positive confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "If every position on this profile were coloured by its raw value, the page would look fuller, but the interpretation would be worse. Non-target positions should not take part in the default DMS positive signal; rows at unresolved positions also cannot pretend they have already been mapped to reliable structural coordinates. More subtly, if the in vivo signal is treated directly as a structural ground truth, ignoring its difference from in vitro, the reader will miss the most valuable finding of DMS-seq: that the living cell uses energy to actively alter RNA structure. Conversely, the layer that is A/C-targetable and carries a clear in vivo / in vitro context is the DMS-seq layer the reader should see first. The remaining rows can still be traced in the details, because they are valuable for provenance, debugging, and reanalysis, but they should not masquerade as the same kind of evidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "What this illustrative scenario really wants to say is not about any one number, but that the same DMS-seq profile lives simultaneously as three identities within the system: raw observation, visual signal, and confidence candidate. These three layers each mind their own business: the raw observation layer records \"what the experiment measured, in which cellular state\", the visual signal layer only displays \"what can be read out within the in vivo DMS interpretive boundary\", and the confidence layer only accepts interpretable evidence that has passed the gates. For DMS-seq, failing to distinguish these three layers brings a double misreading: on one side, treating counts that fall on G/U/T or unresolved positions as accessibility evidence on a par with A/C; on the other, treating the in vivo number directly as structural ground truth and erasing its difference from in vitro, which throws away the most valuable biological signal of all, the layer of active unfolding. At the scale of the whole transcriptome, both kinds of misreading are propagated several times over by automated layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct ending for a DMS-seq article is not \"high signal proves this base is unpaired\", nor \"covering the whole transcriptome is equivalent to interpreting the whole transcriptome\", but: DMS-seq can provide powerful A/C accessibility clues for RNA structure interpretation in living cells, at genome-wide scale, and it made in vivo phenomena such as active unfolding measurable for the first time; in FoldBridge, such a clue becomes part of structural interpretation and confidence only after it passes `DMS_AC_ONLY` and the subsequent gates (including recording the in vivo / in vitro context)."
+    }
+  ]
+}

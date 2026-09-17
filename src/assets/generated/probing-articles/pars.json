@@ -1,0 +1,56 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "pars",
+  "title": "PARS: reading the pairing state of RNA via the cleavage ratio of two nucleases",
+  "date": "",
+  "figure_count": 3,
+  "rep_pmid": "20811459",
+  "rep_pmcid": "PMC3847670",
+  "rep_doi": "10.1038/nature09322",
+  "asset_base": "./src/assets/generated/probing-articles/assets/pars",
+  "key_innovation": "Compared with classical enzymatic probing, PARS integrates structure-sensitive RNase digestion with high-throughput sequencing, enabling genome-wide mapping of double-stranded and single-stranded RNA regions at nucleotide resolution.",
+  "blocks": [
+    {
+      "type": "heading",
+      "text": "How does PARS distinguish double-stranded and single-stranded RNA regions?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-pars-f1",
+      "alt": "PARS workflow showing RNase V1 and S1 cleavage and the resulting PARS score",
+      "srcBasename": "pars_f1__PMC3847670__F1.jpg",
+      "legend": "**Figure 1. Genome-wide RNA structure profiling by PARS.** PARS uses complementary RNase digestion to differentiate RNA structural states. RNase V1 preferentially cleaves double-stranded or structured RNA regions, whereas S1 nuclease preferentially cleaves single-stranded regions. Cleavage sites are converted into sequencing libraries, and cleavage frequencies are used to calculate PARS scores representing local RNA secondary structure.",
+      "label": "PARS F1",
+      "figureId": "F1",
+      "legendText": "(a) RNA molecules are cleaved by RNase V1, which cuts 3′ of double-stranded RNA, leaving a 5′ phosphate (5′P). One such cut is illustrated by a red arrow. Following random fragmentation, V1-generated fragments are specifically captured and subjected to deep sequencing. Each aligned sequence provides structural evidence about a single base. (b) Same as (a), but when the RNA sample is treated with RNase S1, which cuts 3′ of single-stranded RNA. (c) By combining the data extracted from the two complementary experiments, we obtain a nucleotide-resolution score representing the likelihood that the inspected base was in a double- or single-stranded conformation."
+    },
+    {
+      "type": "heading",
+      "text": "How can PARS reveal transcriptome-wide RNA structures?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-pars-f2",
+      "alt": "PARS signal profiles and structure-guided readouts across RNA transcripts",
+      "srcBasename": "pars_f2__PMC3847670__F2.jpg",
+      "legend": "**Figure 2. Transcriptome-wide RNA secondary structure landscapes.** PARS scores were mapped across yeast transcripts, revealing structured regions enriched in coding sequences and conserved RNA elements. Genome-wide structure profiles demonstrate that RNA folding patterns are widespread and biologically regulated.",
+      "label": "PARS F2",
+      "figureId": "F2",
+      "legendText": "(a) The PARS signal obtained for bases 50-110 of the yeast gene CCW12 using the double-stranded cutter RNase V1 or single-stranded cutter RNase S1 accurately matches traditional footprinting. (b) Gel analysis of RNase V1 and S1 probing of CCW12. (c-d) The corresponding PARS signal and footprinting analysis for RPL41A. (e-f) Raw V1 and S1 read counts, the resulting PARS score, and known structures for inspected domains of ASH1 and URE2."
+    },
+    {
+      "type": "heading",
+      "text": "How does PARS improve RNA structure prediction?"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-pars-f3",
+      "alt": "PARS-guided RNA secondary structure modeling and transcript-level structure profiles",
+      "srcBasename": "pars_f3__PMC3847670__F3.jpg",
+      "legend": "**Figure 3. PARS-guided RNA secondary structure modeling.** Experimental PARS constraints were incorporated into RNA folding algorithms to improve secondary structure prediction accuracy compared with sequence-only prediction.",
+      "label": "PARS F3",
+      "figureId": "F3",
+      "legendText": "(a) Significant correspondence between PARS and computational predictions of RNA structure, with nucleotides sorted by PARS score. (b) Discrete Fourier transform of average PARS score across coding and untranslated regions, including the codon-position signal. (c) Average PARS score across the 5′ UTR, coding region, and 3′ UTR aligned to translation start and stop sites."
+    }
+  ]
+}

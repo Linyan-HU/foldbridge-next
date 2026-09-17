@@ -1,0 +1,191 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "smartshape",
+  "title": "SmartSHAPE: Ultra-low-input SHAPE profiling for transcriptome-wide RNA structure analysis",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "38933905",
+  "rep_pmcid": "PMC11197792",
+  "rep_doi": "10.1016/j.fmre.2021.12.007",
+  "asset_base": "./src/assets/generated/probing-articles/assets/smartshape",
+  "sibling_navigation": {
+    "previous": {
+      "slug": "nai-map",
+      "title": "NAI-MaP"
+    }
+  },
+  "key_innovation": "Compared with conventional SHAPE-based transcriptome profiling, smartSHAPE improves library preparation efficiency and reduces input requirements, enabling global RNA structure mapping from limited biological samples.",
+  "body_start_heading": "A real example: how a smartSHAPE profile flows through three layers (illustrative)",
+  "ppt_overview": [
+    {
+      "title": "How does smartSHAPE enable RNA structure profiling from low-input samples?",
+      "srcBasename": "smartshape_figure1.png",
+      "alt": "Overview of the smartSHAPE experimental workflow",
+      "captionTitle": "Figure 1. Overview of the smartSHAPE experimental workflow",
+      "text": "smartSHAPE integrates optimized SHAPE chemistry with improved sequencing library preparation to achieve transcriptome-wide RNA structure profiling using substantially reduced RNA input."
+    },
+    {
+      "title": "How does smartSHAPE improve probing sensitivity?",
+      "srcBasename": "smartshape_figure2.png",
+      "alt": "Enhanced signal quality and reduced background in smartSHAPE datasets",
+      "captionTitle": "Figure 2. Enhanced signal quality and reduced background in smartSHAPE datasets",
+      "text": "Benchmarking experiments demonstrate that smartSHAPE produces higher-quality structural profiles with improved signal-to-noise ratios compared with conventional SHAPE approaches."
+    },
+    {
+      "title": "Can smartSHAPE measure RNA structures genome-wide?",
+      "srcBasename": "smartshape_figure3.png",
+      "alt": "Transcriptome-wide RNA structure landscape revealed by smartSHAPE",
+      "captionTitle": "Figure 3. Transcriptome-wide RNA structure landscape revealed by smartSHAPE",
+      "text": "smartSHAPE enables global profiling of RNA structural accessibility across cellular transcripts, providing nucleotide-resolution structural information from limited samples."
+    },
+    {
+      "title": "What biological regulation can be uncovered by smartSHAPE?",
+      "srcBasename": "smartshape_figure4.png",
+      "alt": "Identification of RNA structural regulation mediated by Regnase-1",
+      "captionTitle": "Figure 4. Identification of RNA structural regulation mediated by Regnase-1",
+      "text": "Application of smartSHAPE identifies RNA structural changes associated with Regnase-1-mediated regulation, demonstrating its capability for studying RNA structure–function relationships."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "The point where smartSHAPE is most easily misread is hidden in its selling point: because it can measure a high-sensitivity signal in living cells with very little starting material, it is easy to take \"even such a tiny amount was measured\" directly as \"even the structure of every base has been determined\". That reading is wrong. The object of interpretation of smartSHAPE is the chemical accessibility and flexibility of the ribose 2′-OH in living cells (in vivo): when a nucleotide's 2′-hydroxyl is single-stranded, not paired, not occluded by a protein or ligand, and not protected by a complex conformation, it is more readily modified by an acylating reagent such as NAI-N3. What is special about smartSHAPE is that it carries out this SHAPE chemistry at extremely low RNA starting amounts and high sensitivity: the modified RNA has a handle attached by click chemistry, undergoes random reverse transcription, is digested by RNase I to remove premature termination, and then undergoes streptavidin enrichment and library sequencing. That is to say, what smartSHAPE reports first is whether a class of chemical sites is accessible and flexible, not directly whether \"this base is definitely paired\" or \"this base is definitely unpaired\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "This boundary matters greatly for FoldBridge. FoldBridge can preserve the raw observations and can display experimental signal on its web pages; but as soon as anything enters default structure colouring, interpretive text or the confidence layer, a more specific question must be asked first: can this number, under the assay model of smartSHAPE, be interpreted as support for 2′-OH accessibility? The raw reverse-transcription signal of smartSHAPE is raw provenance; it must first pass the assay chemistry and the background/readout context before it can become a candidate for default structure colour or confidence. The low starting amount is the strength of smartSHAPE, but it does not change this interpretive boundary: higher sensitivity means it is all the more important to keep the readout and structural ground truth distinct."
+    },
+    {
+      "type": "heading",
+      "text": "The chemistry chain of smartSHAPE: acylate 2′-OH at low starting amount, then click-enrich for library construction"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-smartshape-f1",
+      "alt": "smartSHAPE F1",
+      "srcBasename": "smartshape_f1__PMC11197792__F1.jpg",
+      "legend": "**Figure 1. The overall smartSHAPE workflow for low-starting-amount in vivo structure probing.** Piao et al. 2021 (PMID 38933905, DOI `10.1016/j.fmre.2021.12.007`). The legend breaks smartSHAPE into a series of steps: single-stranded nucleotides are modified by NAI-N3 in living cells; total RNA is then extracted, rRNA removed and the click reaction performed; SuperScript III is used for random reverse transcription to generate cDNA; RNase I is then used to digest away premature reverse-transcription termination products, and streptavidin magnetic beads are used for enrichment; after elution, CircLigase II ligates a biotin-modified 3′ adapter to the cDNA, and the ligation product is captured again by streptavidin magnetic beads; second-strand synthesis is then performed on the beads, with a 5′ adapter added by T4 DNA Ligase; the ligated library is eluted from the beads, amplified and sequenced; the smartSHAPE score is finally computed using icSHAPE-pipe (modified).",
+      "body": [
+        "Following this engineered workflow, the key point is that all the ingenuity of smartSHAPE is spent on \"obtaining a readable signal even with very little RNA\": after NAI-N3 acylates 2′-OH, a click handle is attached, and random reverse transcription combined with RNase I digestion removes spurious signal, turning the fact that \"2′-OH is accessible and flexible\" into a physical signal that can be enriched and sequenced at a tiny starting amount. This series of enzymatic and enrichment steps together ensures that a readable signal can still be obtained at an extremely low RNA starting amount, and each step determines what the number in the final table actually represents.",
+        "More importantly, the score of smartSHAPE is computed using a modified icSHAPE-pipe, which means that, like icSHAPE, what it ultimately reports is the accessibility/flexibility of 2′-OH, not the ground truth of base pairing. For FoldBridge, this means the smartSHAPE signal of the same stretch of RNA cannot be interpreted apart from \"under which condition and with how much starting material it was measured\". Every additional step of enzymatic processing or enrichment in the workflow enters the provenance of the final number, so the raw provenance must be preserved together with the complete assay context."
+      ],
+      "label": "smartSHAPE F1",
+      "pmid": "38933905",
+      "pmcid": "PMC11197792",
+      "doi": "10.1016/j.fmre.2021.12.007",
+      "figureId": "F1",
+      "legendText": "Schematic of smartSHAPE for low-input in vivo RNA structure probing. Single-stranded ribonucleotides are modified with NAI-N 3 in vivo , which is followed by total RNA isolation, rRNA removal, and a click reaction. cDNAs are then generated by random reverse transcription (RT) with SuperScript III; an RNase I digestion is then performed to remove premature RT stops, followed by enrichment with streptavidin beads. After elution, the cDNAs are ligated to a 3’ adapter modified with biotin by CircLigase II, and the ligated products are captured using streptavidin beads. Subsequently, on-bead second strand synthesis is performed and T4 DNA Ligase is used to add 5’ adapters. The ligated library is then eluted from the beads, amplified, and sequenced. smartSHAPE scores are then calculated using icSHAPE-pipe as previously described with modifications (see Material and methods and Fig. S1)."
+    },
+    {
+      "type": "heading",
+      "text": "RNase I digestion: remove the spurious signal from premature termination before discussing accessibility"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-smartshape-f2",
+      "alt": "smartSHAPE F2",
+      "srcBasename": "smartshape_f2__PMC11197792__F2.jpg",
+      "legend": "**Figure 2. How RNase I digestion suppresses the spurious structural signal caused by premature reverse-transcription termination.** Piao et al. 2021 (PMID 38933905, DOI `10.1016/j.fmre.2021.12.007`). The legend explains: (a) a schematic showing how RNase I digestion, combined with streptavidin enrichment, removes the structure-probing signal brought by premature reverse-transcription termination; (b) the structure model of 28S rRNA near a known m1A modification (position 1478); (c) urea PAGE analysis of the reverse-transcription products of NAI-N3-modified 28S rRNA after streptavidin enrichment, with or without RNase I digestion, where the primer targets the sequence upstream of the known m1A modification and the template is total RNA extracted from HEK293T cells modified in vivo with NAI-N3; (d) the normalised reverse-transcription values of the HEK293T DMSO and NAI-N3 groups at known m1A and m3U modification sites; (e) the 18S rRNA structure model, with nucleotides coloured by the smartSHAPE/icSHAPE score in HEK293T cells; (f) the ROC curve of the 18S rRNA smartSHAPE/icSHAPE score, evaluated using the accessible nucleotides computed from the crystal structure.",
+      "body": [
+        "This figure is the safeguard most worth emphasising in smartSHAPE. Reverse transcription stops in front of an acylated 2′-OH site, so the modification is read as reverse-transcription termination. But termination is not produced only by true modification: random reverse transcription, endogenous modifications (such as m1A and m3U) and the template itself all bring premature termination. smartSHAPE uses RNase I digestion plus streptavidin enrichment to remove these prematurely terminated spurious signals, and what remains is closer to a clue to 2′-OH accessibility. The raw reverse-transcription signal itself is not equal to structure.",
+        "The easiest mistake to make here is to write \"reverse-transcription termination was measured\" as \"structure was measured\". Endogenous modifications such as m1A and m3U produce termination even in the absence of NAI-N3; both the ROC curve and the normalised reverse-transcription values are telling the reader that the value of smartSHAPE is an observation after readout, background and normalisation, not a structure label given directly by the smartSHAPE molecule. For FoldBridge, the raw observation must first pass the readout context (including the RNase I step of separating true from spurious signal) before it can become a candidate for the default layer or confidence; the raw reverse-transcription count must not be allowed to drive structure colouring directly."
+      ],
+      "label": "smartSHAPE F2",
+      "pmid": "38933905",
+      "pmcid": "PMC11197792",
+      "doi": "10.1016/j.fmre.2021.12.007",
+      "figureId": "F2",
+      "legendText": "RNase I digestion of smartSHAPE substantially reduced artefact RNA structure probing signals caused by premature RT stops. (a) Schematic showing how the RNase I digestion removes structure probing signals of premature RT stops when combined with streptavidin beads enrichment. (b) Structure model of 28S rRNA near a known m 1 A modification at 1478. (c) Urea PAGE analysis of RT products of NAI-N 3 -modified 28S rRNA followed by streptavidin bead enrichment with or without RNase I digestion. The primers targeted a sequence upstream of the known m 1 A modification. The template here was total RNA isolated from HEK293T cells modified in vivo with NAI-N 3 . (d) Normalized RT values of the HEK293T DMSO and NAI-N 3 groups at known m 1 A and m 3 U modification sites. (e) 18S rRNA structure model with nucleotides colored by smartSHAPE/icSHAPE scores in HEK293T cells. (f) ROC curve of 18S rRNA smartSHAPE/icSHAPE scores, evaluated on accessible nucleotides calculated from crystal structures. See also Fig. S2."
+    },
+    {
+      "type": "heading",
+      "text": "Coverage and accuracy at low starting amount: high sensitivity, high interpretive responsibility too"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-smartshape-f3",
+      "alt": "smartSHAPE F3",
+      "srcBasename": "smartshape_f3__PMC11197792__F3.jpg",
+      "legend": "**Figure 3. smartSHAPE still achieves high coverage and high accuracy at an extremely low RNA starting amount.** Piao et al. 2021 (PMID 38933905, DOI `10.1016/j.fmre.2021.12.007`). The legend shows: (a) the normalised reverse-transcription values of the RPS16 gene at different RNA starting amounts for smartSHAPE or icSHAPE libraries in HEK293T cells; (b) the number of transcripts with high structure-probing coverage at different RNA starting amounts and sequencing depths (the highest depth being the true depth, the rest analysed by down-sampling for library complexity and structure coverage; high coverage defined as transcripts with more than 80% of nucleotides passing the coverage threshold), with a pie chart showing the composition of the RNA structurome under high coverage; (c) the number of reads corresponding to each processing step (duplicates and reads shorter than 25 nt removed before alignment); (d) the ROC curves of the 18S and 28S rRNA smartSHAPE/icSHAPE scores at different RNA starting amounts, evaluated using the accessible nucleotides computed from the crystal structure; (e) the conserved structure model of the XBP1 mRNA, with nucleotides coloured by the smartSHAPE/icSHAPE structure score at different RNA starting amounts.",
+      "body": [
+        "This figure shows the core selling point of smartSHAPE: when the RNA starting amount is greatly reduced, it can still maintain high structure-probing coverage and an accuracy close to the crystal structure. For a non-specialist reader, this is the appeal of smartSHAPE: the in vivo SHAPE that previously required a large number of cells can now be done with very few samples.",
+        "But be careful: high sensitivity does not mean the interpretive boundary disappears. What the ROC curve evaluates is \"whether the score can distinguish the accessible nucleotides in the crystal structure\", that is, 2′-OH accessibility, not the ground truth of base pairing. The lower the starting amount, the greater the influence of library complexity, coverage and normalisation on the final value. When FoldBridge cites such results, it should write \"the smartSHAPE accessibility signal of this site at this starting amount\", not \"this base is paired here\". The low starting amount is an engineering breakthrough, but it magnifies the weight of the readout in the interpretive chain, so it is all the more important to separate the accessibility readout from structural ground truth."
+      ],
+      "label": "smartSHAPE F3",
+      "pmid": "38933905",
+      "pmcid": "PMC11197792",
+      "doi": "10.1016/j.fmre.2021.12.007",
+      "figureId": "F3",
+      "legendText": "smartSHAPE achieved high RNA structure-probing coverage and accuracy with low RNA input amount. (a) Normalized RT values of RPS16 gene for different RNA inputs of smartSHAPE or icSHAPE libraries in HEK293T cells. (b) Number of transcripts with high structure-probing coverage for smartSHAPE (or icSHAPE) libraries of different RNA input amount, under different sequencing depths. The highest sequencing depths are the real depths; reads were down-sampled for analysis of library complexity and structure coverage. Transcripts with high structure-probing coverage were defined as transcripts for which more than 80% nucleotides passed a coverage cutoff. The pie chart illustrates the RNA structurome composition for high coverage. (c) Number of reads corresponding to each processing step. Duplicates and reads shorter than 25 nucleotides were removed prior to mapping. (d) ROC curve of 18S rRNA and 28S rRNA smartSHAPE (or icSHAPE) scores with different RNA input amounts, using accessible nucleotides calculated from crystal structure. (e) Conserved structure model of XBP1 mRNA with nucleotides colored by smartSHAPE (or icSHAPE) structure score with different RNA input amounts. See also Fig. S3 and Table S1."
+    },
+    {
+      "type": "heading",
+      "text": "In vivo probing in primary cells: a differential signal is not necessarily a change in pairing"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-smartshape-f4",
+      "alt": "smartSHAPE F4",
+      "srcBasename": "smartshape_f4__PMC11197792__F4.jpg",
+      "legend": "**Figure 4. In vivo structure probing of mouse primary colonic macrophages with smartSHAPE.** Piao et al. 2021 (PMID 38933905, DOI `10.1016/j.fmre.2021.12.007`). The legend explains: (a) a schematic of mouse macrophage isolation and structure probing: mice are first infected by oral gavage with C. rodentium, sacrificed on day 5 after infection to collect colonic tissue, the tissue is digested and Ly6C-lo and Ly6C-hi macrophages are sorted by FACS, then modified in vivo with NAI-N3 and probed for structure with smartSHAPE; (b) the number of transcripts with high structure-probing coverage in mouse colonic Ly6C-lo and Ly6C-hi macrophages, with a pie chart showing the structurome composition of the high-coverage transcripts; (c) the conserved structural elements of Xbp1, with nucleotides coloured by the structure score in the Ly6C-lo and Ly6C-hi macrophages of the smartSHAPE library, or the mES icSHAPE library; (d) the distribution of the proportion of high-difference windows across different mRNA regions and different RNA species; (e) the gene ontology (GO) analysis of the top 25% of genes by proportion of high-difference windows, with a bar chart showing the top GO terms ranked by FDR (binomial test).",
+      "body": [
+        "This figure lays out the real value of smartSHAPE: it can, with very few primary cells, read out the 2′-OH accessibility of RNA under real physiological/infection conditions and compare the differences between different cell subsets. This is something high-starting-amount methods can hardly do.",
+        "But this is also exactly why FoldBridge must preserve the assay context. A \"high-difference window\" between Ly6C-lo and Ly6C-hi is a difference in the smartSHAPE accessibility signal, behind which there may be a change in pairing, a conformational change, or a difference in the protection brought by protein binding or modification. If one looks at a single difference window and judges \"pairing has changed here\", protein protection or environmental differences will be misread as structure. So a complete sentence should be: under this condition and in this cell subset, the 2′-OH accessibility at this site has changed; this may come from pairing, and may come from the protection brought by protein or modification, and judgement requires combining the context."
+      ],
+      "label": "smartSHAPE F4",
+      "pmid": "38933905",
+      "pmcid": "PMC11197792",
+      "doi": "10.1016/j.fmre.2021.12.007",
+      "figureId": "F4",
+      "legendText": "In vivo RNA structure probing of mouse primary colonic macrophages by smartSHAPE. (a) Schematic of mouse macrophage isolation and structure probing. Mice were first infected with C. rodentium by oral gavage and were sacrificed for colon tissue collection at 5 days post infection. After colon tissue digestion, Ly6C lo and Ly6C hi macrophages were isolated via FACS and were then modified by NAI-N 3 in vivo for structure probing by smartSHAPE. (b) The number of transcripts with high structure-probing coverage in mouse colonic Ly6C lo and Ly6C hi macrophages. The pie chart illustrates the structurome composition of the transcripts with high structure-probing coverage. (c) Conserved structure element in Xbp1 with nucleotides colored by smartSHAPE structure score of Ly6C lo and Ly6C hi macrophages in the smartSHAPE libraries or the mES icSHAPE library. (d) Distribution of the ratios of high difference windows for different regions of mRNA and different species of RNA. (e) Gene ontology (GO) analysis of top 25% genes with high difference window ratio. The bar chart shows the top GO terms ranked by FDR (binomial test). See also Fig. S4."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about smartSHAPE"
+    },
+    {
+      "type": "paragraph",
+      "text": "smartSHAPE has no clear base-target boundary of \"A/C interpretable, G/U not interpretable\" as DMS does; its target is the ribose 2′-OH, and in principle every nucleotide has a 2′-OH. So the interpretive gate of smartSHAPE is not \"which base can be coloured\", but a multi-stage gate oriented toward 2′-OH accessibility: chemical target reachability (whether the 2′-OH at this site is effectively acylated and read out in the current low-starting-amount library), readout context (whether the reverse-transcription signal has had spurious signal removed by RNase I, whether background has been subtracted, and whether scaling and normalisation have been performed), and the mapping and claim gate (whether the coordinates are reliable and whether they hold under this experimental condition and starting amount)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Only accessibility that passes all of these gates can enter the default visualisation and confidence layers. The raw reverse-transcription count is itself only provenance: it should be preserved in full, downloadable and traceable, but it should not automatically drive default structure colouring. The default structure figure in ANNOJOIN should read the visualisation value after background correction and targetability processing, not the bare reverse-transcription count. The requirements of confidence / FEC are higher still: only accessibility observations that pass the chemistry, readout, mapping, claim and context gates may become candidates for positive confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is not a weakening of smartSHAPE, but a respect for its strengths. smartSHAPE is very powerful for low-starting-amount, in-cell 2′-OH accessibility; the error occurs when \"a decrease in accessibility\" is uniformly written as \"pairing\", or the raw reverse-transcription signal is written as structural ground truth. The high sensitivity brought by the low starting amount is precisely what requires FoldBridge to separate \"there is an observation\" from \"it can be interpreted as structural support\" more clearly. The default colour on the web page answers \"what readable signal does this site have within the smartSHAPE interpretive boundary\"; the details table answers \"what is recorded in the raw data\". Once these two layers are mixed together, the little signal magnified by the low starting amount will also be taken by the reader as a structural judgement that smartSHAPE has already certified."
+    },
+    {
+      "type": "heading",
+      "text": "A real example: how a smartSHAPE profile flows through three layers (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so what follows is a clearly labelled illustrative scenario, used to show how a single smartSHAPE profile separates into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine a smartSHAPE profile measured in mouse primary colonic macrophages with a very small starting amount entering FoldBridge. The first layer is the raw observation: the per-position reverse-transcription signal, the readings before and after RNase I treatment, the library metadata (starting amount, sequencing depth) and the sequencing coordinates, all preserved as-is, as provenance, downloadable and recomputable. They record \"what reverse-transcription signal was measured at a very small starting amount\", not yet a flexibility conclusion for the site."
+    },
+    {
+      "type": "paragraph",
+      "text": "The second layer is the visual signal: after the reverse-transcription signal has had spurious signal removed by RNase I, been background-corrected, scaled and passed the mapping and readout gates, one obtains the 2′-OH accessibility value that can be coloured on the structure page. The colour the reader sees first should come from this layer, because it is a colour interpretable under the smartSHAPE assay model, not a bare count; especially at a low starting amount, an unprocessed count is more easily misled by coverage and library complexity."
+    },
+    {
+      "type": "paragraph",
+      "text": "The third layer is the confidence candidate: only those accessibility observations that pass both the chemistry and readout gates and the mapping/claim/context checks enter the confidence assessment, and they must still carry the qualification \"a change in accessibility may come from pairing, and may come from the protection of protein or modification\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "The value of this illustrative scenario lies in making clear the cost of the engineering feature of low starting amount: the same smartSHAPE profile can simultaneously produce the raw observation, the visualisation signal and the confidence candidate, and the three are not the same thing. The lower the starting amount, the greater the influence of these readout steps, library complexity, coverage and RNase I despuriation, on the final value, and the more easily an unprocessed count is misled. The higher the sensitivity and the more automatic the layer, the more clearly it must be stated, in the colour and the confidence, which processing steps each number has gone through, rather than letting \"even a tiny amount was measured\" be read as \"even the structure has been determined\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct ending for a smartSHAPE article is not \"a low signal proves the base is paired\", but: smartSHAPE can, with very little starting material, provide a powerful in vivo 2′-OH accessibility clue for RNA structure interpretation; in FoldBridge, such a clue becomes part of default structural interpretation and confidence only after first being preserved as raw provenance and then passing the chemistry, readout, mapping, claim and context gates."
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "cmc-cmct",
+  "title": "Why CMC/CMCT reads U/G rather than A/C",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "30389828",
+  "rep_pmcid": "PMC6298570",
+  "rep_doi": "10.1261/rna.067561.118",
+  "asset_base": "./src/assets/generated/probing-articles/assets/cmc-cmct",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you put CMC/CMCT and DMS side by side at the data table, it is easy to treat them as the same kind of \"score every base\" RNA structure stain, and even to assume that they both report A/C. That reading is wrong. CMC and CMCT both belong to carbodiimide chemistry, and what they label is the N3 of U and the N1 of G: under mildly basic conditions, the deprotonated nitrogen on an unpaired base attacks the electrophilic carbon on the carbodiimide, forming a guanidinium adduct. In other words, the carbodiimide series first reports whether a chemical site of the U/G class is accessible, not A/C, and not \"this base must be paired or must be unpaired\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "This boundary matters a great deal for FoldBridge, because it is precisely the chemical complement of DMS. DMS looks at the N1 of A and the N3 of C; CMC/CMCT look at the N3 of U and the N1 of G. Together they cover all four bases, but any single reagent can only interpret its own half. FoldBridge can preserve all the raw observations, and can also display the signal from the experiment on the web page; but the moment it enters the default structure colouring, the explanatory text or ANNOCONFIDENCE / FEC positive confidence, a more specific question must be asked: can this number, under the current assay model, be interpreted as CMC/CMCT support? For carbodiimide, the answer begins from a `CMC_UG_ONLY` targetability gate symmetric to `DMS_AC_ONLY`: U/G are the targetable bases, and A/C/T/unknown are non-target bases. Here CMC and CMCT are treated as related reagents within the same article, because they share the same set of U/G chemical targets."
+    },
+    {
+      "type": "heading",
+      "text": "Carbodiimide chemistry: the targets are the N3 of U and the N1 of G"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-cmc-cmct-f1",
+      "alt": "CMC F1",
+      "srcBasename": "cmccmct_f1__PMC6298570__F1.jpg",
+      "legend": "**Figure 1. The RNA modification chemistry of carbodiimide and its characterisation.** Wang et al. 2019 (PMID 30389828, DOI `10.1261/rna.067561.118`) first give the chemical structures of CMC and EDC in this figure, marking the carbodiimide reactive group in blue; they then draw the reaction in which carbodiimide modifies uracil N3, and explain that the reaction with guanine likewise occurs at N1. The legend describes the mechanism: under mildly basic conditions, the deprotonated nitrogen on the base attacks the electrophilic carbon on the carbodiimide, forming a guanidinium adduct. Parts C to E of the figure use electrophoretic mobility shift assays to characterise the degree of modification under different reaction times, temperatures and carbodiimide concentrations, with the shared band at the very bottom corresponding to the unmodified RNA oligo and each band above it corresponding to one additional modification.",
+      "body": [
+        "The chemical red line of carbodiimide is drawn very clearly in this figure: its targets are U and G, not A and C. Whether a site can produce a carbodiimide signal first depends on whether it is a U or a G, and only then on whether the N3/N1 of this U/G is accessible in the current conformation. Painting the values of the A/C/T/unknown rows directly as carbodiimide positive support amounts to conflating chemical sites with data-table fields — that is the chemical face of DMS, not of CMC/CMCT."
+      ],
+      "label": "CMC F1",
+      "pmid": "30389828",
+      "pmcid": "PMC6298570",
+      "doi": "10.1261/rna.067561.118",
+      "figureId": "F1",
+      "legendText": "RNA modification chemistry of carbodiimides and its characterization. ( A ) Chemical structures of CMC and EDC with carbodiimide highlighted in blue. ( B ) Reaction of carbodiimide modification of uracil at N3. The reaction with guanine occurs similarly at N1. Under mildly basic conditions, the deprotonated N in the nucleobase attacks the electrophilic C in carbodiimide, resulting in the formation of a guanidinium adduct. ( C – E ) Electrophoretic mobility shift assay for RNA modification by carbodiimides at varying reaction conditions. The shared bottom band corresponds to unmodified RNA oligonucleotide, and each band above corresponds to each incremental number of modifications per oligonucleotide. k app denotes approximate apparent second order rate constants calculated using a binomial distribution (Materials and Methods). Reactions were assayed at varying reaction times ( C ), temperatures ( D ), and carbodiimide concentrations ( E )."
+    },
+    {
+      "type": "heading",
+      "text": "In vitro validation: the U preference is a fact you can see in the data"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-cmc-cmct-f2",
+      "alt": "CMC F2",
+      "srcBasename": "cmccmct_f2__PMC6298570__F2.jpg",
+      "legend": "**Figure 2. In vitro validation and comparison of CMC and EDC on a Xist subregion.** Wang et al. 2019 (PMID 30389828, DOI `10.1261/rna.067561.118`) use a subregion of Xist 4658–5090 (nt 4701–5001) to compare the CMC and EDC probes in this figure. The legend explains: part A gives the P(stop) values of the two reagents; part B is the cumulative distribution of P(stop) across all probed nucleotides, with both datasets showing a preference for U; part C is the correlation of the normalised P(stop) values of CMC and EDC, normalised at the 95th percentile; part D maps the reactive G and U identified in the CMC and EDC data onto the predicted secondary-structure model of the region, with asterisks marking positions conflicting with the structure model, and blue asterisks indicating conflicts consistent between CMC and EDC.",
+      "body": [
+        "This figure turns the U/G gate from a mechanism into an observable statistical fact: the cumulative distribution directly shows a U-preference, and the reactive sites that are annotated and mapped onto the structure are G and U, not A and C. Put differently, what is worth taking into structural interpretation within carbodiimide data was always the two base classes U/G. The good correlation between CMC and EDC also shows that treating them as related reagents of the same U/G chemistry is reasonable, rather than as two mutually independent systems that need to be interpreted separately."
+      ],
+      "label": "CMC F2",
+      "pmid": "30389828",
+      "pmcid": "PMC6298570",
+      "doi": "10.1261/rna.067561.118",
+      "figureId": "F2",
+      "legendText": "In vitro validation and comparison of CMC and EDC for RNA chemical probing using a subregion in Xist 4658–5090 (nt 4701–5001). ( A ) P(stop) values obtained for CMC and EDC probing. ( B ) Cumulative distribution of P(stop) values for all nucleotides probed, showing bias for U in both data sets. ( C ) Correlation of normalized P(stop) values between CMC and EDC data sets. Respective P(stop) values are normalized at the 95th percentile as described (Materials and Methods). ( D ) Reactive G and U nucleotides identified in CMC and EDC data sets as mapped to the predicted secondary structure model of the region. Asterisk denotes conflicts with the structure model, and a blue asterisk denotes a conflict consistent between CMC and EDC."
+    },
+    {
+      "type": "heading",
+      "text": "In-cell probing: the coverage broadens, the U-preference stays unchanged"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-cmc-cmct-f3",
+      "alt": "CMC F3",
+      "srcBasename": "cmccmct_f3__PMC6298570__F3.jpg",
+      "legend": "**Figure 3. In-cell carbodiimide probing of the 7SK RNA structure.** Wang et al. 2019 (PMID 30389828, DOI `10.1261/rna.067561.118`) bring carbodiimide probing into the cell in this figure. The legend explains: part A is a bar chart of P(stop) obtained by in-cell probing with three concentrations of CMC or EDC, where some bars of 1500 mM EDC exceed the display ceiling so as to show the value range; part B is the cumulative distribution of P(stop), showing a clear U-preference across datasets; part C maps the reactive nucleotides in the 300 mM EDC sample onto the known secondary structure of 7SK and marks conflicts as described above; part D gives the normalised reactivity difference of the first major stem–loop of 7SK (nt 24–87), where positive values indicate reduced reactivity in cells relative to in vitro and negative values indicate increased reactivity, with the uridine discussed in the text annotated, and the (GAUC)2 motif recognised by HEXIM shown in bold for reference.",
+      "body": [
+        "This figure is the safeguard most worth emphasising in a carbodiimide article: bringing probing into the cell and reading out P(stop) by sequencing does broaden the coverage to the in-cell context, but the clear U-preference in the cumulative distribution reminds us that the chemical target has not changed. For FoldBridge, a raw observation must first pass through chemistry targetability and the readout context before it can become a candidate for the default layer or confidence. The increase or decrease in the reactivity of a U site within the cell may come from pairing, protein binding (for instance HEXIM's recognition of (GAUC)2), conformation or readout limitations; all of these need context, rather than writing a high P(stop) directly as \"unpaired\". Likewise, an A/C site, even if it has a number in the table, is not an interpretable carbodiimide signal."
+      ],
+      "label": "CMC F3",
+      "pmid": "30389828",
+      "pmcid": "PMC6298570",
+      "doi": "10.1261/rna.067561.118",
+      "figureId": "F3",
+      "legendText": "In-cell carbodiimide probing of 7SK RNA structure. ( A ) Bar plots showing P(stop) values obtained by in-cell probing with three concentrations each of CMC or EDC. The 1500 mM EDC plot includes some bars that are above the maximum value shown to better display the range of values. ( B ) Cumulative distribution of P(stop) values showing clear U-preference across data sets. ( C ) Reactive nucleotides found in 300 mM EDC samples as mapped onto the known secondary structure of 7SK, with conflicts marks as previously described. ( D ) The difference in normalized reactivity for the first major stem–loop of 7SK (nt 24–87), where positive values denote reduced reactivity in cells than in vitro, and negative values increased reactivity. Uridines discussed in the text are labeled. Reactivity difference values were mapped to the secondary structure of the stem–loop on the right . The (GAUC) 2 motif recognized by HEXIM is bolded for reference."
+    },
+    {
+      "type": "heading",
+      "text": "Used as a structural constraint: carbodiimide can revise a model, but it does not cancel the boundary"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-cmc-cmct-f4",
+      "alt": "CMC F4",
+      "srcBasename": "cmccmct_f4__PMC6298570__F4.jpg",
+      "legend": "**Figure 4. The revised structure model of Xist 4658–5090.** Wang et al. 2019 (PMID 30389828, DOI `10.1261/rna.067561.118`) show in this figure how carbodiimide data enter secondary-structure inference. The legend explains: part A gives the three sets of chemical probing data used to constrain the structure prediction, namely the P(stop) and P(mut) from the in-cell DMS probing of Fang et al. (2015), and the P(stop) of in-cell EDC (300 mM) probing; part B is the newly revised model of Xist 4658–5090, showing the reactive nucleotides identified through in-cell chemical probing, as well as the base-pairing consistency with the in-cell model of Fang et al. (2015) and the ex vivo model of Smola et al. (2016).",
+      "body": [
+        "This figure places the value of carbodiimide in the right position, and at the same time demonstrates the way of writing complementary to DMS: the P(stop)/P(mut) of DMS constrains the A/C face, the P(stop) of EDC constrains the U/G face, and together they revise the same structure model. This is exactly the multi-assay collaboration picture FoldBridge wants — but on the premise that each dataset is interpreted only on its own chemical targets. Carbodiimide data can help constrain, and even revise, a structure model, but the model still has to distinguish experimental support, predicted conflict, confidence and unavailable positions. What it supports is \"CMC/CMCT is a useful constraint\", not \"carbodiimide can cancel the assay-specific interpretive boundary\". When the reader looks at the same model figure, they need to know which colours come from the U/G carbodiimide signal, which from the A/C DMS signal, and which are predicted conflicts or unavailable regions, otherwise \"a pretty figure\" would mask the real evidence structure."
+      ],
+      "label": "CMC F4",
+      "pmid": "30389828",
+      "pmcid": "PMC6298570",
+      "doi": "10.1261/rna.067561.118",
+      "figureId": "F4",
+      "legendText": "Revised structure model for Xist 4658–5090 . ( A ) Bar plots showing three chemical probing data sets used to constrain the structure prediction, namely P(stop) and P(mut) from in-cell DMS probing from the Fang et al. (2015) data set, and P(stop) from in-cell probing with EDC (300 mM). ( B ) The new revised model of Xist 4658–5090 , showing reactive nucleotides identified via in-cell chemical probing, and base-pairing agreement with the Fang et al. (2015) in-cell model and the Smola et al. (2016) ex vivo model."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write about CMC/CMCT"
+    },
+    {
+      "type": "paragraph",
+      "text": "`CMC_UG_ONLY` is a core rule that the formal article must retain, mirroring `DMS_AC_ONLY`. U/G are the targetable bases; A/C/T/unknown are non-target bases. Even if the A/C/T/unknown rows have numbers, they can only be kept as raw provenance, debug information or download-table fields, and cannot automatically enter the positive confidence of carbodiimide."
+    },
+    {
+      "type": "paragraph",
+      "text": "The default structure figure of ANNOJOIN should not read the raw P(stop) directly, but should first pass through the `CMC_UG_ONLY` targetability gate: U/G rows enter the default carbodiimide layer and contribute `visual_colormap_value` only after they pass, while A/C/T/unknown rows are kept out of the default colouring even if their values are very high. In this way, the carbodiimide colour the reader sees on the structure page is a colour interpretable under the CMC/CMCT assay model, rather than one mixed with A/C values that belong to the DMS half. The requirements of ANNOCONFIDENCE / FEC are higher still: only U/G rows that pass the assay-targetability, mapping, claim and context gates may enter the positive-confidence candidates."
+    },
+    {
+      "type": "paragraph",
+      "text": "This does not weaken CMC/CMCT. On the contrary, it respects its strengths. Carbodiimide is very useful for the N3/N1 accessibility of U/G, and it fills in exactly the half of the bases that DMS cannot see; the error occurs when this strength is expanded into \"uniform reactivity across all bases\", or when it is confused with the A/C targets of DMS. The task of FoldBridge is not to paint all the numbers, but to separate \"there is an observed value\" from \"interpretable as structural support\", and to let each reagent interpret only its own chemical face."
+    },
+    {
+      "type": "paragraph",
+      "text": "So a CMC/CMCT technology article should not merely write \"the signal at a site is high\". A more complete sentence should read: in the carbodiimide assay, this U/G site has a relatively high accessibility signal; if the mapping, coverage, background and context all pass inspection, this signal can serve as support for structural interpretation. Likewise, treating CMC and EDC as related reagents sharing U/G chemistry is closer to the data itself than pretending they are two unrelated systems."
+    },
+    {
+      "type": "heading",
+      "text": "A real case (illustrative): U/G interpretable vs A/C non-target"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so the following is a clearly labelled illustrative scenario, used to explain how the same carbodiimide profile splits into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine a carbodiimide profile with a number of rows in the ANNOJOIN visual track. By chemical target it can be split into three layers, and these three layers correspond exactly to the principles set out earlier in the article."
+    },
+    {
+      "type": "paragraph",
+      "text": "The first layer is the raw observation: every site may have a recorded P(stop) value, whether it is U, G, A, C or unresolved. This layer is provenance, and must be preserved in full, but it does not in itself carry the meaning \"this is carbodiimide structural support\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "The second layer is the visual signal: only U and G rows, after passing through the `CMC_UG_ONLY` targetability mask, enter the default carbodiimide layer. A/C rows, even with very high values, are marked `CMC_NON_TARGET_BASE` — they belong to the chemical face of DMS and are not something carbodiimide can interpret; unresolved rows are marked `POSITION_UNRESOLVED`, because they have not yet been mapped to reliable structural coordinates. If all rows were coloured by their raw values, the page would look fuller, but the interpretation would become worse: the non-target A/C should not participate in the default carbodiimide positive signal."
+    },
+    {
+      "type": "paragraph",
+      "text": "The third layer is confidence: only those U/G rows that pass the targetability, mapping and context gates can possibly enter ANNOCONFIDENCE / FEC positive confidence. A reliably mapped, context-clean reactive U can become a structural clue that the site is more likely unpaired or more accessible; an A/C row, however large its number, will never gain positive confidence on account of carbodiimide — if one wants to interpret A/C, one should look to DMS."
+    },
+    {
+      "type": "paragraph",
+      "text": "When this case lands on actual system behaviour, it means the same carbodiimide profile gives rise to three different things — raw observation, visualisation signal and confidence candidate: the raw layer records the P(stop) measured at the U/G/A/C rows, the visual layer only colours the U/G rows that pass `CMC_UG_ONLY`, and the confidence layer only accepts the cleanly mapped reactive U/G. The most characteristic misreading of CMC/CMCT is to treat it and DMS as interchangeable stains — if the article does not separate these three layers, and does not make clear that it and the A/C of DMS are two complementary rather than overlapping halves, the reader will either think carbodiimide can interpret all bases, or mistakenly credit a high A/C signal to carbodiimide. In the end, carbodiimide data can provide strong U/G accessibility clues for RNA structure interpretation, filling in exactly the face that DMS cannot see; within FoldBridge, such clues become part of structural interpretation and confidence only after they have first passed `CMC_UG_ONLY` and then the subsequent gates."
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "structure-seq",
+  "title": "Structure-seq: In vivo transcriptome-wide RNA structure profiling using DMS",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "24270811",
+  "rep_pmcid": "",
+  "rep_doi": "10.1038/nature12756",
+  "key_innovation": "Compared with DMS-seq, Structure-seq introduces an optimized experimental and computational workflow for in vivo DMS probing, enabling robust transcriptome-wide RNA structure profiling in living cells.",
+  "asset_base": "./src/assets/generated/probing-articles/assets/structure-seq",
+  "ppt_overview": [
+    {
+      "title": "How does Structure-seq convert DMS modification into sequencing signals?",
+      "srcBasename": "structureseq_workflow_figure1.png",
+      "alt": "Principle of Structure-seq library construction",
+      "captionTitle": "Figure 1. Principle of Structure-seq library construction.",
+      "text": "Structure-seq couples DMS chemical probing with next-generation sequencing to measure RNA accessibility in vivo. Arabidopsis seedlings are treated with DMS, which modifies exposed adenine and cytosine residues. Reverse transcription generates cDNA fragments that terminate one nucleotide upstream of DMS-modified sites. These RT-stop products are converted into sequencing libraries using adaptor ligation and PCR amplification. A matched untreated control library is generated in parallel, allowing DMS-dependent RT stops to be identified after normalization and subtraction."
+    },
+    {
+      "title": "How accurately does Structure-seq reproduce known RNA structures?",
+      "srcBasename": "structureseq_figure2.png",
+      "alt": "Structure-seq reproduces known RNA structures",
+      "captionTitle": "Figure 2. Structure-seq accurately reproduces known RNA structures.",
+      "text": "Structure-seq DMS reactivity profiles were mapped onto the known secondary structure of Arabidopsis 18S rRNA and compared with conventional gel-based DMS probing. The high correlation between sequencing-based and traditional measurements demonstrates that Structure-seq accurately identifies nucleotide accessibility and recapitulates established RNA structural features."
+    },
+    {
+      "title": "What RNA structures are associated with translation, alternative polyadenylation, and splicing?",
+      "srcBasename": "structureseq_figure3.png",
+      "alt": "RNA structures associated with translation, alternative polyadenylation, and splicing",
+      "captionTitle": "Figure 3. RNA structures associated with translation, alternative polyadenylation, and splicing.",
+      "text": "Genome-wide Structure-seq profiles reveal distinct RNA structural patterns associated with biological processes. Differential DMS reactivity patterns identify periodic RNA structures within coding regions of efficiently translated mRNAs, structural changes around alternative polyadenylation sites, and differences between spliced and unspliced transcripts."
+    },
+    {
+      "title": "What does global Structure-seq profiling reveal across thousands of mRNAs?",
+      "srcBasename": "structureseq_figure4.png",
+      "alt": "Global RNA structural profiling across thousands of mRNAs",
+      "captionTitle": "Figure 4. Global RNA structural profiling across thousands of mRNAs.",
+      "text": "Structure-seq generated nucleotide-resolution DMS reactivity maps for 10,623 Arabidopsis mRNAs. Comparison between experimentally constrained structures and computational predictions revealed extensive differences between predicted and in vivo RNA structures. Transcripts with distinct structural features showed enrichment for different biological functions, demonstrating that RNA folding landscapes are shaped by cellular context."
+    }
+  ],
+  "body_start_heading": "A real case (illustrative)",
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you only look at the data table, the easiest trap to fall into with Structure-seq is to read every row of counts across the transcriptome as a determination of \"whether this base is paired or not\", even taking the background reads at G and U positions as some kind of pairing evidence. That is exactly the wrong reading. The essence of Structure-seq is to move DMS chemical probing into living cells (in vivo), and then to use high-throughput sequencing to extend the readout across the whole transcriptome. What it actually reports is still the chemical accessibility of A and C on the Watson-Crick pairing face: the N1 of A and the N3 of C are more readily methylated when they are not paired, not shielded by a protein or ligand, and not protected by a complex conformation. In other words, what Structure-seq reports first is whether a class of chemical site is accessible in living cells, rather than directly reporting that \"this base must be paired\" or \"this base must be unpaired\", and still less assigning an equal structural label to every residue transcriptome-wide."
+    },
+    {
+      "type": "paragraph",
+      "text": "Placing this A/C boundary into FoldBridge is something that cannot be avoided. Because Structure-seq inherits the chemistry of DMS, it follows the same A/C target boundary: when the signal falls on A/C, it reflects the accessibility of the pairing face; G/U were never the main interpretable objects in this DMS readout. FoldBridge can preserve the raw observed values, and it can display experimentally derived signal on the web; but as soon as the signal enters default structure colouring, interpretive text, or ANNOCONFIDENCE / FEC positive confidence, the raw signal must first pass checks on assay chemistry and readout context before it can become a candidate for default colouring or confidence. For Structure-seq, this check likewise begins with `DMS_AC_ONLY`, only applied at whole-transcriptome scale."
+    },
+    {
+      "type": "heading",
+      "text": "Accuracy validation: consistency with known structures"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-structureseq-f2",
+      "alt": "Structure-seq F2",
+      "srcBasename": "structureseq_f2__F2.webp",
+      "legend": "**Figure 2. Accuracy validation of Structure-seq on 18S rRNA.** This figure from Ding et al. 2014 (PMID 24270811, DOI `10.1038/nature12756`) shows that the Structure-seq results for 18S rRNA are consistent with gel-based in vivo structure probing. The legend treats this consistency as a benchmark of the method's accuracy: using an object of known structure that has already been probed in vivo by a traditional method to test whether the sequencing-based DMS readout is reliable.",
+      "body": [
+        "This figure grounds the credibility of Structure-seq in a plain place: it comes from validation of consistency with known structures, not from any claim that \"it can score every base\". It is essentially the readout of in vivo DMS plus sequencing: the chemistry is still that same A/C chemistry, only the detection means has been swapped for high-throughput sequencing. For FoldBridge, this means that even though the method has been validated on 18S rRNA, every row that enters the database must still be interpreted back through the assay model: the signal on A/C can be read as an accessibility clue, but the strength of this clue is still jointly influenced by pairing, tertiary structure, protein or ligand protection, and the sequencing background. A validated method does not amount to an inspection-free number."
+      ],
+      "label": "Structure-seq F2",
+      "pmid": "24270811",
+      "pmcid": "",
+      "doi": "10.1038/nature12756",
+      "figureId": "F2",
+      "legendText": "Figure 2: Structure-seq accurately maps 18S rRNA and agrees with gel-based in vivo structure probing."
+    },
+    {
+      "type": "heading",
+      "text": "mRNA structure inside living cells: DMS chemistry determines what can be seen"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-structureseq-f3",
+      "alt": "Structure-seq F3",
+      "srcBasename": "structureseq_f3__F3.webp",
+      "legend": "**Figure 3. Structure-seq reveals new features of mRNA secondary structure inside living cells.** This figure from Ding et al. 2014 (PMID 24270811, DOI `10.1038/nature12756`) shows the mRNA secondary structure features discovered by Structure-seq under in vivo conditions. The legend emphasises that these structural features are widespread inside living cells, and that their being seen at all relies on the measurement of A/C accessibility by DMS.",
+      "body": [
+        "This is exactly the key manifestation of Structure-seq inheriting the DMS boundary: the mRNA structure features it reveals come, in the final analysis, from the chemical accessibility readout of these two classes of base, A and C. So the interpretation of these features is likewise constrained by `DMS_AC_ONLY`: a high signal on A/C suggests the pairing face is more accessible, and a low signal may suggest pairing or protection, but both of these judgements require context. G/U do not provide the same DMS signal in this readout, and they cannot be taken as positive evidence of a structural feature merely because they also have numbers in the table. For FoldBridge, \"seeing new structural features\" in living cells is the power of the method, but when writing this power into the default layer, one must separate the interpretable A/C signal from the non-target positions."
+      ],
+      "label": "Structure-seq F3",
+      "pmid": "24270811",
+      "pmcid": "",
+      "doi": "10.1038/nature12756",
+      "figureId": "F3",
+      "legendText": "Figure 3: Structure-seq reveals new features of mRNA secondary structures that prevail in vivo."
+    },
+    {
+      "type": "heading",
+      "text": "Whole-transcriptome scale: the signal is amplified, and so is the responsibility to interpret"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-structureseq-f4",
+      "alt": "Structure-seq F4",
+      "srcBasename": "structureseq_f4__F4.webp",
+      "legend": "**Figure 4. Structure-seq provides nucleotide-resolution structural information on tens of thousands of mRNAs.** This figure from Ding et al. 2014 (PMID 24270811, DOI `10.1038/nature12756`) shows that Structure-seq provided in vivo, nucleotide-resolution RNA structural information on 10,623 mRNAs, and revealed the correlation between RNA structure and biological function. The legend places scale and functional association together: a nucleotide-resolution structural signal spread across tens of thousands of transcripts.",
+      "body": [
+        "This figure lays out the advantages and the risks of Structure-seq together. Transcriptome-wide coverage does indeed give the DMS signal an unprecedented scale: a single experiment can obtain A/C accessibility readouts on tens of thousands of mRNAs, which is what makes it possible to talk about the correlation of structure with processes such as translation. But the same scale also means that background, coverage, normalisation, and alignment bias are amplified in step, with more opportunities to enter the interpretive chain. In other words, what scale amplifies is not only the signal but also the responsibility to interpret. Scale cannot replace per-assay interpretation: even when spread across 10,623 mRNAs, the number in every row must still first be confirmed to fall on an interpretable A/C target before it enters default colouring or confidence. FoldBridge therefore cannot let `raw_numeric_value` directly drive transcriptome-wide default structure colouring; `raw_numeric_value` should first be preserved as raw provenance, and then an assay-specific gate should judge whether it can enter the visualisation and confidence."
+      ],
+      "label": "Structure-seq F4",
+      "pmid": "24270811",
+      "pmcid": "",
+      "doi": "10.1038/nature12756",
+      "figureId": "F4",
+      "legendText": "Figure 4: Structure-seq provides in vivo RNA structure information at nucleotide resolution across 10,623 mRNAs and reveals correlations between RNA structure and biological function."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write up Structure-seq"
+    },
+    {
+      "type": "paragraph",
+      "text": "Structure-seq is a DMS-based method in the literal sense, so it directly inherits the core rule `DMS_AC_ONLY`, only applied at transcriptome scale. A/C are targetable bases; G/U/T/unknown are non-target bases. Even where G/U/T/unknown rows have numbers, they can only be retained as raw provenance, debug information, or download-table fields; they cannot automatically enter positive confidence merely because they were measured in a transcriptome-wide experiment."
+    },
+    {
+      "type": "paragraph",
+      "text": "The default structure diagram in ANNOJOIN should read the `visual_colormap_value` that has passed through the targetability mask, rather than reading the raw values directly. Only then is the colour readers see on the structure page a colour that is interpretable under the Structure-seq (that is, in vivo DMS) assay model. ANNOCONFIDENCE / FEC require more: only A/C rows that pass the assay targetability, mapping, claim, and context gates may enter the positive confidence candidate pool. This chemistry gate is exactly the same as in the DMS article; the only difference is that Structure-seq amplifies it across tens of thousands of mRNAs, so the discipline of the gate matters all the more."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is not a weakening of Structure-seq. On the contrary, it respects its strengths. Structure-seq is very useful for the accessibility of the A/C pairing face in living cells; the error occurs when this strength is extended into \"a uniform reactivity for every base across the whole transcriptome\". The one thing FoldBridge must do over and over at transcriptome scale is to record separately \"this row has an A/C count\" and \"this row can enter structural interpretation\". The larger the scale, the more one must talk separately about chemical reactivity, accessibility, base pairing, tertiary protection, protein/ligand protection, and sequencing bias."
+    },
+    {
+      "type": "paragraph",
+      "text": "So a Structure-seq technical article should not merely state that \"the signal at some site is high\" or that \"we covered tens of thousands of mRNAs\". A more complete sentence should read: in the in vivo DMS assay of Structure-seq, this A/C site shows a higher accessibility signal; if mapping, coverage, background, and context all pass the checks, this signal can serve as support for structural interpretation. Spelling out this one extra sentence at the scale of tens of thousands of mRNAs is verbose, but it avoids misreading transcriptome-level coverage as a pairing determination for every base."
+    },
+    {
+      "type": "heading",
+      "text": "A real case (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so what follows is a clearly labelled illustrative scenario, used to explain how a single Structure-seq profile is separated into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine a Structure-seq profile flowing into FoldBridge: it comes from an in vivo DMS plus sequencing experiment, covering a run of consecutive positions on an mRNA. In the ANNOJOIN visual track, this profile is naturally split into two classes: positions that fall on A/C, and positions that fall on G/U/T or on positions that are unresolved. The former are DMS-interpretable targets, the latter are not."
+    },
+    {
+      "type": "paragraph",
+      "text": "The conclusion this division gives the reader is very direct: a per-position Structure-seq observation is not the same as per-position DMS positive support. For A/C, DMS in living cells can provide a strong accessibility clue; for G/U/T/unknown, the number is first of all raw provenance. Only the former, after passing the mapping and context gates, may enter ANNOCONFIDENCE / FEC positive confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "If every position on this profile were coloured by its raw value, the page would look fuller, but the interpretation would be worse. Non-target positions should not take part in the default DMS positive signal; rows at unresolved positions also cannot pretend they have already been mapped to reliable structural coordinates. Conversely, the layer that is A/C-targetable is the Structure-seq layer the reader should see first. The remaining rows can still be traced in the details, because they are valuable for provenance, debugging, and reanalysis, but they should not masquerade as the same kind of evidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "What this illustrative scenario really wants to say is not about any one number, but that the same Structure-seq profile lives simultaneously as three identities within the system: raw observation, visual signal, and confidence candidate. These three layers each mind their own business: the raw observation layer records \"what the experiment measured\", the visual signal layer only displays \"what can be read out within the in vivo DMS interpretive boundary\", and the confidence layer only accepts interpretable evidence that has passed the gates. Once an explainer article kneads them into one, the worst outcome is not a few missing points, but that the reader takes non-target G/U/T positions, or unresolved positions not mapped to coordinates at all, as accessibility evidence as interpretable as A/C; and at the scale of the whole transcriptome, this misreading is amplified several times over by automated layers onto tens of thousands of mRNAs."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct ending for a Structure-seq article is not \"high signal proves this base is unpaired\", nor \"covering the whole transcriptome is equivalent to interpreting the whole transcriptome\", but: Structure-seq can provide powerful A/C accessibility clues for RNA structure interpretation in living cells, at transcriptome-wide scale; in FoldBridge, such a clue becomes part of structural interpretation and confidence only after it passes `DMS_AC_ONLY` and the subsequent gates."
+    }
+  ]
+}

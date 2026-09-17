@@ -1,0 +1,136 @@
+{
+  "schema_version": "help.v2",
+  "hero": {
+    "title": "Help"
+  },
+  "sections": [
+    {
+      "id": "about",
+      "title": "About FoldBridge",
+      "kind": "prose",
+      "body": "Ribocentre-FoldBridge (FoldBridge) connects residue-level RNA chemical-probing profiles from RMDB and RASP to experimentally resolved PDB chains. Each Entry keeps the source signal, sequence mapping, structure state, and confidence evidence together so you can move from an observed probing signal to the structure it maps onto."
+    },
+    {
+      "id": "usage",
+      "title": "Search channels",
+      "kind": "usage",
+      "items": [
+        {
+          "title": "Open Search",
+          "body": "Choose Search in the navigation bar to open the site-wide search page.",
+          "image": "./src/assets/guide/help-usage-open-search.png",
+          "alt": "FoldBridge navigation bar with Search selected"
+        },
+        {
+          "title": "Search by keyword",
+          "body": "Enter a molecule name, PDB ID, or probing method, then select Search.",
+          "image": "./src/assets/guide/help-usage-keyword-search.png",
+          "alt": "FoldBridge Search field with a riboswitch keyword and Search button"
+        },
+        {
+          "title": "Review the results",
+          "body": "Browse the matching records and select a result to open its linked Entry page.",
+          "image": "./src/assets/guide/help-usage-results.png",
+          "alt": "FoldBridge search results for riboswitch"
+        }
+      ]
+    },
+    {
+      "id": "interactive",
+      "title": "Interactive visualisation",
+      "kind": "usage",
+      "items": [
+        {
+          "title": "Open an Entry",
+          "body": "Select a molecule name in the results to open its structure-linked Entry page.",
+          "image": "./src/assets/guide/help-interactive-open-entry.png",
+          "alt": "FoldBridge Entry row with a molecule name selected"
+        },
+        {
+          "title": "Read the sequence mapping",
+          "body": "Trace the selected nucleotide across the probing profile and PDB sequence alignment.",
+          "image": "./src/assets/guide/help-interactive-sequence-mapping.png",
+          "alt": "FoldBridge sequence mapping with a selected nucleotide"
+        },
+        {
+          "title": "Inspect the 2D structure",
+          "body": "Use the secondary-structure view to see the selected position in its RNA context.",
+          "image": "./src/assets/guide/help-interactive-secondary-structure.png",
+          "alt": "FoldBridge RNA secondary-structure view"
+        },
+        {
+          "title": "Explore the 3D structure",
+          "body": "Inspect the mapped nucleotide in the interactive tertiary-structure viewer.",
+          "image": "./src/assets/guide/help-interactive-3d-structure.png",
+          "alt": "FoldBridge interactive RNA tertiary-structure viewer"
+        }
+      ]
+    },
+    {
+      "id": "data-sources",
+      "title": "Data sources",
+      "kind": "cards",
+      "items": [
+        {
+          "name": "RMDB",
+          "body": "Community-deposited RNA chemical-probing reactivity profiles."
+        },
+        {
+          "name": "RASP",
+          "body": "RNA structure-probing cases linking probing-derived sequences to PDB hits."
+        },
+        {
+          "name": "PDB",
+          "body": "Experimentally resolved tertiary structures used as structural ground truth."
+        }
+      ]
+    },
+    {
+      "id": "data-collection",
+      "title": "Data collection and alignment",
+      "kind": "prose",
+      "body": "FoldBridge combines per-residue chemical-probing data from RMDB / RASP with experimentally resolved PDB chains. Each probing sequence is aligned to its corresponding chain, and only residues with resolved structural coordinates enter confidence scoring. Records without a usable mapping or signal are flagged or excluded rather than force-scored."
+    },
+    {
+      "id": "feedback",
+      "title": "How to make a feedback",
+      "kind": "feedback",
+      "body": "We welcome your feedback, ideas, and suggestions. They help us keep FoldBridge useful, functional, and user-friendly. When possible, include the relevant page URL, PDB ID, chain, profile, or a screenshot so we can reproduce the issue.",
+      "route": "https://docs.google.com/spreadsheets/d/1_FCcOjBuui393jg9HWLx4xyJ68PGLOKVJd3ZhSyENJQ/edit?gid=0#gid=0",
+      "linkLabel": "Submit feedback"
+    },
+    {
+      "id": "contact",
+      "title": "How to contact us",
+      "kind": "prose",
+      "body": "For any inquiries or concerns regarding the database, please reach out to",
+      "email": "hu_linyan@gzlab.ac.cn"
+    }
+  ],
+  "group_members": [
+    {
+      "initials": "ZM",
+      "photo": "./src/assets/team/Chichau_photo.jpg",
+      "name": "Zhichao (Chichau) Miao",
+      "role": "Principal Investigator of Guangzhou Lab",
+      "details": [
+        { "prefix": "PhD", "organization": "Institute of Biophysics, CAS", "url": "https://english.ibp.cas.cn/about_us/brief_introduction/" },
+        { "prefix": "Chercheur", "organization": "IBMC, CNRS", "url": "https://ibmc.cnrs.fr/" },
+        { "prefix": "PostDoc", "organization": "EMBL-EBI", "url": "https://www.ebi.ac.uk/" },
+        { "prefix": "Visiting Scientist", "organization": "Wellcome Sanger Institute", "url": "https://www.sanger.ac.uk/" },
+        { "prefix": "Senior Bioinformatician", "organization": "EMBL-EBI", "url": "https://www.ebi.ac.uk/" }
+      ]
+    },
+    {
+      "initials": "LH",
+      "photo": "./src/assets/team/Lin_Huang.jpg",
+      "name": "Lin Huang",
+      "role": { "prefix": "Principal Investigator of", "organization": "Sun Yat-sen University" },
+      "details": [
+        { "prefix": "PhD", "organization": "Wuhan University", "url": "https://en.whu.edu.cn/" },
+        { "prefix": "Postdoctoral Research Assistant", "organization": "University of Dundee, UK", "url": "https://www.dundee.ac.uk/" },
+        { "prefix": "Senior Research Associate", "organization": "University of Dundee, UK", "url": "https://www.dundee.ac.uk/" }
+      ]
+    }
+  ]
+}

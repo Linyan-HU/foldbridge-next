@@ -1,0 +1,195 @@
+{
+  "schema_version": "probing-articles.v1",
+  "slug": "icshape",
+  "title": "icSHAPE: In vivo transcriptome-wide RNA structure profiling using selective 2′-hydroxyl acylation",
+  "date": "",
+  "figure_count": 4,
+  "rep_pmid": "25799993",
+  "rep_pmcid": "PMC4376618",
+  "rep_doi": "10.1038/nature14263",
+  "asset_base": "./src/assets/generated/probing-articles/assets/icshape",
+  "sibling_navigation": {
+    "previous": {
+      "slug": "shape-map",
+      "title": "SHAPE-MaP"
+    },
+    "next": {
+      "slug": "icshape-map",
+      "title": "icSHAPE-MaP"
+    }
+  },
+  "key_innovation": "Compared with conventional SHAPE approaches, icSHAPE introduces an in vivo compatible NAI-N3 chemical probe with biotin-based enrichment, enabling transcriptome-wide mapping of RNA structures inside living cells at single-nucleotide resolution.",
+  "body_start_heading": "A real case: how an icSHAPE profile flows through three layers (illustrative)",
+  "ppt_overview": [
+    {
+      "title": "How does icSHAPE measure RNA structures inside living cells?",
+      "srcBasename": "icshape_figure1.png",
+      "alt": "Principle and workflow of icSHAPE modification and sequencing",
+      "captionTitle": "Figure 1. Principle and workflow of icSHAPE modification and sequencing.",
+      "text": "icSHAPE uses the NAI-N3 reagent to selectively acylate flexible RNA nucleotides in living cells. Modified RNAs are enriched through biotin–streptavidin purification and converted into sequencing libraries to generate transcriptome-wide RNA structural profiles."
+    },
+    {
+      "title": "How does icSHAPE reveal transcriptome-wide RNA structural landscapes?",
+      "srcBasename": "icshape_figure2.png",
+      "alt": "Transcriptome-wide RNA structure profiling by icSHAPE",
+      "captionTitle": "Figure 2. Transcriptome-wide RNA structure profiling by icSHAPE.",
+      "text": "icSHAPE generates nucleotide-resolution structural profiles across cellular RNAs. Reactivity patterns reveal differential RNA accessibility between in vivo and in vitro conditions, reflecting cellular RNA folding environments."
+    },
+    {
+      "title": "How can icSHAPE identify RNA regulatory structures?",
+      "srcBasename": "icshape_figure3.png",
+      "alt": "Structural features associated with translation and RNA regulation",
+      "captionTitle": "Figure 3. Structural features associated with translation and RNA regulation.",
+      "text": "icSHAPE profiles reveal structural signatures associated with translation initiation, ribosome interactions, and regulatory RNA elements, demonstrating the biological applications of in vivo RNA structure mapping."
+    },
+    {
+      "title": "How can icSHAPE detect dynamic RNA structural changes?",
+      "srcBasename": "icshape_figure4.png",
+      "alt": "Differential icSHAPE analysis reveals RNA structural remodeling",
+      "captionTitle": "Figure 4. Differential icSHAPE analysis reveals RNA structural remodeling.",
+      "text": "Comparing icSHAPE profiles under different cellular conditions reveals structural rearrangements caused by RNA-binding proteins and RNA modifications."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Date: 2026-06-25"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you only look at the data table, icSHAPE is easily misread as \"since it was measured in living cells, it must have directly seen whether each base is paired or not\". That reading is wrong. icSHAPE uses NAI-N3 to acylate the 2′-OH inside living cells, then uses click chemistry to attach biotin and performs streptavidin affinity enrichment; what this whole workflow captures is \"which 2′-OH are accessible in vivo\", not the pairing state itself. The object of interpretation for icSHAPE is the chemical accessibility of the ribose 2′-OH in living cells (in vivo): when a nucleotide's 2′ hydroxyl is not paired, not shielded by a protein or ligand, and not protected by a complex conformation, it is more readily modified by an acylating reagent such as NAI-N3. The modified RNA then has biotin attached by click chemistry, undergoes affinity enrichment, and finally enters the sequencing readout. That is to say, what icSHAPE reports first is whether a class of chemical site is accessible, rather than directly reporting that \"this base must be paired\" or \"this base must be unpaired\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "This boundary is crucial for FoldBridge. FoldBridge can preserve the raw observed values, and it can display experimentally derived signal on the web; but as soon as the signal enters default structure colouring, interpretive text, or the confidence layer, it must first ask a more specific question: can this number, under the icSHAPE assay model, be interpreted as support for 2′-OH accessibility? The raw RT-stop signal of icSHAPE is raw provenance; it must first pass the assay chemistry and the background/readout context before it can become a candidate for default structure colour or confidence."
+    },
+    {
+      "type": "heading",
+      "text": "The chemical chain of icSHAPE: acylate the 2′-OH, then click-enrich"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-icshape-f1",
+      "alt": "Spitale et al. 2015 F1",
+      "srcBasename": "spitale2015_f1__F1.jpg",
+      "legend": "**Figure 1. The chemical scheme and library workflow of icSHAPE.** The legend of Spitale et al. 2015 (PMID 25799993, DOI `10.1038/nature14263`) breaks icSHAPE down into several stages: (a) the chemical preparation scheme for acylating RNA, with the modified RNA amenable to biotin-streptavidin affinity purification; (b) a schematic of the modification and purification steps of icSHAPE, ultimately generating a sequencing library; (c) a dot blot of biotin-modified RNA after streptavidin affinity separation; (d) denaturing gel electrophoresis of rRNA derived from mESC processed by icSHAPE, with the corresponding icSHAPE profile obtained by deep sequencing on the right; (e) a Pymol representation of rRNA (PDB 3J3D) corresponding to regions of higher in vivo reactivity; (f) a Pymol representation of rRNA corresponding to regions of higher in vitro reactivity.",
+      "body": [
+        "This figure shows the logic of icSHAPE: it does not assign labels to each base out of thin air, but first uses chemistry to turn \"the 2′-OH is accessible\" into a physical signal that can be enriched and sequenced. NAI-N3 acylates the 2′-OH, click chemistry attaches a handle for enrichment, and the result enters the library; each step determines what the numbers in the final table actually represent.",
+        "More importantly, e and f draw the difference in reactivity between in vivo and in vitro directly onto the three-dimensional structure of rRNA. This shows that icSHAPE reports the accessibility of the 2′-OH, and that this accessibility varies with the environment (in living cells there are proteins, ions, and crowded conformations; in the test tube there are none). For FoldBridge, this means that the icSHAPE signal of the same stretch of RNA cannot be interpreted apart from \"under which condition it was measured\". Raw provenance must be preserved together with its assay context."
+      ],
+      "label": "Spitale et al. 2015 F1",
+      "pmid": "25799993",
+      "pmcid": "PMC4376618",
+      "doi": "10.1038/nature14263",
+      "figureId": "F1",
+      "legendText": "a , Chemical scheme for the preparation of acylated RNA, which can be purified by biotin-streptavidin purification. b , Schematic of icSHAPE modification and purification steps to generate a sequencing library. c , Dot blot of biotin-modified RNA from icSHAPE through streptavidin affinity isolation. d , Denaturing gel electrophoresis of icSHAPE on rRNA from mESCs. The corresponding icSHAPE profile, generated from deep sequencing is to the right. e , Pymol representation of rRNA, corresponding to regions of icSHAPE that are more reactive in vivo (PDB3J3D). f , Pymol representation of rRNA, corresponding to regions of icSHAPE that are more reactive in vitro ."
+    },
+    {
+      "type": "heading",
+      "text": "The RT-stop readout: subtract the background before talking about accessibility"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-icshape-f2",
+      "alt": "Spitale et al. 2015 F2",
+      "srcBasename": "spitale2015_f2__F2.jpg",
+      "legend": "**Figure 2. How the icSHAPE signal goes from an RT-stop distribution to a measure of accessibility.** The legend of Spitale et al. 2015 (PMID 25799993, DOI `10.1038/nature14263`) explains: (a) the RT stop distributions of the transcriptome, the DMSO control, and the icSHAPE library respectively; (b) the icSHAPE data track and VTD calculation for MALAT1 RNA (chr19:5796010-5796081), with the icSHAPE data scaled to between 0 (no reactivity) and 1 (maximum reactivity); (c) the VTD distribution of the icSHAPE library; (d) the GINI index of the icSHAPE data for in vivo and in vitro; (e) the distribution of VTD profiles for all hexamer motifs in the transcriptome, with the bin positions of several motifs related to post-transcriptional regulation marked.",
+      "body": [
+        "This figure is the safeguard most worth emphasising for icSHAPE. Reverse transcription halts in front of an acylated 2′-OH site, so the modification is read as an RT-stop. But RT-stops are not produced only by modification: the transcriptome itself, and the DMSO control, also have RT-stops. So the icSHAPE signal must first have the DMSO background subtracted and then be scaled (0 to 1) before it can be interpreted as a clue to 2′-OH accessibility. A raw RT-stop is not in itself structure.",
+        "The easiest mistake to make here is to write \"an RT-stop was measured\" as \"structure was measured\". VTD (a reactivity calculation based on RT-stops), the GINI index, and the hexamer motif distribution are all telling the reader that the icSHAPE number is a measured quantity arrived at after readout, background, and normalisation, rather than a structural label given directly by the icSHAPE molecule. A site that, after scaling, is close to 1 suggests a more accessible 2′-OH; close to 0 suggests it is paired or protected; but both of these judgements require background correction and contextual support. For FoldBridge, the raw observation must first pass through the readout context before it can become a candidate for the default layer or confidence; raw RT-stop counts cannot be allowed to drive structure colouring directly."
+      ],
+      "label": "Spitale et al. 2015 F2",
+      "pmid": "25799993",
+      "pmcid": "PMC4376618",
+      "doi": "10.1038/nature14263",
+      "figureId": "F2",
+      "legendText": "a , RT stop distribution for the transcriptome, DMSO control, or icSHAPE libraries. b , icSHAPE data track and VTD calculation of the MALAT1 RNA (chr19:5796010-5796081). icSHAPE data are scaled from 0 (no reactivity) to 1 (max reactivity). c , The VTD distribution for icSHAPE libraries. d , GINI index of icSHAPE data in vivo vs. in vitro . e , The distribution of VTD profiles for all hexamer motifs across the transcriptome. Bin locations for several motifs for post-transcriptional regulation are highlighted."
+    },
+    {
+      "type": "heading",
+      "text": "The biological readout: an accessibility profile can illuminate functional structures"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-icshape-f3",
+      "alt": "Spitale et al. 2015 F3",
+      "srcBasename": "spitale2015_f3__F3.jpg",
+      "legend": "**Figure 3. The readout of the icSHAPE accessibility profile on translation-related structures.** The legend of Spitale et al. 2015 (PMID 25799993, DOI `10.1038/nature14263`) shows: (a) a cartoon schematic of a ribosome translating an mRNA, where a uORF start site is manifested as initiation upstream of the canonical start codon, the canonical start position is marked \"AUG\", and an N-terminal truncation is manifested as the ribosome initiating 3′ of the canonical \"AUG\"; (b) the icSHAPE profile at the canonical start codon position; (c) the icSHAPE profile at uORF and N-terminal truncation sites; (d) a cartoon schematic of a paused ribosome and its A-P-E sites (A: acceptor; P: peptidyl-transferase; E: exit); (e) the icSHAPE profile at ribosome pause sites; (f) the icSHAPE profile at the negative control sites for the pause sequence, with grey boxes marking the regions of structural difference relative to the control upstream of the genuine pause sites.",
+      "body": [
+        "This figure shows that icSHAPE is not just a chemical measurement: its accessibility profile can illuminate structures of functional significance. Start codons, uORFs, and the regions upstream of ribosome pause sites each have characteristic 2′-OH accessibility patterns. For the non-specialist reader, this is where the appeal of icSHAPE lies: structural clues in living cells can be mapped onto biological processes such as translation.",
+        "But take care: these are all interpretations of in vivo accessibility, not base-level structural determinations. The \"structural difference\" inside the grey box is a difference in icSHAPE signal, which could be pairing or conformation, or could be the occupancy of the ribosome itself. When FoldBridge cites this kind of result, it should write \"the icSHAPE accessibility profile of this region is associated with the pause site\", not \"this base is paired here\". The more elegant the functional interpretation, the more one must separate the accessibility readout from structural ground truth."
+      ],
+      "label": "Spitale et al. 2015 F3",
+      "pmid": "25799993",
+      "pmcid": "PMC4376618",
+      "doi": "10.1038/nature14263",
+      "figureId": "F3",
+      "legendText": "a , Cartoon representation of ribosomes translating an mRNA. The uORF initiation site is represented by ribosome initiation upstream of the canonical start codon. The canonical start position is demarcated by “AUG”. The N-terminal truncation is represented as a ribosome initiating to the 3’-end of the canonical start “AUG”. b , icSHAPE profile at canonical start codon position. c , icSHAPE profiles at uORF and N-terminal truncation sites. d , Cartoon representation of a paused ribosome and its corresponding A-P-E sites. A: acceptor; P: peptidyl-transferase; E: exit. e , The icSHAPE profile at ribosome pause sites. f , icSHAPE profile at negative control sites for pause sequences. Gray box highlights a region of structural difference upstream of true pause sites vs. controls."
+    },
+    {
+      "type": "heading",
+      "text": "A drop in accessibility is not necessarily pairing: it could be protein protection"
+    },
+    {
+      "type": "figure",
+      "anchor": "paper-figure-icshape-f4",
+      "alt": "Spitale et al. 2015 F4",
+      "srcBasename": "spitale2015_f4__F4.jpg",
+      "legend": "**Figure 4. The relationship of icSHAPE accessibility to the RNA-protein interface and m⁶A modification.** The legend of Spitale et al. 2015 (PMID 25799993, DOI `10.1038/nature14263`) explains: (a) the Rbfox1-RNA interaction structure, highlighting the RNA-protein interface, with the RNA backbone in blue, the bases in orange, and each 2′ hydroxyl marked in green (PDB 2ERR); (b) the differential icSHAPE profile of Rbfox2 target mRNA between in vivo and in vitro, mapping precisely onto the Rbfox binding site; (c) a model of the interaction between m⁶A and RNA structure; (d) the differential icSHAPE signal between m⁶A-methylated and unmethylated sites (both in vivo) within the same sequence motif, with the signal of the unmodified sites subtracted from that of the m⁶A-modified sites, asterisks (*) marking positions of significant difference (p<0.05, FDR<0.05), and data from wild-type and Mettl3 KO mESC compared; (e) the ROC curve for predicting m⁶A sites by incorporating the icSHAPE profile; (f) the effect of m⁶A on the structure of Nanog mRNA, with the positions of Mettl3-dependent m⁶A sites (highlighted in yellow) and m⁶A-RIP data from Batista et al. shown above, and the icSHAPE profiles of WT and Mettl3 KO cells below.",
+      "body": [
+        "This figure lays out the most subtle point within the icSHAPE interpretive boundary: a drop in accessibility can come from pairing, or it can come from protein binding. In the Rbfox example, the differential signal of in vivo relative to in vitro falls precisely on the protein binding site; that is, in living cells the 2′-OH becomes inaccessible because a protein has covered it, not because it has formed a new base pair.",
+        "This is exactly why FoldBridge must preserve the assay context. If one looks only at a low in vivo icSHAPE signal and concludes \"this is paired\", one will misread protein protection as structure. Likewise, the m⁶A example shows that the chemical modification itself can also change local accessibility. So a complete sentence should read: under this condition, the 2′-OH accessibility at this site is low; this could come from pairing, or it could come from the protection afforded by a protein or modification, and it requires context to judge."
+      ],
+      "label": "Spitale et al. 2015 F4",
+      "pmid": "25799993",
+      "pmcid": "PMC4376618",
+      "doi": "10.1038/nature14263",
+      "figureId": "F4",
+      "legendText": "a , Structure of Rbfox1-RNA interaction, highlighting the RNA-protein interface. The RNA is shown with a blue backbone and orange bases; each 2’hydroxyl is green (PDB:2ERR). b , The differential icSHAPE profile at Rbfox2 target mRNAs measured in vivo vs. in vitro maps precisely to the Rbfox binding sites. c , Model of interplay between m 6 A and RNA structure. d , Differential icSHAPE signal for m 6 A methylated vs. non-methylated sites with the same underlying sequence motif, both in vivo . icSHAPE signal from unmodified sites are subtracted from m 6 A-modified sites; asterisks (*) indicate positions with significant differences ( p <0.05, FDR<0.05). Data from wild type and Mettl3 KO mESCs are plotted for comparison. e , ROC curve for prediction of m 6 A sites, incorporating icSHAPE profiles. f , Effect of m 6 A on RNA structure on Nanog mRNA. Top: location of Mettl3 -dependent m 6 A sites (highlight in yellow); m 6 A-RIP data from Batista et al 25 . Bottom: icSHAPE profile of WT and Mettl3 KO cells."
+    },
+    {
+      "type": "heading",
+      "text": "How FoldBridge should write up icSHAPE"
+    },
+    {
+      "type": "paragraph",
+      "text": "icSHAPE does not have a clear base-target boundary like the \"A/C interpretable, G/U not interpretable\" of DMS: its target is the ribose 2′-OH, and in principle every nucleotide has a 2′-OH. So the interpretive gate for icSHAPE is not \"which base may be coloured\", but a multi-level gate oriented towards 2′-OH accessibility: chemical target reachability (whether the 2′-OH at this site was effectively acylated and read out in the current library), readout context (whether the RT-stop has had the DMSO background subtracted and been scaled and normalised), and the mapping and claim gates (whether the coordinates are reliable, and whether they hold under this experimental condition)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Only accessibility that passes all of these gates simultaneously may enter the default visualisation and the confidence layer. The raw RT-stop count is itself only provenance: it should be preserved in full, be downloadable, and be traceable, but it should not automatically drive default structure colouring. The default structure diagram in ANNOJOIN should read the visualised value after background correction and targetability processing, rather than the bare RT-stop. Confidence / FEC require more: only accessibility observations that pass the chemistry, readout, mapping, claim, and context gates may become candidates for positive confidence."
+    },
+    {
+      "type": "paragraph",
+      "text": "This is not a weakening of icSHAPE, but a respect for its strengths. icSHAPE is very powerful for the 2′-OH accessibility of living cells; the error occurs when \"a drop in accessibility\" is uniformly written as \"pairing\", or when a raw RT-stop is written as structural ground truth. In an environment such as living cells, where the background signal is more complex, FoldBridge must all the more separate \"an RT-stop was measured at some site\" from \"this signal can serve as evidence of flexibility\". The default colour on the web answers \"within the icSHAPE interpretive boundary, what readable signal is there at this site\"; the detail table answers \"what was recorded in the raw data\". Once these two layers are overlaid on a single diagram, the complex background signals in living cells will be silently read as icSHAPE-certified evidence of flexibility."
+    },
+    {
+      "type": "heading",
+      "text": "A real case: how an icSHAPE profile flows through three layers (illustrative)"
+    },
+    {
+      "type": "paragraph",
+      "text": "There is no real FoldBridge accession here, so what follows is a clearly labelled illustrative scenario, used to explain how a single icSHAPE profile is separated into three different layers."
+    },
+    {
+      "type": "paragraph",
+      "text": "Imagine an icSHAPE profile measured in living mESC cells entering FoldBridge. The first layer is the raw observation: per-position RT-stop counts, the corresponding DMSO control, library metadata, and sequencing coordinates; these are all preserved as is, as provenance, downloadable and recomputable. What they record is \"how many RT-stops were measured in living cells\", not yet a flexibility conclusion for this site."
+    },
+    {
+      "type": "paragraph",
+      "text": "The second layer is the visual signal: after the RT-stop has had the DMSO background subtracted, been scaled 0 to 1, and passed the mapping and readout gates, one obtains a 2′-OH accessibility value that can be coloured onto the structure page. The colour the reader sees first should come from this layer, because it is a colour interpretable under the icSHAPE assay model, rather than a bare count."
+    },
+    {
+      "type": "paragraph",
+      "text": "The third layer is the confidence candidate: only those accessibility observations that pass both the chemistry and readout gates and the mapping/claim/context checks enter the confidence assessment, and they must still carry the qualification that \"a drop in accessibility could come from pairing, or from protein or modification protection\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "The value of this illustrative scenario lies in grounding click enrichment, background correction, and layering in system behaviour: the same icSHAPE profile can simultaneously produce a raw observation, a visual signal, and a confidence candidate, but these three each stop at a different interpretive depth. If an explainer article on icSHAPE merges these three layers into one, the reader will take \"measured in living cells\" directly as \"pairing state determined\", and so misread the FoldBridge structure diagram. The more in vivo, and the more automated the colouring, the more one must write the line \"a drop in accessibility could come from pairing, or from protein protection\" right next to the colour."
+    },
+    {
+      "type": "paragraph",
+      "text": "So the correct ending for an icSHAPE article is not \"low signal proves this base is paired\", but: icSHAPE can provide powerful in vivo 2′-OH accessibility clues for RNA structure interpretation; in FoldBridge, such a clue becomes part of default structural interpretation and confidence only after it is first preserved as raw provenance and then passes the chemistry, readout, mapping, claim, and context gates."
+    }
+  ]
+}
