@@ -6891,6 +6891,12 @@ main.page-probing-index .technology-section-heading h2 {
   box-shadow: none;
 }
 
+.global-search-submit img {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
 .global-search-form button,
 .site-search-form button {
   border: 0;
@@ -7109,13 +7115,10 @@ main.page-detail.page-search > .site-search-card {
   box-shadow: none;
 }
 
-.site-search-submit-icon svg {
+.site-search-submit-icon img {
+  display: block;
   width: 23px;
   height: 23px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-width: 2;
 }
 
 .site-search-saved-actions {

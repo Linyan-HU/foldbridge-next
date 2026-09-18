@@ -74,7 +74,7 @@ export function renderBundleHeader({ mode = 'light', navHtml = '' } = {}) {
           <div class="bundle-home-meta">
             <form class="global-search-form" id="global-search-form">
               <input id="global-search-input" type="search" placeholder="Search FoldBridge" aria-label="Search FoldBridge" />
-              <button class="global-search-submit" type="submit" aria-label="Search" title="Search">🔍</button>
+              <button class="global-search-submit" type="submit" aria-label="Search" title="Search"><img src="./src/assets/search.svg" alt="" aria-hidden="true" /></button>
             </form>
             <button type="button" class="mode-toggle" id="mode-toggle">
               ${mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}

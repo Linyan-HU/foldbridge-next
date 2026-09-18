@@ -2391,7 +2391,7 @@ function searchPage() {
             aria-label="Search query"
           />
           <button type="submit" class="site-search-submit-icon" aria-label="Search">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="m15 15 4.5 4.5"></path></svg>
+            <img src="./src/assets/search.svg" alt="" aria-hidden="true" />
           </button>
         </div>
         <button id="save-search-query" type="button" class="download-outline-btn site-search-save-button">Save search</button>
