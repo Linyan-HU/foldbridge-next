@@ -176,8 +176,8 @@ export function renderHomeProbingCarousel(articles = []) {
       <div class="home-probing-track" data-carousel-track>
         ${slides}
       </div>
-      <button type="button" class="home-probing-nav home-probing-prev" data-carousel-prev aria-label="Previous article">&larr;</button>
-      <button type="button" class="home-probing-nav home-probing-next" data-carousel-next aria-label="Next article">&rarr;</button>
+      <button type="button" class="home-probing-nav home-probing-prev" data-carousel-prev aria-label="Previous article"><img src="./src/assets/home-pagination-arrow.svg" alt="" aria-hidden="true" /></button>
+      <button type="button" class="home-probing-nav home-probing-next" data-carousel-next aria-label="Next article"><img src="./src/assets/home-pagination-arrow.svg" alt="" aria-hidden="true" /></button>
       <div class="home-probing-dots">
         ${dots}
       </div>

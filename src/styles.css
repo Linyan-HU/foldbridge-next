@@ -473,8 +473,10 @@ main.page-sequence-detail {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   width: 24px;
   height: 24px;
+  margin: 0;
   padding: 0;
   border: 1px solid var(--border);
   border-radius: 999px;
@@ -928,7 +930,7 @@ button[data-annojoin-clear-all]:hover {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.03em;
-  font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+  font-family: var(--fontFamily);
 }
 
 /* --- Two-layer text: plain explainer + deep technical inset --- */
@@ -2878,8 +2880,10 @@ tbody tr:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   width: 24px;
   height: 24px;
+  margin: 0;
   padding: 0;
   border: 1px solid var(--border);
   border-radius: 999px;
@@ -2896,6 +2900,14 @@ tbody tr:hover {
   outline: none;
   border-color: #e0ae24;
   background: #fff2bf;
+}
+
+.disclosure-toggle-icon {
+  display: block;
+  flex: none;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 }
 
 .entry-group-label {
@@ -5036,7 +5048,7 @@ main.page-annojoin-confidence {
 
 .bundle-home-bundle-label {
   margin: 0;
-  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--fontFamily);
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.76rem;
@@ -5046,7 +5058,7 @@ main.page-annojoin-confidence {
 
 .bundle-home-switch-label {
   margin: 0;
-  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--fontFamily);
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.76rem;
@@ -5080,7 +5092,7 @@ main.page-annojoin-confidence {
 }
 
 .bundle-home-brand-copy h1 {
-  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--fontFamily);
   font-size: 1.4rem;
   line-height: 1.14;
   font-weight: 700;
@@ -5089,7 +5101,7 @@ main.page-annojoin-confidence {
 
 .bundle-home-brand-copy span,
 .bundle-home-links {
-  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--fontFamily);
   color: var(--textPrimary);
   font-size: 1.08rem;
   line-height: 1.45;
@@ -5151,7 +5163,7 @@ main.page-annojoin-confidence {
 }
 
 .bundle-switch-pill strong {
-  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--fontFamily);
   font-size: 1.08rem;
   line-height: 1.14;
   font-weight: 600;
@@ -5161,7 +5173,7 @@ main.page-annojoin-confidence {
 }
 
 .bundle-switch-pill span {
-  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--fontFamily);
   margin-top: 5px;
   font-size: 0.76rem;
   color: var(--textPrimary);
@@ -5258,7 +5270,7 @@ main.page-annojoin-confidence {
 }
 
 .bundle-home-domain {
-  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--fontFamily);
   color: var(--textSecondary);
   font-size: 0.76rem;
   line-height: 1;
@@ -5278,7 +5290,7 @@ main.page-annojoin-confidence {
 }
 
 .bundle-home-route-nav .nav-btn {
-  font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--fontFamily);
   padding: 9px 8px;
   border-radius: 999px;
   border: 1px solid transparent;
@@ -6561,7 +6573,7 @@ main.page-probing-index .technology-section-heading h2 {
   border-radius: 6px;
   background: rgba(155, 122, 38, 0.1);
   color: var(--textSecondary);
-  font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+  font-family: var(--fontFamily);
   font-size: 0.92em;
 }
 
@@ -6862,6 +6874,15 @@ main.page-probing-index .technology-section-heading h2 {
   border-color: rgba(218, 173, 95, 0.42) !important;
   background: rgba(255, 255, 255, 0.72) !important;
   box-shadow: none !important;
+}
+
+/* Avoid the browser's default blue focus ring; header search follows the
+   database's gold interaction colour in both pointer and keyboard use. */
+.global-search-form input:focus,
+.global-search-form input:focus-visible {
+  outline: none;
+  border-color: #AA7A38 !important;
+  box-shadow: 0 0 0 2px rgba(227, 191, 92, 0.42) !important;
 }
 
 .global-search-form input,
@@ -7324,6 +7345,7 @@ main.page-detail.page-search > .site-search-card {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 8px;
   margin-top: 18px;
 }
@@ -7344,6 +7366,7 @@ main.page-detail.page-search > .site-search-card {
   color: var(--textPrimary);
   cursor: pointer;
   font: inherit;
+  box-shadow: none;
 }
 
 .site-search-pagination-button:hover:not(:disabled),
@@ -7364,6 +7387,37 @@ main.page-detail.page-search > .site-search-card {
 .site-search-pagination-gap {
   padding: 0 2px;
   color: var(--textSecondary);
+}
+
+.site-search-page-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--textPrimary);
+  font-size: var(--type-body-size);
+}
+
+.site-search-page-jump input {
+  box-sizing: border-box;
+  min-height: 38px;
+  border: 1px solid rgba(227, 191, 92, 0.46);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--textPrimary);
+  font: inherit;
+  box-shadow: none;
+}
+
+.site-search-page-jump input {
+  width: 3.7rem;
+  padding: 7px 8px;
+  text-align: center;
+}
+
+.site-search-page-jump input:focus-visible {
+  outline: none;
+  border-color: #AA7A38;
+  background: #fff2bf;
 }
 
 /* Search filters use the shared body type scale. Keep category labels visible
@@ -7400,16 +7454,17 @@ main.page-detail.page-search > .site-search-card {
 }
 
 .site-search-result {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 14px;
+  display: block;
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 14px;
   background: var(--surfaceSoft);
+  color: var(--textPrimary);
+  text-decoration: none;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease, border-color 0.16s ease;
 }
 
-.site-search-result a,
+.site-search-result-title,
 .saved-search-item a {
   color: var(--textAccent);
   font-weight: 800;
@@ -7430,19 +7485,42 @@ main.page-detail.page-search > .site-search-card {
   font-weight: var(--fontWeightHeading);
 }
 
-.page-search .site-search-result a {
+.page-search .site-search-result-title {
+  display: block;
   color: var(--textPrimary);
   font-size: var(--type-body-size);
   font-weight: var(--fontWeightHeading);
 }
 
-.site-search-result p {
+.site-search-result-summary {
+  display: block;
   margin: 6px 0 0;
   color: var(--muted);
 }
 
 .site-search-result-summary {
   color: var(--textPrimary) !important;
+}
+
+.site-search-result:hover,
+.site-search-result:focus-visible {
+  outline: none;
+  border-color: rgba(201, 151, 26, 0.72);
+  background: linear-gradient(135deg, rgba(255, 246, 211, 0.98), rgba(255, 255, 255, 1));
+  box-shadow: 0 16px 34px rgba(155, 122, 38, 0.12);
+  transform: translateY(-2px);
+}
+
+.site-search-result:hover .site-search-result-title,
+.site-search-result:focus-visible .site-search-result-title,
+.site-search-result:hover .site-search-result-summary,
+.site-search-result:focus-visible .site-search-result-summary {
+  color: var(--textPrimary) !important;
+}
+
+.site-search-result:hover .site-search-result-details,
+.site-search-result:focus-visible .site-search-result-details {
+  color: var(--textSecondary) !important;
 }
 
 .site-search-result-details {
@@ -7657,8 +7735,11 @@ main.page-detail.page-search > .site-search-card {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   width: 36px;
   height: 36px;
+  margin: 0;
+  padding: 0;
   border: none;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.45);
@@ -7670,6 +7751,12 @@ main.page-detail.page-search > .site-search-card {
 .home-probing-prev { left: 0.6rem; }
 .home-probing-next { right: 0.6rem; }
 .home-probing-nav:hover { background: rgba(0, 0, 0, 0.65); }
+.home-probing-nav img {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.home-probing-prev img { transform: scaleX(-1); }
 .home-probing-dots {
   position: absolute;
   bottom: 0.7rem;
@@ -7701,13 +7788,15 @@ main.page-detail.page-search > .site-search-card {
 .home-scroll-story > .home-probing-carousel {
   margin: 24px 0 0;
   border-radius: 0;
+  overflow: visible;
   background: transparent;
   box-shadow: none;
 }
 
 .home-scroll-story > .home-probing-carousel .home-probing-slide {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  /* Reserve a gutter for the controls without covering either column. */
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .home-scroll-story > .home-probing-carousel .home-probing-slide-img {
@@ -7717,11 +7806,39 @@ main.page-detail.page-search > .site-search-card {
 .home-scroll-story > .home-probing-carousel .home-probing-slide-noimg {
   background: var(--surfaceAlt);
 }
+
+/* Keep carousel controls in the surrounding gutter so they never cover the
+   figure or article title. Their hit area remains available, while the icon
+   itself stays visually lightweight. */
+.home-scroll-story > .home-probing-carousel .home-probing-nav {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: #b7bbb4;
+  box-shadow: none;
+}
+
+.home-scroll-story > .home-probing-carousel .home-probing-prev { left: 0.8rem; }
+.home-scroll-story > .home-probing-carousel .home-probing-next { right: 0.8rem; }
+
+.home-scroll-story > .home-probing-carousel .home-probing-nav:hover {
+  background: #a8ada5;
+  box-shadow: none;
+}
+
 @media (max-width: 640px) {
   .home-probing-slide {
     grid-template-columns: 1fr;
     padding: 1.25rem 2.4rem;
   }
+
+  .home-scroll-story > .home-probing-carousel .home-probing-slide {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .home-scroll-story > .home-probing-carousel .home-probing-prev { left: 0.25rem; }
+  .home-scroll-story > .home-probing-carousel .home-probing-next { right: 0.25rem; }
 }
 /* ===== 主页招牌滚动叙事 home-scroll-story（Apple 风重设计，配色/质感限定本区） ===== */
 .home-scroll-story {
@@ -7795,7 +7912,7 @@ main.page-detail.page-search > .site-search-card {
 .hss-bar { width: 13px; border-radius: 3px 3px 0 0; min-height: 3px; }
 .hss-cell { width: 21px; height: 26px; border-radius: 5px; display: flex; align-items: center;
   justify-content: center; font-size: 11px; font-weight: 700; color: #fff;
-  font-family: ui-monospace, monospace; }
+  font-family: var(--fontFamily); }
 .hss-match-tick { height: 10px; line-height: 10px; text-align: center; font-size: 9px; color: var(--textAccent); }
 
 /* legend */
@@ -8391,7 +8508,7 @@ body[data-mode="dark"] .article-ppt-overview .article-sibling-nav {
   max-width: var(--feature-card-width);
   margin: 0 auto;
   border: 1px solid #edc457;
-  border-radius: 16px;
+  border-radius: var(--panel-card-radius);
   padding: 28px 32px 32px;
   background: linear-gradient(112deg, #fff7de 0%, #fffdf8 48%, #eef8ed 100%);
   box-shadow: none;

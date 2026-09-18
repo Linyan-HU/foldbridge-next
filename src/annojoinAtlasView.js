@@ -14,6 +14,7 @@ import {
   mechanismFamiliesForRow,
   MECHANISM_FAMILIES
 } from './techniqueFilterModel.js';
+import { renderDisclosureIcon } from './disclosureIcon.js';
 
 const DEFAULT_GROUP_ROW_LIMIT = 5;
 
@@ -172,7 +173,7 @@ function renderTableBody({
     rows.push(`<tr class="annojoin-parent-group-row${parentExpanded ? ' is-expanded-group' : ''}" data-annojoin-parent-group="${escapeHtml(parent.id)}" data-annojoin-group-state="${parentExpanded ? 'expanded' : 'collapsed'}">
       <td colspan="${visibleColumns.length}">
         <div class="annojoin-group-row-inner">
-          <button type="button" data-annojoin-group-toggle="${escapeHtml(parentToggleId)}" aria-expanded="${parentExpanded ? 'true' : 'false'}">${parentExpanded ? '-' : '+'}</button>
+          <button type="button" data-annojoin-group-toggle="${escapeHtml(parentToggleId)}" aria-expanded="${parentExpanded ? 'true' : 'false'}">${renderDisclosureIcon(parentExpanded)}</button>
           <strong>${escapeHtml(parent.label)}</strong>
           <span>${escapeHtml(parent.count)} cases</span>
         </div>
@@ -193,7 +194,7 @@ function renderTableBody({
       rows.push(`<tr class="annojoin-child-group-row${childExpanded ? ' is-expanded-group' : ''}" data-annojoin-child-group="${escapeHtml(child.id)}" data-annojoin-group-state="${childExpanded ? 'expanded' : 'collapsed'}">
         <td colspan="${visibleColumns.length}">
           <div class="annojoin-group-row-inner">
-            <button type="button" data-annojoin-group-toggle="${escapeHtml(childToggleId)}" aria-expanded="${childExpanded ? 'true' : 'false'}">${childExpanded ? '-' : '+'}</button>
+            <button type="button" data-annojoin-group-toggle="${escapeHtml(childToggleId)}" aria-expanded="${childExpanded ? 'true' : 'false'}">${renderDisclosureIcon(childExpanded)}</button>
             <span>${escapeHtml(child.label)}</span>
             <small>${escapeHtml(child.count)} cases</small>
           </div>

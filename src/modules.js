@@ -912,8 +912,8 @@ export async function initSequenceDetailSecondaryHeatmap() {
 
     const flatValues = parsed.reactivityRows.flat().filter((value) => Number.isFinite(value));
     const maxValue = Math.max(...flatValues, 1);
-    const font = `${Math.max(10, cellSize - 2)}px system-ui, -apple-system, BlinkMacSystemFont, sans-serif`;
-    const monoFont = `${Math.max(10, cellSize - 2)}px Menlo, Consolas, monospace`;
+    const font = `${Math.max(10, cellSize - 2)}px Arial, sans-serif`;
+    const monoFont = `${Math.max(10, cellSize - 2)}px Arial, sans-serif`;
 
     function paint(activeCell = null) {
       ctx.fillStyle = '#ffffff';
@@ -922,7 +922,7 @@ export async function initSequenceDetailSecondaryHeatmap() {
       for (let row = 0; row < rows; row += 1) {
         const y = topLabelBand + row * cellSize;
         ctx.fillStyle = '#69d9ca';
-        ctx.font = `italic ${Math.max(10, cellSize - 1)}px system-ui, -apple-system, BlinkMacSystemFont, sans-serif`;
+        ctx.font = `italic ${Math.max(10, cellSize - 1)}px Arial, sans-serif`;
         ctx.textAlign = 'right';
         ctx.textBaseline = 'middle';
         ctx.fillText(String(row + 1), leftLabelBand - labelGap, y + cellSize / 2);
@@ -977,7 +977,7 @@ export async function initSequenceDetailSecondaryHeatmap() {
         ctx.rotate(-Math.PI / 2);
         ctx.textAlign = 'right';
         ctx.textBaseline = 'middle';
-        ctx.font = `italic ${Math.max(9, cellSize - 3)}px system-ui, -apple-system, BlinkMacSystemFont, sans-serif`;
+        ctx.font = `italic ${Math.max(9, cellSize - 3)}px Arial, sans-serif`;
         ctx.fillStyle = '#7fe5d9';
         ctx.fillText(String(col + 1), 0, 0);
         ctx.restore();

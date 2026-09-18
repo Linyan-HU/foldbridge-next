@@ -3,6 +3,7 @@
 
 import { ENTRY_TABLE_COLUMNS, entryCaseHref, entryEfLinks, rcsbStructureHref, buildEntryTableGroups } from './entryTable.js';
 import { renderTechniqueFilterControls } from './annojoinAtlasView.js';
+import { renderDisclosureIcon } from './disclosureIcon.js';
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -94,7 +95,7 @@ function renderGroups(rows, caseBase, missingSet, expandedSet) {
     const parentExpanded = expandedSet.has(parentToggleId);
     out.push(`<tr class="entry-parent-group-row${parentExpanded ? ' is-expanded-group' : ''}" data-entry-group-state="${parentExpanded ? 'expanded' : 'collapsed'}">
       <td class="entry-group-head" colspan="${colCount}">
-        <button type="button" class="entry-group-toggle" data-entry-group-toggle="${escapeHtml(parentToggleId)}" aria-expanded="${parentExpanded ? 'true' : 'false'}">${parentExpanded ? '−' : '+'}</button>
+        <button type="button" class="entry-group-toggle" data-entry-group-toggle="${escapeHtml(parentToggleId)}" aria-expanded="${parentExpanded ? 'true' : 'false'}">${renderDisclosureIcon(parentExpanded)}</button>
         <span class="entry-group-label">${escapeHtml(parent.label)}</span>
         <span class="entry-group-count">${parent.count.toLocaleString()}</span>
       </td>
@@ -108,7 +109,7 @@ function renderGroups(rows, caseBase, missingSet, expandedSet) {
       const childExpanded = expandedSet.has(childToggleId);
       out.push(`<tr class="entry-child-group-row${childExpanded ? ' is-expanded-group' : ''}" data-entry-group-state="${childExpanded ? 'expanded' : 'collapsed'}">
         <td class="entry-group-head entry-group-head-child" colspan="${colCount}">
-          <button type="button" class="entry-group-toggle" data-entry-group-toggle="${escapeHtml(childToggleId)}" aria-expanded="${childExpanded ? 'true' : 'false'}">${childExpanded ? '−' : '+'}</button>
+          <button type="button" class="entry-group-toggle" data-entry-group-toggle="${escapeHtml(childToggleId)}" aria-expanded="${childExpanded ? 'true' : 'false'}">${renderDisclosureIcon(childExpanded)}</button>
           <span class="entry-group-label">${escapeHtml(child.label)}</span>
           <span class="entry-group-count">${child.count.toLocaleString()}</span>
         </td>

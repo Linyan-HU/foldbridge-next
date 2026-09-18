@@ -2563,7 +2563,7 @@ function annojoinConfidencePage() {
             <rect x="22" y="78" width="60" height="32" rx="8" fill="var(--primarySoft)" stroke="var(--border)"/>
             <text x="52" y="100" text-anchor="middle" font-size="17" font-weight="700" fill="var(--textPrimary)">A</text>
             <text x="100" y="99" font-size="12.5" fill="var(--textPrimary)">WC-face base-specific (DMS/CMCT/Keth)</text>
-            <text x="335" y="99" font-size="12" style="font-family:ui-monospace,Menlo,monospace" fill="var(--textPrimary)">auc_unpaired_vs_paired</text>
+            <text x="335" y="99" font-size="12" style="font-family:Arial,sans-serif" fill="var(--textPrimary)">auc_unpaired_vs_paired</text>
             <text x="600" y="99" font-size="12.5" fill="var(--textPrimary)">unpaired</text>
             <text x="668" y="99" font-size="16" font-weight="700" fill="var(--accent)">&#8594;</text>
             <title>Family A: Watson-Crick face base-specific reagents, unpaired-positive</title>
@@ -2573,7 +2573,7 @@ function annojoinConfidencePage() {
             <rect x="22" y="138" width="60" height="32" rx="8" fill="var(--accentSoft)" stroke="var(--border)"/>
             <text x="52" y="160" text-anchor="middle" font-size="17" font-weight="700" fill="var(--textPrimary)">B</text>
             <text x="100" y="159" font-size="12.5" fill="var(--textPrimary)">SHAPE 2&#8242;-OH flexibility (ACGU)</text>
-            <text x="335" y="159" font-size="12" style="font-family:ui-monospace,Menlo,monospace" fill="var(--textPrimary)">auc_unpaired_vs_paired</text>
+            <text x="335" y="159" font-size="12" style="font-family:Arial,sans-serif" fill="var(--textPrimary)">auc_unpaired_vs_paired</text>
             <text x="600" y="159" font-size="12.5" fill="var(--textPrimary)">unpaired</text>
             <text x="668" y="159" font-size="16" font-weight="700" fill="var(--accent)">&#8594;</text>
             <title>Family B: SHAPE flexibility proxy, unpaired-positive</title>
@@ -2584,7 +2584,7 @@ function annojoinConfidencePage() {
             <text x="52" y="220" text-anchor="middle" font-size="17" font-weight="700" fill="var(--textPrimary)">C</text>
             <text x="100" y="214" font-size="12.5" fill="var(--textPrimary)">enzymatic (PARS/PARTE)</text>
             <text x="100" y="232" font-size="10.5" font-weight="700" fill="var(--accent)">REVERSED &#183; V1 cleaves paired stems</text>
-            <text x="335" y="219" font-size="12" style="font-family:ui-monospace,Menlo,monospace" fill="var(--textPrimary)">auc_paired_vs_unpaired (1&#8722;AUC)</text>
+            <text x="335" y="219" font-size="12" style="font-family:Arial,sans-serif" fill="var(--textPrimary)">auc_paired_vs_unpaired (1&#8722;AUC)</text>
             <text x="600" y="219" font-size="12.5" fill="var(--textPrimary)">paired</text>
             <text x="654" y="219" font-size="16" font-weight="700" fill="var(--accent)">&#8592;</text>
             <title>Family C: enzymatic, REVERSED direction, paired-positive</title>
@@ -2595,7 +2595,7 @@ function annojoinConfidencePage() {
             <text x="52" y="280" text-anchor="middle" font-size="17" font-weight="700" fill="var(--textPrimary)">D</text>
             <text x="100" y="274" font-size="12.5" fill="var(--textPrimary)">SASA solvent accessibility</text>
             <text x="100" y="292" font-size="10.5" font-weight="700" fill="var(--accent)">DUAL PATH &#183; fallback never STRONG</text>
-            <text x="335" y="279" font-size="12" style="font-family:ui-monospace,Menlo,monospace" fill="var(--textPrimary)">spearman(reactivity, sasa)</text>
+            <text x="335" y="279" font-size="12" style="font-family:Arial,sans-serif" fill="var(--textPrimary)">spearman(reactivity, sasa)</text>
             <text x="600" y="279" font-size="12.5" fill="var(--textPrimary)">high</text>
             <text x="638" y="279" font-size="15" font-weight="700" fill="var(--accent)">&#8596;</text>
             <text x="660" y="279" font-size="12.5" fill="var(--textPrimary)">high</text>
@@ -2606,7 +2606,7 @@ function annojoinConfidencePage() {
             <rect x="22" y="318" width="60" height="32" rx="8" fill="var(--primarySoft)" stroke="var(--border)"/>
             <text x="52" y="340" text-anchor="middle" font-size="17" font-weight="700" fill="var(--textPrimary)">E</text>
             <text x="100" y="339" font-size="12.5" fill="var(--textPrimary)">contact map (MCA/MOHCA)</text>
-            <text x="335" y="339" font-size="12" style="font-family:ui-monospace,Menlo,monospace" fill="var(--textPrimary)">contact_pair_auc</text>
+            <text x="335" y="339" font-size="12" style="font-family:Arial,sans-serif" fill="var(--textPrimary)">contact_pair_auc</text>
             <text x="600" y="339" font-size="12.5" fill="var(--textPrimary)">near = hit</text>
             <title>Family E: contact map, near = hit</title>
           </g>
@@ -2615,7 +2615,7 @@ function annojoinConfidencePage() {
             <rect x="22" y="378" width="60" height="32" rx="8" fill="var(--accentSoft)" stroke="var(--border)"/>
             <text x="52" y="400" text-anchor="middle" font-size="17" font-weight="700" fill="var(--textPrimary)">F</text>
             <text x="100" y="399" font-size="12.5" fill="var(--textPrimary)">pair-set F1 (mutate-and-map)</text>
-            <text x="335" y="399" font-size="12" style="font-family:ui-monospace,Menlo,monospace" fill="var(--textPrimary)">pair_set_prf</text>
+            <text x="335" y="399" font-size="12" style="font-family:Arial,sans-serif" fill="var(--textPrimary)">pair_set_prf</text>
             <text x="600" y="399" font-size="12.5" fill="var(--textPrimary)">F1 inferred vs ref</text>
             <title>Family F: pair-set F1 of inferred vs reference pairs</title>
           </g>
@@ -2774,7 +2774,7 @@ function annojoinConfidencePage() {
             <rect x="40" y="44" width="60" height="220" rx="8" fill="var(--surfaceAlt)" stroke="var(--border)"/>
             <rect x="58" y="60" width="24" height="18" rx="3" fill="var(--primary)"/>
             <path d="M 63 60 V 53 a 7 7 0 0 1 14 0 V 60" fill="none" stroke="var(--primary)" stroke-width="2.5"/>
-            <g font-size="11" style="font-family:ui-monospace,Menlo,monospace" fill="var(--textPrimary)" text-anchor="middle">
+            <g font-size="11" style="font-family:Arial,sans-serif" fill="var(--textPrimary)" text-anchor="middle">
               <text x="70" y="104">0.81</text><text x="70" y="128">0.12</text><text x="70" y="152">0.64</text>
               <text x="70" y="176">0.05</text><text x="70" y="200">0.77</text><text x="70" y="224">0.21</text><text x="70" y="248">0.58</text>
             </g>
@@ -2806,7 +2806,7 @@ function annojoinConfidencePage() {
           </g>
           <line x1="596" y1="70" x2="596" y2="250" stroke="var(--primary)" stroke-width="2.5"/>
           <text x="596" y="64" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--primary)">observed</text>
-          <text x="350" y="284" font-size="11.5" style="font-family:ui-monospace,Menlo,monospace" fill="var(--textPrimary)">p = (1 + #{null &#8805; obs}) / (1 + n_perm)</text>
+          <text x="350" y="284" font-size="11.5" style="font-family:Arial,sans-serif" fill="var(--textPrimary)">p = (1 + #{null &#8805; obs}) / (1 + n_perm)</text>
           <text x="350" y="304" font-size="10.5" fill="var(--textMuted)">1000 permutations &#183; seed 12345 &#183; p never zero</text>
         </svg>
         <figcaption>To test whether a score is luck, reactivity values are held fixed while paired/unpaired labels are reshuffled 1000 times to build a null distribution. The histogram is schematic. This label-shuffle applies to A/B/C and Family D&#8217;s pairing-proxy fallback; D&#8217;s SASA-Spearman main path has its own calibration path.</figcaption>
@@ -3161,12 +3161,10 @@ function renderSearchResults(result) {
     .map((item) => {
       const summary = item.summary || (item.type === 'probing-article' ? 'RNA probing method article.' : 'Open this RNA structure entry for details.');
       const details = item.details ? `<span class="site-search-result-details"> · ${escapeHtml(item.details)}</span>` : '';
-      return `<article class="site-search-result">
-      <div>
-        <a href="${escapeHtml(item.href)}">${escapeHtml(item.title)}</a>
-        <p class="site-search-result-summary">${escapeHtml(summary)}${details}</p>
-      </div>
-    </article>`;
+      return `<a class="site-search-result" href="${escapeHtml(item.href)}">
+      <strong class="site-search-result-title">${escapeHtml(item.title)}</strong>
+      <span class="site-search-result-summary">${escapeHtml(summary)}${details}</span>
+    </a>`;
     })
     .join('');
 }
@@ -3186,6 +3184,10 @@ function renderSearchPagination({ page, totalPages }) {
     <button type="button" class="site-search-pagination-button" data-search-page="${page - 1}"${page === 1 ? ' disabled' : ''}>Previous</button>
     <div class="site-search-pagination-pages">${buttons}</div>
     <button type="button" class="site-search-pagination-button" data-search-page="${page + 1}"${page === totalPages ? ' disabled' : ''}>Next</button>
+    <form class="site-search-page-jump" data-search-page-jump aria-label="Jump to page">
+      <input id="site-search-page-jump-input" name="page" type="number" inputmode="numeric" min="1" max="${totalPages}" value="${page}" aria-label="Page number; press Enter to jump" title="Enter a page number and press Enter" />
+      <span aria-hidden="true">/ ${totalPages}</span>
+    </form>
   </nav>`;
 }
 
@@ -3265,6 +3267,30 @@ async function initSearchPage() {
         if (!Number.isSafeInteger(page) || page < 1 || page > result.totalPages || page === result.page) return;
         setSearchState({ q: state.q, filters: state.filters, page });
         requestAnimationFrame(() => document.querySelector('.site-search-results-card')?.scrollIntoView({ block: 'start' }));
+      });
+    });
+    resultHost.querySelectorAll('[data-search-page-jump]').forEach((jumpForm) => {
+      const pageInput = jumpForm.elements.namedItem('page');
+      const jumpToEnteredPage = () => {
+        const page = Number(pageInput?.value);
+        if (!Number.isSafeInteger(page) || page < 1 || page > result.totalPages) {
+          pageInput?.setCustomValidity(`Enter a page from 1 to ${result.totalPages}.`);
+          pageInput?.reportValidity();
+          return;
+        }
+        pageInput?.setCustomValidity('');
+        if (page === result.page) return;
+        setSearchState({ q: state.q, filters: state.filters, page });
+        requestAnimationFrame(() => document.querySelector('.site-search-results-card')?.scrollIntoView({ block: 'start' }));
+      };
+      jumpForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        jumpToEnteredPage();
+      });
+      pageInput?.addEventListener('keydown', (event) => {
+        if (event.key !== 'Enter') return;
+        event.preventDefault();
+        jumpToEnteredPage();
       });
     });
   } catch (_error) {
