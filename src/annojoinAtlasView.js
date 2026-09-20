@@ -465,7 +465,7 @@ function renderChainsPanel(row) {
   const body = count
     ? chains.map((chain) => `<details class="annojoin-chain-seq">
         <summary>${escapeHtml(chain)}</summary>
-        <a class="download-outline-btn" href="${escapeHtml(rcsbHref)}" target="_blank" rel="noopener noreferrer">View sequence on RCSB →</a>
+        <a class="download-outline-btn" href="${escapeHtml(rcsbHref)}" target="_blank" rel="noopener noreferrer">View sequence on RCSB <img class="inline-arrow-icon" src="./src/assets/probing-arrow-right.svg" alt="" aria-hidden="true" /></a>
       </details>`).join('')
     : '<p class="mini-note">No PDB chain identifiers are annotated for this case in the current index asset.</p>';
   return `<aside class="annojoin-detail-sidebar" aria-label="ANNOJOIN chain definitions">

@@ -157,6 +157,24 @@ test('renderProbingArticleIndex uses the curated method count and public wording
   assert.doesNotMatch(html, /Chain confidence/i);
 });
 
+test('probing navigation uses the supplied vector arrow assets', () => {
+  const overviewHtml = probingArticleView.renderProbingArticleIndex(INDEX);
+  const articleHtml = probingArticleView.renderProbingArticlePage({
+    slug: 'shape',
+    title: 'SHAPE',
+    blocks: []
+  }, INDEX);
+  const mainSource = readFileSync(new URL('../src/main.js', import.meta.url), 'utf8');
+  const leftArrow = readFileSync(new URL('../src/assets/probing-arrow-left.svg', import.meta.url), 'utf8');
+  const rightArrow = readFileSync(new URL('../src/assets/probing-arrow-right.svg', import.meta.url), 'utf8');
+
+  assert.match(overviewHtml, /class="probing-method-section-action"[^>]*><img src="\.\/src\/assets\/probing-arrow-right\.svg"/);
+  assert.match(articleHtml, /class="technology-back-link-icon" src="\.\/src\/assets\/probing-arrow-left\.svg"/);
+  assert.match(mainSource, /class="technology-back-link-icon" src="\.\/src\/assets\/probing-arrow-left\.svg"/);
+  assert.match(leftArrow, /viewBox="0 0 1024 1024"/);
+  assert.match(rightArrow, /viewBox="0 0 1024 1024"/);
+});
+
 test('renderProbingUnavailablePage renders an escaped probing-specific error shell without legacy counts', () => {
   assert.equal(
     typeof probingArticleView.renderProbingUnavailablePage,

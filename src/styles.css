@@ -68,6 +68,29 @@ body[data-mode="dark"] {
   border: 0;
   transition: all .15s ease;
 }
+
+/* Navigation arrows share the supplied vector assets rather than mixing text glyphs. */
+.inline-arrow-icon {
+  display: inline-block;
+  width: 1.15em;
+  height: 1.15em;
+  flex: 0 0 auto;
+  vertical-align: -0.15em;
+}
+
+.pdb-download-back-link,
+.help-guide-link,
+.download-outline-btn,
+.bundle-hero-primary {
+  align-items: center;
+  gap: 0.42em;
+}
+
+.pdb-download-back-link,
+.help-guide-link,
+.download-outline-btn {
+  display: inline-flex;
+}
 .black-nav a img {
   width: 16px;
   height: 16px;
@@ -6202,6 +6225,13 @@ main.page-probing-index .technology-hero-copy {
   text-decoration: none;
 }
 
+.technology-back-link-icon {
+  width: 1.45em;
+  height: 1.45em;
+  margin-right: 0.36em;
+  flex: 0 0 auto;
+}
+
 .technology-back-link:hover {
   text-decoration: underline;
 }
@@ -7443,6 +7473,15 @@ main.page-detail.page-search > .site-search-card {
   line-height: var(--type-footnote-line-height);
 }
 
+/* Search filter names and counts are regular body copy, not headings. */
+.page-search .site-search-filter,
+.page-search .site-search-filter span,
+.page-search .site-search-filter small {
+  font-size: var(--type-body-size) !important;
+  font-weight: 400 !important;
+  line-height: var(--type-body-line-height);
+}
+
 .page-search .site-search-filter-card h2 {
   font-weight: 600;
 }
@@ -7764,6 +7803,9 @@ main.page-detail.page-search > .site-search-card {
   transform: translateX(-50%);
   display: flex;
   gap: 0.4rem;
+  width: calc(100% - 32px);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .home-probing-dot {
   width: 8px;
@@ -7859,8 +7901,9 @@ main.page-detail.page-search > .site-search-card {
   letter-spacing: -1px; color: var(--textPrimary); }
 .hss-lede { max-width: 540px; margin: 16px auto 0; font-size: 1.08rem;
   color: var(--textPrimary); line-height: 1.6; }
-.hss-scrollcue { margin-top: 20px; font-size: 0.76rem; font-weight: 400; color: var(--textPrimary);
+.hss-scrollcue { display: inline-flex; align-items: center; gap: 0.48em; margin-top: 20px; font-size: 0.76rem; font-weight: 400; color: var(--textPrimary);
   animation: hss-bob 1.8s ease-in-out infinite; }
+.hss-scrollcue-icon { display: block; width: 1.45em; height: 1.45em; transform: rotate(90deg); }
 @keyframes hss-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 
 /* two-column scroll narrative */
@@ -9075,37 +9118,7 @@ main.page-detail > .stats-page {
   font-size: var(--type-body-size);
 }
 .pdb-download-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  padding-top: 24px;
-  color: var(--textPrimary);
-  font-size: var(--type-body-size);
-}
-.pdb-download-page-button {
-  min-height: 36px;
-  padding: 7px 12px;
-  border: 1px solid #edc457;
-  border-radius: 7px;
-  background: rgba(255, 253, 242, 0.72);
-  color: var(--textPrimary);
-  font: inherit;
-  font-size: var(--type-body-size);
-  cursor: pointer;
-}
-.pdb-download-page-button:hover:not(:disabled),
-.pdb-download-page-button:focus-visible {
-  border-color: #d7b451;
-  background: #fff2bf;
-}
-.pdb-download-page-button:focus-visible {
-  outline: 2px solid #edc457;
-  outline-offset: 2px;
-}
-.pdb-download-page-button:disabled {
-  cursor: default;
-  opacity: 0.45;
+  padding-top: 0;
 }
 .download-center-grid {
   display: grid;
@@ -9834,9 +9847,12 @@ main.page-probing-index .technology-hero-copy {
   place-items: center;
   border-radius: 50%;
   background: rgba(227, 191, 92, 0.24);
-  color: var(--textPrimary);
-  font-size: 1.1rem;
   transition: transform 0.16s ease;
+}
+.probing-family-card-arrow img {
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
 }
 .probing-family-card:hover .probing-family-card-arrow {
   transform: translateX(3px);
@@ -9927,6 +9943,12 @@ main.page-probing-index .probing-family-collection .probing-method-section-actio
   transition: transform 0.16s ease;
 }
 
+.probing-method-section-action img {
+  display: block;
+  width: 1.7em;
+  height: 1.7em;
+}
+
 .probing-family-collection > .technology-section-card[open] .technology-section-summary {
   border-radius: 0;
   border-bottom: 0;
@@ -9981,6 +10003,77 @@ body[data-mode="dark"] .probing-family-collection .technology-section-summary {
 body[data-mode="dark"] .probing-family-collection .technology-section-summary:hover {
   background: rgba(125, 212, 170, 0.14);
   border-color: rgba(125, 212, 170, 0.46);
+}
+
+body[data-mode="dark"] .technology-back-link-icon,
+body[data-mode="dark"] .probing-method-section-action img,
+body[data-mode="dark"] .hss-scrollcue-icon,
+body[data-mode="dark"] .inline-arrow-icon,
+body[data-mode="dark"] .probing-family-card-arrow img {
+  filter: brightness(0) invert(1);
+}
+
+/* The wide header needs to collapse before its search and theme controls
+   collide with the five database pills. */
+@media (min-width: 1101px) and (max-width: 1360px) {
+  .bundle-home-header {
+    padding: 22px 0 24px;
+  }
+
+  .bundle-home-header-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .bundle-home-nav-column,
+  .bundle-home-topline,
+  .bundle-home-meta,
+  .bundle-home-route-nav {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .bundle-home-brand {
+    margin: 0 0 8px;
+  }
+
+  .bundle-home-topline {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    padding-right: 0;
+  }
+
+  .bundle-home-meta {
+    position: static;
+    justify-content: flex-end;
+  }
+
+  .bundle-home-switches {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .bundle-switch-pill {
+    flex: 1 1 calc(50% - 12px);
+  }
+
+  .bundle-home-route-nav {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    left: 0;
+  }
+}
+
+/* Keep every global navigation item visible on a phone instead of creating a
+   page-wide horizontal strip. */
+@media (max-width: 640px) {
+  .black-nav {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    justify-content: center;
+    overflow-x: visible;
+    flex-wrap: wrap;
+  }
 }
 
 .probing-family-index .probing-hub-heading > p {
@@ -10225,7 +10318,8 @@ main .technology-method-pill {
   height: 720px;
   min-height: 480px;
   border: none;
-  background: var(--background, #fff);
+  /* Let the embedded Case document reveal this page's shared canvas. */
+  background: transparent;
 }
 
 /* Entry 表筛选 + 选择功能（2026-08-21）。
@@ -10711,4 +10805,74 @@ body[data-mode="dark"] .mode-toggle {
   border-radius: 999px !important;
   background: rgba(229, 193, 90, 0.13) !important;
   box-shadow: none !important;
+}
+
+/* Entry reuses the Annojoin technique filter. Its original card treatment
+   uses literal light gradients, so the parent-level dark override alone
+   leaves bright cards and nearly invisible option labels in dark mode. */
+body[data-mode="dark"] .entry-table-hero-meta {
+  background: #202122 !important;
+  border-color: rgba(229, 193, 90, 0.36) !important;
+  box-shadow: none !important;
+}
+
+body[data-mode="dark"] .entry-table-count,
+body[data-mode="dark"] .entry-table-hero h1,
+body[data-mode="dark"] .annojoin-technique-filter-heading,
+body[data-mode="dark"] .annojoin-technique-filter-heading strong,
+body[data-mode="dark"] .annojoin-technique-filter .mini-note,
+body[data-mode="dark"] .annojoin-technique-family-summary,
+body[data-mode="dark"] .annojoin-technique-option {
+  color: var(--textPrimary) !important;
+}
+
+body[data-mode="dark"] .entry-table-hero-meta .entry-selection-toolbar {
+  border-color: rgba(229, 193, 90, 0.28) !important;
+}
+
+body[data-mode="dark"] .entry-table-hero-meta .entry-action-btn {
+  background: linear-gradient(180deg, #f2cd63 0%, #d9a92f 100%) !important;
+  border-color: #e8bd4f !important;
+  color: #17130a !important;
+}
+
+body[data-mode="dark"] .annojoin-technique-filter {
+  background: #151617 !important;
+  border-color: rgba(229, 193, 90, 0.32) !important;
+}
+
+body[data-mode="dark"] .annojoin-technique-family-group {
+  background: #202122 !important;
+  border-color: rgba(229, 193, 90, 0.26) !important;
+}
+
+body[data-mode="dark"] .annojoin-technique-option:hover {
+  background: rgba(229, 193, 90, 0.13) !important;
+  border-color: rgba(229, 193, 90, 0.48) !important;
+}
+
+/* Keep technique-family colors meaningful without reintroducing pale chips. */
+body[data-mode="dark"] .annojoin-family-badge-dms {
+  color: #c9b8ff;
+  background: rgba(124, 92, 191, 0.26);
+}
+
+body[data-mode="dark"] .annojoin-family-badge-shape {
+  color: #8cc7ff;
+  background: rgba(47, 111, 176, 0.26);
+}
+
+body[data-mode="dark"] .annojoin-family-badge-cleavage {
+  color: #ffc273;
+  background: rgba(201, 118, 30, 0.24);
+}
+
+body[data-mode="dark"] .annojoin-family-badge-nucleotide {
+  color: #8fe0ae;
+  background: rgba(62, 148, 99, 0.24);
+}
+
+body[data-mode="dark"] .annojoin-family-badge-interaction {
+  color: #f5d778;
+  background: rgba(227, 191, 92, 0.20);
 }

@@ -324,7 +324,7 @@ export function renderProbingArticleIndex(index, headerHtml = '') {
               <span class="probing-method-section-count">${family.methods.length} methods</span>
             </div>
             <p>${renderScientificProse(family.summary)}</p>
-            <span class="probing-method-section-action" aria-hidden="true">→</span>
+            <span class="probing-method-section-action" aria-hidden="true"><img src="./src/assets/probing-arrow-right.svg" alt="" /></span>
           </div>
         </summary>
         <div class="probing-article-grid">${cards}</div>
@@ -537,7 +537,7 @@ export function renderProbingArticlePage(detail, index, headerHtml = '') {
   return `${headerHtml}
   <main class="page-detail page-probing-article${enlargedFigureClass}">
     <section class="card bundle-wide-card technology-detail-hero">
-      <a class="technology-back-link" href="#probing">← Back to probing methods overview</a>
+      <a class="technology-back-link" href="#probing"><img class="technology-back-link-icon" src="./src/assets/probing-arrow-left.svg" alt="" aria-hidden="true" />Back to probing methods overview</a>
       <div class="technology-detail-header">
         <div>
           <h1>${escapeHtml(detail.title)}</h1>

@@ -84,13 +84,13 @@ function verifyTechniqueStatus(pure) {
   assert.equal(typeof pure.publicTechniqueFilterStatus, 'function', 'export publicTechniqueFilterStatus(options)');
   const status = pure.publicTechniqueFilterStatus;
   assert.equal(status({ active: true, hitCount: 1, totalCount: 17, metadataAvailable: true }),
-    '匹配 1 个 Profile；请在 Profile 下拉列表中选择');
+    '1 matching profiles. Choose one from the Profile menu.');
   assert.equal(status({ active: true, hitCount: 12, totalCount: 17, metadataAvailable: true }),
-    '匹配 12 个 Profile；请在 Profile 下拉列表中选择');
+    '12 matching profiles. Choose one from the Profile menu.');
   assert.equal(status({ active: true, hitCount: 0, totalCount: 17, metadataAvailable: true }),
-    '无匹配 Profile');
+    'No matching profiles');
   const cleared = status({ active: false, hitCount: 0, totalCount: 17, metadataAvailable: true });
-  assert.equal(cleared, '显示全部 17 个 Profile');
+  assert.equal(cleared, 'Showing all 17 profiles');
   assert.equal(status({ active: true, hitCount: 0, totalCount: 17, metadataAvailable: false }),
     'Technique metadata unavailable');
   assert.equal(status({ active: false, hitCount: 0, totalCount: 17, metadataAvailable: false }),

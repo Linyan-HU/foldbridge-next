@@ -172,4 +172,7 @@ test('PDB CIF catalogue uses the current Entry PDB list and sends downloads dire
   assert.match(main, /getPdbDownloadRecords\(entryTableState\)/);
   assert.match(main, /https:\/\/files\.rcsb\.org\/download\/\$\{encodeURIComponent\(record\.pdbId\)\}\.cif/);
   assert.match(main, /PDB_DOWNLOAD_PAGE_SIZE = 48/);
+  assert.match(main, /data-pdb-download-page-jump/);
+  assert.match(main, /name="page" type="number" inputmode="numeric" min="1" max="\$\{totalPages\}"/);
+  assert.match(main, /pageJumpForm\.addEventListener\('submit'/);
 });

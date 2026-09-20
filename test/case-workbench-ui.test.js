@@ -75,12 +75,12 @@ test(`fingerprinted ${runtimePurePath} implements the full pure behavior contrac
   assert.equal(runtimeRows(capped).at(-1).norm, 1);
   const status = runtimePure.publicTechniqueFilterStatus;
   assert.equal(status({ active: true, hitCount: 1, totalCount: 17, metadataAvailable: true }),
-    '匹配 1 个 Profile；请在 Profile 下拉列表中选择');
+    '1 matching profiles. Choose one from the Profile menu.');
   assert.equal(status({ active: true, hitCount: 12, totalCount: 17, metadataAvailable: true }),
-    '匹配 12 个 Profile；请在 Profile 下拉列表中选择');
-  assert.equal(status({ active: true, hitCount: 0, totalCount: 17, metadataAvailable: true }), '无匹配 Profile');
+    '12 matching profiles. Choose one from the Profile menu.');
+  assert.equal(status({ active: true, hitCount: 0, totalCount: 17, metadataAvailable: true }), 'No matching profiles');
   assert.equal(status({ active: false, hitCount: 0, totalCount: 17, metadataAvailable: true }),
-    '显示全部 17 个 Profile');
+    'Showing all 17 profiles');
   assert.equal(status({ active: true, hitCount: 0, totalCount: 17, metadataAvailable: false }),
     'Technique metadata unavailable');
   assert.equal(status({ active: false, hitCount: 0, totalCount: 17, metadataAvailable: false }),

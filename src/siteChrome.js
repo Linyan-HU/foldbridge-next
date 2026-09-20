@@ -66,7 +66,7 @@ export function renderHomeHero(dashboardView) {
             A curated database that links RNA chemical probing data with experimentally resolved tertiary structures.
           </p>
           <div class="bundle-hero-actions">
-            <button type="button" class="bundle-hero-primary" data-route="entry">Browse Entry table &rarr;</button>
+            <button type="button" class="bundle-hero-primary" data-route="entry">Browse Entry table <img class="inline-arrow-icon" src="./src/assets/probing-arrow-right.svg" alt="" aria-hidden="true" /></button>
             <button type="button" class="ghost" data-route="probing">Explore probing methods</button>
           </div>
         </div>
@@ -284,7 +284,7 @@ export function renderHomeScrollStory(caseData, opts = {}) {
   const intro = `<header class="hss-intro">
       <h1 class="hss-headline">Follow one RNA from probing signal to 3D fold</h1>
       <p class="hss-lede">The same reactivity colors travel with every nucleotide — from the raw alignment, into the secondary structure, and onto the deposited tertiary structure. Scroll to watch it transform.</p>
-      <p class="hss-scrollcue">↓ Scroll</p>
+      <p class="hss-scrollcue"><img class="hss-scrollcue-icon" src="./src/assets/probing-arrow-right.svg" alt="" aria-hidden="true" />Scroll</p>
     </header>`;
   const closing = `<footer class="hss-closing ${dashboardStatusClass(records)}">
       <h2>Every record in FoldBridge tells this story</h2>
@@ -434,7 +434,7 @@ function renderHelpGuide(section) {
       <div>
         <h3>${aboutText(item.term || item.title).replace(/^\d+\)\s*/, '')}</h3>
         <p>${aboutText(item.body)}</p>
-        ${item.route ? `<a class="help-guide-link" href="${aboutText(item.route)}">${aboutText(item.linkLabel || 'Open this page')} →</a>` : ''}
+        ${item.route ? `<a class="help-guide-link" href="${aboutText(item.route)}">${aboutText(item.linkLabel || 'Open this page')} <img class="inline-arrow-icon" src="./src/assets/probing-arrow-right.svg" alt="" aria-hidden="true" /></a>` : ''}
       </div>
     </article>`).join('')}
   </div>`;
@@ -756,12 +756,12 @@ export function renderProbingFamilyIndex(families, { embedded = false } = {}) {
     return `<a class="probing-family-card" href="#probing-family-${id}" data-probing-family-link="${id}">
         <div class="probing-family-card-topline">
           <span class="probing-family-card-count">${methods.length} methods</span>
-          <span class="probing-family-card-arrow" aria-hidden="true">→</span>
+          <span class="probing-family-card-arrow" aria-hidden="true"><img src="./src/assets/probing-arrow-right.svg" alt="" /></span>
         </div>
         <h3 class="probing-family-card-title">${escapeProbingHtml(title)}</h3>
         <p class="probing-family-card-summary">${renderScientificProse(summary)}</p>
         <div class="probing-family-method-list">${featuredMethods}</div>
-        <span class="probing-family-card-action">Explore methods <span aria-hidden="true">→</span></span>
+        <span class="probing-family-card-action">Explore methods <img class="inline-arrow-icon" src="./src/assets/probing-arrow-right.svg" alt="" aria-hidden="true" /></span>
       </a>`;
   }).join('');
   const tag = embedded ? 'div' : 'section';

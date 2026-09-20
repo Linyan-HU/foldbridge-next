@@ -79,7 +79,7 @@ test('desktop full-width header uses document width without scrollbar-sensitive 
   assert.deepEqual(responsiveMargins, ['0']);
 });
 
-test('desktop navigation offset and width are reset by the ordered 1100px declarations', () => {
+test('navigation offset and width are reset at the intermediate and 1100px breakpoints', () => {
   const allNavRules = ruleBodies(STYLES, '.bundle-home-route-nav');
   const allLeftDeclarations = allNavRules.flatMap((body) => declarationValues(body, 'left'));
   const allWidthDeclarations = allNavRules.flatMap((body) => declarationValues(body, 'width'));
@@ -89,8 +89,8 @@ test('desktop navigation offset and width are reset by the ordered 1100px declar
 
   assert.deepEqual(
     allLeftDeclarations,
-    ['220px', '0'],
-    'the complete navigation cascade must keep desktop left: 220px before the 1100px left: 0 reset',
+    ['220px', '0', '0'],
+    'the complete navigation cascade must keep desktop left: 220px before the intermediate and 1100px left: 0 resets',
   );
   assert.ok(navRules.length > 0, 'expected a .bundle-home-route-nav rule in the 1100px breakpoint');
   assert.deepEqual(
@@ -98,15 +98,14 @@ test('desktop navigation offset and width are reset by the ordered 1100px declar
     ['0'],
     'the 1100px breakpoint must contain one explicit left: 0 reset and no conflicting offset',
   );
-  assert.deepEqual(
-    allWidthDeclarations,
-    ['calc(100% - 220px)', '100%'],
-    'the complete navigation cascade must subtract the desktop offset before restoring width: 100%',
+  assert.equal(allWidthDeclarations[0], 'calc(100% - 220px)');
+  assert.ok(
+    allWidthDeclarations.slice(1).every((value) => value === '100%'),
+    'every responsive navigation override must restore width: 100% after the desktop offset',
   );
-  assert.deepEqual(
-    widthDeclarations,
-    ['100%'],
-    'the 1100px breakpoint must contain one explicit width: 100% reset and no conflicting width',
+  assert.ok(
+    widthDeclarations.length > 0 && widthDeclarations.every((value) => value === '100%'),
+    'the 1100px breakpoint must restore width: 100% without a conflicting width',
   );
 });
 

@@ -201,14 +201,29 @@ test('entry Case layout uses the shared centered width and content-driven height
   assert.match(heightBridge, /frame\.style\.height\s*=\s*`\$\{height\}px`/);
   assert.doesNotMatch(heightBridge, /calc\(100vh/);
   assert.match(main, /mountEntryCaseHeightListener\(\{/);
+  assert.match(main, /function entryCaseOriginForCurrentHost\(\)/);
+  assert.match(main, /new URL\('\/public\/entry-cases', window\.location\.origin\)/);
+  assert.match(main, /expectedOrigin: new URL\(entryCaseOriginForCurrentHost\(\)\)\.origin/);
   assert.match(main, /mountEntryCaseLoadingIndicator\(\{/);
   assert.match(main, /class="entry-case-loading"/);
   assert.match(styles, /\.entry-case-loading-track/);
   assert.match(styles, /@keyframes entry-case-loading-slide/);
   assert.match(shell, /classList\.add\("is-embedded"\)/);
   assert.match(shellStyles, /html\.is-embedded \.shell\s*\{[^}]*width:\s*100%[^}]*max-width:\s*100%/s);
+  assert.match(shellStyles, /html\.is-embedded \.shell\s*\{[^}]*box-shadow:\s*none;/s);
+  assert.match(shellStyles, /html\.is-embedded body\[data-mode="dark"\] \.shell\s*\{\s*box-shadow:\s*none;/s);
   assert.match(shell, /ResizeObserver/);
   assert.match(shell, /foldbridge-case-height/);
+});
+
+test('light Case canvas is transparent so the portal background stays continuous', () => {
+  const shellStyles = readFileSync(new URL('../public/entry-cases/__entry_v3_site__/case-shell.css', import.meta.url), 'utf8');
+  const siteStyles = readFileSync(new URL('../src/styles.css', import.meta.url), 'utf8');
+  const lightTokens = shellStyles.slice(0, shellStyles.indexOf('body[data-mode="dark"]'));
+
+  assert.match(lightTokens, /--bg:\s*transparent;/);
+  assert.match(lightTokens, /html,\s*body\s*\{\s*background-color:\s*transparent;/s);
+  assert.match(siteStyles, /\.entry-case-embed-frame\s*\{[^}]*background:\s*transparent;/s);
 });
 
 test('main-site entry route forwards the requested chain into the case iframe', () => {
@@ -325,6 +340,9 @@ test('Case shell shows staged loading progress until the first profile is ready'
   assert.match(shell, /fb-case-progress/);
   assert.match(shellStyles, /\.fb-case-progress/);
   assert.match(shellStyles, /prefers-reduced-motion:\s*reduce/);
+  assert.match(shellStyles, /body\[data-mode="dark"\] \.fb-case-progress/);
+  assert.match(shellStyles, /body\[data-mode="dark"\] \.chain-btn/);
+  assert.match(workbench, /document\.body\.dataset\.mode\s*=\s*requestedThemeMode/);
 
   const loadingAt = initBody.indexOf('reportWorkbenchProgress(45');
   const assetsAt = initBody.indexOf('reportWorkbenchProgress(80');

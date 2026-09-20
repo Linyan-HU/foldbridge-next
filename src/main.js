@@ -1401,7 +1401,7 @@ function renderTechnologyMethodPage(method) {
   return `${renderBundleHeader()}
   <main class="page-detail">
     <section class="card bundle-wide-card technology-detail-hero">
-      <a class="technology-back-link" href="#probing">Back to technology overview</a>
+      <a class="technology-back-link" href="#probing"><img class="technology-back-link-icon" src="./src/assets/probing-arrow-left.svg" alt="" aria-hidden="true" />Back to technology overview</a>
       <div class="technology-detail-header">
         <div>
           <h1>${method.title}</h1>
@@ -1545,7 +1545,7 @@ function renderProbingArticleLoadingPage(slug, headerHtml, isError) {
   return `${headerHtml}
   <main class="page-detail page-probing-article">
     <section class="card bundle-wide-card technology-detail-hero">
-      <a class="technology-back-link" href="#probing">← Back to probing methods overview</a>
+      <a class="technology-back-link" href="#probing"><img class="technology-back-link-icon" src="./src/assets/probing-arrow-left.svg" alt="" aria-hidden="true" />Back to probing methods overview</a>
       <div class="technology-detail-header">
         <div>
           <p class="technology-kicker">probing article</p>
@@ -1607,7 +1607,7 @@ function renderPdbCaseLoadingPage(message, headerHtml = '') {
   return `${headerHtml}
   <main class="page-pdb-case">
     <section class="card bundle-wide-card pdb-case-hero">
-      <a class="technology-back-link" href="#pdb-case">Back to PDB case index</a>
+      <a class="technology-back-link" href="#pdb-case"><img class="technology-back-link-icon" src="./src/assets/probing-arrow-left.svg" alt="" aria-hidden="true" />Back to PDB case index</a>
       <p class="technology-kicker">PDB case</p>
       <h1>${message}</h1>
       <div class="pdb-case-track-empty">Loading…</div>
@@ -2341,12 +2341,21 @@ function renderPdbDownloadsPage() {
   const resultLabel = query
     ? `${filteredRecords.length.toLocaleString()} matching structures`
     : `${allRecords.length.toLocaleString()} structures`;
+  const paginationPages = [...new Set([1, page - 1, page, page + 1, totalPages])]
+    .filter((value) => value >= 1 && value <= totalPages)
+    .sort((a, b) => a - b);
+  const paginationButtons = paginationPages.map((value, index) => {
+    const gap = index && value - paginationPages[index - 1] > 1
+      ? '<span class="site-search-pagination-gap" aria-hidden="true">…</span>'
+      : '';
+    return `${gap}<button type="button" class="site-search-pagination-button pdb-download-page-button${value === page ? ' active' : ''}" data-pdb-download-page="${value}"${value === page ? ' aria-current="page"' : ''}>${value}</button>`;
+  }).join('');
 
   return `${renderBundleHeader()}
     <main class="page-download page-pdb-downloads" aria-label="PDB CIF downloads">
       <section class="card bundle-wide-card pdb-download-page-card">
         <header class="page-card-heading">
-          <a class="pdb-download-back-link" href="#download">← Back to Download</a>
+          <a class="pdb-download-back-link" href="#download"><img class="inline-arrow-icon" src="./src/assets/probing-arrow-left.svg" alt="" aria-hidden="true" />Back to Download</a>
           <h1>PDB CIF downloads</h1>
           <p class="pdb-download-intro">Download the structure CIF for any PDB record represented in FoldBridge. Files are delivered directly by RCSB PDB.</p>
         </header>
@@ -2356,10 +2365,14 @@ function renderPdbDownloadsPage() {
           <p class="pdb-download-count" aria-live="polite">${resultLabel}</p>
         </div>
         <ul class="pdb-download-list" aria-label="PDB CIF files">${list || '<li class="pdb-download-empty">No PDB records match this search.</li>'}</ul>
-        ${filteredRecords.length > PDB_DOWNLOAD_PAGE_SIZE ? `<nav class="pdb-download-pagination" aria-label="PDB download pages">
-          <button type="button" class="pdb-download-page-button" data-pdb-download-page="${page - 1}" ${page === 1 ? 'disabled' : ''}>Previous</button>
-          <span>Page ${page} of ${totalPages}</span>
-          <button type="button" class="pdb-download-page-button" data-pdb-download-page="${page + 1}" ${page === totalPages ? 'disabled' : ''}>Next</button>
+        ${filteredRecords.length > PDB_DOWNLOAD_PAGE_SIZE ? `<nav class="site-search-pagination pdb-download-pagination" aria-label="PDB download pages">
+          <button type="button" class="site-search-pagination-button pdb-download-page-button" data-pdb-download-page="${page - 1}" ${page === 1 ? 'disabled' : ''}>Previous</button>
+          <div class="site-search-pagination-pages">${paginationButtons}</div>
+          <button type="button" class="site-search-pagination-button pdb-download-page-button" data-pdb-download-page="${page + 1}" ${page === totalPages ? 'disabled' : ''}>Next</button>
+          <form class="site-search-page-jump" data-pdb-download-page-jump aria-label="Jump to page">
+            <input name="page" type="number" inputmode="numeric" min="1" max="${totalPages}" value="${page}" aria-label="Page number; press Enter to jump" title="Enter a page number and press Enter" />
+            <span aria-hidden="true">/ ${totalPages}</span>
+          </form>
         </nav>` : ''}
       </section>
     </main>`;
@@ -2965,7 +2978,17 @@ function annojoinConfidencePage() {
 // local preview is intentionally incomplete, so using it for localhost would
 // turn otherwise valid search results into 404s.
 const ENTRY_CASE_ORIGIN = 'https://foldbridge.sunhao.uk/entry-cases';
-const ENTRY_CASE_FRAME_ORIGIN = new URL(ENTRY_CASE_ORIGIN).origin;
+
+function entryCaseOriginForCurrentHost() {
+  if (typeof window === 'undefined') return ENTRY_CASE_ORIGIN;
+  const hostname = window.location.hostname.toLowerCase();
+  const isLocalPreview = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
+  // A local preview must use the checked-in Case bundle; otherwise the remote
+  // Tunnel bundle masks stylesheet and script changes made in this workspace.
+  return isLocalPreview
+    ? new URL('/public/entry-cases', window.location.origin).href.replace(/\/$/, '')
+    : ENTRY_CASE_ORIGIN;
+}
 
 function clearEntryCaseEmbed() {
   if (!disposeEntryCaseHeightListener) return;
@@ -2981,7 +3004,7 @@ function initEntryCaseEmbed() {
   const disposeHeight = mountEntryCaseHeightListener({
     windowObject: window,
     frame,
-    expectedOrigin: ENTRY_CASE_FRAME_ORIGIN,
+    expectedOrigin: new URL(entryCaseOriginForCurrentHost()).origin,
   });
   const disposeLoading = mountEntryCaseLoadingIndicator({
     frame,
@@ -3010,7 +3033,8 @@ function entryCasePage() {
   const safeChain = String(chain || '').trim();
   // 所有 case（含 EF）走无版本 index.html；EF 由无版本 family-aware 壳按 ?family= 选 2D 产物。
   // 缓存击穿靠全局壳子模块的版本化文件名（VERSIONED_ASSETS），与 case 数量无关，新增 EF case 零改动。
-  const srcUrl = new URL(`${ENTRY_CASE_ORIGIN}/cases/${encodeURIComponent(safePdb)}/index.html`);
+  const entryCaseOrigin = entryCaseOriginForCurrentHost();
+  const srcUrl = new URL(`${entryCaseOrigin}/cases/${encodeURIComponent(safePdb)}/index.html`);
   // Entry Case is rendered in a separate iframe, so the parent document's
   // data-mode attribute cannot style it. Pass the persisted theme explicitly.
   srcUrl.searchParams.set('mode', mode);
@@ -3149,11 +3173,15 @@ function renderSavedSearches() {
     .join('');
 }
 
-function renderSearchResults(result) {
+function renderSearchResults(result, hasSearchCriteria = false) {
   if (!result.items.length) {
+    const heading = hasSearchCriteria ? 'No matching entries' : 'Start a search';
+    const message = hasSearchCriteria
+      ? 'Try another keyword or remove a filter.'
+      : 'Search by PDB ID, molecule name, or probing method.';
     return `<div class="site-search-empty" role="status">
-      <strong>No matching entries</strong>
-      <p>Try another keyword or remove a filter.</p>
+      <strong>${heading}</strong>
+      <p>${message}</p>
     </div>`;
   }
 
@@ -3250,10 +3278,11 @@ async function initSearchPage() {
       pageSize: isProbingArticleSearch ? 8 : 10
     });
     filterHost.innerHTML = renderSearchFilters(result.availableFilters, state.filters);
-    resultHost.innerHTML = `${renderSearchResults(result)}${renderSearchPagination(result)}`;
-    summaryHost.textContent = state.q || Object.keys(state.filters).length
+    const hasSearchCriteria = Boolean(state.q || Object.keys(state.filters).length);
+    resultHost.innerHTML = `${renderSearchResults(result, hasSearchCriteria)}${renderSearchPagination(result)}`;
+    summaryHost.textContent = hasSearchCriteria
       ? `${result.total} results`
-      : 'Enter a query or choose a filter.';
+      : 'Search the catalogue by PDB ID, molecule name, or probing method.';
 
     filterHost.querySelectorAll('[data-search-filter-key]').forEach((button) => {
       button.addEventListener('click', () => {
@@ -3571,6 +3600,25 @@ function initPdbDownloadsPage() {
       render({ preserveScroll: true });
     });
   });
+  const pageJumpForm = document.querySelector('[data-pdb-download-page-jump]');
+  const pageJumpInput = pageJumpForm?.elements.namedItem('page');
+  if (pageJumpForm && pageJumpInput instanceof HTMLInputElement) {
+    pageJumpForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const requestedPage = Number(pageJumpInput.value);
+      const totalPages = Number(pageJumpInput.max);
+      if (!Number.isSafeInteger(requestedPage) || requestedPage < 1 || requestedPage > totalPages) {
+        pageJumpInput.setCustomValidity(`Enter a whole number from 1 to ${totalPages}.`);
+        pageJumpInput.reportValidity();
+        return;
+      }
+      pageJumpInput.setCustomValidity('');
+      if (requestedPage === pdbDownloadPage) return;
+      pdbDownloadPage = requestedPage;
+      render({ preserveScroll: true });
+    });
+    pageJumpInput.addEventListener('input', () => pageJumpInput.setCustomValidity(''));
+  }
 }
 
 function initDownloadGeoDisclosure() {

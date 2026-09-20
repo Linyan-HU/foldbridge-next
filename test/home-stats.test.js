@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import test from 'node:test';
 
 import {
@@ -63,6 +64,16 @@ test('renderHomeScrollStory uses the current PDB structure count in its closing'
 
   assert.match(html, /5,321 structure-linked records/);
   assert.doesNotMatch(html, /2,386|510|High confidence/i);
+});
+
+test('home scroll cue uses the supplied vector arrow rather than a text glyph', () => {
+  const html = renderHomeScrollStory(CASE_DATA, { dashboardView: DASHBOARD_VIEW });
+  const styles = readFileSync(new URL('../src/styles.css', import.meta.url), 'utf8');
+
+  assert.match(html, /class="hss-scrollcue-icon" src="\.\/src\/assets\/probing-arrow-right\.svg"/);
+  assert.doesNotMatch(html, />↓\s*Scroll</);
+  assert.match(styles, /\.hss-scrollcue-icon\s*\{[^}]*transform:\s*rotate\(90deg\)/s);
+  assert.match(styles, /body\[data-mode="dark"\] \.hss-scrollcue-icon\s*\{?[^}]*filter:\s*brightness\(0\) invert\(1\)/s);
 });
 
 for (const [entryStatus, probingStatus] of [
